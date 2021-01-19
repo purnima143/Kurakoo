@@ -21,7 +21,7 @@ Project Managers, Developers and Designers would be collaborating on various dom
     
 -   **Front-End Development with ReactJS**
     
--   **Developing Backend APIs with NodeJS and MongoDB
+-   **Developing Backend APIs with NodeJS and MongoDB**
     
 -   **Working on a NoSQL Database Management System**
     
