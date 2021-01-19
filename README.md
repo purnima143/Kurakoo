@@ -5,21 +5,19 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
-Kurakoo is a website where you can make friends (safely) and learn more from people you trust. Kurakoo is an online community of people providing answers to questions just like Quora site. Kurakoo is specially for school-college students, people from around the different colleges visit Kurakoo to ask questions from a community of people who answer them. 
+Kurakoo is a website where you can make friends (safely) and learn more from people you trust. Kurakoo is an online community of people providing answers to questions just like Quora site. Kurakoo is especially for school-college students, people from around the different colleges visit Kurakoo to ask questions from a community of people who answer them. 
 
 
 ## Project Background💡
 
-In Majority of the Colleges and Universities across India, having so many queries from "Which branch to choose?" to "How to crack interview?". A One-Stop Solution can be to bring up an Application where Students can drop down their questions for public View, that can be accessed by anyone and those people knows the answer they can share their point of view. 
+In Majority of the Colleges and Universities across India, having so many queries from "Which branch to choose?" to "How to crack interview?". A One-Stop Solution can be to bring up an application where students can drop down their questions for public View, that can be accessed by anyone and those people knows the answer they can share their point of view. 
 
-
-We will also be working on adding more features to the Project, like specifying the nature of Notes and to whom it benefits the most which would allow the other User to filter and view specific content.
 
 ## Areas of Collaboration 👨‍🏭
 
 Project Managers, Developers and Designers would be collaborating on various domains like:
 
--   UI Prototyping with Tools like Adobe XD/Figma
+-   UI Prototyping with Tools like [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
     
 -   Front-End Development with ReactJS
     
@@ -31,9 +29,6 @@ Project Managers, Developers and Designers would be collaborating on various dom
     
 This would be an enriching experience for all Student Developers, Project Managers and Designers.
 
-## Team Prospects 👨‍💻
-
-Assuming a total team strength of X, X/3 students will be working on Front-End, X/3 on Back-End and X/3 on Databases/DevOps/Deployment. The minimum number of people I am looking for to work on this project is 6 while the maximum number of people I am looking for to work on this project is 24.
 
 ## Technology Stack 🛠️
 
@@ -42,6 +37,20 @@ Assuming a total team strength of X, X/3 students will be working on Front-End, 
 - **Tools & Technologies**: React, MongoDB, Express, NodeJS
 
 - **Project Management Tools**: Trello, Git/Github, Markdown (Documentation)
+
+## Flow of the site
+
+
+
+## General Guidelines
+ - Before working on any issue kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme file carefully.
+ - For each issue, a detailed explanation is mentioned in issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
+ - While making any component, make sure that the code for the all generalised/common components must be kept in [src->components->common](src/components/common) folder.
+ - Kindly keep the source code in the [src->components](src/components/) folder while making the specific components.
+] - Please make sure to adhere to the folder structure of the project.
+
+We will also be working on adding more features to the Project.
+
 
 ## Learning Resources 🧰
 
