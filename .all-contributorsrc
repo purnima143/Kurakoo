@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "purnima143",
+      "name": "Purnima Sharma",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/57852378?v=4",
+      "profile": "http://purnimasharma.me",
+      "contributions": [
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Kurakoo",
+  "projectOwner": "purnima143",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
