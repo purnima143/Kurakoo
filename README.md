@@ -55,6 +55,12 @@ Below is the basic idea how the website will work. We will also be working on ad
 
 We will also be working on adding more features to the Project.
 
+## Open source contest
+Girlscript Summer of Code 2021
+About GirlScript Summer of Code is the 3 month long Open Source program during summers conducted by GirlScript Foundation, started in 2018, with an aim to help beginners get started with Open Source Development while encouraging diversity.
+
+![0_hvZkvLGPR4t6TFhS](https://user-images.githubusercontent.com/57852378/108583937-3ef2fb00-7363-11eb-9239-a274fbe00bdd.png)
+
 
 ## Learning Resources 🧰
 
