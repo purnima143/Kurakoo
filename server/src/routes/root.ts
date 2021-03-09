@@ -1,6 +1,7 @@
 import express, { Request, Response, Router } from "express";
 
 import { apiData } from "../types/interfaces";
+import responseHandler from "../helpers/responseHandler";
 
 const dataToSend: apiData = {
   name: "John Doe",
@@ -11,7 +12,12 @@ const dataToSend: apiData = {
 const router: Router = express.Router();
 
 router.get("/", (req: Request, res: Response) => {
-  res.send(dataToSend);
+  return res.json(responseHandler<apiData>(
+    true,
+    200,
+    'Data retrieved successfully',
+    dataToSend
+  ));
 });
 
 export default router;
