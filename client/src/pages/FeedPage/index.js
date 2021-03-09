@@ -5,21 +5,39 @@ import profileImg from './images/imgAvatar.png';
 
 function FeedPage() {
 
+    //dummy data
     var feedData = [
       {
-        userName: "userName1",
+        userInfo: {
+          userName: "userName1",
+          profilePic: profileImg,
+          profession: "profession details"
+        },
+
         question: "Which Engineering colleges are good in Mumbai?"
       },
       {
-        userName: "userName2",
+        userInfo: {
+          userName: "userName2",
+          profilePic: profileImg,
+          profession: "profession details"
+        },
         question: "Which Engineering colleges are good in Mumbai, and what is the admission procedure or requirement for these colleges?"
       },
       {
-        userName: "userName3",
+        userInfo: {
+          userName: "userName3",
+          profilePic: profileImg,
+          profession: "profession details"
+        },
         question: "Which Engineering colleges are good in Mumbai?"
       },
       {
-        userName: "userName4",
+        userInfo: {
+          userName: "userName4",
+          profilePic: profileImg,
+          profession: "profession details"
+        },
         question: "Which Engineering colleges are good in Mumbai, and what is the admission procedure or requirement for these colleges?"
       },
     ];
@@ -27,23 +45,23 @@ function FeedPage() {
     var connect = [
       {
         userName: "user1", 
-        profilePic: ""
+        profilePic: profileImg
       }, 
       {
         userName: "userName2", 
-        profilePic: ""
+        profilePic: profileImg
       }, 
       {
         userName: "aniketbagayatkar",
-        profilePic: "/"
+        profilePic: profileImg
       }, 
       {
         userName: "user4",
-        profilePic: "/"
+        profilePic: profileImg
       }, 
       {
         userName: "user5",
-        profilePic: "/"
+        profilePic: profileImg
       }
     ];
 
@@ -82,7 +100,9 @@ function FeedPage() {
             {connect.map((item, index) => {
               return (
                 <li>
-                  <a href = "/"><img src = { profileImg } alt = "alternate" className="profile-pic"/>{ item.userName }</a>
+                  <a href = "/">
+                    <img src = { item.profilePic } alt = "alternate" className="profile-pic"/>{ item.userName }
+                  </a>
                 </li>
               );
             })}
@@ -92,7 +112,7 @@ function FeedPage() {
 
         {feedData.map((item, index) => {
           return (
-            <Feed username = { item.userName } question = { item.question } />
+            <Feed username = { item.userInfo.userName } question = { item.question } img = { item.userInfo.profilePic } profession = { item.userInfo.profession } />
           )
         })}
 

@@ -1,12 +1,49 @@
 
 .feed-content{
     width: 60%;
-    height: 30vh;
-    border: 0px;
+    height: 300px;
+    border: solid var(--primary-color) 1px;
     margin: 2rem auto;
     border-radius: 3px;
-    /* background-color: var(--secondary-color); */
-    background-color: var(--secondary-light);
+    background-color: white;
+    /* background-color: var(--secondary-light); */
     top: 6.5rem;
     position: relative;
+}
+
+
+.bio-div{
+    text-align: left;
+    margin-top: 4px;
+}
+
+.bio-div img{
+    margin-left: 0px;
+}
+
+.bio-div #username{
+    margin: 0rem;
+}
+
+.bio-div small{
+    
+}
+
+#bio-details{
+    display: inline-block;
+}
+
+section hr{
+    background-color: var(--primary-color);
+    border: 0px;
+    padding: 1px 0px 0px 0px;
+}
+
+#profile-pic{
+    vertical-align: top;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    margin: 0px 5px;
+
 }
