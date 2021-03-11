@@ -1,4 +1,5 @@
 // main server file
+/// main server file
 const app = require("express");
 const env = require("dotenv");
 const express = require("express");
@@ -6,10 +7,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-import root from "./routes/root";
-import api from "./routes/api";
-import notFound from "./routes/notFound";
-import logger from "./middleware/logger";
+const root = require("./routes/root");
+const api = require("./routes/api");
+const notFound= require("./routes/notFound");
+const logger = require("./routes/loger");
 
 //environment variable
 env.config();
@@ -35,4 +36,4 @@ app.use("*", notFound);
 
 app.listen(process.env.PORT, ()=> {
     console.log(`Our Server is started at ${process.env.PORT}`);
-});
+}); 
