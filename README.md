@@ -55,6 +55,12 @@ Below is the basic idea how the website will work. We will also be working on ad
 
 We will also be working on adding more features to the Project.
 
+## Open source contest
+Girlscript Summer of Code 2021
+About GirlScript Summer of Code is the 3 month long Open Source program during summers conducted by GirlScript Foundation, started in 2018, with an aim to help beginners get started with Open Source Development while encouraging diversity.
+
+![0_hvZkvLGPR4t6TFhS](https://user-images.githubusercontent.com/57852378/108583937-3ef2fb00-7363-11eb-9239-a274fbe00bdd.png)
+
 
 ## Learning Resources 🧰
 
@@ -84,7 +90,7 @@ We will also be working on adding more features to the Project.
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -97,6 +103,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://purnimasharma.me"><img src="https://avatars1.githubusercontent.com/u/57852378?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Purnima Sharma</b></sub></a><br /><a href="#projectManagement-purnima143" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/thaditi"><img src="https://avatars.githubusercontent.com/u/47235301?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Thapliyal</b></sub></a><br /><a href="#design-thaditi" title="Design">🎨</a></td>
   </tr>
 </table>
 
