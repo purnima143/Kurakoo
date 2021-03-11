@@ -1,0 +1,75 @@
+
+  body {
+    background:  linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  #navbar {
+    overflow: hidden;
+    
+  }
+  
+  #navbar a {
+    margin: 1rm;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color:white;
+  }
+    
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .content {
+    padding: 16px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .dirty a{
+      color:green;
+  }
+  #aboutStyle{
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgb(27, 21, 21);
+    color: white;
+  }
+  .icons{
+    font-size: 3rem;
+    text-align: center;
+  }
+  .icons a:link , a:visited , a:active{
+    color:rgb(24, 18, 18);
+  }
+  .icons a:hover{
+    color: white;
+  }
+  
