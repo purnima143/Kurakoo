@@ -23,6 +23,15 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "thaditi",
+      "name": "Aditi Thapliyal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47235301?v=4",
+      "profile": "https://github.com/thaditi",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
