@@ -1,41 +1,37 @@
 // main server file
-
-import express, { Application } from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+const app = require("express");
+const env = require("dotenv");
 
 import root from "./routes/root";
 import api from "./routes/api";
 import notFound from "./routes/notFound";
-
 import logger from "./middleware/logger";
 
-const app: Application = express();
-const PORT = 3000;
+//environment variable
+env.config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.to93b.mongodb.net/${process.env.MONGO_DB_DATA}?retryWrites=true&w=majority`, 
+    {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true,
+        useCreateIndex: true
+    }
+).then(()=>{
+        console.log("database connected");
+});
+
 app.use(cors());
 app.use(express.json());
-
-const DBName = `ExampleApiDB`;
-mongoose.connect(`mongodb://localhost:27017/${DBName}`, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-});
-
-const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("MongoDB database connection established successfully");
-});
-
 app.use(logger);
-
-app.use("/", root);
-
+app.use("/", root);//modify later according to apis 
 app.use("/api", api);
-
 app.use("*", notFound);
 
-app.listen(process.env.PORT || PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(process.env.PORT, ()=> {
+    console.log(`Our Server is started at ${process.env.PORT}`);
+});
