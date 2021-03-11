@@ -106,6 +106,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/thaditi"><img src="https://avatars.githubusercontent.com/u/47235301?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Thapliyal</b></sub></a><br /><a href="#design-thaditi" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/anhushree"><img src="https://avatars.githubusercontent.com/u/56672958?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anhushree Munees</b></sub></a><br /><a href="#design-anhushree" title="Design">🎨</a></td>
+    
   </tr>
 </table>
 
