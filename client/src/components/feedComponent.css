@@ -1,10 +1,10 @@
 
-.feed-content{
+.feed-component{
     width: 60%;
-    height: 300px;
+    
     border: solid var(--primary-color) 1px;
     margin: 2rem auto;
-    border-radius: 3px;
+    border-radius: 6px;
     background-color: white;
     /* background-color: var(--secondary-light); */
     top: 6.5rem;
@@ -46,4 +46,37 @@ section hr{
     border-radius: 50%;
     margin: 0px 5px;
 
+}
+
+#feed-content{
+    text-align: left;
+    margin: 0.5rem 1rem;
+}
+
+#question{
+    margin: 0.2rem 0rem;
+    
+}
+
+#answer{
+    margin-top: 0.1rem;
+}
+
+#response-bar{
+    text-align: left;
+    font-size: larger;
+    margin: 0.2rem;
+}
+
+#response-bar .button{
+    padding: 0rem 1rem;
+    border: 0px;
+    background-color: transparent;
+    font-size: large;
+    display: inline;
+}
+
+#response-bar .button :hover{
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
 }

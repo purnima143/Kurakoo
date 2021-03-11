@@ -1,10 +1,11 @@
 import React from "react";
-import './feed_styles.css';
+import './feedComponent.css';
+import { AiFillLike, AiFillDislike, AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/ai";
 
 function Feed(props) {
     return (
       <div>
-        <section className = "feed-content">
+        <section className = "feed-component">
           <div className = "bio-div">
             <img src = { props.img } id = "profile-pic" alt = "img" />
             <div id = "bio-details">
@@ -15,13 +16,22 @@ function Feed(props) {
 
           <hr/>
 
-          <div id = "q-ans-div">
+          <div id = "feed-content">
             <h4 id = "question">
               { props.question }
             </h4>
-            <p>
+            <p id = "answer">
               { props.answer }
             </p>
+          </div>
+          <hr/>
+
+          <div id = "response-bar">
+            <button class = "button">
+              <span><AiOutlineLike /></span>
+            </button>
+            <button class = "button"><AiOutlineDislike /></button>
+            <button class = "button"><AiOutlineComment /></button>
           </div>
         </section>
       </div>

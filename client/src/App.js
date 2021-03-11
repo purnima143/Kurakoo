@@ -1,13 +1,22 @@
 import React from "react";
 import './App.css';
-import FeedPage from './pages/FeedPage/index';
+import FeedPage from './components/feed';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      < FeedPage />
-      
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <div id = "logo">
+            <h1>LOGO</h1>
+          </div>
+        </nav>
+        <Switch>
+          <Route path = "/" exact component = { FeedPage } />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

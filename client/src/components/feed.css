@@ -10,16 +10,6 @@ body{
     background-color: var(--secondary-light);
 }
 
-nav{
-    background-color: var(--tertiary-color);
-    margin: 0.5rem 0rem;
-    margin-top: 0px;
-    padding: 0.5rem 0.5rem;
-    top: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-}
 
 /* Left sidebar */
 .side-bar-left{
@@ -74,9 +64,12 @@ nav{
 .side-bar-right{
     position: fixed;
     height: 100%;
-    background-color: var(--primary-color);
-    width: 14em;
-    top: 6.5rem;
+    /* background-color: var(--primary-color); */
+    background-color: var(--secondary-color);
+    border-left: solid var(--tertiary-color) 1px;
+
+    width: 220px;
+    top: 5.5rem;
     right: 0;
     z-index: 1;
     
