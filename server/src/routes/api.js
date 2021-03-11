@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { lodger } = require('../common-middleware');
+const { logger } = require('../middleware');
 const { apiData } = require ('../controller/interfaces');
 
 const apiData = {

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { lodger } = require('../common-middleware');
+const { logger } = require('../middleware');
 const { apiData } = require ('../controller/interfaces');
 
 const dataToSend= apiData = {
@@ -9,7 +9,7 @@ const dataToSend= apiData = {
   pass: true,
 };
 
-router.get("/", (req, res) => {
+router.get("/logger", (req, res) => {
   res.send(dataToSend);
 });
 
