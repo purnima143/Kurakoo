@@ -23,6 +23,25 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "thaditi",
+      "name": "Aditi Thapliyal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47235301?v=4",
+      "profile": "https://github.com/thaditi",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "anhushree",
+      "name": "Anhushree Munees",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56672958?v=4",
+      "profile": "https://github.com/anhushree",
+
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
