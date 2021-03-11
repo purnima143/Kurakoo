@@ -50,6 +50,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "himanshujaidka",
+      "name": "Himanshu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58654018?v=4",
+      "profile": "https://himanshujaidka-github-io.vercel.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
