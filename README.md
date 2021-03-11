@@ -90,7 +90,7 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -112,6 +112,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://mayank0255.github.io"><img src="https://avatars.githubusercontent.com/u/43780137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayank Aggarwal</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Mayank0255" title="Code">💻</a></td>
   </tr>
 </table>
 
