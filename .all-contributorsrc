@@ -77,6 +77,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Mayank0255",
+      "name": "Mayank Aggarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43780137?v=4",
+      "profile": "http://mayank0255.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
