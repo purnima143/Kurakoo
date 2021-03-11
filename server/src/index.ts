@@ -1,9 +1,10 @@
 // main server file
-import cors from "cors";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
 const app = require("express");
 const env = require("dotenv");
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 import root from "./routes/root";
 import api from "./routes/api";
