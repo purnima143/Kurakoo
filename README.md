@@ -90,7 +90,7 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -108,6 +108,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/anhushree"><img src="https://avatars.githubusercontent.com/u/56672958?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anhushree Munees</b></sub></a><br /><a href="#design-anhushree" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/encodeArnab"><img src="https://avatars.githubusercontent.com/u/77114532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Arnab</b></sub></a><br /><a href="#design-encodeArnab" title="Design">🎨</a></td>
     <td align="center"><a href="https://himanshujaidka-github-io.vercel.app/"><img src="https://avatars.githubusercontent.com/u/58654018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Himanshu</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=himanshujaidka" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vijayjoshi16"><img src="https://avatars.githubusercontent.com/u/54314949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vijay Joshi</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=vijayjoshi16" title="Code">💻</a></td>
   </tr>
 </table>
 
