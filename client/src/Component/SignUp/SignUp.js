@@ -43,7 +43,7 @@ const SignUp = ()=>{
                 if(re.test(email)){
                     if(password!==""){
                         if(course!==""){
-                            if(year!=""){
+                            if(year!==""){
                                 if(college!==""){
                                     toast.success("Valid details", {
                                         position: "top-right",
