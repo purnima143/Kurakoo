@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 
-const SignUp = ()=>{
+const SignIn = () =>{
 
     //STATE HOOKS FOR INPUT DETAILS
     const [email, setEmail] = useState("");
@@ -119,4 +119,4 @@ const SignUp = ()=>{
     );
 };
 
-export default SignUp;
+export default SignIn;
