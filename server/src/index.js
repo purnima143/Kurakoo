@@ -1,39 +1,55 @@
 // main server file
-/// main server file
-const app = require("express");
-const env = require("dotenv");
-const express = require("express");
-const bodyParser = require("body-parser");
+
+require('dotenv').config();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const http = require('http');
+const morgan = require('morgan');
+const helmet = require('helmet');
+const compression = require('compression');
 const mongoose = require("mongoose");
-const cors = require("cors");
+const express = require('express');
+const app = express();
 
-const root = require("./routes/root");
-const api = require("./routes/api");
-const notFound= require("./routes/notFound");
-const logger = require("./routes/loger");
+const root = require('./routes/root');
 
-//environment variable
-env.config();
+// logger
+app.use(morgan('dev'));
 
+// compressing api response
+app.use(compression());
+
+// security config
+app.use(helmet());
+
+// cors enable
+app.options('*', cors());
+app.use(cors({ origin: 'http://localhost:5000' }));
+
+// body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.to93b.mongodb.net/${process.env.MONGO_DB_DATA}?retryWrites=true&w=majority`, 
+// database connection
+mongoose.connect(process.env.MONGO_URL,
     {
-        useNewUrlParser: true, 
+        useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true
     }
 ).then(()=>{
-        console.log("database connected");
+    console.log("database connected");
 });
 
-app.use(cors());
-app.use(express.json());
-app.use(logger);
-app.use("/", root);//modify later according to apis 
-app.use("/api", api);
-app.use("*", notFound);
+// all the api routes
+app.use('/api', root);
 
-app.listen(process.env.PORT, ()=> {
-    console.log(`Our Server is started at ${process.env.PORT}`);
-}); 
+// port initialized
+const PORT = process.env.PORT || 5000;
+
+// server setup
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});

@@ -1,16 +1,8 @@
+const example = require('./example.route');
+
 const express = require('express');
 const router = express.Router();
-const { logger } = require('../middleware');
-const { apiData } = require ('../controller/interfaces');
 
-const dataToSend= apiData = {
-  name: "John Doe",
-  age: 13,
-  pass: true,
-};
-
-router.get("/logger", (req, res) => {
-  res.send(dataToSend);
-});
+router.use('/example', example);
 
 module.exports = router;
