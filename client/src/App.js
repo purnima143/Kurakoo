@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import './App.css';
 import store from './store/store';
 import SignUp from './Component/SignUp/SignUp';
+import { FeedPage } from './Component/feedpage/FeedPage';
+import SignIn from "./Component/SignIn/SignIn";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <div>
           <Switch>
             <Route path="/signup" component={SignUp} />
+            <Route path="/feedpage" component={FeedPage} />
+            <Route path="/signin" component={SignIn} />
           </Switch>
         </div>
       </div>
