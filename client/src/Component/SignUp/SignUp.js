@@ -85,7 +85,7 @@ const SignUp = ()=>{
             {!isSmallScreen
             ?
             <Grid item md={6} lg={6}>
-                <img className="signup_image" src="./images/Formimage.png" alt=""></img>
+                <img className="signup_image" src="./images/Formimage.png" alt="signup_image"></img>
             </Grid>
             :
             <Grid item md={12} lg={12}></Grid>
@@ -96,7 +96,7 @@ const SignUp = ()=>{
                 {
                     isSmallScreen
                     ?
-                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt=""></img>
+                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
                     :
                     <div></div>
                 }
