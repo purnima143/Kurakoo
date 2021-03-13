@@ -1,0 +1,148 @@
+/*div containing whole search bar */
+.search_div
+{
+    display: table;
+    width: 100%;
+}
+/*div containing input box*/
+.input_box
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+/* styling input box and btn for search  */
+.input_class, .btn_class
+{
+    color: #000;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+    position: absolute;
+    top: 70%;
+    left: 10px;
+    right: 0;
+    width: 600px;
+    padding: 10px;;
+    margin: -68px auto 0 auto;
+    border: 2px solid black;
+    transform: scale(0.6);
+}
+/*class name for search form tag */
+.form_search
+{
+    height: 65px;
+}
+/* input tag*/
+.input_class[type="text"]
+{
+    width: 500px;
+    height: 65px;
+    font-size: 30px;
+    line-height: 1;
+}
+/*input tag*/
+.input_class[type="text"]::placeholder
+{
+    color: grey;
+}
+/* btn in search button before click*/
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+/*btn for submit the search*/
+.btn_class
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 65px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -10px;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 10px solid black;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+/*adjustment of search btn*/
+.btn_class span
+{
+    position: absolute;
+    top: 40px;
+    left: 45px;
+    display: block;
+    width: 30px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 8px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+/*adjustment of search on some actions*/
+.btn_class span:before, .btn_class span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 12px;
+    background-color: #000;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 45px;
+    height: 15px;
+    border-width: 0;
+    background-color: #000;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 50px;
+    width: 14px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 35px;
+    background-color:#000;
+}
+
