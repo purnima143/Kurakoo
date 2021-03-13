@@ -37,6 +37,7 @@ section hr{
     background-color: var(--primary-color);
     border: 0px;
     padding: 1px 0px 0px 0px;
+    margin-bottom: 3px;
 }
 
 #profile-pic{
@@ -65,15 +66,18 @@ section hr{
 #response-bar{
     text-align: left;
     font-size: larger;
-    margin: 0.2rem;
+    padding: 0px;
+    margin: 0rem 2px;
 }
 
 #response-bar .button{
-    padding: 0rem 1rem;
+    
     border: 0px;
     background-color: transparent;
-    font-size: large;
+    padding: 0rem;
+    margin: 0rem;
     display: inline;
+    outline: none;
 }
 
 #response-bar .button :hover{

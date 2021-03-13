@@ -10,6 +10,17 @@ body{
     background-color: var(--secondary-light);
 }
 
+@media screen and (max-width: 1150px) {
+    .side-bar-right {
+      display: none;
+    }
+    #feeds{
+        transform: translate(5rem);
+        width: 70rem;
+        display: flex;
+        flex-direction: column;
+    }
+  }
 
 /* Left sidebar */
 .side-bar-left{

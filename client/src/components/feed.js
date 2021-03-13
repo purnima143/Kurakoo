@@ -101,7 +101,7 @@ function FeedPage() {
               return (
                 <li>
                   <a href = "/">
-                    <img src = { item.profilePic } alt = "alternate" className="profile-pic"/>{ item.userName }
+                    <img src = { item.profilePic } alt = "alt" className="profile-pic"/>{ item.userName }
                   </a>
                 </li>
               );
@@ -110,12 +110,13 @@ function FeedPage() {
           </ul>
         </div>
 
+        <div id = "feeds">
         {feedData.map((item, index) => {
           return (
             <Feed username = { item.userInfo.userName } question = { item.question } img = { item.userInfo.profilePic } profession = { item.userInfo.profession } answer = { item.answer } />
           )
         })}
-
+        </div>
         
 
       </div>

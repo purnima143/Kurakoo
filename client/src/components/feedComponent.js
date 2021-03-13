@@ -1,8 +1,24 @@
 import React from "react";
 import './feedComponent.css';
 import { AiFillLike, AiFillDislike, AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/ai";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
+import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import InsertCommentOutlinedIcon from '@material-ui/icons/InsertCommentOutlined';
+import InsertCommentIcon from '@material-ui/icons/InsertComment';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  root: {
+    width: "18px",
+    padding: "4px 18px",
+    margin: "0px"
+  },
+});
 
 function Feed(props) {
+    const classes = useStyles();
     return (
       <div>
         <section className = "feed-component">
@@ -13,9 +29,7 @@ function Feed(props) {
               <small>{ props.profession }</small>
             </div>
           </div>
-
           <hr/>
-
           <div id = "feed-content">
             <h4 id = "question">
               { props.question }
@@ -25,13 +39,12 @@ function Feed(props) {
             </p>
           </div>
           <hr/>
-
           <div id = "response-bar">
             <button class = "button">
-              <span><AiOutlineLike /></span>
+              < ThumbUpOutlinedIcon className={classes.root}/>
             </button>
-            <button class = "button"><AiOutlineDislike /></button>
-            <button class = "button"><AiOutlineComment /></button>
+            <button class = "button"><ThumbDownOutlinedIcon className={classes.root}/></button>
+            <button class = "button"><InsertCommentOutlinedIcon className={classes.root}/></button>
           </div>
         </section>
       </div>
