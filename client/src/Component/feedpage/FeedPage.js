@@ -10,9 +10,9 @@ export class FeedPage extends Component {
              <Navbar/>
              <div className="haeder_i">
             
-               <img className="header_img" src="./images/Group_5.png"></img>
+               <img className="header_img" src="./images/Group_5.png" alt="haeder_image"></img>
                
-               <img className="header_img1" src="./images/Group_4.png"></img>
+               <img className="header_img1" src="./images/Group_4.png" alt="haeder_image"></img>
           
                <button className="header_btn">Ask a Question</button>
              </div>

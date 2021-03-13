@@ -13,7 +13,7 @@ export class Navbar extends Component {
                     <div className="col col1">
                         <div className="logo_nav">
                             <a href="#home">
-                                <img className="logo_kurakoo"  src="./images/kurakoo-logo.png"/>
+                                <img className="logo_kurakoo"  src="./images/kurakoo-logo.png" alt="kurakoo_logo"/>
                             </a>
                         </div>
                     </div>
@@ -26,7 +26,7 @@ export class Navbar extends Component {
                     <div class="col col4">
                         <div class="sign_nav">
                             <div className="col profile_div">
-                                <img className="profile_img"  src="./images/profile_pic.jpg"/>
+                                <img className="profile_img"  src="./images/profile_pic.jpg" alt="progile_image"/>
                             </div>
                             <div className="col btn_div">
                                 <button className="sign_in_btn"><b>Sign In</b></button>
