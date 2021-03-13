@@ -34,6 +34,7 @@ const SignIn = () =>{
     const PostData = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
             if(email!==""){
+                // eslint-disable-next-line
                 const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 if(valid_email.test(email)){
                     if(password!==""){
@@ -56,7 +57,7 @@ const SignIn = () =>{
                 !isSmallScreen
                 ?
                 <Grid item md={6} lg={6}>
-                    <img className="signin_image" src="./images/Formimage.png"></img>
+                    <img className="signin_image" src="./images/Formimage.png" alt=""></img>
                 </Grid>
                 :
                 <Grid item md={12} lg={12}></Grid>
@@ -69,7 +70,7 @@ const SignIn = () =>{
                     ?
                     <div></div>
                     :
-                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png"></img>
+                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt=""></img>
                 }
 
                 {/* Form to take input */}
