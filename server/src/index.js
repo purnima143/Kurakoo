@@ -11,9 +11,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
-//routes
-const authRoutes = require("./routes/auth");
-
 // logger
 app.use(morgan("dev"));
 
@@ -45,7 +42,7 @@ mongoose.connect(
   });
 
 // all the api routes
-app.use("/api", authRoutes);
+app.use('/api', root);
 
 // port initialized
 const PORT = process.env.PORT || 5000;
