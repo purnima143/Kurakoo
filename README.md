@@ -102,11 +102,11 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 ## Project Mentors 👨‍💻
 <table>
 <tr>
-    <td align="center"><a href=https://www.linkedin.com/in/maw1a/"><img src="https://avatars.githubusercontent.com/u/48566609?s=460&u=47e205d9f0802abd125b2410d9bc12cbcd10bd1b&v=4" width="100px;" alt=""/><br /><sub><b>Ahmed Mawia</b></sub></a><br /><a href="https://github.com/maw1a" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+    <td align="center"><a href="https://www.linkedin.com/in/maw1a/"><img src="https://avatars.githubusercontent.com/u/48566609?s=460&u=47e205d9f0802abd125b2410d9bc12cbcd10bd1b&v=4" width="100px;" alt=""/><br /><sub><b>Ahmed Mawia</b></sub></a><br /><a href="https://github.com/maw1a" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a> </td>
     <td align="center"><a href="https://www.linkedin.com/in/ir2010/"><img src="https://avatars.githubusercontent.com/u/46022116?s=460&u=5a5db16a4d00686752dff0cd7b3c7e03c1e956df&v=4" width="100px;" alt=""/><br /><sub><b>Ishu Raj</b></sub></a><br /><a href="https://github.com/ir2010" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
-   <td align="center"><a href="https://www.linkedin.com/search/results/all/?keywords=vivek&origin=GLOBAL_SEARCH_HEADER"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+   <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
   
   </tr>
