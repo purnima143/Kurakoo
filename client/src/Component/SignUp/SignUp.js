@@ -39,15 +39,16 @@ const SignUp = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
         if(name !== ""){
             if(email!==""){
-                const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                // eslint-disable-next-line
+                const re = /^(([^<>()[\]\\.,;:"\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 if(re.test(email)){
                     if(password!==""){
                         if(course!==""){
-                            if(year!=""){
+                            if(year!==""){
                                 if(college!==""){
                                     toast.success("Valid details", {
                                         position: "top-right",
-                                        autoClose: 2000,
+                                        autoClose: 2000 ,
                                         hideProgressBar: false,
                                         closeOnClick: true,
                                         pauseOnHover: true,
@@ -84,7 +85,7 @@ const SignUp = ()=>{
             {!isSmallScreen
             ?
             <Grid item md={6} lg={6}>
-                <img className="signup_image" src="./images/Formimage.png"></img>
+                <img className="signup_image" src="./images/Formimage.png" alt="signup_image"></img>
             </Grid>
             :
             <Grid item md={12} lg={12}></Grid>
@@ -95,7 +96,7 @@ const SignUp = ()=>{
                 {
                     isSmallScreen
                     ?
-                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png"></img>
+                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
                     :
                     <div></div>
                 }

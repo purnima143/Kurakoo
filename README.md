@@ -90,18 +90,21 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
-  <tr>
+	<tr>
+		<td>
+			<a href="https://github.com/purnima143/Kurakoo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=purnima143/Kurakoo" />
+</a>
+		</td></tr></table>
+<table>
+<tr>
     <td align="center"><a href="http://purnimasharma.me"><img src="https://avatars1.githubusercontent.com/u/57852378?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Purnima Sharma</b></sub></a><br /><a href="#projectManagement-purnima143" title="Project Management">📆</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/thaditi"><img src="https://avatars.githubusercontent.com/u/47235301?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Thapliyal</b></sub></a><br /><a href="#design-thaditi" title="Design">🎨</a></td>
@@ -109,16 +112,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/encodeArnab"><img src="https://avatars.githubusercontent.com/u/77114532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Arnab</b></sub></a><br /><a href="#design-encodeArnab" title="Design">🎨</a></td>
     <td align="center"><a href="https://himanshujaidka-github-io.vercel.app/"><img src="https://avatars.githubusercontent.com/u/58654018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Himanshu</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=himanshujaidka" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vijayjoshi16"><img src="https://avatars.githubusercontent.com/u/54314949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vijay Joshi</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=vijayjoshi16" title="Code">💻</a></td>
-  </tr>
-  <tr>
     <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
     <td align="center"><a href="http://mayank0255.github.io"><img src="https://avatars.githubusercontent.com/u/43780137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayank Aggarwal</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Mayank0255" title="Code">💻</a></td>
+    <td align="center"><a href="http://aasthasinha2305.github.io"><img src="https://avatars.githubusercontent.com/u/55781193?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aastha Sinha</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=AasthaSinha2305" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Subham142"><img src="https://avatars.githubusercontent.com/u/60570595?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Subham Yadav</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/issues?q=author%3ASubham142" title="Bug reports">🐛</a></td>
+    
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
