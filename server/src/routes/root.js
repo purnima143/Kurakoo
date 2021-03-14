@@ -5,6 +5,6 @@ const example = require('./example.route');
 const authRoutes = require("./routes/auth");
 
 router.use('/example', example);
-router.use("/api", authRoutes);
+router.use("/", authRoutes);
 
 module.exports = router;
