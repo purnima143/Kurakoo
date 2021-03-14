@@ -96,11 +96,14 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
+	<tr>
+		<td>
+			<a href="https://github.com/purnima143/Kurakoo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=purnima143/Kurakoo" />
+</a>
+		</td>
+	</tr>
   <tr>
     <td align="center"><a href="http://purnimasharma.me"><img src="https://avatars1.githubusercontent.com/u/57852378?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Purnima Sharma</b></sub></a><br /><a href="#projectManagement-purnima143" title="Project Management">📆</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
@@ -118,9 +121,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
