@@ -55,6 +55,45 @@ Below is the basic idea how the website will work. We will also be working on ad
 
 We will also be working on adding more features to the Project.
 
+## Setup Guidelines
+Clone the repository -
+```
+git clone https://github.com/purnima143/Kurakoo.git
+```
+
+### Backend
+
+1. Run `cd server` on your CLI.
+
+2. Create a `.env` file and the format should be as given in `.env.example` in the server directory itself.
+
+    _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
+
+3. Install the dependencies by running
+    ```
+    npm install
+    ```
+
+4. Run the server
+    ```
+    npm run dev
+    ```
+
+### Frontend
+
+1. Run `cd client` on your CLI.
+
+2. Install the dependencies by running
+    ```
+    npm install
+    ```
+
+3. Run the server
+    ```
+    npm start
+    ```
+_NOTE: To run the Frontend side of the application it recommended to run the backend server too._
+
 ## Open source contest
 Girlscript Summer of Code 2021
 About GirlScript Summer of Code is the 3 month long Open Source program during summers conducted by GirlScript Foundation, started in 2018, with an aim to help beginners get started with Open Source Development while encouraging diversity.
