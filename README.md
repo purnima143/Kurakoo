@@ -67,6 +67,8 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 2. Create a `.env` file and the format should be as given in `.env.example` in the server directory itself.
 
+    _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
+
 3. Install the dependencies by running
     ```
     npm install
