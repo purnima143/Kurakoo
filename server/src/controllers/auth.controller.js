@@ -1,13 +1,12 @@
 const User = require('../models/user.model');
 const jwt = require("jsonwebtoken");
+const responseHandler = require('../helpers/responseHandler');
 
-exports.signup = ( req, res) => {
+const signup = ( req, res) => {
 
     User.findOne({ email: req.body.email })
     .exec(( error, user ) => {
-        if(user) return res.status(400).json({
-            message: "User is Already Registered"
-        });
+        if(user) return res.status(400).json(responseHandler( true, 400, "User is Already Registered", user ));
 
         const {
             firstName,
@@ -23,14 +22,16 @@ exports.signup = ( req, res) => {
             userName: Math.random().toString()
         });
 
-        _user.save(( erroe, data ) => {
+        _user.save(( error, data ) => {
             if(error){
-                return res.status(400).json({
-                    message: "User Created Successfullt....!"
-                })
-            }
+                return res.status(201).json(responseHandler( false, 201, "User Created Successfully", data ));
+           }
         });
     });
-}
+};
+
+module.exports = authController = {
+    signup
+  };
 
 

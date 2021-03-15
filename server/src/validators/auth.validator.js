@@ -1,6 +1,6 @@
 const { check, validationResult } = require("express-validator");
 
-exports.validateSignupRequest = [
+const validateSignupRequest = [
     check('firstName')
     .notEmpty()
     .withMessage('firstName is required'),
@@ -15,10 +15,15 @@ exports.validateSignupRequest = [
     .withMessage('Password must be off 6 character long')
 ];
 
-exports.isRequestValidated = (req, res, next) => {
+const isRequestValidated = (req, res, next) => {
     const errors = validationResult(req);
     if(errors.array().length > 0){
         return res.status(400).json({ error: errors.array()[0].msg})
     }
     next();
 }
+
+module.exports = authValidator = {
+    validateSignupRequest,
+    isRequestValidated
+};

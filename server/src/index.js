@@ -11,6 +11,8 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
+const root = require('./routes/root');
+
 // logger
 app.use(morgan("dev"));
 
