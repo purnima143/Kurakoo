@@ -1,5 +1,5 @@
 const express = require("express");
-const { signup } = require("../controllers/auth.controller");
+const authController = require("../controllers/auth.controller");
 const { validateSignupRequest, isRequestValidated } = require("../validators/auth.validator");
 const router = express.Router();
 
@@ -8,7 +8,7 @@ const router = express.Router();
  *  @access     Public
  */
 
-router.post('/', validateSignupRequest, isRequestValidated, signup);
+router.post('/', validateSignupRequest, isRequestValidated, authController.signup);
 
 
 module.exports = router;
