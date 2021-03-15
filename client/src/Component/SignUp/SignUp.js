@@ -39,12 +39,17 @@ const SignUp = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
         if(name !== ""){
             if(email!==""){
-                const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if(re.test(email)){
-                    if(password!==""){
-                        if(course!==""){
-                            if(year!=""){
-                                if(college!==""){
+                const re = "^(([^<>()[;:@\"]+([^<>()[;:@\"]+)*)|(\".+\"))@(([0-9]{1,3}[0-9]{1,3}[0-9]{1,3}[0-9]{1,3})|(([a-zA-Z0-9]+)+[a-zA-Z]{2,}))$";
+                if(re.test(email))
+                {
+                    if(password!=="")
+                    {
+                        if(course!=="")
+                        {
+                            if(year==="")
+                            {
+                                if(college!=="")
+                                {
                                     toast.success("Valid details", {
                                         position: "top-right",
                                         autoClose: 2000,
@@ -84,7 +89,7 @@ const SignUp = ()=>{
             {!isSmallScreen
             ?
             <Grid item md={6} lg={6}>
-                <img className="signup_image" src="./images/Formimage.png"></img>
+                <img className="signup_image" src="./images/Formimage.png" alt=""></img>
             </Grid>
             :
             <Grid item md={12} lg={12}></Grid>
@@ -95,7 +100,7 @@ const SignUp = ()=>{
                 {
                     isSmallScreen
                     ?
-                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png"></img>
+                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt=""></img>
                     :
                     <div></div>
                 }
@@ -150,7 +155,7 @@ const SignUp = ()=>{
                     <button 
                     className="create_account_button"
                     onClick={()=>{PostData()}}>Create account</button>
-                    <p className="signup_signin_message">Already a user? <span className="signin_link">Sign in</span></p>
+                    <p className="signup_signin_message">Already a user? <a href="/SignIn" className="signup_link">Sign In</a></p>
                 </div>
             </Grid>
             

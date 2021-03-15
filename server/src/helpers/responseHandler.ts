@@ -1,11 +1,4 @@
-interface FormattedResponse<T> {
-  success: boolean,
-  code: number,
-  message: string,
-  data: T,
-}
-
-const responseHandler = <T extends any>(success: boolean, code: number, message: string, data: T): FormattedResponse<T> => {
+const responseHandler = (success, code = 400, message = 'valid', data) => {
   return {
     success,
     code,
@@ -14,4 +7,4 @@ const responseHandler = <T extends any>(success: boolean, code: number, message:
   };
 };
 
-export default responseHandler;
+module.exports = responseHandler;

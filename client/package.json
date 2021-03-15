@@ -7,6 +7,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "mongoose": "^5.11.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.2",
@@ -15,7 +19,6 @@
     "react-scripts": "3.4.3",
     "react-toastify": "^7.0.3",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -38,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.9"
   }
 }
