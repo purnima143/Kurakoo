@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import './feedComponent.css';
-import { AiFillLike, AiFillDislike, AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/ai";
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import InsertCommentOutlinedIcon from '@material-ui/icons/InsertCommentOutlined';
-import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({

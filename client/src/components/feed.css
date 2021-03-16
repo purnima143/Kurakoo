@@ -54,6 +54,7 @@ body{
 
 .sidebar-left-categories a:hover{
     background-color: var(--tertiary-color);
+    border-radius: 1.5rem;
 }
 
 #category-heading{

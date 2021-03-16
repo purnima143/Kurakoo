@@ -3,8 +3,6 @@ import './App.css';
 import FeedPage from './components/feed';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Logo from './components/kurakoo-logo.png';
-import SearchIcon from '@material-ui/icons/Search';
-import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Search from "@material-ui/icons/Search";
 import profileImg from './components/imgAvatar.png';
