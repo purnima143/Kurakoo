@@ -1,7 +1,11 @@
 import React from "react";
 import './App.css';
-import FeedPage from './components/feed';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import FeedPage from './components/feed';
+import store from './store/store';
+import SignUp from './Component/SignUp/SignUp';
+import SignIn from "./Component/SignIn/SignIn";
 import Logo from './components/kurakoo-logo.png';
 import { makeStyles } from '@material-ui/core/styles';
 import Search from "@material-ui/icons/Search";
@@ -20,7 +24,9 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   return (
+
     <Router>
+    <Provider store={store}>
       <div className="App">
         <nav>
           <div id = "logo">
@@ -46,10 +52,14 @@ function App() {
           </div>
         </nav>
         <Switch>
-          <Route path = "/" exact component = { FeedPage } />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/feedpage" component={FeedPage} />
+          <Route path="/signin" component={SignIn} />
         </Switch>
       </div>
+    </Provider> 
     </Router>
+
   );
 }
 

@@ -1,0 +1,61 @@
+.signup_image{
+    width: 100%;
+    height: 100vh;
+}
+
+.mobile_logo_img{
+    max-width: 90%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.common_content{
+    text-align: left;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 50px;
+}
+
+.signup_heading{
+    width: 50%;
+    border-bottom: 7px solid #FF6F00;
+    margin-bottom: 30px;
+}
+
+.text_ip{
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    border: 1px solid rgb(145, 144, 144);
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.text_ip:focus{
+    border: 1px solid #ff9100;
+    outline: 1px solid #ff9100;
+}
+
+.create_account_button{
+    margin-top: 30px;
+    background-color: #FF6F00;
+    color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.signup_signin_message{
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.signin_link{
+    color: rgb(0, 119, 255);
+    cursor: pointer;
+    text-decoration: underline;
+}
