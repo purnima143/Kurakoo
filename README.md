@@ -39,7 +39,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 - **Project Management Tools**: Trello, Git/Github, Markdown (Documentation)
 
 ## Flow of the site :computer:
-Below is the basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, option to follow people, a feature that allows users to filter and view specific content,etc.
+Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, option to follow people, a feature that allows users to filter and view specific content,etc.
 
 
 ![Hnet-image](https://user-images.githubusercontent.com/57852378/104997423-90038c80-5a4f-11eb-88d3-389b501c00ad.gif)
@@ -95,8 +95,7 @@ git clone https://github.com/purnima143/Kurakoo.git
 _NOTE: To run the Frontend side of the application it recommended to run the backend server too._
 
 ## Open source contest
-Girlscript Summer of Code 2021
-The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by  the GirlScript Foundation. It was started in 2018 with an aim to help beginners to get started with Open Source Development while encouraging diversity.
+Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by the GirlScript Foundation. It was started in 2018 with an aim to help beginners to get started with Open Source Development while encouraging diversity.
 
 ![0_hvZkvLGPR4t6TFhS](https://user-images.githubusercontent.com/57852378/108583937-3ef2fb00-7363-11eb-9239-a274fbe00bdd.png)
 
