@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './feedComponent.css';
 import { AiFillLike, AiFillDislike, AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/ai";
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -18,6 +18,8 @@ const useStyles = makeStyles({
 });
 
 function Feed(props) {
+  const [likeDislike, setLikeDislike] = useState([false, false]);
+
     const classes = useStyles();
     return (
       <div>
@@ -40,11 +42,20 @@ function Feed(props) {
           </div>
           <hr/>
           <div id = "response-bar">
-            <button class = "button">
-              < ThumbUpOutlinedIcon className={classes.root}/>
+            <button class = "button" onClick = {() => likeDislike[0]?(setLikeDislike([false, false])):(setLikeDislike([true, false]))}>
+              {(likeDislike[0])?
+              (< ThumbUpIcon className={classes.root} />):
+              (< ThumbUpOutlinedIcon className={classes.root} />)
+              }
             </button>
-            <button class = "button"><ThumbDownOutlinedIcon className={classes.root}/></button>
-            <button class = "button"><InsertCommentOutlinedIcon className={classes.root}/></button>
+            <button class = "button" onClick = {() => likeDislike[1]?(setLikeDislike([false, false])):(setLikeDislike([false, true]))}>
+              {(likeDislike[1])?
+              (<ThumbDownIcon className={classes.root}/>):
+              (< ThumbDownOutlinedIcon className={classes.root} />)
+              }
+              </button>
+            <button class = "button">
+              <InsertCommentOutlinedIcon className={classes.root}/></button>
           </div>
         </section>
       </div>
