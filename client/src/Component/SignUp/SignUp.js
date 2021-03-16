@@ -151,7 +151,7 @@ const SignUp = ()=>{
                     <button 
                     className="create_account_button"
                     onClick={()=>{PostData()}}>Create account</button>
-                    <p className="signup_signin_message">Already a user? <span className="signin_link">Sign in</span></p>
+                    <p className="signup_signin_message">Already a user? <a href="/signin" className="signin_link">Sign In</a></p>
                 </div>
             </Grid>
             
