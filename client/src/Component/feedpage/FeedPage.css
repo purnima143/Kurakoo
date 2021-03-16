@@ -1,0 +1,64 @@
+/* image for desktop view */
+.header_img{
+    margin-top:130px;
+    height: 250px;
+   
+}
+/* image for mobile view*/
+.header_img1{
+  margin-top:130px;
+  height: 250px;
+ 
+}
+/*btn on the header image (Ask a question)*/
+.header_btn{
+  position: absolute;
+  top: 245px;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:#fd6107;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width :280px
+}
+
+
+/*this image disapper in desktop view*/
+  @media (min-width: 1100.5px){
+    .header_img1{
+        display: none;
+    }
+  }
+
+  
+
+  @media (max-width: 1100px){
+     /*this image disapper in mobile view*/
+    .header_img{
+        display: none;
+    }
+    
+     /* btn comes in center in mobile view*/
+    .header_btn{
+      position: absolute;
+      top: 245px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color:#fd6107;
+      color: white;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      width :280px
+    }
+    }
+ 
+  
