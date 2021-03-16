@@ -51,7 +51,7 @@ Below is the basic idea how the website will work. We will also be working on ad
  - For each issue, a detailed explanation is mentioned in issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
  - While making any component, make sure that the code for the all generalised/common components must be kept in [src->components->common](src/components/common) folder.
  - Kindly keep the source code in the [src->components](src/components/) folder while making the specific components.
-] - Please make sure to adhere to the folder structure of the project.
+ - Please make sure to adhere to the folder structure of the project.
 
 We will also be working on adding more features to the Project.
 
