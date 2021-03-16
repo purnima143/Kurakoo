@@ -26,10 +26,8 @@ body{
 .side-bar-left{
     position: fixed;
     height: 100%;
-    /* background-color: var(--primary-color); */
     background-color: var(--secondary-color);
     border-right: solid var(--tertiary-color) 1px;
-
     width: 220px;
     top: 5.5rem;
     left: 1;
@@ -48,22 +46,14 @@ body{
 
 .sidebar-left-categories a{
     text-decoration: none;
-    
     color: white;
-    /* color: var(--tertiary-color); */
-
     display: block;
     padding: 0.6rem 0.5rem;
     margin: 0px 1.5rem;
 }
 
 .sidebar-left-categories a:hover{
-    /* background-color: var(--tertiary-color); */
     background-color: var(--tertiary-color);
-    
-    /* margin: 0rem 1.5rem;
-    padding: 0.3rem 0rem; */
-    border-radius: 1.5rem;
 }
 
 #category-heading{
@@ -75,10 +65,8 @@ body{
 .side-bar-right{
     position: fixed;
     height: 100%;
-    /* background-color: var(--primary-color); */
     background-color: var(--secondary-color);
     border-left: solid var(--tertiary-color) 1px;
-
     width: 220px;
     top: 5.5rem;
     right: 0;

@@ -1,16 +1,13 @@
 
 .feed-component{
     width: 60%;
-    
     border: solid var(--primary-color) 1px;
     margin: 2rem auto;
     border-radius: 6px;
     background-color: white;
-    /* background-color: var(--secondary-light); */
     top: 6.5rem;
     position: relative;
 }
-
 
 .bio-div{
     text-align: left;
@@ -23,10 +20,6 @@
 
 .bio-div #username{
     margin: 0rem;
-}
-
-.bio-div small{
-    
 }
 
 #bio-details{
@@ -56,7 +49,6 @@ section hr{
 
 #question{
     margin: 0.2rem 0rem;
-    
 }
 
 #answer{
@@ -71,7 +63,6 @@ section hr{
 }
 
 #response-bar .button{
-    
     border: 0px;
     background-color: transparent;
     padding: 0rem;
