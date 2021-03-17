@@ -55,6 +55,45 @@ Below is the basic idea how the website will work. We will also be working on ad
 
 We will also be working on adding more features to the Project.
 
+## Setup Guidelines
+Clone the repository -
+```
+git clone https://github.com/purnima143/Kurakoo.git
+```
+
+### Backend
+
+1. Run `cd server` on your CLI.
+
+2. Create a `.env` file and the format should be as given in `.env.example` in the server directory itself.
+
+    _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
+
+3. Install the dependencies by running
+    ```
+    npm install
+    ```
+
+4. Run the server
+    ```
+    npm run dev
+    ```
+
+### Frontend
+
+1. Run `cd client` on your CLI.
+
+2. Install the dependencies by running
+    ```
+    npm install
+    ```
+
+3. Run the server
+    ```
+    npm start
+    ```
+_NOTE: To run the Frontend side of the application it recommended to run the backend server too._
+
 ## Open source contest
 Girlscript Summer of Code 2021
 About GirlScript Summer of Code is the 3 month long Open Source program during summers conducted by GirlScript Foundation, started in 2018, with an aim to help beginners get started with Open Source Development while encouraging diversity.
@@ -93,6 +132,27 @@ About GirlScript Summer of Code is the 3 month long Open Source program during s
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+## Project Admin 📆
+
+<td align="center"><img src="https://avatars1.githubusercontent.com/u/57852378?v=4?s=100" width="100px;" alt=""/> 
+	<b>Purnima Sharma</b>
+</td>
+
+## Project Mentors 👨‍💻
+<table>
+<tr>
+    <td align="center"><a href="https://www.linkedin.com/in/maw1a/"><img src="https://avatars.githubusercontent.com/u/48566609?s=460&u=47e205d9f0802abd125b2410d9bc12cbcd10bd1b&v=4" width="100px;" alt=""/><br /><sub><b>Ahmed Mawia</b></sub></a><br /><a href="https://github.com/maw1a" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+</a> </td>
+    <td align="center"><a href="https://www.linkedin.com/in/ir2010/"><img src="https://avatars.githubusercontent.com/u/46022116?s=460&u=5a5db16a4d00686752dff0cd7b3c7e03c1e956df&v=4" width="100px;" alt=""/><br /><sub><b>Ishu Raj</b></sub></a><br /><a href="https://github.com/ir2010" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+</a></td>
+   <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+</a></td>
+  
+  </tr>
+</table>
+
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -105,7 +165,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 		</td></tr></table>
 <table>
 <tr>
-    <td align="center"><a href="http://purnimasharma.me"><img src="https://avatars1.githubusercontent.com/u/57852378?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Purnima Sharma</b></sub></a><br /><a href="#projectManagement-purnima143" title="Project Management">📆</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/thaditi"><img src="https://avatars.githubusercontent.com/u/47235301?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Thapliyal</b></sub></a><br /><a href="#design-thaditi" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/anhushree"><img src="https://avatars.githubusercontent.com/u/56672958?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anhushree Munees</b></sub></a><br /><a href="#design-anhushree" title="Design">🎨</a></td>
