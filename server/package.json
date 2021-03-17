@@ -1,13 +1,13 @@
 {
-    "name": "javascript-express-api",
+    "name": "Kurakoo Backend",
     "version": "1.0.0",
-    "description": "A simple javascript express api",
+    "description": "Kurakoo Backend APIs",
     "main": "dist/index.js",
     "scripts": {
         "start": "node src/index.js",
         "dev": "nodemon src/index.js"
     },
-    "author": "Kaushal",
+    "author": "Kurakoo",
     "license": "ISC",
     "dependencies": {
         "bcrypt": "^5.0.1",
