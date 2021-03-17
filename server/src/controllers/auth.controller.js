@@ -28,8 +28,13 @@ const signup = ( req, res) => {
                 return res.status(400).json(responseHandler( false, 400, "Something went wrong...!", null ));
            }
 
+           const token = jwt.sign({
+            exp: Math.floor(Date.now() / 1000) + (60 * 60),
+            data: 'Kurakoo'
+          },  process.env.JWT_SECRET);
+
            if(data){
-            return res.status(201).json(responseHandler( true, 201, "User Created Succesfully...!", data ));
+            return res.status(201).json(responseHandler( true, 201, "User Created Succesfully...!", token ));
        }
         });
     });
