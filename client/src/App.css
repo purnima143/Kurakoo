@@ -2,37 +2,100 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  background-color: var(--tertiary-color);
+  margin: 0.5rem 0rem;
+  margin-top: 0px;
+  padding: 0.5rem 0.5rem;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 4.48rem;
+  z-index: 2;
+  text-align: left;
+  color: black;
   display: flex;
-  flex-direction: column;
+}
+
+#logo{
+  text-align: left;
+  background-color: white;
+  display: inline-block;
+  margin: 1rem 0rem;
+}
+
+.logo{
+  width: 11rem;
+}
+
+#nav-content{
+  margin: float 1rem;
+  padding: 0rem 3rem;
+  display: inline-block;
+}
+
+#search-div{
+  display: flex;
+}
+
+#search-bar{
+  width: 10rem;
+  border: 0px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+  transition: width .7s;
+  padding-left: 1rem;
+}
+
+#search-bar:focus{
+  width: 30rem;
+}
+
+#search-bar:not(:placeholder-shown){
+  width: 30rem;
+}
+
+#search-icon{
+  background-color: white;
+  border: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#nav-items-list{
+  display: flex;
+  list-style: none;
+  color: white;
+  margin: 8px 0px;
+}
+
+.nav-item{
+  padding: 7px 2rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 20px;
+}
+
+.nav-item:hover{
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+#nav-div{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 650px;
+}
+
+#profile-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#profile #username{
+  margin: 3px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
