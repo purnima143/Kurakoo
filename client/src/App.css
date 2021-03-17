@@ -39,10 +39,21 @@ nav{
 }
 
 #search-bar{
+  width: 10rem;
   border: 0px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   outline: none;
+  transition: width .7s;
+  padding-left: 1rem;
+}
+
+#search-bar:focus{
+  width: 30rem;
+}
+
+#search-bar:not(:placeholder-shown){
+  width: 30rem;
 }
 
 #search-icon{

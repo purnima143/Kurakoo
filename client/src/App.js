@@ -12,12 +12,8 @@ import Search from "@material-ui/icons/Search";
 import profileImg from './components/imgAvatar.png';
 
 const useStyles = makeStyles({
-  textField: {
-    width: "10rem",
-    height: "10px",
-    color: "white",
-    textSize: "5px",
-    border: "2px solid white"
+  searchIcon: {
+    marginTop: "2px",
   },
 });
 
@@ -30,12 +26,12 @@ function App() {
       <div className="App">
         <nav>
           <div id = "logo">
-            <img className = "logo" src =  { Logo } />
+            <img className = "logo" src =  { Logo } alt = "alt"/>
           </div>
           <div id = "nav-content">
             <div id = "search-div">
               <input id = "search-bar" placeholder = "search"></input>
-              <div id = "search-icon"> <Search/> </div>
+              <div id = "search-icon"> <Search className={ classes.searchIcon }/> </div>
             </div>
             <ul id = "nav-items-list">
               <li className="nav-item">Home</li>
@@ -46,7 +42,7 @@ function App() {
           </div>
           <div id = "nav-div">
             <div id = "profile">
-              <img id = "profile-img" src = { profileImg }></img>
+              <img id = "profile-img" src = { profileImg } alt = "alt"></img>
               <h5 id = "username">username</h5>
             </div>
           </div>
