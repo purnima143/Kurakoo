@@ -6,7 +6,7 @@ const signup = ( req, res) => {
 
     User.findOne({ email: req.body.email })
     .exec(( error, user ) => {
-        if(user) return res.status(400).json(responseHandler( false, 400, "User is Already Registered", user ));
+        if(user) return res.status(400).json(responseHandler( false, 400, "User is Already Registered", {user} ));
         if(error) return res.status(400).json(responseHandler( false, 400, "Invalid Cradentials or Error occured", null ));
 
         const {
@@ -34,7 +34,7 @@ const signup = ( req, res) => {
           },  process.env.JWT_SECRET);
 
            if(data){
-            return res.status(201).json(responseHandler( true, 201, "User Created Succesfully...!", token ));
+            return res.status(201).json(responseHandler( true, 201, "User Created Succesfully...!", {token} ));
        }
         });
     });
