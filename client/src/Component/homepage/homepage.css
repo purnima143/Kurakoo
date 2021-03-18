@@ -9,7 +9,8 @@
 .landing-page-orange {
   align-items: flex-start;
   display: flex;
-  width: 1519px;
+  width: 100vw;
+  height: 100vh;
 }
 .landing-page-orange .explore {
   letter-spacing: 0px;
@@ -34,7 +35,7 @@
   left: 1357px;
   min-width: 131px;
   position: absolute;
-  top: 51px;padding: 0;
+  top: 31px;padding: 0;
   border: none;
   background: none;
 }
@@ -45,14 +46,14 @@
   left: 1835px;
   min-width: 201px;
   position: absolute;
-  top: 1600px;
+  top: 1400px;
 }
 .landing-page-orange .image-3 {
   height: 434px;
   left: 2589px;
   object-fit: cover;
   position: absolute;
-  top: 1116px;
+  top: 1016px;
   width: 616px;
 }
 .landing-page-orange .landing-page-orange {
@@ -60,7 +61,8 @@
   height: 1024px;
   overflow: hidden;
   position: relative;
-  width: 1519px;
+  width: 100vw;
+  height: 100vh;
 }
 .landing-page-orange .overlap-group {
   height: 3183px;
@@ -95,7 +97,7 @@
   left: 2533px;
   letter-spacing: 0px;
   position: absolute;
-  top: 885px;
+  top: 865px;
 }
 .landing-page-orange .rectangle-33 {
   border-radius: 15px;
@@ -109,7 +111,7 @@
   left: 1241px;
   letter-spacing: 0px;
   position: absolute;
-  top: 64px;padding: 0;
+  top: 44px;padding: 0;
   border: none;
   background: none;
 }
@@ -117,14 +119,14 @@
   left: 14px;
   letter-spacing: 0px;
   position: absolute;
-  top: 13px;
+  top: 15px;
   width: 103px;
 }
 .landing-page-orange .text-1 {
   left: 1834px;
   letter-spacing: 0px;
   position: absolute;
-  top: 1281px;
+  top: 1181px;
   width: 642px;
 }
 .landing-page-orange .vector {
@@ -154,14 +156,14 @@
   height: 56px;
   left: 1835px;
   position: absolute;
-  top: 868px;
+  top: 848px;
   width: 269px;
 }
 .landing-page-orange .vector-4 {
   height: 21px;
   left: 2501px;
   position: absolute;
-  top: 887px;
+  top: 866px;
   width: 23px;
 }
 .montserrat-bold-black-24px {
