@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './index.css';
-import App from './App';
+import Homepage from "../src/Component/homepage/homepage";
+import SignUp from './Component/SignUp/SignUp';
+import SignIn from "./Component/SignIn/SignIn";
+import FeedPage from './components/feed';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+       <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/feedpage" component={FeedPage} />
+        <Route path="/signin" component={SignIn} />
+      </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
