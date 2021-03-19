@@ -10,6 +10,7 @@ import Logo from './components/kurakoo-logo.png';
 import { makeStyles } from '@material-ui/core/styles';
 import Search from "@material-ui/icons/Search";
 import profileImg from './components/imgAvatar.png';
+import Homepage from "./Component/homepage/homepage";
 
 const useStyles = makeStyles({
   searchIcon: {
@@ -48,6 +49,7 @@ function App() {
           </div>
         </nav>
         <Switch>
+          <Route path="/home" component={Homepage}/>
           <Route path="/signup" component={SignUp} />
           <Route path="/feedpage" component={FeedPage} />
           <Route path="/signin" component={SignIn} />
