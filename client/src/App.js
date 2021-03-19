@@ -49,7 +49,6 @@ function App() {
           </div>
         </nav>
         <Switch>
-          <Route path="/home" component={Homepage}/>
           <Route path="/signup" component={SignUp} />
           <Route path="/feedpage" component={FeedPage} />
           <Route path="/signin" component={SignIn} />
