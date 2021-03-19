@@ -1,0 +1,187 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+* {
+  box-sizing: border-box;
+}
+.border-class-1 {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+.landing-page-orange {
+  align-items: flex-start;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.landing-page-orange .explore {
+  letter-spacing: 0px;
+  width: 98px;
+}
+.landing-page-orange .group-7 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 390px;
+  min-height: 2389px;
+  padding: 409.5px 494.1px;
+  position: absolute;
+  top: 397px;
+  transform: rotate(-24.81deg);
+  width: 2417px;
+}
+.landing-page-orange .group-8 {
+  align-items: flex-start;
+  display: flex;
+  height: 55px;
+  left: 1357px;
+  min-width: 131px;
+  position: absolute;
+  top: 31px;padding: 0;
+  border: none;
+  background: none;
+}
+.landing-page-orange .group-9 {
+  align-items: flex-start;
+  display: flex;
+  height: 68px;
+  left: 1835px;
+  min-width: 201px;
+  position: absolute;
+  top: 1400px;
+}
+.landing-page-orange .image-3 {
+  height: 434px;
+  left: 2589px;
+  object-fit: cover;
+  position: absolute;
+  top: 1016px;
+  width: 616px;
+}
+.landing-page-orange .landing-page-orange {
+  background-color: var(--blaze-orange);
+  height: 1024px;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.landing-page-orange .overlap-group {
+  height: 3183px;
+  left: -1785px;
+  position: absolute;
+  top: -821px;
+  width: 3205px;
+}
+.landing-page-orange .overlap-group1 {
+  height: 1347px;
+  margin-top: 127px;
+  position: relative;
+  width: 1352px;
+}
+.landing-page-orange .overlap-group2 {
+  align-items: center;
+  background-color: var(--crusta);
+  border-radius: 39.5px;
+  display: flex;
+  height: 68px;
+  justify-content: flex-end;
+  min-width: 199px;
+  padding: 0 49.8px;
+}
+.landing-page-orange .overlap-group3 {
+  border-radius: 15px;
+  height: 55px;
+  position: relative;
+  width: 129px;
+}
+.landing-page-orange .place {
+  left: 2533px;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 865px;
+}
+.landing-page-orange .rectangle-33 {
+  border-radius: 15px;
+  height: 55px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 129px;
+}
+.landing-page-orange .sign-in {
+  left: 1241px;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 44px;padding: 0;
+  border: none;
+  background: none;
+}
+.landing-page-orange .sign-up {
+  left: 14px;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 15px;
+  width: 103px;
+}
+.landing-page-orange .text-1 {
+  left: 1834px;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 1181px;
+  width: 642px;
+}
+.landing-page-orange .vector {
+  align-self: center;
+  height: 1px;
+  margin-right: 118.24px;
+  transform: rotate(24.81deg);
+  width: 1px;
+}
+.landing-page-orange .vector-1 {
+  height: 1065px;
+  left: 887px;
+  position: absolute;
+  top: 162px;
+  transform: rotate(24.81deg);
+  width: 996px;
+}
+.landing-page-orange .vector-2 {
+  height: 1052px;
+  left: 870px;
+  position: absolute;
+  top: 161px;
+  transform: rotate(24.81deg);
+  width: 967px;
+}
+.landing-page-orange .vector-3 {
+  height: 56px;
+  left: 1835px;
+  position: absolute;
+  top: 848px;
+  width: 269px;
+}
+.landing-page-orange .vector-4 {
+  height: 21px;
+  left: 2501px;
+  position: absolute;
+  top: 866px;
+  width: 23px;
+}
+.montserrat-bold-black-24px {
+  color: var(--black);
+  font-family: "Montserrat", Helvetica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+.montserrat-bold-white-24px {
+  color: white;
+  font-family: "Montserrat", Helvetica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+:root {
+  --black: rgba(0, 0, 0, 0.54);
+  --blaze-orange: rgba(255, 111, 0, 0.78);
+  --crusta: rgba(249, 137, 50, 1);
+}
