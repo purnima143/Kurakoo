@@ -6,9 +6,11 @@ import store from './store/store';
 import SignUp from './Component/SignUp/SignUp';
 import { FeedPage } from './Component/feedpage/FeedPage';
 import SignIn from "./Component/SignIn/SignIn";
+import Footer from './Component/Footer/Footer';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
     <Provider store={store}>
       <div className="App">
@@ -22,6 +24,8 @@ function App() {
       </div>
     </Provider> 
     </BrowserRouter>   
+    <Footer/>
+    </>
   );
 }
 
