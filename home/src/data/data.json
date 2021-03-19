@@ -1,0 +1,51 @@
+{
+    "Header": {
+
+        "title": "Get Connect People"
+
+    },
+    "About": {
+        "paragraph": "Users on Kurakoo develop profiles, pose questions to the community, and share their expertise by answering others’ questions on subjects ranging from technology to social media to startups and venture capital.",
+        "Why": [
+            "Looking for a place to use skills, talents, and training.",
+            "The skills you can and want to use and develop and to what end.",
+            "he skills you can and want to use and develop and to what end",
+            "Truthfull answer with honesty"
+        ],
+        "Why2": [
+            "The company interviews you is to see if you are a good fit for them.",
+            "High number of followers who ask or answer a lot of questions.",
+            "Follow topics that matter to your brand to stay in the know. ",
+            "Ask questions as a way to create new roundup posts."
+        ]
+    },
+    "Contact": {
+        "address": "",
+        "phone": "",
+        "email": "kurakoo@gmail.com",
+        "facebook": "facebook.com",
+        "twitter": "twitter.com",
+        "youtube": "youtube.com"
+    },
+    "Features": [{
+            "icon": "fa fa-comments-o",
+            "title": "Comments",
+            "text": "People Can Post Quesion other People Can Post Answer And Comments."
+        },
+        {
+            "icon": "fa fa-user-plus",
+            "title": "Add People",
+            "text": "Add People connect with other People and get Answers. "
+        },
+        {
+            "icon": "fa fa-upload",
+            "title": "Post Question",
+            "text": "Upload Doubt get Answers other Peoples."
+        },
+        {
+            "icon": "fa fa-share-alt-square",
+            "title": "Share Questions",
+            "text": "Share Idea's,Post Question and Answers."
+        }
+    ]
+}

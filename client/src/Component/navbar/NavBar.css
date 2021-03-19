@@ -1,9 +1,0 @@
-/*outermost div*/
-.Nav{
-    z-index: 20;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    height: 130px;
-}
