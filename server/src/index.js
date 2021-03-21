@@ -6,6 +6,7 @@ const cors = require("cors");
 const http = require("http");
 const morgan = require("morgan");
 const helmet = require("helmet");
+const clc = require("cli-color");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const express = require("express");
@@ -40,7 +41,7 @@ mongoose.connect(
     }
   )
   .then(() => {
-    console.log("database connected");
+    console.log(clc.green("database connected"));
   });
 
 // all the api routes
@@ -53,5 +54,5 @@ const PORT = process.env.PORT || 5000;
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(clc.green(`Server started on port ${PORT}`));
 });

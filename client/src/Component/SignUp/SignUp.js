@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import './SignUp.css';
 import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
@@ -150,7 +151,10 @@ const SignUp = ()=>{
                     <button 
                     className="create_account_button"
                     onClick={PostData}>Create account</button>
-                    <p className="signup_signin_message">Already a user? <span className="signin_link">Sign in</span></p>
+                    <p className="signup_signin_message">Already a user? 
+                    {/* <a href="/signin" className="signin_link">Sign In</a> */}
+                    <Link to="/signin" >Sign In</Link>
+                    </p>
                 </div>
             </Grid>
             
