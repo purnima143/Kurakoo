@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.addaquestionpage {
+  min-height: 100vh;
+  background-color: white;
+}
+.addaquestionpage_header {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addaquestionpage_header_close {
+  width: 15px;
+}
+.addaquestionpage_header_logo {
+  width: 200px;
+}
+.selectdiv {
+  position: relative;
+}
+
+/*To remove button from IE11, thank you Matt */
+select::-ms-expand {
+  display: none;
+}
+
+.selectdiv:after {
+  content: ">";
+  font: 20px "Consolas", monospace;
+  font-weight: bolder;
+  color: #6c4548;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 0px;
+  /*Adjust for position however you want*/
+  padding: 0 0 2px;
+  top: 13px;
+  /*left line */
+  position: absolute;
+  pointer-events: none;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  max-width: 320px;
+  height: 50px;
+  padding: 0px 24px;
+  font-size: 16px;
+  color: #6c4548;
+  -ms-word-break: normal;
+  word-break: normal;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+.semicircle1,
+.semicircle2 {
+  position: absolute;
+  transform: rotatez(-90deg);
+  height: 60px;
+  width: 120px;
+  border-radius: 150px 150px 0 0;
+  background-color: #ff6f00;
+  right: -30px;
+  top: 170px;
+}
+.semicircle2 {
+  background-color: #ffbb00;
+  top: 370px !important;
+}
+.addaquestionpage_questionsection {
+  margin-left: 10vw;
+}
+.addaquestionpage_askerdetails {
+  display: flex;
+  align-items: center;
+  margin-top: 10vh;
+}
+.addaquestionpage_askerdetails > p,
+.addaquestionpage_link > p {
+  margin: 0px 40px;
+  color: #979797;
+  font-family: "Lato", sans-serif;
+}
+.addaquestionpage_askerdetails_select {
+  background: linear-gradient(
+      317.7deg,
+      rgba(65, 24, 24, 0.4) 0%,
+      rgba(149, 126, 126, 0.4) 0.01%,
+      rgba(255, 255, 255, 0.4) 105.18%
+    ),
+    rgba(65, 24, 24, 0.81);
+  color: white;
+  background-blend-mode: soft-light, normal;
+  border: 1px solid #411818;
+  box-shadow: -10px -10px 20px #fafbff, 10px 10px 20px #a6abbd;
+  border-radius: 47px;
+  font-family: "Lato", sans-serif;
+  padding: 5px 3px;
+}
+.addaquestionpage_askerdetails_questionInput > textarea {
+  border: none;
+  margin: 50px 0;
+  width: 90%;
+  font-family: "Lato", sans-serif;
+  border-bottom: 1px solid #411818;
+}
+.addaquestionpage_link {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+.addaquestionpage_link > img {
+  width: 12px;
+}
+.addaquestionpage_link > p {
+  font-size: 12px;
+  margin-left: 10px;
+  font-family: "Lato", sans-serif;
+}
+.addaquestionpage_btn {
+  border: none;
+  outline: none;
+  padding: 5px 25px;
+  font-size: 12px;
+  background: linear-gradient(
+      270deg,
+      #ff6f00 8.97%,
+      rgba(255, 255, 255, 0) 104.62%
+    ),
+    #ffbb00;
+  border-radius: 20px;
+}
+.addaquestionpage_bottomsection {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin-top: 20vh;
+}
+.addaquestionpage_cancelbtn {
+  border: none;
+  background: none;
+  margin-right: 20px;
+}
+@media (max-width: 600px) {
+  .addaquestionpage_header {
+    padding: 10px 15px;
+  }
+  .addaquestionpage_header_logo {
+    width: 80px;
+  }
+  .addaquestionpage_header_close {
+    width: 10px;
+  }
+  .selectdiv {
+    width: 100px;
+  }
+  .semicircle1,
+  .semicircle2 {
+    display: none;
+  }
+  .addaquestionpage_askerdetails > p {
+    margin: 0px 12px;
+    font-size: 14px;
+  }
+  .addaquestionpage_questionsection {
+    margin: 5vw;
+  }
+  .addaquestionpage_askerdetails_select {
+    font-size: 12px;
+    padding: 3px;
+  }
+  .selectdiv:after {
+    right: -40px;
+  }
+  .addaquestionpage_askerdetails_questionInput > textarea {
+    font-size: 11px;
+  }
+}
