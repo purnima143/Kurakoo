@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {Link} from 'react-router-dom'
 toast.configure();
 
 const SignIn = () =>{
@@ -57,7 +57,7 @@ const SignIn = () =>{
                 !isSmallScreen
                 ?
                 <Grid item md={6} lg={6}>
-                    <img className="signin_image" src="./images/Formimage.png" alt="signin_image"></img>
+                    <img draggable={false} className="signin_image" src="./images/Formimage.png" alt="signin_image"></img>
                 </Grid>
                 :
                 <Grid item md={12} lg={12}></Grid>
@@ -70,7 +70,7 @@ const SignIn = () =>{
                     ?
                     <div></div>
                     :
-                    <img className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
+                    <img draggable={false} className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
                 }
 
                 {/* Form to take input */}
@@ -109,7 +109,7 @@ const SignIn = () =>{
                             Continue
                         </button>
                         <p className="signup_signin_message">
-                            New User ? <a href="/signup" className="signup_link">Sign up</a>
+                            New User ? <Link to="/signup" >Sign Up</Link>
                         </p>
                     </div>
                     

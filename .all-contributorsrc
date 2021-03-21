@@ -86,6 +86,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AasthaSinha2305",
+      "name": "Aastha Sinha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55781193?v=4",
+      "profile": "http://aasthasinha2305.github.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Subham142",
+      "name": "Subham Yadav",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60570595?v=4",
+      "profile": "https://github.com/Subham142",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

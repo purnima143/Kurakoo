@@ -1,0 +1,109 @@
+:root{
+    --primary-color: #FF6F00;
+    --secondary-color: #FFBB00;
+    --secondary-light: #fce29c;
+    --secondary-lighter: #ffbb004b;
+    --tertiary-color: #411818;
+}
+
+body{
+    background-color: var(--secondary-light);
+}
+
+@media screen and (max-width: 1150px) {
+    .side-bar-right {
+      display: none;
+    }
+    #feeds{
+        transform: translate(5rem);
+        width: 70rem;
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+/* Left sidebar */
+.side-bar-left{
+    position: fixed;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-right: solid var(--tertiary-color) 1px;
+    width: 220px;
+    top: 5.5rem;
+    left: 1;
+    z-index: 1;
+}
+
+.sidebar-left-categories{
+    list-style-type: none;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.sidebar-left-items{
+    padding: 0.1rem 0rem;
+}
+
+.sidebar-left-categories a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.6rem 0.5rem;
+    margin: 0px 1.5rem;
+}
+
+.sidebar-left-categories a:hover{
+    background-color: var(--tertiary-color);
+    border-radius: 1.5rem;
+}
+
+#category-heading{
+    color: var(--tertiary-color);
+    margin-bottom: 0.7rem;
+}
+
+/* Right sidebar */
+.side-bar-right{
+    position: fixed;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-left: solid var(--tertiary-color) 1px;
+    width: 220px;
+    top: 5.5rem;
+    right: 0;
+    z-index: 1;
+    
+}
+
+.sidebar-right-categories{
+    list-style-type: none;
+    padding: 0rem;
+    margin: 0rem;
+    text-align: left;
+}
+
+#connect-heading{
+    color: var(--tertiary-color);
+    margin-bottom: 0.7rem;
+    font: larger;
+}
+
+.sidebar-right-categories a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.3rem 0rem;
+    padding-left: 1.2rem;
+}
+
+.sidebar-right-categories :hover{
+    background-color: var(--tertiary-color);
+}
+
+.profile-pic{
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
