@@ -7,47 +7,58 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 
+const initialState = {
+    email:'',password:''
+}
 const SignIn = () =>{
 
-    //STATE HOOKS FOR INPUT DETAILS
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    //STATE HOOK FOR INPUT DETAILS
+    const [formData,setFormData] = useState(initialState)
+
+    //MAKING CHANGE IN STATE VALUES FROM USER INPUT
+    const handleChange = (e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});
+    }
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
         query: '(max-width: 959.5px)'
     });
 
+    //OPTIONS TO DISPLAY TOAST
+    const ToastOptions = {
+        position: "top-center",
+        autoClose: 3000,
+        closeOnClick: true,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    }
+    
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
-        toast.error(message, {
-            position: "top-center",
-            autoClose: 3000,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        }); 
+        toast.error(message, ToastOptions ); 
     };
     
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
-            if(email!==""){
-                // eslint-disable-next-line
-                const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if(valid_email.test(email)){
-                    if(password!==""){
-                        //Code to perform authentication via an api         
-                    }else{
-                        errorToast("Please enter password");
-                    }
+        if(formData.email!==""){
+            // eslint-disable-next-line
+            const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(valid_email.test(formData.email)){
+                if(formData.password!==""){
+                    //Code to perform authentication via an api         
                 }else{
-                   errorToast("Please enter a valid email id"); 
+                    errorToast("Please enter password");
                 }
             }else{
-                errorToast("Please enter email");
+                errorToast("Please enter a valid email id"); 
             }
+        }else{
+            errorToast("Please enter email");
+        }
     };
 
     return(
@@ -79,35 +90,32 @@ const SignIn = () =>{
                         Sign In
                     </h1>
                     <div className="signin_form">
-                        <label>
-                            Email id
-                        </label>
+                        <label> Email id </label>
                         <br></br>
                         <input 
                             className="text_ip"
-                            value={email}
-                            onChange={(e)=>{setEmail(e.target.value)}} 
+                            name="email"
+                            onChange={handleChange} 
                         />
 
-                        <label>
-                            Password
-                        </label>
+                        <label> Password </label>
                         <br></br>
                         <input 
                             className="text_ip" 
                             type="password"
-                            value={password}
-                            onChange={(e)=>{setPassword(e.target.value)}} 
+                            name="password"
+                            onChange={handleChange} 
                         />
                         <br></br>
 
                         <button 
                             className="sign_in_button"
                             type="submit"
-                            onClick={()=>{PostData()}}
+                            onClick={PostData}
                         >
                             Continue
                         </button>
+
                         <p className="signup_signin_message">
                             New User ? <a href="/signup" className="signup_link">Sign up</a>
                         </p>
@@ -115,7 +123,6 @@ const SignIn = () =>{
                     
                 </div>
             </Grid>
-            
         </Grid>
     );
 };
