@@ -102,6 +102,7 @@ select::-ms-expand {
   border: none;
   margin: 50px 0;
   width: 90%;
+  outline: none;
   font-family: "Lato", sans-serif;
   border-bottom: 1px solid #411818;
 }
