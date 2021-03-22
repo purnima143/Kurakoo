@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import './SignUp.css';
 import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
@@ -21,27 +21,32 @@ const SignUp = ()=>{
     const handleChange = (e)=>{
         setFormData({...formData,[e.target.name]:e.target.value});
     }
+    const history = useHistory();
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
         query: '(max-width: 959.5px)'
     });
 
-    //OPTIONS TO DISPLAY TOAST
-    const ToastOptions = {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-    }
+
 
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
         toast.error(message, ToastOptions ); 
     };
+
+    //TOAST TO DISPLAY FOR SUCCESSFULL SIGNUP
+    const successToast = (message) => {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 2000 ,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
     
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
@@ -55,7 +60,10 @@ const SignUp = ()=>{
                         if(formData.course!==""){
                             if(formData.year!==""){
                                 if(formData.college!==""){
-                                    toast.success("Valid details", ToastOptions);
+                                    // If signup process is successfull via an api then
+                                    // we will show a toast and redirect the user in a .then() block
+                                    successToast("Signup successfull")
+                                    history.push("/")
                                 }else{
                                     errorToast("Please enter college name");
                                 }

@@ -4,13 +4,14 @@ import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 toast.configure();
 
 const initialState = {
     email:'',password:''
 }
 const SignIn = () =>{
+    const history = useHistory();
 
     //STATE HOOK FOR INPUT DETAILS
     const [formData,setFormData] = useState(initialState)
@@ -24,22 +25,24 @@ const SignIn = () =>{
     const isSmallScreen = useMediaQuery({
         query: '(max-width: 959.5px)'
     });
-
-    //OPTIONS TO DISPLAY TOAST
-    const ToastOptions = {
-        position: "top-center",
-        autoClose: 3000,
-        closeOnClick: true,
-        hideProgressBar: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-    }
     
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
         toast.error(message, ToastOptions ); 
     };
+
+     //TOAST TO DISPLAY FOR SUCCESSFULL SIGNIN
+     const successToast = (message) => {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 2000 ,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
     
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
@@ -48,11 +51,16 @@ const SignIn = () =>{
             // eslint-disable-next-line
             const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if(valid_email.test(formData.email)){
-                if(formData.password!==""){
-                    //Code to perform authentication via an api         
-                }else{
-                    errorToast("Please enter password");
-                }
+                   if(formData.password!==""){
+                        //Code to perform authentication via an api  
+                        // if user is successfully signed then then we can have a .then() block 
+                        // in which we will show a toast and redirect the user
+                        successToast("Successfully signed in")
+                        history.push("/feed");
+
+                    }else{
+                        errorToast("Please enter password");
+                    }
             }else{
                 errorToast("Please enter a valid email id"); 
             }
