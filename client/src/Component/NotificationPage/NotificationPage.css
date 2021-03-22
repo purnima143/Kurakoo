@@ -1,0 +1,31 @@
+:root{
+    --primary-color-nav: #FFE7A6;
+    --secondary-color-bg: #FFFCF5;
+    --darker-shade: #FFE293;
+}
+
+body{
+    background-color: var(--secondary-color-bg);
+}
+
+.greet-msg{
+    width: 90%;
+    margin: auto;
+    border: solid 1px var(--darker-shade);
+    display: flex;
+    border-radius: 2.7rem;
+}
+
+h1{
+    font: larger;
+    font-weight: bold;
+    margin: 2px auto;
+}
+
+.img-div{
+    width: 5rem;
+    height: 5rem;
+    border: solid 2px var(--darker-shade);
+    border-radius: 2.5rem;
+    margin: 2px 2px;
+}
