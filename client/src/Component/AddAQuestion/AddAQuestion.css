@@ -15,7 +15,7 @@
 .addaquestionpage_header_logo {
   width: 200px;
 }
-.selectdiv {
+.addaquestionpage_header_selectdiv {
   position: relative;
 }
 
@@ -23,7 +23,7 @@ select::-ms-expand {
   display: none;
 }
 
-.selectdiv:after {
+.addaquestionpage_header_selectdiv:after {
   content: ">";
   font: 20px "Consolas", monospace;
   font-weight: bolder;
@@ -39,7 +39,7 @@ select::-ms-expand {
   pointer-events: none;
 }
 
-.selectdiv select {
+.addaquestionpage_header_selectdiv select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -192,7 +192,7 @@ select::-ms-expand {
   .addaquestionpage_header_close {
     width: 10px;
   }
-  .selectdiv {
+  .addaquestionpage_header_selectdiv {
     width: 100px;
   }
   .semicircle1,
@@ -210,7 +210,7 @@ select::-ms-expand {
     font-size: 12px;
     padding: 3px;
   }
-  .selectdiv:after {
+  .addaquestionpage_header_selectdiv:after {
     right: -40px;
   }
   .addaquestionpage_askerdetails_questionInput > textarea {

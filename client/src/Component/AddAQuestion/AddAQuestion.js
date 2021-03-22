@@ -48,7 +48,7 @@ const AddAQuestion = () => {
             alt="close icons"
             className="addaquestionpage_header_close"
           />
-          <div className="selectdiv">
+          <div className="addaquestionpage_header_selectdiv">
             <label>
               <select>
                 <option value="Addq"> Add question </option>
@@ -68,8 +68,7 @@ const AddAQuestion = () => {
 
             <select className="addaquestionpage_askerdetails_select">
               <option> Public </option>
-              <option>Option 1</option>
-              <option>Option 2</option>
+              <option> Selected </option>
             </select>
           </div>
           <div className="addaquestionpage_askerdetails_questionInput">
