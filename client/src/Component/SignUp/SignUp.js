@@ -8,32 +8,31 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 
+
+const initialState = {
+    name:'',email:'',password:'',course:'',year:2021,college:''
+}
 const SignUp = ()=>{
+    
+    //STATE HOOK FOR INPUT DETAILS
+    const [formData,setFormData] = useState(initialState);
+
+    //MAKING CHANGE IN STATE VALUES FROM USER INPUT
+    const handleChange = (e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});
+    }
     const history = useHistory();
-    //STATE HOOKS FOR INPUT DETAILS
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [course, setCourse] = useState("");
-    const [year, setYear] = useState(2021);
-    const [college, setCollege] = useState("");
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
         query: '(max-width: 959.5px)'
     });
 
+
+
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
-        toast.error(message, {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        }); 
+        toast.error(message, ToastOptions ); 
     };
 
     //TOAST TO DISPLAY FOR SUCCESSFULL SIGNUP
@@ -41,7 +40,7 @@ const SignUp = ()=>{
         toast.success(message, {
             position: "top-right",
             autoClose: 2000 ,
-            hideProgressBar: false,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
@@ -52,20 +51,19 @@ const SignUp = ()=>{
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
-        if(name !== ""){
-            if(email!==""){
+        if(formData.name !== ""){
+            if(formData.email!==""){
                 // eslint-disable-next-line
                 const re = /^(([^<>()[\]\\.,;:"\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if(re.test(email)){
-                    if(password!==""){
-                        if(course!==""){
-                            if(year!==""){
-                                if(college!==""){
+                if(re.test(formData.email)){
+                    if(formData.password!==""){
+                        if(formData.course!==""){
+                            if(formData.year!==""){
+                                if(formData.college!==""){
                                     // If signup process is successfull via an api then
                                     // we will show a toast and redirect the user in a .then() block
                                     successToast("Signup successfull")
                                     history.push("/")
-
                                 }else{
                                     errorToast("Please enter college name");
                                 }
@@ -83,8 +81,7 @@ const SignUp = ()=>{
                 }
             }else{
                 errorToast("Please enter email");
-            }
-            
+            }    
         }else{
             errorToast("Please enter name");
         }
@@ -119,29 +116,29 @@ const SignUp = ()=>{
                     <br></br>
                     <input 
                     className="text_ip"
-                    value={name}
-                    onChange={(e)=>{setName(e.target.value)}}></input>
+                    name="name"
+                    onChange={handleChange}></input>
                     <label>Email</label>
                     <br></br>
                     <input 
                     className="text_ip"
-                    value={email}
-                    onChange={(e)=>{setEmail(e.target.value)}}></input>
+                    name="email"
+                    onChange={handleChange}></input>
                     <label>Password</label>
                     <br></br>
                     <input 
                     className="text_ip" 
                     type="password"
-                    value={password}
-                    onChange={(e)=>{setPassword(e.target.value)}}></input>
+                    name="password"
+                    onChange={handleChange}></input>
                     <Grid container spacing={4}>
                         <Grid item xs={6} sm={6} md={6} lg={6}>
                             <label>Course</label>
                             <br></br>
                             <input 
                             className="text_ip"
-                            value={course}
-                            onChange={(e)=>{setCourse(e.target.value)}}></input>
+                            name="course"
+                            onChange={handleChange}></input>
                         </Grid>
                         <Grid item xs={6} sm={6} md={6} lg={6}>
                             <label>Year</label>
@@ -149,19 +146,19 @@ const SignUp = ()=>{
                             <input 
                             type="number" 
                             className="text_ip"
-                            value={year}
-                            onChange={(e)=>{setYear(Number(e.target.value))}}></input>
+                            name="year"
+                            onChange={handleChange}></input>
                         </Grid>
                     </Grid>
                     <label>College Name</label>
                     <br></br>
                     <input 
                     className="text_ip"
-                    value={college}
-                    onChange={(e)=>{setCollege(e.target.value)}}></input>
+                    name="college"
+                    onChange={handleChange}></input>
                     <button 
                     className="create_account_button"
-                    onClick={()=>{PostData()}}>Create account</button>
+                    onClick={PostData}>Create account</button>
                     <p className="signup_signin_message">Already a user? 
                     {/* <a href="/signin" className="signin_link">Sign In</a> */}
                     <Link to="/signin" >Sign In</Link>

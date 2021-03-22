@@ -7,28 +7,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Link, useHistory} from 'react-router-dom'
 toast.configure();
 
+const initialState = {
+    email:'',password:''
+}
 const SignIn = () =>{
     const history = useHistory();
 
-    //STATE HOOKS FOR INPUT DETAILS
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    //STATE HOOK FOR INPUT DETAILS
+    const [formData,setFormData] = useState(initialState)
+
+    //MAKING CHANGE IN STATE VALUES FROM USER INPUT
+    const handleChange = (e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});
+    }
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
         query: '(max-width: 959.5px)'
     });
-
+    
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
-        toast.error(message, {
-            position: "top-center",
-            autoClose: 3000,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        }); 
+        toast.error(message, ToastOptions ); 
     };
 
      //TOAST TO DISPLAY FOR SUCCESSFULL SIGNIN
@@ -36,7 +36,7 @@ const SignIn = () =>{
         toast.success(message, {
             position: "top-right",
             autoClose: 2000 ,
-            hideProgressBar: false,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
@@ -47,11 +47,11 @@ const SignIn = () =>{
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
         //CONDITIONS TO CHECK VALID INPUT DETAILS
-            if(email!==""){
-                // eslint-disable-next-line
-                const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if(valid_email.test(email)){
-                    if(password!==""){
+        if(formData.email!==""){
+            // eslint-disable-next-line
+            const valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(valid_email.test(formData.email)){
+                   if(formData.password!==""){
                         //Code to perform authentication via an api  
                         // if user is successfully signed then then we can have a .then() block 
                         // in which we will show a toast and redirect the user
@@ -61,12 +61,12 @@ const SignIn = () =>{
                     }else{
                         errorToast("Please enter password");
                     }
-                }else{
-                   errorToast("Please enter a valid email id"); 
-                }
             }else{
-                errorToast("Please enter email");
+                errorToast("Please enter a valid email id"); 
             }
+        }else{
+            errorToast("Please enter email");
+        }
     };
 
     return(
@@ -98,35 +98,32 @@ const SignIn = () =>{
                         Sign In
                     </h1>
                     <div className="signin_form">
-                        <label>
-                            Email id
-                        </label>
+                        <label> Email id </label>
                         <br></br>
                         <input 
                             className="text_ip"
-                            value={email}
-                            onChange={(e)=>{setEmail(e.target.value)}} 
+                            name="email"
+                            onChange={handleChange} 
                         />
 
-                        <label>
-                            Password
-                        </label>
+                        <label> Password </label>
                         <br></br>
                         <input 
                             className="text_ip" 
                             type="password"
-                            value={password}
-                            onChange={(e)=>{setPassword(e.target.value)}} 
+                            name="password"
+                            onChange={handleChange} 
                         />
                         <br></br>
 
                         <button 
                             className="sign_in_button"
                             type="submit"
-                            onClick={()=>{PostData()}}
+                            onClick={PostData}
                         >
                             Continue
                         </button>
+
                         <p className="signup_signin_message">
                             New User ? <Link to="/signup" >Sign Up</Link>
                         </p>
@@ -134,7 +131,6 @@ const SignIn = () =>{
                     
                 </div>
             </Grid>
-            
         </Grid>
     );
 };
