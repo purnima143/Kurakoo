@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignIn.css';
 import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
-import {toast} from 'react-toastify';
+import {Toast, toast, ToastOptions} from 'react-bootstrap/Toast'
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
