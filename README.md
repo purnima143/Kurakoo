@@ -5,12 +5,12 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
-**Kurakoo is a website where you can make friends (safely) and learn more from people you trust.** Kurakoo is an online community of people providing answers to questions just like Quora site. **Kurakoo** is especially for school-college students, people from around the different colleges visit **Kurakoo to ask questions from a community of people who answer them.**
+**Kurakoo is a website where you can make friends (safely) and learn more from people you trust.** It is an online community of people providing answers to questions, just like 'Quora'. **Kurakoo** is specially catered to meet the needs of school/college students. Students from different colleges/universities around the world visit **Kurakoo to ask questions to a community of people who are always ready to answer them.**
 
 
 ## Project Background💡
 
-In Majority of the Colleges and Universities across India, having so many queries from **"Which branch to choose?"** to **"How to crack interview?"**. A One-Stop Solution can be to bring up an application where students can drop down their questions for public View, that can be accessed by anyone and those people knows the answer they can share their point of view. 
+In the majority of the colleges and universities across India, thousands of students have many doubts and queries from **"Which branch to choose?"** to **"How to crack interviews?"**. Kurakoo is a one-stop solution for all these problems. It serves as a platform where students can drop in their questions for public view and any person from this vibrant community can help by providing answers to these questions. 
 
 
 ## Areas of Collaboration 👨‍🏭
@@ -39,7 +39,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 - **Project Management Tools**: Trello, Git/Github, Markdown (Documentation)
 
 ## Flow of the site :computer:
-Below is the basic idea how the website will work. We will also be working on adding more features to the Project, like sharing the questions ,following people and to whom it benefits the most which would allow the other User to filter and view specific content.
+Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, an option to follow people, a feature that allows users to filter and view specific content, etc.
 
 
 ![Hnet-image](https://user-images.githubusercontent.com/57852378/104997423-90038c80-5a4f-11eb-88d3-389b501c00ad.gif)
@@ -47,13 +47,14 @@ Below is the basic idea how the website will work. We will also be working on ad
 
 
 ## General Guidelines :dart:
- - Before working on any issue kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme file carefully.
+ - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme file carefully.
  - For each issue, a detailed explanation is mentioned in issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
- - While making any component, make sure that the code for the all generalised/common components must be kept in [src->components->common](src/components/common) folder.
- - Kindly keep the source code in the [src->components](src/components/) folder while making the specific components.
-] - Please make sure to adhere to the folder structure of the project.
 
-We will also be working on adding more features to the Project.
+ - While making any component, make sure that the code for the all generalised/common components is kept in [src->components->common](src/components/common) folder.
+ - Kindly keep the source code in the [src->components](src/components/) folder while making specific components.
+ - Please make sure to adhere to the folder structure of the project.
+
+We will also be working on adding more features to this project.
 
 ## Setup Guidelines
 Clone the repository -
@@ -95,8 +96,7 @@ git clone https://github.com/purnima143/Kurakoo.git
 _NOTE: To run the Frontend side of the application it recommended to run the backend server too._
 
 ## Open source contest
-Girlscript Summer of Code 2021
-About GirlScript Summer of Code is the 3 month long Open Source program during summers conducted by GirlScript Foundation, started in 2018, with an aim to help beginners get started with Open Source Development while encouraging diversity.
+Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by the GirlScript Foundation. It was started in 2018 to help beginners to get started with Open Source Development while encouraging diversity.
 
 ![0_hvZkvLGPR4t6TFhS](https://user-images.githubusercontent.com/57852378/108583937-3ef2fb00-7363-11eb-9239-a274fbe00bdd.png)
 

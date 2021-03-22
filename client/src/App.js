@@ -1,28 +1,26 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React from "react";
 import './App.css';
-import store from './store/store';
-import SignUp from './Component/SignUp/SignUp';
-import { FeedPage } from './Component/feedpage/FeedPage';
-import SignIn from "./Component/SignIn/SignIn";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Feed from './components/feed';
+import Signup from './Component/SignUp/SignUp';
+import Signin from "./Component/SignIn/SignIn";
+import Homepage from "./Component/homepage/homepage";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-    <Provider store={store}>
-      <div className="App">
-        <div>
-          <Switch>
-            <Route path="/signup" component={SignUp} />
-            <Route path="/feedpage" component={FeedPage} />
-            <Route path="/signin" component={SignIn} />
-          </Switch>
-        </div>
-      </div>
-    </Provider> 
-    </BrowserRouter>   
+    <>
+  <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/signup"  component={Signup} />
+        <Route path="/signin"  component={Signin} />
+        <Route path="/feed"  component={Feed} />
+      </Switch>
+    </BrowserRouter>
+        
+      </>
   );
-}
+};
+
 
 export default App;

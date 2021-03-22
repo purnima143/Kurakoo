@@ -1,21 +1,26 @@
 {
-    "name": "javascript-express-api",
+    "name": "kurakoo-backend",
     "version": "1.0.0",
-    "description": "A simple javascript express api",
+    "description": "Kurakoo Backend APIs",
     "main": "dist/index.js",
     "scripts": {
         "start": "node src/index.js",
         "dev": "nodemon src/index.js"
     },
-    "author": "Kaushal",
+    "author": "Kurakoo",
     "license": "ISC",
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "body-parser": "^1.19.0",
+        "cli-color": "^2.0.0",
         "compression": "1.7.4",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
+        "express-validator": "^6.10.0",
         "helmet": "4.4.1",
+        "jsonwebtoken": "^8.5.1",
+        "loader": "^2.1.1",
         "mongoose": "^5.9.28",
         "morgan": "1.10.0"
     },
