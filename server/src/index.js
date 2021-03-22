@@ -39,10 +39,16 @@ mongoose.connect(
       useUnifiedTopology: true,
       useCreateIndex: true,
     }
-  )
-  .then(() => {
+  ).catch((err) => {
+    console.log(clc.red(err))
+  }) 
+  mongoose.connection.on('connected',()=> {
     console.log(clc.green("database connected"));
-  });
+  })
+  mongoose.connection.on('error',(err) => {
+    console.log(clc.red("error connecting to the database"))
+  })
+
 
 // all the api routes
 app.use('/api', root);

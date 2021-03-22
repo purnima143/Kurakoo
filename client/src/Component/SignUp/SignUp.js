@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import './SignUp.css';
 import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
 const SignUp = ()=>{
+    const history = useHistory();
     //STATE HOOKS FOR INPUT DETAILS
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -34,6 +35,19 @@ const SignUp = ()=>{
             progress: undefined,
         }); 
     };
+
+    //TOAST TO DISPLAY FOR SUCCESSFULL SIGNUP
+    const successToast = (message) => {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 2000 ,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
     
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
     const PostData = ()=>{
@@ -47,15 +61,11 @@ const SignUp = ()=>{
                         if(course!==""){
                             if(year!==""){
                                 if(college!==""){
-                                    toast.success("Valid details", {
-                                        position: "top-right",
-                                        autoClose: 2000 ,
-                                        hideProgressBar: false,
-                                        closeOnClick: true,
-                                        pauseOnHover: true,
-                                        draggable: true,
-                                        progress: undefined,
-                                    });
+                                    // If signup process is successfull via an api then
+                                    // we will show a toast and redirect the user in a .then() block
+                                    successToast("Signup successfull")
+                                    history.push("/")
+
                                 }else{
                                     errorToast("Please enter college name");
                                 }
