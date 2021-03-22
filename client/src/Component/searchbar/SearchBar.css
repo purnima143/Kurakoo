@@ -1,91 +1,93 @@
 /*div containing whole search bar */
-.search_div
-{
-    display: table;
+.search_div {
+    display: flex;
     width: 100%;
+    position: relative;
+
 }
+
 /*div containing input box*/
-.input_box
-{
-    display: table-cell;
+.input_box {
+    display: inline-block;
     vertical-align: middle;
+    border-radius: 15px;
 }
+
 /* styling input box and btn for search  */
-.input_class, .btn_class
-{
+.input_class,
+.btn_class {
     color: #000;
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: transparent;
 }
 
-#cover
-{
-    position: absolute;
-    top: 70%;
+#cover {
+    position: relative;
     left: 10px;
-    right: 0;
     width: 600px;
-    padding: 10px;;
-    margin: -68px auto 0 auto;
+    padding: 5px;
     border: 2px solid black;
+    border-radius: 300px;
     transform: scale(0.6);
+    background-color: white;
+    overflow: hidden;
 }
+
 /*class name for search form tag */
-.form_search
-{
+.form_search {
     height: 65px;
 }
+
 /* input tag*/
-.input_class[type="text"]
-{
+.input_class[type="text"] {
     width: 500px;
     height: 65px;
     font-size: 30px;
     line-height: 1;
+    outline: none;
 }
+
 /*input tag*/
-.input_class[type="text"]::placeholder
-{
+.input_class[type="text"]::placeholder {
     color: grey;
 }
+
 /* btn in search button before click*/
-#s-cover
-{
+#s-cover {
     width: 1px;
     padding-left: 35px;
 }
+
 /*btn for submit the search*/
-.btn_class
-{
-    position: relative;
+.btn_class {
+    position: absolute;
     display: block;
     width: 84px;
     height: 65px;
     cursor: pointer;
+    background-color: transparent;
 }
 
-#s-circle
-{
+#s-circle {
     position: relative;
     top: -10px;
-    left: 18px;
-    width: 20px;
-    height: 20px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
     margin-top: 0;
     border-width: 15px;
-    border: 10px solid black;
+    border: 8px solid var(--tertiary-color);
     background-color: transparent;
     border-radius: 50%;
     transition: 0.5s ease all;
 }
+
 /*adjustment of search btn*/
-.btn_class span
-{
+.btn_class span {
     position: absolute;
     top: 40px;
-    left: 45px;
+    left: 42px;
     display: block;
     width: 30px;
     height: 15px;
@@ -94,33 +96,36 @@
     transform: rotateZ(52deg);
     transition: 0.5s ease all;
 }
+
 /*adjustment of search on some actions*/
-.btn_class span:before, .btn_class span:after
-{
+.btn_class span:before,
+.btn_class span:after {
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
     width: 35px;
     height: 12px;
-    background-color: #000;
+    background-color: var(--tertiary-color);
     border-radius: 10px;
     transform: rotateZ(0);
     transition: 0.5s ease all;
 }
 
-#s-cover:hover #s-circle
-{
+#s-cover:hover #s-circle {
     top: -1px;
     width: 45px;
     height: 15px;
     border-width: 0;
-    background-color: #000;
+    background-color: var(--tertiary-color);
     border-radius: 20px;
 }
 
-#s-cover:hover span
-{
+#s-cover{
+    transform: translateX(-1.1rem);
+}
+
+#s-cover:hover span {
     top: 50%;
     left: 50px;
     width: 14px;
@@ -128,21 +133,19 @@
     transform: rotateZ(0);
 }
 
-#s-cover:hover button span:before
-{
+#s-cover:hover button span:before {
     bottom: 11px;
     transform: rotateZ(52deg);
 }
 
-#s-cover:hover button span:after
-{
+#s-cover:hover button span:after {
     bottom: -11px;
     transform: rotateZ(-52deg);
 }
-#s-cover:hover button span:before, #s-cover:hover button span:after
-{
+
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
     right: -6px;
     width: 35px;
-    background-color:#000;
+    background-color: var(--tertiary-color);
 }
-
