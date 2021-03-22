@@ -1,41 +1,29 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import { SearchBar } from '../searchbar/SearchBar';
+import Logo from '../kurakoo-logo.png';
 
+export default function Navbar() {
 
-export class Navbar extends Component {
-
-  render() {
     return (
-        <div className="Nav">
-            <div className="nav1">
-                <div id="navbar" className="row">
-                    <div className="col col1">
-                        <div className="logo_nav">
-                            <a href="#home">
-                                <img className="logo_kurakoo"  src="./images/kurakoo-logo.png" alt="kurakoo_logo"/>
-                            </a>
-                        </div>
+        <div>
+            <nav className = "Nav">
+                <div>
+                    <img id = "logo" src= {Logo} alt = "alt"/>
+                </div>
+                <div className = "nav-options">
+                    <div className = "option">
+                        feed
                     </div>
-                    <div className="col col2">
-                        <div className="seachbar_nav">
-                            <SearchBar />
-                        </div>
+                    <div className = "option">
+                        write
                     </div>
-
-                    <div class="col col4">
-                        <div class="sign_nav">
-                            <div className="col profile_div">
-                                <img className="profile_img"  src="./images/profile_pic.jpg" alt="progile_image"/>
-                            </div>
-                            <div className="col btn_div">
-                                <button className="sign_in_btn"><b>Sign In</b></button>
-                            </div>
-                        </div>
+                    <div className = "option">
+                        <SearchBar/>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
     );
-  }
+  
 }
