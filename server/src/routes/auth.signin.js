@@ -1,6 +1,6 @@
 const express = require("express");
 const authController = require("../controllers/auth.controller");
-const{ validateSignupRequest, isRequestValidated } = require('../validators/auth.validator')
+const{ validateSignupRequest, isRequestValidated, validateSigninRequest} = require('../validators/auth.validator')
 const router = express.Router();
 
 /** @route      GET /api/signup
@@ -8,6 +8,6 @@ const router = express.Router();
  *  @access     Public
  */
 
-router.post('/', validateSignupRequest, isRequestValidated, authController.signup);
+router.post('/',validateSigninRequest, isRequestValidated, authController.signin);
 
 module.exports = router;
