@@ -81,6 +81,7 @@ select::-ms-expand {
   margin: 0px 40px;
   color: #979797;
   font-family: "Lato", sans-serif;
+  font-size: 20px;
 }
 .addaquestionpage_askerdetails_select {
   background: linear-gradient(
@@ -97,6 +98,7 @@ select::-ms-expand {
   border-radius: 47px;
   font-family: "Lato", sans-serif;
   padding: 5px 3px;
+  font-size: 15px;
 }
 .addaquestionpage_askerdetails_questionInput > textarea {
   border: none;
@@ -105,6 +107,7 @@ select::-ms-expand {
   outline: none;
   font-family: "Lato", sans-serif;
   border-bottom: 1px solid #411818;
+  font-size: 15px;
 }
 .addaquestionpage_link {
   display: flex;
@@ -115,7 +118,7 @@ select::-ms-expand {
   width: 12px;
 }
 .addaquestionpage_link > p {
-  font-size: 12px;
+  font-size: 15px;
   margin-left: 10px;
   font-family: "Lato", sans-serif;
 }
@@ -216,5 +219,8 @@ select::-ms-expand {
   }
   .addaquestionpage_askerdetails_questionInput > textarea {
     font-size: 11px;
+  }
+  .addaquestionpage_link > p {
+    font-size: 10px;
   }
 }
