@@ -5,6 +5,7 @@ import Feed from './components/feed';
 import Signup from './Component/SignUp/SignUp';
 import Signin from "./Component/SignIn/SignIn";
 import Homepage from "./Component/homepage/homepage";
+import NotificationPage from "./Component/NotificationPage/NotificationPage";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/signup"  component={Signup} />
         <Route path="/signin"  component={Signin} />
         <Route path="/feed"  component={Feed} />
+        <Route path="/notification" component={NotificationPage} />
       </Switch>
     </BrowserRouter>
         
