@@ -1,0 +1,23 @@
+{
+  "name": "kurakoo",
+  "version": "1.0.0",
+  "description": "![kurakoo-logo](https://user-images.githubusercontent.com/57852378/104982229-3cce1180-5a30-11eb-9d02-3c32878c6a42.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd server && npm run start\" \"cd client && npm start\" ",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purnima143/Kurakoo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purnima143/Kurakoo/issues"
+  },
+  "homepage": "https://github.com/purnima143/Kurakoo#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
