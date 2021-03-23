@@ -5,6 +5,7 @@
     --secondary-color-bg: #FFFCF5;
     --darker-shade: #FFE293;
     --shadow-color: #00000017;
+    --white: #FFFFFF;
 }
 
 body{
@@ -48,4 +49,8 @@ body{
     border: solid 2px var(--darker-shade);
     border-radius: 100px;
     box-shadow: 5px 5px 2px var(--shadow-color);
+}
+
+.notification-body{
+    display: flex;
 }

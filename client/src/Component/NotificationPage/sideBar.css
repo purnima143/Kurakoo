@@ -1,0 +1,12 @@
+.sidebar{
+    height: 100%;
+    
+}
+
+.activities-div{
+    border: solid 2px var(--darker-shade);
+    border-radius: 10px;
+    width: 300px;
+    background-color: var(--white);
+    margin: auto;
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import './NotificationPage.css';
-import Logo from '../kurakoo-logo.png';
-import image from './images/Vector.png';
 import Navbar from '../navbar/Navbar';
+import Sidebar from './sideBar';
+import Notification from './NotficationComp';
+import Logo from '../kurakoo-logo.png';
+import Image from './images/Vector.png';
+import Image1 from './images/Vector1.png';
 import WebOutlinedIcon from '@material-ui/icons/WebOutlined';
 
 function getTime(){
@@ -28,7 +31,7 @@ function NotificationPage(){
             <div id = "notification-container">
                 <div className ="greet-msg">
                     <div className ="img-div">
-                        <img className = "img" src = { image } alt = "alt" />
+                        <img className = "img" src = { Image } alt = "alt" />
                     </div>
                     <div className = "content-div">
                         <div className = "content-head">
@@ -42,8 +45,23 @@ function NotificationPage(){
                         </div>
                     </div>
                 </div>
-                <div id = "notification-body">
+                <div className = "notification-body">
                     
+                    <div className = "notifications-container">
+                        <ul className = "notification-list">
+                            {
+                                data.map((item, index) =>{
+                                    return (
+                                        <li>
+                                            <Notification image = {item.image} />
+                                        </li>
+                                    );
+                                })
+                            }
+                        </ul>
+                    </div>
+                    <Sidebar />
+
                 </div>
             </div>
         </div>
@@ -61,5 +79,10 @@ const currentuser = {
 const data = [
     {
         username: "Emma Watson",
+        timeStamp: "17:45",
+        type: "message",
+        read: false,
+        image: Image1,
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     },
 ];

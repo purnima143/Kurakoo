@@ -1,0 +1,36 @@
+.notification{
+    width: 90%;
+    margin: auto;
+    border: solid 1px var(--darker-shade);
+    display: flex;
+    border-radius: 5rem;
+    background-color: white;
+    box-shadow: 5px 5px 2px var(--shadow-color);
+}
+
+.notification .content-div{
+    margin: 5px;
+}
+
+.notification .content-head{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    margin: 2px auto;
+}
+
+.notification .content-body{
+    font-size: 1rem;
+}
+
+.notification .img-div{
+    width: 90px;
+    height: 90px;
+    margin: 8px 8px;
+}
+
+.notification .img{
+    width: 90px;
+    border: solid 2px var(--darker-shade);
+    border-radius: 100px;
+    box-shadow: 5px 5px 2px var(--shadow-color);
+}
