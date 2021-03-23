@@ -21,3 +21,4 @@ export class FeedPage extends Component {
       );
     }
   }
+export default FeedPage;

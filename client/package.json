@@ -12,7 +12,7 @@
     "react-redux": "^7.2.2",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.3",
     "react-toastify": "^7.0.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
@@ -26,7 +26,7 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-    "eslint":"recommended"
+    "eslint": "recommended"
   },
   "browserslist": {
     "production": [

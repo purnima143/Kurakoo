@@ -6,4 +6,11 @@
   position: relative;
   bottom: 0;
   width: 100%;
+  
+}
+.list-unstyled{
+  font-size: 16px;
+}
+.col{
+  margin-left: 5%;
 }
