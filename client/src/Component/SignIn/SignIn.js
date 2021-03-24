@@ -11,6 +11,7 @@ const initialState = {
     email:'',password:''
 }
 const SignIn = () =>{
+    
     const history = useHistory();
 
     //STATE HOOK FOR INPUT DETAILS
@@ -28,7 +29,15 @@ const SignIn = () =>{
     
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
     const errorToast = (message)=>{
-        toast.error(message, ToastOptions ); 
+        toast.error(message, {
+            position: "top-center",
+            autoClose: 3000,
+            closeOnClick: true,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        } ); 
     };
 
      //TOAST TO DISPLAY FOR SUCCESSFULL SIGNIN
