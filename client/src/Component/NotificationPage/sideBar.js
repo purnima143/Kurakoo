@@ -8,7 +8,7 @@ function Sidebar(){
             <div className = "sidebar">
                 <div className = "activities-div">
                     <div className = "activities-head">
-                        <h2>Your recent activities</h2>
+                        <h2>Your recent activities in groups</h2>
                     </div>
                     <div className = "activities-body">
                         <ul className = "activities-list">

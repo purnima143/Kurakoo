@@ -1,6 +1,6 @@
 .notification{
     width: 90%;
-    margin: auto;
+    margin: 0rem 1rem 0.8rem;
     border: solid 1px var(--darker-shade);
     display: flex;
     border-radius: 5rem;
@@ -12,14 +12,28 @@
     margin: 5px;
 }
 
+.notification .content-head-div{
+    display: flex;
+}
+
 .notification .content-head{
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: bolder;
     margin: 2px auto;
 }
 
+.notification .time-stamp{
+    
+}
+
 .notification .content-body{
-    font-size: 1rem;
+    font-size: .9rem;
+}
+
+.notification hr{
+    border: solid 2px var(--darker-shade);
+    border-bottom: none;
+    width: 90%;
 }
 
 .notification .img-div{
@@ -33,4 +47,18 @@
     border: solid 2px var(--darker-shade);
     border-radius: 100px;
     box-shadow: 5px 5px 2px var(--shadow-color);
+}
+
+.more{
+    margin: auto 8px;
+    height: 90px;
+    width: 90px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.more :hover{
+    background-color: var(--darker-shade);
+    border-radius: 50%;
+    cursor: pointer;
 }

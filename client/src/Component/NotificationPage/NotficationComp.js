@@ -1,7 +1,20 @@
 import React from 'react';
 import './NotificationComp.css';
+import { makeStyles } from '@material-ui/core/styles';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-function Notification({image}){
+const useStyles = makeStyles({
+    more: {
+        margin: "0rem .5rem",
+        position: "relative",
+        top: "50%",
+        transform: "translateY(-50%) scale(1.4)",
+    }
+});
+
+function Notification({username, timeStamp, type, read, message, image}){
+
+    const classes = useStyles();
 
     return (
         <>
@@ -10,15 +23,21 @@ function Notification({image}){
                     <img className = "img" src = { image } alt = "alt" />
                 </div>
                 <div className = "content-div">
-                    <div className = "content-head">
-                        <h1> You have recieved 2 messages from xyz </h1>
+                    <div className = "content-head-div">
+                        <h1 className = "content-head"> You have recieved 2 messages from {username} </h1>
+                        <div className = "time-stamp">
+                            {timeStamp}
+                        </div>
                     </div>
                     <hr/>
                     <div>
                         <p className = "content-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                            {message}
                         </p>
                     </div>
+                </div>
+                <div className = "more">
+                    <MoreVertIcon className = { classes.more } />
                 </div>
             </div>
         </>

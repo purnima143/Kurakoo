@@ -53,4 +53,5 @@ body{
 
 .notification-body{
     display: flex;
+    margin: 0rem 4rem;
 }
