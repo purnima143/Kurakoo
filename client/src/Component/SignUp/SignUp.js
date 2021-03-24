@@ -31,10 +31,18 @@ const SignUp = ()=>{
 
 
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
-    const errorToast = (message)=>{
-        toast.error(message, ToastOptions ); 
-    };
-
+    
+     const errorToast = (message) =>{
+        toast.error(message, {
+            position: "top-center",
+            autoClose: 3000,
+            closeOnClick: true,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+     }
     //TOAST TO DISPLAY FOR SUCCESSFULL SIGNUP
     const successToast = (message) => {
         toast.success(message, {
