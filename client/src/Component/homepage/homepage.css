@@ -35,7 +35,8 @@
   left: 1357px;
   min-width: 131px;
   position: absolute;
-  top: 31px;padding: 0;
+  top: 31px;
+  padding: 0;
   border: none;
   background: none;
 }
@@ -102,25 +103,28 @@
 .landing-page-orange .rectangle-33 {
   border-radius: 15px;
   height: 55px;
-  left: 0px;
+  left: -100px;
   position: absolute;
   top: 0px;
-  width: 129px;
+  width: 108px;
 }
 .landing-page-orange .sign-in {
-  left: 1241px;
+  left: 1141px;
   letter-spacing: 0px;
   position: absolute;
-  top: 44px;padding: 0;
+  top: 44px;
+  padding: 0;
   border: none;
   background: none;
 }
 .landing-page-orange .sign-up {
-  left: 14px;
+  left: -79px;
   letter-spacing: 0px;
   position: absolute;
   top: 15px;
-  width: 103px;
+  font-size: 23px;
+  width: 100px;
+  margin-left: -14px;
 }
 .landing-page-orange .text-1 {
   left: 1834px;
