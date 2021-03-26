@@ -1,131 +1,163 @@
 
 /*outermost div*/
 .Nav{
-        z-index: 20;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: white;
-        height: 130px;
-}
-
-
- 
-
-
-.row{
-  /*border: 2px solid black;*/
-    margin-top: 35px;
-
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    width: 100%;
     
 }
+
+
+
+nav.navheader{
+display:flex;
+width: 100%;
+justify-content: space-between;
+background-color: white;
+padding:10px 10px;
+height:87px;
+}
+
+.row{
+/*border: 2px solid black;*/
+margin-top: 35px;
+
+
+}
+
+/* .searchbar_nav
+{
+width: 15px;
+} */
+/* 
 .col{
-  /*border:2px solid red; */
-    display:inline-block;
-    margin: auto;
-}
+/*border:2px solid red; */
+/* display:inline-block; */
+/* margin: auto; */
+/* } */
 /*div for kurakoo logo*/
-.col1{
-    float: left;
-    margin-left: 50px;
-}
+/* .col1{
+float: left;
+margin-left: 50px;
+} */
 /*div for profile pic & sign in button*/
-.col4{
-    float:right;
-    width: 400px;
-  
-}
+/* .col4{
+float:right;
+width: 400px;
+
+} */
 
 
 /*for logo of kurakoo*/
 .logo_kurakoo{
-    width: 210px;
-    margin-left: 80px;
-
+width: 210px;
+/* margin-left: 80px; */
 }
+
+
 /*profile image on right side of navbar */
 .profile_img{
-    position: absolute;
-    width:60px;
-    border-radius: 50%;
-    border: 2px solid black;
+/* position: absolute; */
+width:60px;
+border-radius: 50%;
+position: relative;
+/* top:-10px; */
+/* float: right; */
+border: 2px solid black;
 
 
+}
+
+.sign_nav
+{
+/* float: right; */
+/* display: inline; */
+/* width:30px; */
 }
 
 /*div containing profile image*/
-.profile_div{
-    float: left;
-    margin-left: 30px;
-}
+/* .profile_div{ */
+/* float: left; */
+/* margin-left: 30px; */
+/* }
+*/
 /*div containing sign in btn */
-.btn_div{
-    margin-top: 8px;
-}
-
 /*btn SIGN IN*/
+
 .sign_in_btn{
-   
-    background-color:white;
-    border: 2px solid black;
-    font-size: 15px;
-    width: 100px;
-    height: 40px;
+
+cursor: pointer;
+/* float: right; */
+background-color:white;
+border: 2px solid black;
+font-size: 15px;
+width: 100px;
+position: relative;
+top:-25px;
+height: 40px;
+margin-left: 10px;
 
 }
 /*hover effect for sign in btn */
 .sign_in_btn:hover {
+border: 2px solid black;
+background-color: #FF8C00;
+transition: 0.2s ease-in-out;
+}
+
+
+/*for mobile view*/
+@media (max-width: 1100px){
+  /*for kurakoo logo */
+/* .logo_kurakoo{
+    width: 130px;
+    /* margin-left: 20px; */
+
+
+/* .navheader{
+    height
+} */
+/*div containing kurakoo logo*/
+/* .col1{
+    float: left;
+    margin-left: 5px;
+    margin-top: 20px;
+} */ 
+/* div containing searchbar*/
+.searchbar_nav
+{
+    display: none;
+}
+/* .col2{
+    display: none;
+} */
+/*circular profile image on the right hand side */
+/* .profile_img{
+    /* position: absolute; */
+    /* width:40px;
+    border-radius: 50%;
     border: 2px solid black;
-    background-color: #FF8C00;
-    transition: 0.2s ease-in-out;
-  }
+    
 
+
+} */
+/*sign in btn */
+/* .sign_in_btn{
+    font-size: 10px;
+    width: 60px;
+    height: 30px;
+    position:relative;
+   top:-15px;
   
- /*for mobile view*/
-  @media (max-width: 1100px){
-      /*for kurakoo logo */
-    .logo_kurakoo{
-        width: 130px;
-        margin-left: 20px;
-    
-    }
-    /*div containing kurakoo logo*/
-    .col1{
-        float: left;
-        margin-left: 5px;
-        margin-top: 20px;
-    }
-    /* div containing searchbar*/
-    .col2{
-        display: none;
-    }
-    /*circular profile image on the right hand side */
-    .profile_img{
-        position: absolute;
-        width:40px;
-        border-radius: 50%;
-        border: 2px solid black;
-        
-    
-    
-    }
-    /*sign in btn */
-    .sign_in_btn{
-        font-size: 10px;
-        width: 60px;
-        height: 30px;
-        margin-left: 55px;
-    
-    }
-    /*column containing profile image and sign in btn */
-    .col4{
+} */ 
+/*column containing profile image and sign in btn */
+/* .col4{
 
-        float:right;
-        margin-top: 15px;
-        width: 210px;
-      
-    }
+    float:right;
+    margin-top: 15px;
+    width: 210px;
+   */
 
-    }
- 
-  
+}
+

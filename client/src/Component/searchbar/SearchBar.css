@@ -2,7 +2,7 @@
 .search_div
 {
     display: table;
-    width: 100%;
+    /* width: 100%; */
 }
 /*div containing input box*/
 .input_box
@@ -69,8 +69,8 @@
 #s-circle
 {
     position: relative;
-    top: -10px;
-    left: 18px;
+    top: -15px;
+    left:1px;
     width: 20px;
     height: 20px;
     margin-top: 0;
@@ -84,14 +84,14 @@
 .btn_class span
 {
     position: absolute;
-    top: 40px;
-    left: 45px;
+    top: 44px;
+    left: 12px;
     display: block;
     width: 30px;
     height: 15px;
     background-color: transparent;
     border-radius: 8px;
-    transform: rotateZ(52deg);
+    transform: rotateZ(55deg);
     transition: 0.5s ease all;
 }
 /*adjustment of search on some actions*/
