@@ -9,7 +9,7 @@ const requireSignin = (req, res, next) => {
     const user = jwt.verify(token, process.env.JWT_SECRET);
     req.user = user;
     } else {
-        return res.status(400).json(responseHandler( false, 400, "authorization required", null ));
+        return res.status(401).json(responseHandler( false, 401, "authorization required", null ));
     }
     next();
    

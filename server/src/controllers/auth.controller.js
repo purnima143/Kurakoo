@@ -49,7 +49,7 @@ const signin = (req,res) => {
             if(user.authenticate(req.body.password)){
                 const token = jwt.sign({ _id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h'});
                 const { _id, firstName, lastName, email, role, fullName } = user;
-                res.status(200).json(responseHandler( true, 200, "User Exist", {token, user} ));
+                res.status(200).json(responseHandler( true, 200, "User Logged in", {token, user} ));
             
             } else {
                 return res.status(400).json(responseHandler( false, 400, "Invalid Password", null ));
