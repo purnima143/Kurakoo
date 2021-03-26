@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NotificationComp.css';
 import { makeStyles } from '@material-ui/core/styles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -12,13 +12,17 @@ const useStyles = makeStyles({
     }
 });
 
+
+
 function Notification({username, timeStamp, type, read, message, image}){
 
     const classes = useStyles();
+    const [status, setStatus] = useState(read);
+    const className = "notification " + ((status)? "": "unread");
 
     return (
         <>
-            <div className = "notification">
+            <div className = {className} onClick = {() => setStatus(true)} >
                 <div className ="img-div">
                     <img className = "img" src = { image } alt = "alt" />
                 </div>

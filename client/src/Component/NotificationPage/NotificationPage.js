@@ -3,15 +3,9 @@ import './NotificationPage.css';
 import Navbar from '../navbar/Navbar';
 import Sidebar from './sideBar';
 import Notification from './NotficationComp';
-import Logo from '../kurakoo-logo.png';
+import { currentuser, data } from './DummyData';
 import Image from './images/Vector.png';
-import Image1 from './images/Vector1.png';
-import Image2 from './images/Vector2.png';
-import Image3 from './images/Vector3.png';
-import Image4 from './images/Vector4.png';
-import Image5 from './images/Vector5.png';
-import Image6 from './images/Vector6.png';
-import WebOutlinedIcon from '@material-ui/icons/WebOutlined';
+
 
 function getTime(){
     var hours = new Date().getHours();
@@ -51,7 +45,7 @@ function NotificationPage(){
                     </div>
                 </div>
 
-                <br/><br/>
+                <br/>
 
                 <div className = "notification-body">
                     
@@ -78,67 +72,3 @@ function NotificationPage(){
 
 export default NotificationPage;
 
-const currentuser = {
-    name: "Purnima",
-    msgCount: 3,
-    followersCount: 1
-};
-
-const data = [
-    {
-        username: "Emma Watson",
-        timeStamp: "17:45",
-        type: "message",
-        read: false,
-        image: Image1,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "Brad Pitt",
-        timeStamp: "16:56",
-        type: "message",
-        read: false,
-        image: Image2,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "Grany Stone",
-        timeStamp: "16:19",
-        type: "message",
-        read: false,
-        image: Image3,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "The Heritage",
-        timeStamp: "14:51",
-        type: "message",
-        read: false,
-        image: Image4,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "Petricious",
-        timeStamp: "14:38",
-        type: "message",
-        read: false,
-        image: Image5,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "Emma Watson",
-        timeStamp: "17:45",
-        type: "message",
-        read: false,
-        image: Image6,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-    {
-        username: "Emma Watson",
-        timeStamp: "17:45",
-        type: "message",
-        read: false,
-        image: Image6,
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    },
-];

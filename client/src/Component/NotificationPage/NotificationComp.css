@@ -1,11 +1,12 @@
 .notification{
-    width: 90%;
+    width: 97%;
     margin: 0rem 1rem 0.8rem;
     border: solid 1px var(--darker-shade);
     display: flex;
     border-radius: 5rem;
     background-color: white;
     box-shadow: 5px 5px 2px var(--shadow-color);
+    cursor: pointer;
 }
 
 .notification .content-div{
@@ -22,12 +23,12 @@
     margin: 2px auto;
 }
 
-.notification .time-stamp{
-    
-}
-
 .notification .content-body{
     font-size: .9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .notification hr{
@@ -61,4 +62,8 @@
     background-color: var(--darker-shade);
     border-radius: 50%;
     cursor: pointer;
+}
+
+.unread{
+    border: solid 5px var(--darker-shade);
 }
