@@ -25,7 +25,7 @@ function getTime(){
 function NotificationPage(){
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar />
             <br/><br/><br/><br/><br/><br/>
             <div id = "notification-container">
                 <div className ="greet-msg">
