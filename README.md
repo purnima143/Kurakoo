@@ -110,7 +110,7 @@ _NOTE: To run the Frontend side of the application it recommended to run the bac
     npm install
     ```
 
-	3. Start Frontend & Backend simultaneously
+ 3. Start Frontend & Backend simultaneously
 
     ```
     npm run dev
