@@ -52,7 +52,7 @@ const signin = (req,res) => {
                 res.status(200).json(responseHandler( true, 200, "User Logged in", {token, user} ));
             
             } else {
-                return res.status(400).json(responseHandler( false, 400, "Invalid Password", null ));
+                return res.status(401).json(responseHandler( false, 401, "Invalid Password", null ));
             }
 
         } else {

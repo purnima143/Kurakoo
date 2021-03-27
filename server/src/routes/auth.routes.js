@@ -9,7 +9,7 @@ const router = express.Router();
  *  @access     Public
  */
 
-router.post("/", validateSignupRequest, isRequestValidated, authController.signup);
+router.post("/signup", validateSignupRequest, isRequestValidated, authController.signup);
 router.post("/signin", validateSigninRequest, isRequestValidated, authController.signin);
 router.post("/signout", requireSignin, authController.signout);
 
