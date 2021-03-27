@@ -27,6 +27,7 @@ Project Managers, Developers and Designers would be collaborating on various dom
     
 -   **Working on a User-Experience rich platform for a Social Cause**
     
+
 This would be an enriching experience for all Student Developers, Project Managers and Designers.
 
 
@@ -66,7 +67,11 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 1. Run `cd server` on your CLI.
 
-2. Create a `.env` file and the format should be as given in `.env.example` in the server directory itself.
+2. Create a `.env` file and paste the MONGO_URL in the given format
+
+    ```
+    MONGO_URL = <your_url>
+    ```
 
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
@@ -77,7 +82,7 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 4. Run the server
     ```
-    npm run dev
+    npm run server
     ```
 
 ### Frontend
@@ -94,6 +99,24 @@ git clone https://github.com/purnima143/Kurakoo.git
     npm start
     ```
 _NOTE: To run the Frontend side of the application it recommended to run the backend server too._
+
+## Start Frontend & Backend simultaneously
+
+ 1. Navigate to the root folder i.e.  Kurakoo.git
+
+ 2. Install the dependencies by running
+
+    ```
+    npm install
+    ```
+
+	3. Start Frontend & Backend simultaneously
+
+    ```
+    npm run dev
+    ```
+
+    
 
 ## Open source contest
 Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by the GirlScript Foundation. It was started in 2018 to help beginners to get started with Open Source Development while encouraging diversity.
@@ -147,7 +170,7 @@ Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long 
 </a></td>
    <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
-  
+
   </tr>
 </table>
 
@@ -175,7 +198,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://mayank0255.github.io"><img src="https://avatars.githubusercontent.com/u/43780137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayank Aggarwal</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Mayank0255" title="Code">💻</a></td>
     <td align="center"><a href="http://aasthasinha2305.github.io"><img src="https://avatars.githubusercontent.com/u/55781193?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aastha Sinha</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=AasthaSinha2305" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Subham142"><img src="https://avatars.githubusercontent.com/u/60570595?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Subham Yadav</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/issues?q=author%3ASubham142" title="Bug reports">🐛</a></td>
-    
+
   </tr>
 </table>
 
