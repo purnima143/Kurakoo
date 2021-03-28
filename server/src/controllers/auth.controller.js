@@ -42,7 +42,6 @@ const signup = ( req, res) => {
 const signin = (req,res) => {
     User.findOne({ email: req.body.email})
     .exec ( (error, user) => {
-        if(error)   return res.status(400).json(responseHandler( false, 400, "Something went wrong...!", null ));
 
         if( user){
 
@@ -56,7 +55,7 @@ const signin = (req,res) => {
             }
 
         } else {
-            return res.status(400).json(responseHandler( false, 400, "Something went wrong...!", null ));
+            return res.status(400).json(responseHandler( false, 400, "Invalid Profile", null ));
         }
     })
 }
