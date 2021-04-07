@@ -15,6 +15,15 @@ const validateSignupRequest = [
     .withMessage('Password must be off 6 character long')
 ];
 
+const validateSigninRequest = [
+    check('email')
+    .isEmail()
+    .withMessage('valid email is required'),
+    check('password')
+    .isLength({min: 6})
+    .withMessage('Password must be off 6 character long')
+];
+
 const isRequestValidated = (req, res, next) => {
     const errors = validationResult(req);
     if(errors.array().length > 0){
@@ -25,5 +34,6 @@ const isRequestValidated = (req, res, next) => {
 
 module.exports = authValidator = {
     validateSignupRequest,
+    validateSigninRequest,
     isRequestValidated
 };

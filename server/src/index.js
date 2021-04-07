@@ -1,11 +1,11 @@
 // main server file
 
 require("dotenv").config();
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
 const morgan = require("morgan");
 const helmet = require("helmet");
+const clc = require("cli-color");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const express = require("express");
@@ -26,9 +26,8 @@ app.use(helmet());
 app.options("*", cors());
 app.use(cors({ origin: "http://localhost:5000" }));
 
-// body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded());
+app.use(express.json());
 
 // database connection
 mongoose.connect(
@@ -38,10 +37,16 @@ mongoose.connect(
       useUnifiedTopology: true,
       useCreateIndex: true,
     }
-  )
-  .then(() => {
-    console.log("database connected");
-  });
+  ).catch((err) => {
+    console.log(clc.red(err))
+  }) 
+  mongoose.connection.on('connected',()=> {
+    console.log(clc.green("database connected"));
+  })
+  mongoose.connection.on('error',(err) => {
+    console.log(clc.red("error connecting to the database"))
+  })
+
 
 // all the api routes
 app.use('/api', root);
@@ -53,5 +58,5 @@ const PORT = process.env.PORT || 5000;
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(clc.green(`Server started on port ${PORT}`));
 });

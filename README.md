@@ -27,6 +27,7 @@ Project Managers, Developers and Designers would be collaborating on various dom
     
 -   **Working on a User-Experience rich platform for a Social Cause**
     
+
 This would be an enriching experience for all Student Developers, Project Managers and Designers.
 
 
@@ -39,7 +40,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 - **Project Management Tools**: Trello, Git/Github, Markdown (Documentation)
 
 ## Flow of the site :computer:
-Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, option to follow people, a feature that allows users to filter and view specific content,etc.
+Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, an option to follow people, a feature that allows users to filter and view specific content, etc.
 
 
 ![Hnet-image](https://user-images.githubusercontent.com/57852378/104997423-90038c80-5a4f-11eb-88d3-389b501c00ad.gif)
@@ -49,9 +50,10 @@ Below is a basic idea as to how the website works. We will also be working on ad
 ## General Guidelines :dart:
  - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme file carefully.
  - For each issue, a detailed explanation is mentioned in issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
+
  - While making any component, make sure that the code for the all generalised/common components is kept in [src->components->common](src/components/common) folder.
  - Kindly keep the source code in the [src->components](src/components/) folder while making specific components.
-] - Please make sure to adhere to the folder structure of the project.
+ - Please make sure to adhere to the folder structure of the project.
 
 We will also be working on adding more features to this project.
 
@@ -65,7 +67,11 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 1. Run `cd server` on your CLI.
 
-2. Create a `.env` file and the format should be as given in `.env.example` in the server directory itself.
+2. Create a `.env` file and paste the MONGO_URL in the given format
+
+    ```
+    MONGO_URL = <your_url>
+    ```
 
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
@@ -76,7 +82,7 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 4. Run the server
     ```
-    npm run dev
+    npm run server
     ```
 
 ### Frontend
@@ -94,8 +100,26 @@ git clone https://github.com/purnima143/Kurakoo.git
     ```
 _NOTE: To run the Frontend side of the application it recommended to run the backend server too._
 
+## Start Frontend & Backend simultaneously
+
+ 1. Navigate to the root folder i.e.  Kurakoo.git
+
+ 2. Install the dependencies by running
+
+    ```
+    npm install
+    ```
+
+ 3. Start Frontend & Backend simultaneously
+
+    ```
+    npm run dev
+    ```
+
+    
+
 ## Open source contest
-Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by the GirlScript Foundation. It was started in 2018 with an aim to help beginners to get started with Open Source Development while encouraging diversity.
+Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long Open Source program conducted every summer by the GirlScript Foundation. It was started in 2018 to help beginners to get started with Open Source Development while encouraging diversity.
 
 ![0_hvZkvLGPR4t6TFhS](https://user-images.githubusercontent.com/57852378/108583937-3ef2fb00-7363-11eb-9239-a274fbe00bdd.png)
 
@@ -146,7 +170,7 @@ Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long 
 </a></td>
    <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
-  
+
   </tr>
 </table>
 
@@ -162,21 +186,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <img src="https://contrib.rocks/image?repo=purnima143/Kurakoo" />
 </a>
 		</td></tr></table>
-<table>
-<tr>
-    <td align="center"><a href="https://www.linkedin.com/in/sachinsom507"><img src="https://avatars.githubusercontent.com/u/64790109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sachin som</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Documentation">📖</a> <a href="https://github.com/purnima143/Kurakoo/commits?author=sachinsom93" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/thaditi"><img src="https://avatars.githubusercontent.com/u/47235301?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Thapliyal</b></sub></a><br /><a href="#design-thaditi" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/anhushree"><img src="https://avatars.githubusercontent.com/u/56672958?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anhushree Munees</b></sub></a><br /><a href="#design-anhushree" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/encodeArnab"><img src="https://avatars.githubusercontent.com/u/77114532?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Arnab</b></sub></a><br /><a href="#design-encodeArnab" title="Design">🎨</a></td>
-    <td align="center"><a href="https://himanshujaidka-github-io.vercel.app/"><img src="https://avatars.githubusercontent.com/u/58654018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Himanshu</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=himanshujaidka" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/vijayjoshi16"><img src="https://avatars.githubusercontent.com/u/54314949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vijay Joshi</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=vijayjoshi16" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://mayank0255.github.io"><img src="https://avatars.githubusercontent.com/u/43780137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayank Aggarwal</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=Mayank0255" title="Code">💻</a></td>
-    <td align="center"><a href="http://aasthasinha2305.github.io"><img src="https://avatars.githubusercontent.com/u/55781193?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aastha Sinha</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/commits?author=AasthaSinha2305" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Subham142"><img src="https://avatars.githubusercontent.com/u/60570595?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Subham Yadav</b></sub></a><br /><a href="https://github.com/purnima143/Kurakoo/issues?q=author%3ASubham142" title="Bug reports">🐛</a></td>
-    
-  </tr>
-</table>
 
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
