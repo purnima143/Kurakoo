@@ -233,7 +233,7 @@ width: 40vw;
 @media only screen and (max-width: 900px){
   .landing-page-orange .BigBox{
     flex-direction: column-reverse;
-    top: 30vh;
+    top: 20vh;
   }
   .landing-page-orange .text-1{
     width: 50vh;
@@ -242,6 +242,9 @@ width: 40vw;
 @media only screen and (max-width: 600px){
   .landing-page-orange .header{
     flex-direction: column;
+  }
+  .landing-page-orange .BigBox{
+    top: 30vh;
   }
   .landing-page-orange .vec{
     visibility: hidden;
