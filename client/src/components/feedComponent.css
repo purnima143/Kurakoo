@@ -1,0 +1,77 @@
+
+.feed-component{
+    width: 60%;
+    border: solid var(--primary-color) 1px;
+    margin: 2rem auto;
+    border-radius: 6px;
+    background-color: white;
+    top: 6.5rem;
+    position: relative;
+}
+
+.bio-div{
+    text-align: left;
+    margin-top: 4px;
+}
+
+.bio-div img{
+    margin-left: 0px;
+}
+
+.bio-div #username{
+    margin: 0rem;
+}
+
+#bio-details{
+    display: inline-block;
+}
+
+section hr{
+    background-color: var(--primary-color);
+    border: 0px;
+    padding: 1px 0px 0px 0px;
+    margin-bottom: 3px;
+}
+
+#profile-pic{
+    vertical-align: top;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    margin: 0px 5px;
+
+}
+
+#feed-content{
+    text-align: left;
+    margin: 0.5rem 1rem;
+}
+
+#question{
+    margin: 0.2rem 0rem;
+}
+
+#answer{
+    margin-top: 0.1rem;
+}
+
+#response-bar{
+    text-align: left;
+    font-size: larger;
+    padding: 0px;
+    margin: 0rem 2px;
+}
+
+#response-bar .button{
+    border: 0px;
+    background-color: transparent;
+    padding: 0rem;
+    margin: 0rem;
+    display: inline;
+    outline: none;
+}
+
+#response-bar .button :hover{
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
+}

@@ -1,0 +1,157 @@
+:root{
+    --sec-bg-shade: #FFF4D9;
+}
+
+.sidebar{
+    height: 100%;
+    width: 500px;
+    position: sticky;
+    top: 90px;
+    bottom: 0;
+}
+
+body{
+    letter-spacing: 1px;
+}
+
+.line-word-space{
+    line-height: 1.3;
+}
+
+.activities-div{
+    border: solid 1px var(--darker-shade);
+    border-radius: 25px;
+    background-color: var(--white);
+    margin: 0px 10px;
+    box-shadow: 5px 5px 2px var(--shadow-color);
+}
+
+.activities-head{
+    border-radius: 50px;
+    background-color: var(--sec-bg-shade);
+    margin: 5px;
+    box-shadow: 5px 5px 2px var(--shadow-color);
+    font-size: 18px;
+    width: 400px;
+}
+
+.activities-head h2{
+    padding: .5rem;
+    margin: auto 2rem;
+}
+
+.activity{
+    display: flex;
+}
+
+.image-div{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.activity .content{
+    margin: .8rem;
+}
+
+.activity .rare-img{
+    width: 50px;
+}
+
+.activity .front-img{
+    width: 35px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.activity .topic{
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.activities-list{
+    margin-bottom: .5rem;
+}
+
+.activities-div{
+    margin-bottom: 1rem;
+}
+
+.activity .detail{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.content p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.content button{
+    background-color: var(--sec-bg-shade);
+    border: 0px;
+    box-shadow: 5px 5px 2px var(--shadow-color);
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    align-self: center;
+    transform: scale(1.1);
+    padding: 3px 10px;
+    margin: 4px 5rem 1px;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+
+.sidebar .footer{
+    text-align: center;
+}
+
+.sidebar .footer-line1, .footer-line2, .footer-line3{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .logo{
+    padding: 0px;
+    transform: translateY(-2px);
+}
+
+.logo img{
+    width: 6rem;
+}
+
+.footer div{
+    padding: .3rem;
+    font-weight: bold;
+}
+
+.footer-line1{
+    font-size: 11px;
+    word-spacing: 5px;
+}
+
+.footer-line2{
+    font-size: 13px;
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+.footer-line2 .email{
+    font-size: 10px;
+    margin: 0px .5rem;
+}
+
+.footer-line3{
+    font-size: 10px;
+}
+
+.footer .copyright{
+    transform: translateX(-20px);
+}

@@ -1,30 +1,31 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import logo from './logo.svg';
-import './App.css';
-import store from './store/store';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Feed from "./components/feed";
+import Signup from "./Component/SignUp/SignUp";
+import Signin from "./Component/SignIn/SignIn";
+import Homepage from "./Component/homepage/homepage";
+import NotificationPage from "./Component/NotificationPage/NotificationPage";
+import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
 
-function App() {
+const App = () => {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </Provider>    
+    <>
+
+  <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/signup"  component={Signup} />
+        <Route path="/signin"  component={Signin} />
+        <Route path="/feed"  component={Feed} />
+        <Route path="/notification" component={NotificationPage} />
+        <Route path="/addaquestion" component={AddAQuestion} />
+      </Switch>
+    </BrowserRouter>
+        
+      </>
+
   );
-}
+};
 
 export default App;
