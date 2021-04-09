@@ -1,7 +1,6 @@
 // main server file
 
 require("dotenv").config();
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
 const morgan = require("morgan");
@@ -27,9 +26,8 @@ app.use(helmet());
 app.options("*", cors());
 app.use(cors({ origin: "http://localhost:5000" }));
 
-// body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded());
+app.use(express.json());
 
 // database connection
 mongoose.connect(

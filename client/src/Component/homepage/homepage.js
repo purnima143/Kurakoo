@@ -11,29 +11,29 @@ export default homepage;
 
 
 function LandingPageorange(props) {
-  const { vector, vector2, vector3, text1, vector4, place, explore, image3, vector5, signIn, signUp } = props;
+  const { vector, vector2, vector3, text1,  place, explore, image3, vector5, signIn, signUp } = props;
 
   return (
     <div className="landing-page-orange">
       <div className="landing-page-orange">
         <div className="overlap-group">
           <div className="group-7">
-            <img className="vector" src={vector} />
+            <img className="vector" src={vector} alt="vector" />
             <div className="overlap-group1">
-              <img className="vector-1" src={vector2} />
-              <img className="vector-2" src={vector3} />
+              <img className="vector-1" src={vector2} alt="vector-1" />
+              <img className="vector-2" src={vector3} alt="vector-2" />
             </div>
           </div>
           <h1 className="text-1 montserrat-bold-black-24px">{text1}</h1>
-          <img className="vector-3" src={logo} />
+          <img className="vector-3" src={logo} alt="vector-3" />
           <div className="place montserrat-bold-white-24px">{place}</div>
           <Link to="/notyet"><div className="group-9">
             <div className="overlap-group2">
               <div className="explore montserrat-bold-white-24px">{explore}</div>
             </div>
           </div></Link>
-          <img className="image-3" src={image3} />
-          <img className="vector-4" src={vector5} />
+          <img className="image-3" src={image3} alt="img-3" />
+          <img className="vector-4" src={vector5} alt="vector-4" />
         </div>
         <Link to="/signin"><div className="sign-in montserrat-bold-white-24px">{signIn}</div></Link>
         <Link to="/signup"><div className="group-8">
