@@ -4,3 +4,4 @@ server/*.env
 client/*.env
 /.idea
 /.vscode
+node_modules

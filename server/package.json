@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "start": "node src/index.js",
-        "dev": "nodemon src/index.js"
+        "server": "nodemon src/index.js"
     },
     "author": "Kurakoo",
     "license": "ISC",

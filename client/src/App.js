@@ -5,21 +5,26 @@ import Feed from "./components/feed";
 import Signup from "./Component/SignUp/SignUp";
 import Signin from "./Component/SignIn/SignIn";
 import Homepage from "./Component/homepage/homepage";
+import NotificationPage from "./Component/NotificationPage/NotificationPage";
 import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/signin" component={Signin} />
-          <Route path="/feed" component={Feed} />
-          <Route path="/addaquestion" component={AddAQuestion} />
-        </Switch>
-      </BrowserRouter>
-    </>
+
+  <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/signup"  component={Signup} />
+        <Route path="/signin"  component={Signin} />
+        <Route path="/feed"  component={Feed} />
+        <Route path="/notification" component={NotificationPage} />
+        <Route path="/addaquestion" component={AddAQuestion} />
+      </Switch>
+    </BrowserRouter>
+        
+      </>
+
   );
 };
 
