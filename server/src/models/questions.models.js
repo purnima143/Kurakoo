@@ -13,9 +13,11 @@ const questionsSchema = new mongoose.Schema({
         trim: true
     },
     createdBy: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User', 
+        required: true
     },
     updatedAt: Date,
-}, {timeStamps: true});
+}, { timeStamps: true });
 
 module.exports = mongoose.model('Questions', questionsSchema);
