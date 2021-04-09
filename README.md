@@ -85,8 +85,8 @@ git clone https://github.com/purnima143/Kurakoo.git
     npm run server
     ```
 
-    Link for the screenshots, how to setup backend locally:
-    https://docs.google.com/document/d/1Ofx0v6mXjIhNQ0ddYh7btWBZWjqgNobQffi3E1o5Lkw/edit?usp=sharing
+    Link for the screenshots, how to setup backend locally are kept in
+    [assets->backend](assets/backend) folder.
 
 ### Frontend
 
