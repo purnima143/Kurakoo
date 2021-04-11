@@ -30,7 +30,8 @@ const signup = ( req, res) => {
 
            const token = jwt.sign({
             exp: Math.floor(Date.now() / 1000) + (60 * 60),
-            data: 'Kurakoo'
+            data: 'Kurakoo',
+            _id: _user._id.toString()
           },  process.env.JWT_SECRET);
 
            if(data){
@@ -64,10 +65,44 @@ const signout = (req, res) => {
     res.clearCookie("token");
     res.status(200).json(responseHandler( true, 200, "Signout Successful", null ));
 }
+
+const update = async(req, res) => {
+    try{
+        const user = await User.findById(req.user._id)
+        console.log(user)
+        const updates = Object.keys(req.body)
+        const allowedUpdates = ['firstName','lastName','email','password'] //allowing a user to update only these fields
+        const isValid = updates.every((update)=>{
+            return allowedUpdates.includes(update)
+        })
+        if(!isValid){
+            res.status(400).send({error: 'Invalid Updates!'})
+        }
+        try{    
+            updates.forEach(update => {
+                user[update] = req.body[update]
+            })
+            
+            await user.save()
+            const {_id, firstName,lastName,email} = user
+            return res.status(200).json({user:{_id,firstName,lastName,email}})
+    
+        }
+        catch(e){
+            res.status(400).send({error: "something went wrong!"})
+        }
+    }
+    catch(e){
+        res.status(400).send({error: "something went wrong!"})
+    }
+    
+}
+
 module.exports = authController = {
     signup,
     signin,
-    signout
+    signout,
+    update
   };
 
 
