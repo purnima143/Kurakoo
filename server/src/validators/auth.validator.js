@@ -24,7 +24,7 @@ const validateSigninRequest = [
     .withMessage('Password must be off 6 character long')
 ];
 
-const validateUpdateRequest = [
+const validateUpdateRequest = [ //performs a conditional validation depending on whether a not that field was mentioned
     oneOf([
         [
             check('password')

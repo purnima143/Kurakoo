@@ -71,7 +71,7 @@ const update = async(req, res) => {
         const user = await User.findById(req.user._id)
         console.log(user)
         const updates = Object.keys(req.body)
-        const allowedUpdates = ['firstName','lastName','email','password']
+        const allowedUpdates = ['firstName','lastName','email','password'] //allowing a user to update only these fields
         const isValid = updates.every((update)=>{
             return allowedUpdates.includes(update)
         })
