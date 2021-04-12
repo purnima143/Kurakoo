@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./NavBar.css";
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';

@@ -2,11 +2,13 @@ import React from 'react';
 import './feed.css';
 import Feed from './feedComponent';
 import {feedData, connect} from './dummyData';
+import NavBar from '../Component/navbar/Navbar';
 
 function FeedPage() {
 
     return (
       <div>
+        <NavBar/>
         <div className = "side-bar-left">
           <h3 id = "category-heading">Categories</h3>
           <hr style = {{padding: "1px 0px 0px 0px", backgroundColor: "black", border: "0rem", width: "60%", margin: "0rem auto", marginBottom: "0.5rem"}}></hr>

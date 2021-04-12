@@ -15,6 +15,14 @@ const requireSignin = (req, res, next) => {
    
 }
 
+const userMiddleWare = (req, res, next) => {
+    if (req.user.role !== 'user') {
+        return res.status(401).json(responseHandler( false, 401, "User Acess Denied!", null ));
+    }
+    next();
+}
+
 module.exports = commonMiddleware = {
-    requireSignin
+    requireSignin,
+    userMiddleWare
 };
