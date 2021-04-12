@@ -7,6 +7,8 @@ import Signin from "./Component/SignIn/SignIn";
 import Homepage from "./Component/homepage/homepage";
 import NotificationPage from "./Component/NotificationPage/NotificationPage";
 import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
+import aboutus from "./Component/aboutus/aboutus";
+
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/feed"  component={Feed} />
         <Route path="/notification" component={NotificationPage} />
         <Route path="/addaquestion" component={AddAQuestion} />
+        <Route path="/aboutus" component={aboutus} />
+        
       </Switch>
     </BrowserRouter>
         
