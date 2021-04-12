@@ -1,0 +1,99 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    background:white; /*#0000ff;*//*#44ce6f;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: backgroundcolorchange 20s infinite alternate;
+    animation: backgroundcolorchange 20s infinite alternate;
+  }
+  .preloader img{
+      width: 9rem;
+      height: 6rem;
+      animation: animatelogo 1s alternate-reverse infinite;
+  }
+  .preloader h1{
+      font-size: 3rem;
+      animation: animatelogo 1s alternate-reverse infinite;
+      color: #ffffff;
+  }
+  .updown{
+      display: flex;
+      justify-content: space-between;
+  }
+  @keyframes animatelogo {
+      from{
+          transform: translateY(-25px);
+      }
+      to{
+          transform: translateY(25px);
+      }
+  }
+  @keyframes backgroundcolorchange {
+    0% {
+      background: #ffff00;
+    }
+  
+    10% {
+      background: #8e44ad;
+    }
+  
+    20% {
+      background: #1abc9c;
+    }
+  
+    30% {
+      background: #d35400;
+    }
+  
+    40% {
+      background: #0000ff;
+    }
+  
+    50% {
+      background: #34495e;
+    }
+  
+    60% {
+      background: blue;
+    }
+  
+    70% {
+      background: #2980b9;
+    }
+  
+    80% {
+      background: #f1c40f;
+    }
+  
+    90% {
+      background: #2980b9;
+    }
+  
+    100% {
+      background: pink;
+    }
+  }
+
+  .preloader .updown h1 span:nth-child(1){
+      animation: fade .5s infinite alternate-reverse;
+  }
+  .preloader .updown h1 span:nth-child(2){
+    animation: fade 1s infinite alternate-reverse;
+}
+.preloader .updown h1 span:nth-child(3){
+    animation: fade 1.5s infinite alternate-reverse;
+}
+  @keyframes fade{
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 1;
+      }
+  }
