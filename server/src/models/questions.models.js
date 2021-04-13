@@ -17,6 +17,10 @@ const questionsSchema = new mongoose.Schema({
         ref: 'User', 
         required: true
     },
+    questionsLinks: {
+        type: String,
+        trim: true
+    },
     updatedAt: Date,
 }, { timeStamps: true });
 
