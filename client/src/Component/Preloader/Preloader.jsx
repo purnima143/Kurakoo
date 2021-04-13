@@ -6,7 +6,7 @@ function Preloader() {
         <div className="preloader">
             <div className="updown">
                 <img src={require('./KURKOO logo.png')} alt="KURKOO Logo" />
-                <h1>KURKOO<span> .</span><span> .</span><span> .</span></h1>
+                <h1>Kurakoo<span> .</span><span> .</span><span> .</span></h1>
             </div>
         </div>
     );
