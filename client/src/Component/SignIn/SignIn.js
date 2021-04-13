@@ -78,54 +78,66 @@ const SignIn = () =>{
         }
     };
 
-    return(
+    return (
         <Grid container>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
-            {
-                !isSmallScreen
-                ?
+            {!isSmallScreen ? (
                 <Grid item md={6} lg={6}>
-                    <img draggable={false} className="signin_image" src="./images/Formimage.png" alt="signin_image"></img>
+                    <img
+                        draggable={false}
+                        className="signin_image"
+                        src="./images/Formimage.png"
+                        alt="signin_image"
+                    ></img>
                 </Grid>
-                :
+            ) : (
                 <Grid item md={12} lg={12}></Grid>
-            }
-            
+            )}
+
             <Grid item xs={12} sm={12} md={6} lg={6}>
                 {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
-                {
-                    !isSmallScreen
-                    ?
+                {!isSmallScreen ? (
                     <div></div>
-                    :
-                    <img draggable={false} className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
-                }
+                ) : (
+                    <Link to="/">
+                        <img
+                            draggable={false}
+                            className="mobile_logo_img"
+                            src="./images/kurakoo-logo.png"
+                            alt="mobile_logo_img"
+                        ></img>
+                    </Link>
+                )}
 
                 {/* Form to take input */}
                 <div className="common_content">
-                    <h1 className="signin_heading">
-                        Sign In
-                    </h1>
+                    <h1 className="signin_heading">Sign In</h1>
+                    <Link to="/">
+                        <button className="sign_in_button" type="submit">
+                            Home
+                        </button>
+                    </Link>
+
                     <div className="signin_form">
                         <label> Email id </label>
                         <br></br>
-                        <input 
+                        <input
                             className="text_ip"
                             name="email"
-                            onChange={handleChange} 
+                            onChange={handleChange}
                         />
 
                         <label> Password </label>
                         <br></br>
-                        <input 
-                            className="text_ip" 
+                        <input
+                            className="text_ip"
                             type="password"
                             name="password"
-                            onChange={handleChange} 
+                            onChange={handleChange}
                         />
                         <br></br>
 
-                        <button 
+                        <button
                             className="sign_in_button"
                             type="submit"
                             onClick={PostData}
@@ -134,10 +146,9 @@ const SignIn = () =>{
                         </button>
 
                         <p className="signup_signin_message">
-                            New User ? <Link to="/signup" >Sign Up</Link>
+                            New User ? <Link to="/signup">Sign Up</Link>
                         </p>
                     </div>
-                    
                 </div>
             </Grid>
         </Grid>

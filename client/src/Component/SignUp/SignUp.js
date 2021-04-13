@@ -95,85 +95,108 @@ const SignUp = ()=>{
         }
     };
 
-    return(
+    return (
         <Grid container>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
-            {!isSmallScreen
-            ?
-            <Grid item md={6} lg={6}>
-                <img draggable={false} className="signup_image" src="./images/Formimage.png" alt="signup_image"></img>
-            </Grid>
-            :
-            <Grid item md={12} lg={12}></Grid>
-            }
-            
+            {!isSmallScreen ? (
+                <Grid item md={6} lg={6}>
+                    <img
+                        draggable={false}
+                        className="signup_image"
+                        src="./images/Formimage.png"
+                        alt="signup_image"
+                    ></img>
+                </Grid>
+            ) : (
+                <Grid item md={12} lg={12}></Grid>
+            )}
+
             <Grid item xs={12} sm={12} md={6} lg={6}>
                 {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
-                {
-                    isSmallScreen
-                    ?
-                    <img draggable={false} className="mobile_logo_img" src="./images/kurakoo-logo.png" alt="mobile_logo_img"></img>
-                    :
+                {isSmallScreen ? (
+                    <Link to="/">
+                        <img
+                            draggable={false}
+                            className="mobile_logo_img"
+                            src="./images/kurakoo-logo.png"
+                            alt="mobile_logo_img"
+                        ></img>
+                    </Link>
+                ) : (
                     <div></div>
-                }
+                )}
 
                 {/* //INPUT CONTENT */}
                 <div className="common_content">
                     <h1 className="signup_heading">Sign up</h1>
+                    <Link to="/">
+                        <button className="create_account_button" type="submit">
+                            Home
+                        </button>
+                    </Link><br></br>
                     <label>Name</label>
                     <br></br>
-                    <input 
-                    className="text_ip"
-                    name="name"
-                    onChange={handleChange}></input>
+                    <input
+                        className="text_ip"
+                        name="name"
+                        onChange={handleChange}
+                    ></input>
                     <label>Email</label>
                     <br></br>
-                    <input 
-                    className="text_ip"
-                    name="email"
-                    onChange={handleChange}></input>
+                    <input
+                        className="text_ip"
+                        name="email"
+                        onChange={handleChange}
+                    ></input>
                     <label>Password</label>
                     <br></br>
-                    <input 
-                    className="text_ip" 
-                    type="password"
-                    name="password"
-                    onChange={handleChange}></input>
+                    <input
+                        className="text_ip"
+                        type="password"
+                        name="password"
+                        onChange={handleChange}
+                    ></input>
                     <Grid container spacing={4}>
                         <Grid item xs={6} sm={6} md={6} lg={6}>
                             <label>Course</label>
                             <br></br>
-                            <input 
-                            className="text_ip"
-                            name="course"
-                            onChange={handleChange}></input>
+                            <input
+                                className="text_ip"
+                                name="course"
+                                onChange={handleChange}
+                            ></input>
                         </Grid>
                         <Grid item xs={6} sm={6} md={6} lg={6}>
                             <label>Year</label>
                             <br></br>
-                            <input 
-                            type="number" 
-                            className="text_ip"
-                            name="year"
-                            onChange={handleChange}></input>
+                            <input
+                                type="number"
+                                className="text_ip"
+                                name="year"
+                                onChange={handleChange}
+                            ></input>
                         </Grid>
                     </Grid>
                     <label>College Name</label>
                     <br></br>
-                    <input 
-                    className="text_ip"
-                    name="college"
-                    onChange={handleChange}></input>
-                    <button 
-                    className="create_account_button"
-                    onClick={PostData}>Create account</button>
-                    <p className="signup_signin_message">Already a user? 
-                    {/* <a href="/signin" className="signin_link">Sign In</a> */}
-                    <Link to="/signin" >Sign In</Link>
+                    <input
+                        className="text_ip"
+                        name="college"
+                        onChange={handleChange}
+                    ></input>
+                    <button
+                        className="create_account_button"
+                        onClick={PostData}
+                    >
+                        Create account
+                    </button>
+                    <p className="signup_signin_message">
+                        Already a user?
+                        {/* <a href="/signin" className="signin_link">Sign In</a> */}
+                        <Link to="/signin">Sign In</Link>
                     </p>
                 </div>
             </Grid>
-            
         </Grid>
     );
 };
