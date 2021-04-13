@@ -9,6 +9,7 @@ const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
 const Feed=lazy(()=>import("./components/feed"));
 const NotificationPage=(()=>import("./Component/NotificationPage/NotificationPage"));
 const AddAQuestion=(()=>import("./Component/AddAQuestion/AddAQuestion"));
+const AboutUs=(()=>import("./Component/aboutus/aboutus"));
 
 
 const App = () => {
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/feed"  component={Feed} />
         <Route path="/notification" component={NotificationPage} />
         <Route path="/addaquestion" component={AddAQuestion} />
+        <Route path="/aboutus" component={AboutUs} />
+        
       </Switch>
     </BrowserRouter>
       </Suspense>
