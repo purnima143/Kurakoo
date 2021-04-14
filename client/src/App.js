@@ -2,13 +2,14 @@ import React , {lazy,Suspense} from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./Component/Preloader/Preloader";
+import NotificationPage from "./Component/NotificationPage/NotificationPage";
 
 const Homepage=lazy(()=> import("./Component/homepage/homepage"));
 const Signup=lazy(()=>import("./Component/SignUp/SignUp"));
 const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
 const Feed=lazy(()=>import("./components/feed"));
-const NotificationPage=(()=>import("./Component/NotificationPage/NotificationPage"));
 const AddAQuestion=(()=>import("./Component/AddAQuestion/AddAQuestion"));
+const AboutUs=(()=>import("./Component/aboutus/aboutus"));
 
 
 const App = () => {
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/feed"  component={Feed} />
         <Route path="/notification" component={NotificationPage} />
         <Route path="/addaquestion" component={AddAQuestion} />
+        <Route path="/aboutus" component={AboutUs} />
+        
       </Switch>
     </BrowserRouter>
       </Suspense>
