@@ -3,12 +3,13 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./Component/Preloader/Preloader";
 import NotificationPage from "./Component/NotificationPage/NotificationPage";
+import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
+
 
 const Homepage=lazy(()=> import("./Component/homepage/homepage"));
 const Signup=lazy(()=>import("./Component/SignUp/SignUp"));
 const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
 const Feed=lazy(()=>import("./components/feed"));
-const AddAQuestion=(()=>import("./Component/AddAQuestion/AddAQuestion"));
 const AboutUs=(()=>import("./Component/aboutus/aboutus"));
 
 
