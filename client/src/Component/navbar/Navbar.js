@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import {Link} from 'react-router-dom';
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';
 
@@ -10,7 +11,7 @@ export default function Navbar() {
         <div>
             <nav className = "Nav">
                 <div>
-                    <img id = "logo" src= {Logo} alt = "alt"/>
+                   <Link to ="/"><img id = "logo" src= {Logo} alt = "alt"/></Link> 
                 </div>
                 <div className = "nav-options">
                     <div className = "option">
