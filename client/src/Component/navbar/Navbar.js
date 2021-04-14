@@ -3,6 +3,8 @@ import "./NavBar.css";
 import {Link} from 'react-router-dom';
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';
+import {Button} from '@material-ui/core'
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 
 
 export default function Navbar() {
@@ -22,6 +24,12 @@ export default function Navbar() {
                     </div>
                     <div className = "option search">
                         <SearchBar/>
+                    </div>
+                    <div className = "option">
+                    <Button variant="contained" color="secondary" size="large" href="/addaquestion">
+                       <QuestionAnswerIcon/> &emsp; Ask Question
+                    </Button>
+
                     </div>
                     <div className = "option">
                     <Link to ="/notification"> {data.notification}</Link>
