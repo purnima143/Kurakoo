@@ -24,7 +24,7 @@ export default function Navbar() {
                         <SearchBar/>
                     </div>
                     <div className = "option">
-                        {data.notification}
+                    <Link to ="/notification"> {data.notification}</Link>
                     </div>
                 </div>
             </nav>
