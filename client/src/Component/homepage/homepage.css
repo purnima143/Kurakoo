@@ -200,6 +200,42 @@
   --crusta: rgba(249, 137, 50, 1);
 }
 
+.landing-page-orange .aboutus {
+  left: 860px; 
+  transition: 0.2s ease-in;
+  color: #2f2e41;;
+}
+.landing-page-orange .aboutus:hover{
+  color: white;
+}
+.landing-page-orange .sign-in {
+  left: 1003px;
+  color: #2f2e41;
+  transition: 0.2s ease-in;
+}
+.landing-page-orange .sign-up {
+  top: 3px;
+  left: -221px;
+  color: #2f2e41;
+  transition: 0.2s ease-in;
+  border: 1px solid #2f2e41;
+  padding: 9px 17px;
+  width: 138px;
+  border-radius: 22px;
+}
+.landing-page-orange .navbar :hover{
+  color: #fffeb2;
+  border: 1px solid #fffeb2;
+}
+.navbar:hover{
+  color: white;
+}
+.landing-page-orange .overlap-group2 span{
+  transition: .2s ease;
+}
+.landing-page-orange .overlap-group2 span:hover{
+  color: #2f2e41;
+}
 .title-text30::after{
   content: '';
     width: 1360px;

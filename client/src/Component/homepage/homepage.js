@@ -53,18 +53,19 @@ function LandingPageorange(props) {
           <div className="place montserrat-bold-white-24px">{place}</div>
           <Link to="/notyet"><div className="group-9">
             <div className="overlap-group2">
-              <div className="explore montserrat-bold-white-24px">{explore}</div>
+              <div className="explore montserrat-bold-white-24px"><span>{explore}</span></div>
             </div>
           </div></Link>
           <img className="image-3" src={image3} alt="img-3" />
           <img className="vector-4" src={vector5} alt="vector-4" />
         </div>
-        <Link to="/aboutus"><div className="aboutus montserrat-bold-white-24px">{aboutus}</div></Link>
-        <Link to="/signin"><div className="sign-in montserrat-bold-white-24px">{signIn}</div></Link>
+        {/* <Link to="/signin"><div className="sign-in montserrat-bold-white-24px navbar">{signIn}</div></Link> */}
+        <Link to="/aboutus"><div className="aboutus montserrat-bold-white-24px navbar">{aboutus}</div></Link>
+        <Link to="/signin"><div className="sign-in montserrat-bold-white-24px navbar">{signIn}</div></Link>
         <Link to="/signup"><div className="group-8">
-          <div className="overlap-group3">
-            <div className="sign-up montserrat-bold-white-24px">{signUp}</div>
-            <div className="rectangle-33 border-class-1"></div>
+          <div className="overlap-group3 navbar">
+            <div className="sign-up montserrat-bold-white-24px navbar">{signUp}</div>
+            {/* <div className="rectangle-33 border-class-1"></div> */}
           </div>
         </div></Link>
         
