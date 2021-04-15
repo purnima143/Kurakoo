@@ -4,15 +4,18 @@ const responseHandler = require('../helpers/responseHandler');
 const createQuestions = (req, res) => {
 
     const {
-        questionText, tags, createdBy
+        questionText, questionLinks, tags
     } = req.body;
 
 
-    const question = new Questions({
-        questionText: questionText,
-        tags: tags,
-        createdBy: req.user._id
-    });
+
+const question = new Questions({
+    questionText: questionText,
+    questionLinks: questionLinks,
+    tags: tags,
+    createdBy: req.user._id
+});
+
 
     question.save(((error, question) => {
         if(error) return res.status(400).json(responseHandler(false, 400, "Something went wrong!"));
