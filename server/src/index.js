@@ -13,6 +13,9 @@ const app = express();
 
 const root = require('./routes/root');
 
+// port initialized
+const PORT = process.env.PORT || 5000;
+
 // logger
 app.use(morgan("dev"));
 
@@ -24,7 +27,7 @@ app.use(helmet());
 
 // cors enable
 app.options("*", cors());
-app.use(cors({ origin: "http://localhost:5000" }));
+app.use(cors({ origin: `http://localhost:${process.env.PORT}` }));
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -51,12 +54,11 @@ mongoose.connect(
 // all the api routes
 app.use('/api', root);
 
-// port initialized
-const PORT = process.env.PORT || 5000;
+
 
 // server setup
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-  console.log(clc.green(`Server started on port ${PORT}`));
+  console.log(clc.green(`Server started on port ${PORT}. Check by this link http://localhost:${process.env.PORT} `));
 });
