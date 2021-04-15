@@ -7,6 +7,10 @@ const questionsSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    questionLinks: {
+        type: String,
+        trim: true
+    },
     tags: {
         type: String,
         required: true,

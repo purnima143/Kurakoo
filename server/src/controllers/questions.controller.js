@@ -4,12 +4,13 @@ const responseHandler = require('../helpers/responseHandler');
 const createQuestions = (req, res) => {
 
     const {
-        questionText, tags, createdBy
+        questionText, tags
     } = req.body;
 
 
 const question = new Questions({
     questionText: questionText,
+    questionLinks: questionLinks,
     tags: tags,
     createdBy: req.user._id
 });

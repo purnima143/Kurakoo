@@ -11,6 +11,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+ 
 }
 .landing-page-orange .explore {
   letter-spacing: 0px;
@@ -107,6 +108,16 @@
   position: absolute;
   top: 0px;
   width: 110px;
+}
+.landing-page-orange .aboutus {
+  left: 1000px;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  z-index: +40;
 }
 .landing-page-orange .sign-in {
   left: 1141px;
@@ -225,3 +236,102 @@
 .landing-page-orange .overlap-group2 span:hover{
   color: #2f2e41;
 }
+.title-text30::after{
+  content: '';
+    width: 1360px;
+    height: 583px;
+    background: linear-gradient( #ff6f00,#f3b360);
+    position: absolute;
+    top: 753px;
+    left: -8px;
+    z-index: +40;
+    border-bottom-right-radius: 378px;
+}
+.title-text31::after{
+  content: '';
+  width: 1527px;
+  height: 612px;
+  background: #ffba60;
+  position: absolute;
+  top: 753px;
+  left: -8px;
+  z-index: +39;
+  border-bottom-right-radius: 463px;
+}
+.title-text32::after{
+  content: '';
+    width: 542px;
+    height: 85px;
+    background: #fffeb2;
+    position: absolute;
+    top: 770px;
+    left: 370px;
+    z-index: +42;
+    border-bottom-right-radius: 37px;
+    border-top-left-radius: 37px;
+ 
+}
+.title-text33::after{
+  content: '';
+    width: 540px;
+    height: 91px;
+    background: #474705;
+    position: absolute;
+    top: 786px;
+    left: 387px;
+    z-index: +41;
+    border-bottom-right-radius: 56px;
+    border-top-left-radius: 37px;
+}
+.title-text34 {
+  font-size: 43px;
+    left: 400px;
+    position: absolute;
+    top: 791px;
+    width: 499px;
+    font-family: 'Montserrat';
+    color: rgb(37, 1, 1);
+    font-weight: bold;
+    z-index: +43;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background: radial-gradient(white, black);
+  border-radius: 50%;
+  display: inline-block;
+  z-index: +45;
+  left: 30px;
+    position: absolute;
+    }
+.contributor{
+  font-size: 24px;
+    left: 80px;
+    position: absolute;
+    width: 444px;
+    font-family: 'Montserrat';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    z-index: +45;
+}
+#dot1 {top: 910px;}
+#dot2 {top: 950px;}
+#dot3 {top: 990px;}
+#dot4 {top: 1030px;}
+#dot5 {top: 1070px;}
+#dot6 {top: 1110px;}
+#dot7 {top: 1150px;}
+#dot8 {top: 1190px;}
+#dot9 {top: 1230px;}
+#dot10 {top: 1270px;}
+
+#name1 {top: 910px;}
+#name2 {top: 950px;}
+#name3 {top: 990px;}
+#name4 {top: 1030px;}
+#name5 {top: 1070px;}
+#name6 {top: 1110px;}
+#name7 {top: 1150px;}
+#name8 {top: 1190px;}
+#name9 {top: 1230px;}
+#name10 {top: 1270px;}

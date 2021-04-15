@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import "./NavBar.css";
+import {Link} from 'react-router-dom';
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';
+import {Button} from '@material-ui/core'
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 
 
 export default function Navbar() {
@@ -10,7 +13,7 @@ export default function Navbar() {
         <div>
             <nav className = "Nav">
                 <div>
-                    <img id = "logo" src= {Logo} alt = "alt"/>
+                   <Link to ="/"><img id = "logo" src= {Logo} alt = "alt"/></Link> 
                 </div>
                 <div className = "nav-options">
                     <div className = "option">
@@ -23,7 +26,13 @@ export default function Navbar() {
                         <SearchBar/>
                     </div>
                     <div className = "option">
-                        {data.notification}
+                    <Button variant="contained" color="secondary" size="large" href="/addaquestion">
+                       <QuestionAnswerIcon/> &emsp; Ask Question
+                    </Button>
+
+                    </div>
+                    <div className = "option">
+                    <Link to ="/notification"> {data.notification}</Link>
                     </div>
                 </div>
             </nav>

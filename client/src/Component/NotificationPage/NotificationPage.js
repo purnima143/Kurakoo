@@ -34,7 +34,7 @@ function NotificationPage(){
                     </div>
                     <div className = "content-div">
                         <div className = "content-head">
-                            <h1>👋 Good { getTime() }, {currentuser.name} </h1>
+                         <h1> <span role="img" aria-label="wave">👋</span>  Good { getTime() }, {currentuser.name} </h1>
                         </div>
                         <br></br>
                         <div>
