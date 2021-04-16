@@ -13,4 +13,5 @@ router.post(
     questionController.createQuestions
 );
 
+router.get("/allQuestions",  requireSignin, userMiddleWare, questionController.getQuestions)
 module.exports = router;
