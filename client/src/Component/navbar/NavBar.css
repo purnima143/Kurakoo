@@ -19,7 +19,7 @@
 .nav-options{
     display: flex;
     align-items: center;
-    margin: auto 1rem;
+    margin: -48px;
 }
 
 .option{
