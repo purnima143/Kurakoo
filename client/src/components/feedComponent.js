@@ -54,6 +54,10 @@ function Feed({ username, question, img, profession, answer }) {
               </button>
             <button class = "button">
               <InsertCommentOutlinedIcon className={classes.root}/></button>
+
+              <button class="ans_button">
+              Answer</button>
+              
           </div>
         </section>
       </div>

@@ -1,14 +1,25 @@
-import React from "react";
+import React ,{useState} from "react";
 import "./NavBar.css";
 import {Link} from 'react-router-dom';
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';
-import {Button} from '@material-ui/core'
+import {Button, Menu,MenuItem} from '@material-ui/core'
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+import EditIcon from '@material-ui/icons/Edit';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 
 export default function Navbar() {
+    const [anchorEl, setAnchorEl] = useState(null);
 
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
     return (
         <div>
             <nav className = "Nav">
@@ -18,10 +29,8 @@ export default function Navbar() {
                 <div className = "nav-options">
                     <div className = "option">
                         {data.svg1}
-                    </div>
-                    <div className = "option">
-                        {data.svg2}
-                    </div>
+                    </div>    
+                                 
                     <div className = "option search">
                         <SearchBar/>
                     </div>
@@ -33,6 +42,24 @@ export default function Navbar() {
                     </div>
                     <div className = "option">
                     <Link to ="/notification"> {data.notification}</Link>
+                    </div>
+                    
+                    <div className="option">
+                    <Button  onClick={handleClick}  variant="contained"
+                    color="secondary"
+                    startIcon={<AccountCircleRoundedIcon />}>
+                       <b>User</b>
+                    </Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleClose}><EditIcon/>&emsp;Profile</MenuItem>
+                        <MenuItem onClick={handleClose}><ExitToAppOutlinedIcon/>&emsp;Logout</MenuItem>
+                    </Menu>
                     </div>
                 </div>
             </nav>
