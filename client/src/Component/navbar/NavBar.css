@@ -19,14 +19,13 @@
 .nav-options{
     display: flex;
     align-items: center;
-    margin: auto 1rem;
+    margin: -48px;
 }
 
 .option{
     
     font-size: larger;
     margin: auto 1rem;
-    padding: 0px .5rem;
     transform: scale(0.85);
 }
 

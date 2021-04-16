@@ -7,3 +7,7 @@ labels: 'proposal'
 ## Proposal
 
 (A clear and concise description of what the proposal is.)
+
+
+
+###### Do you want to work on it? - [Yes/No]

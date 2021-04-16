@@ -10,12 +10,198 @@
     margin-right: auto;
 }
 
-.common_content{
-    text-align: left;
-    margin-left: 7vw;
-    margin-right: 7vw;
-    margin-top: 50px;
+
+.show {
+    display: none;
 }
+
+.title,
+.form {
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.title {
+    margin-bottom: 0.5em;
+    display: block;
+    background: orange;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    padding: 1em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+}
+.user{
+    
+    margin-bottom: 0.5em;
+    display: block;
+    background: orange;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    padding: 1em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+
+}
+.flag {
+    position: absolute;
+    top: 7px;
+    border-radius: 2px;
+    border: 35px solid;
+    border-top-color: orange;
+    border-bottom-color: orange;
+}
+
+.show ~ .title {
+    z-index: 2;
+    width: 300px;
+    position: relative;
+    top: 250px;
+    left: 0;
+    transition:
+        width 200ms ease-out,
+        top 200ms ease-out;
+}
+
+.show ~ .title .flag {
+    opacity: 0; 
+}
+
+.show ~ .title .left {
+    left: 0;
+    border-right-color: orange;
+    border-left-color: transparent;
+}
+
+.show ~ .title .right {
+    right: 0;
+    border-right-color: transparent;
+    border-left-color: orange;
+}
+
+.show ~ .form {
+    opacity: 0;
+    transition:
+        opacity 200ms linear;
+}
+
+.show:checked ~ .title {
+    position: relative;
+    top: 0;
+    width: 500px;
+}
+
+.show:checked ~ .title .left {
+    opacity: 0.7;
+    left: -55px;
+    transition: 
+        opacity 50ms linear 200ms,
+        left 50ms linear 200ms;
+}
+
+.show:checked ~ .title .right {
+    opacity: 0.7;
+    right: -55px;
+    transition: 
+        opacity 50ms linear 200ms,
+        right 50ms linear 200ms;
+}
+
+.show:checked ~ .form {
+    opacity: 1;
+}
+
+.form {
+    width: 500px;
+    background: #ddd;
+    padding: 2em 0 2em 0;
+}
+
+.group {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.group {
+    margin-bottom: 2em;
+}
+
+.group:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.col-1,
+.col-2 {
+    float: left;
+}
+
+.col-1 {
+    width: 40%;
+}
+
+.col-1 label {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-shadow: 0.5px 0.5px 0 #fff;
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+}
+
+.col-2 {
+    width: 60%;
+}
+
+.col-2 input {
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 
+        inset 0 0 3px 0 rgba(0,0,0,0.3),
+        0.5px 0.5px 0 0 #fff;
+    padding: 1em;
+    background: rgba(80,80,80,0.1);
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+
+.submit {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
+
+.submit:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
+
+
 
 .signup_heading{
     width: 50%;
@@ -52,6 +238,8 @@
 .signup_signin_message{
     font-weight: 500;
     margin-top: 10px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
 
 .signin_link{
@@ -59,3 +247,12 @@
     cursor: pointer;
     text-decoration: underline;
 }
+html, body, h2 {
+    margin: 0;
+    padding: 0.5em;
+}
+
+.show {
+    display: none;
+}
+

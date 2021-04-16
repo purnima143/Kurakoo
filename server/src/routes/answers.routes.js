@@ -3,14 +3,14 @@ const {
     requireSignin,
     userMiddleWare
 } = require("../common-middleware/middleware");
-const questionController = require("../controllers/questions.controller");
+const answerController = require("../controllers/answers.controller");
 const router = express.Router();
 
 router.post(
-    "/question",
+    "/question/answer",
     requireSignin,
     userMiddleWare,
-    questionController.createQuestions
+    answerController.createAnswers
 );
 
 module.exports = router;

@@ -1,0 +1,11 @@
+newIssueWelcomeComment: >
+  Thanks for opening for issue here! Be sure to follow the issue template! Mentors will soon assign you :)
+
+
+newPRWelcomeComment: >
+  Thanks for opening this pull request! Mentors will soon Review your PR :)
+
+
+firstPRMergeComment: >
+  Congrats on merging your first pull request! We here at behaviorbot are proud of you!
+
