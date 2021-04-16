@@ -18,11 +18,9 @@ const createAnswers = (req, res) => {
         );
     }
 
-    tagArray = tags.split(",");
-
     const answer = new Answers({
         answerText: answerText,
-        tags: tagArray,
+        tags: tags,
         questionId: questionId,
         createdBy: req.user._id
     });

@@ -16,13 +16,11 @@ const createQuestions = (req, res) => {
             .status(400)
             .json(responseHandler(false, 400, "please fill all the fields")
         );
-    }
-    const tagArray = tags.split(",");
-
+    
     const question = new Questions({
         questionText: questionText,
         questionLinks: questionLinks,
-        tags: tagArray,
+        tags: tags,
         createdBy: req.user._id
     });
 
