@@ -2,23 +2,9 @@ const Answers = require("../models/answers.model");
 const responseHandler = require("../helpers/responseHandler");
 
 const createAnswers = (req, res) => {
-    const { 
-        answerText, 
-        questionId, 
-        tags 
-    } = req.body;
-    if(
-        !answerText ||
-        !questionId ||
-        !tags
-    ){
-        return res
-            .status(400)
-            .json(responseHandler(false, 400, "please fill all the fields")
-        );
-    }
-
-    const answer = new Answers({
+    const { answerText, questionId, tags } = req.body;
+    
+     const answer = new Answers({
         answerText: answerText,
         tags: tags,
         questionId: questionId,
