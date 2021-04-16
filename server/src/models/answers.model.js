@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
-const questionsSchema = new mongoose.Schema(
+const answersSchema = new mongoose.Schema(
     {
-        questionText: {
+        questionId: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        answerText: {
             type: String,
             required: true,
-            trim: true
-        },
-        questionLinks: {
-            type: String,
             trim: true
         },
         tags: {
             type: String,
-            required: true,
             trim: true
         },
         createdBy: {
@@ -26,4 +26,4 @@ const questionsSchema = new mongoose.Schema(
     { timeStamps: true }
 );
 
-module.exports = mongoose.model("Questions", questionsSchema);
+module.exports = mongoose.model("Answers", answersSchema);
