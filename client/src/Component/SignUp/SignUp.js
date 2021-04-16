@@ -126,77 +126,66 @@ const SignUp = ()=>{
                     <div></div>
                 )}
 
-                {/* //INPUT CONTENT */}
-                <div className="common_content">
-                    <h1 className="signup_heading">Sign up</h1>
-                    <Link to="/">
-                        <button className="create_account_button" type="submit">
-                            Home
-                        </button>
-                    </Link><br></br>
-                    <label>Name</label>
-                    <br></br>
-                    <input
-                        className="text_ip"
-                        name="name"
-                        onChange={handleChange}
-                    ></input>
-                    <label>Email</label>
-                    <br></br>
-                    <input
-                        className="text_ip"
-                        name="email"
-                        onChange={handleChange}
-                    ></input>
-                    <label>Password</label>
-                    <br></br>
-                    <input
-                        className="text_ip"
-                        type="password"
-                        name="password"
-                        onChange={handleChange}
-                    ></input>
-                    <Grid container spacing={4}>
-                        <Grid item xs={6} sm={6} md={6} lg={6}>
-                            <label>Course</label>
-                            <br></br>
-                            <input
-                                className="text_ip"
-                                name="course"
-                                onChange={handleChange}
-                            ></input>
-                        </Grid>
-                        <Grid item xs={6} sm={6} md={6} lg={6}>
-                            <label>Year</label>
-                            <br></br>
-                            <input
-                                type="number"
-                                className="text_ip"
-                                name="year"
-                                onChange={handleChange}
-                            ></input>
-                        </Grid>
-                    </Grid>
-                    <label>College Name</label>
-                    <br></br>
-                    <input
-                        className="text_ip"
-                        name="college"
-                        onChange={handleChange}
-                    ></input>
-                    <button
-                        className="create_account_button"
-                        onClick={PostData}
-                    >
-                        Create account
-                    </button>
-                    <p className="signup_signin_message">
-                        Already a user?
-                        {/* <a href="/signin" className="signin_link">Sign In</a> */}
-                        <Link to="/signin">Sign In</Link>
+{/* //INPUT CONTENT */}
+<input type="checkbox" id="show" className="show" />
+<label for="show" class="title">sign up<i class="flag left"></i><i class="flag right"></i></label>
+<form className="form"> 
+    <div className="group">
+        <div className="col-1">
+            <label for="name">Username</label>
+        </div>
+        <div class="col-2">
+            <input type="text" placeholder="Username" name="name" onChange={handleChange} required/>
+        </div>
+    </div>
+     
+    <div className="group">
+        <div className="col-1">
+            <label for="email">Email</label>
+        </div>
+        <div className="col-2">
+            <input type="email" placeholder="example@email.com" name="email" onChange={handleChange} required/>
+        </div>
+    </div>
+    <div className="group">
+        <div className="col-1">
+            <label for="password">Password</label>
+        </div>
+        <div className="col-2">
+            <input type="password" placeholder="password" name="password" onChange={handleChange} required/>
+        </div>
+    </div>
+    <div className="group">
+        <div className="col-1">
+            <label for="course">Course</label>
+        </div>
+        <div className="col-2">
+            <input type="text" placeholder="course" name="course" onChange={handleChange} required/>
+        </div>
+    </div>
+    <div className="group">
+        <div className="col-1">
+            <label for="year">Year</label>
+        </div>
+        <div className="col-2">
+            <input type="number" placeholder="year" name="year" onChange={handleChange} required/>
+        </div>
+    </div>
+    <div className="group">
+        <div className="col-1">
+            <label for="college">College Name</label>
+        </div>
+        <div className="col-2">
+            <input type="text" placeholder="college name" name="college" onChange={handleChange} required/>
+        </div>
+    </div>
+    <input type="submit" className="submit" value="submit" onClick={PostData}/><br/>
+    <p className="signup_signin_message">Already a user? 
+                    {/* <a href="/signin" className="signin_link">Sign In</a> */}
+                    <Link to="/signin" >Sign In</Link>
                     </p>
-                </div>
-            </Grid>
+                    </form>
+            </Grid>   
         </Grid>
     );
 };

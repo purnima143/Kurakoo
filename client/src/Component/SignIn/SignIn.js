@@ -110,47 +110,23 @@ const SignIn = () =>{
                 )}
 
                 {/* Form to take input */}
-                <div className="common_content">
-                    <h1 className="signin_heading">Sign In</h1>
-                    <Link to="/">
-                        <button className="sign_in_button" type="submit">
-                            Home
-                        </button>
-                    </Link>
-
-                    <div className="signin_form">
-                        <label> Email id </label>
-                        <br></br>
-                        <input
-                            className="text_ip"
-                            name="email"
-                            onChange={handleChange}
-                        />
-
-                        <label> Password </label>
-                        <br></br>
-                        <input
-                            className="text_ip"
-                            type="password"
-                            name="password"
-                            onChange={handleChange}
-                        />
-                        <br></br>
-
-                        <button
-                            className="sign_in_button"
-                            type="submit"
-                            onClick={PostData}
-                        >
-                            Continue
-                        </button>
-
-                        <p className="signup_signin_message">
-                            New User ? <Link to="/signup">Sign Up</Link>
-                        </p>
-                    </div>
-                </div>
-            </Grid>
+                    <div className="app">
+                    <div className="bg"></div>
+                    <form className="form1">
+                    <header>
+				        <img src="./images/favicon.png" className="logo"/>
+			        </header>
+                    <div className="inputs">
+				        <input type="text" placeholder="email" name="email" onChange={handleChange}/>
+				        <input type="password" placeholder="password" name="password" onChange={handleChange} />
+			        </div>
+                    </form>
+                    <footer>
+			            <button type="submit" onClick={PostData}>Continue</button>
+			            <p className="para">Don't have an account? <Link to="/signup" >Sign Up</Link></p>
+		            </footer>
+	                </div>
+                    </Grid>
         </Grid>
     );
 };
