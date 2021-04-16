@@ -12,7 +12,7 @@ const questionsSchema = new mongoose.Schema(
             trim: true
         },
         tags: {
-            type: String,
+            type: [String],
             required: true,
             trim: true
         },
