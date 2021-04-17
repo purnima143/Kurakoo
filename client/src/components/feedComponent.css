@@ -75,3 +75,15 @@ section hr{
     background-color: rgb(216, 216, 216);
     cursor: pointer;
 }
+
+.ans_button{
+    position: absolute;
+    left: 51rem;
+    margin-top: 4px;
+    width: 90px;
+    height: 29px;
+    border-radius: 9px;
+    background-color: white;
+    color: black;
+    border: 2px solid #28c22e;
+}
