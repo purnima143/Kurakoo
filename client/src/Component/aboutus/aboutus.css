@@ -1,0 +1,81 @@
+.grouping10{
+    background: linear-gradient(rgb(255, 255, 255),#e0c17c);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index: -2;
+}
+
+.mobile_logo_img {
+    height: 53px;
+    left: 1px;
+    position: absolute;
+    top: 0px;
+    width: 237px;
+}
+.image-3 {
+    height: 741px;
+    right: 1px;
+    position: absolute;
+    top: 0px;
+    width: 638px;
+    z-index: +1;
+}
+.text-10 {
+    font-size: 53px;
+    left: 473px;
+    position: absolute;
+    top: 28px;
+    width: 444px; 
+    font-family: 'Montserrat';
+    color:rgb(37, 1, 1);
+    font-weight: bold;
+    z-index: +2;
+}
+.text-2 {
+    left: 39px;
+    position: absolute;
+    top: 223px;
+    width: 691px;
+    font-size: 35px;
+    font-family: 'Montserrat';
+    z-index: +1;
+
+    
+}
+
+.title-text1::after{
+    content: '';
+    width: 1295px;
+    height: 122px;
+    background: linear-gradient(#f7b95d,#FF6F00);
+    position: absolute;
+    top: 632px;
+    left: 0;
+    z-index: +1;
+
+    border-top-right-radius: 378px;
+    border-bottom-right-radius: 35px;
+}
+.title-text2::after{
+    content: '';
+    width: 1288px;
+    height: 122px;
+    background: linear-gradient(#f7b95d,#FF6F00);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: +1;
+    border-bottom-left-radius: 378px;
+}
+.title-text3::after{
+    content: '';
+    width: 867px;
+    height: 339px;
+    background: linear-gradient(#f7b95d,#FF6F00);
+    position: absolute;
+    top: 202px;
+    left: 0px;
+    z-index: 0;
+    border-bottom-right-radius: 378px;
+}

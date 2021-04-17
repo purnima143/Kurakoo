@@ -1,4 +1,4 @@
-const { check, validationResult } = require("express-validator");
+const {oneOf, check, validationResult } = require("express-validator");
 
 const validateSignupRequest = [
     check('firstName')
@@ -12,7 +12,10 @@ const validateSignupRequest = [
     .withMessage('lastName is required'),
     check('password')
     .isLength({min: 6})
-    .withMessage('Password must be off 6 character long')
+    .withMessage('Password must be off 6 character long'),
+    check('confirmPassword')
+    .isLength({min:6})
+    .withMessage('confirmPAssword field is missing')
 ];
 
 const validateSigninRequest = [
@@ -23,6 +26,32 @@ const validateSigninRequest = [
     .isLength({min: 6})
     .withMessage('Password must be off 6 character long')
 ];
+
+const validateUpdateRequest = [ //performs a conditional validation depending on whether a not that field was mentioned
+    oneOf([
+        [
+            check('password')
+            .isLength({min: 6})
+            .withMessage('Password must be off 6 character long')
+        ],
+        [
+            check('email')
+            .isEmail()
+            .withMessage('valid email is required')
+        ],
+        [
+            check('firstName')
+            .notEmpty()
+            .withMessage('firstName is required')
+        ],
+        [
+            check('lastName')
+            .notEmpty()
+            .withMessage('lastName is required')
+        ]
+    
+    ])
+]
 
 const isRequestValidated = (req, res, next) => {
     const errors = validationResult(req);
@@ -35,5 +64,6 @@ const isRequestValidated = (req, res, next) => {
 module.exports = authValidator = {
     validateSignupRequest,
     validateSigninRequest,
+    validateUpdateRequest,
     isRequestValidated
 };
