@@ -3,7 +3,7 @@ const responseHandler = require("../helpers/responseHandler");
 
 const createQuestions = (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
-
+    
     const question = new Questions({
         questionText: questionText,
         questionLinks: questionLinks,
