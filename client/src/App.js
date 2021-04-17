@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./Component/Preloader/Preloader";
 import NotificationPage from "./Component/NotificationPage/NotificationPage";
 import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
+import NotFound from "./Component/NotFound/NotFound"
 
 
 const Homepage=lazy(()=> import("./Component/homepage/homepage"));
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/notification" component={NotificationPage} />
         <Route path="/addaquestion" component={AddAQuestion} />
         <Route path="/aboutus" component={AboutUs} />
+        <Route component={NotFound} />
         
       </Switch>
     </BrowserRouter>
