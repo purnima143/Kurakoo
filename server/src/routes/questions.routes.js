@@ -14,4 +14,11 @@ router.post(
 );
 
 router.get("/allQuestions",  requireSignin, userMiddleWare, questionController.getQuestions)
+router.patch(
+    "/question/:id",
+    requireSignin,
+    userMiddleWare,
+    questionController.editQuestion
+)
+
 module.exports = router;
