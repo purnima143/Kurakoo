@@ -13,6 +13,13 @@
 In the majority of the colleges and universities across India, thousands of students have many doubts and queries from **"Which branch to choose?"** to **"How to crack interviews?"**. Kurakoo is a one-stop solution for all these problems. It serves as a platform where students can drop in their questions for public view and any person from this vibrant community can help by providing answers to these questions. 
 
 
+![Issues](https://img.shields.io/github/issues/purnima143/Kurakoo)
+![Pull Requests](https://img.shields.io/github/issues-pr/purnima143/Kurakoo)
+![Forks](https://img.shields.io/github/forks/purnima143/Kurakoo)
+![Stars](https://img.shields.io/github/stars/purnima143/Kurakoo)
+[![License](https://img.shields.io/github/license/purnima143/Kurakoo)](https://github.com/purnima143/Kurakoo/blob/master/LICENSE)
+![](https://img.shields.io/github/repo-size/purnima143/Kurakoo.svg?label=Repo%20size&style=flat-square)&nbsp;
+
 ## Areas of Collaboration 👨‍🏭
 
 Project Managers, Developers and Designers would be collaborating on various domains like:
