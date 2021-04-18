@@ -3,8 +3,8 @@ const responseHandler = require("../helpers/responseHandler");
 
 const createAnswers = (req, res) => {
     const { answerText, questionId, tags } = req.body;
-
-    const answer = new Answers({
+    
+     const answer = new Answers({
         answerText: answerText,
         tags: tags,
         questionId: questionId,
