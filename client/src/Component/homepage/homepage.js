@@ -2,6 +2,12 @@ import React from "react";
 import './homepage.css';
 import {Link} from "react-router-dom";
 import logo from "../../components/kurakoo-logo.png";
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 function homepage() {
   return <LandingPageorange {...landingPageorangeData} />;
@@ -15,7 +21,16 @@ function LandingPageorange(props) {
 
   return (
     <div className="landing-page-orange">
-       
+      <div className="social">
+        <ul>
+          <li><a><span>WhatsApp</span><WhatsAppIcon /></a></li>
+          <li><a><span>Facebook</span><FacebookIcon /></a></li>
+          <li><a><span>Github</span><GitHubIcon /></a></li>
+          <li><a><span>Instagram</span><InstagramIcon /></a></li>
+          <li><a><span>YouTube</span><YouTubeIcon /></a></li>
+          <li><a><span>LinkedIn</span><LinkedInIcon /></a></li>
+          </ul>
+        </div>
        <div className="contributor-section">
             <h4 class="title-text30">{text30}</h4>
             <h4 class="title-text31">{text31}</h4>
