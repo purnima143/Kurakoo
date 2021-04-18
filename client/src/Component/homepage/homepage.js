@@ -60,7 +60,7 @@ function LandingPageorange(props) {
             <div className="overlap-group2">
               <div className="explore montserrat-bold-white-24px"><span>{explore}</span></div>
             </div>
-        </div>
+        </div></Link>
               <img className="vec" src={vector2} alt="vector-1" />
               <img className="vec" src={vector3} alt="vector-2" />
         <div className="BigBox">
@@ -87,7 +87,7 @@ function LandingPageorange(props) {
   );
 }
 const landingPageorangeData = {
-    vector: "https://anima-uploads.s3.amazonaws.com/projects/603e32473d832b6567888c87/releases/60431c4b77eb01b4ea3292d5/img/line-1@2x.png",
+    vector : "https://anima-uploads.s3.amazonaws.com/projects/603e32473d832b6567888c87/releases/60431c4b77eb01b4ea3292d5/img/line-1@2x.png",
     vector2: "https://anima-uploads.s3.amazonaws.com/projects/603e32473d832b6567888c87/releases/6053337a80ac5a0028404f78/img/vector-8@1x.svg",
     vector3: "https://anima-uploads.s3.amazonaws.com/projects/603e32473d832b6567888c87/releases/6053337a80ac5a0028404f78/img/vector-9@1x.svg",
     text1: <>Kurakoo is a website where you can make friends (safely) and learn more from people you trust.<br/> It is an online community of people providing answers to questions, just like 'Quora'. Kurakoo is specially catered to meet the needs of school/college students. Students from different colleges/universities around the world visit Kurakoo to ask questions to a community of people who are always ready to answer them.</>,
@@ -103,6 +103,5 @@ const landingPageorangeData = {
     text31: <></>,
     text32: <></>,
     text33: <></>,
-    text34: <>OUR CONTRIBUTORS</>,
+    text34: <>OUR CONTRIBUTORS</>
 };
-
