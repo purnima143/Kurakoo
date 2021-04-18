@@ -20,7 +20,7 @@ const App = () => {
     <Suspense fallback={<Preloader />}>
   <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Homepage} />
         <Route path="/signup"  component={Signup} />
         <Route path="/signin"  component={Signin} />
         <Route path="/feed"  component={Feed} />
