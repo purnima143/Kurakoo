@@ -1,4 +1,4 @@
-import profileImg from './imgAvatar.png';
+import profileImg from "./sample_images/imgAvatar.png";
 
 export var feedData = [
     {

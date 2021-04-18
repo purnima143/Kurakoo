@@ -7,10 +7,10 @@ import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
 import NotFound from "./Component/NotFound/NotFound"
 
 
-const Homepage=lazy(()=> import("./Component/homepage/homepage"));
+// const Homepage=lazy(()=> import("./Component/homepage/homepage"));
 const Signup=lazy(()=>import("./Component/SignUp/SignUp"));
 const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
-const Feed=lazy(()=>import("./components/feed"));
+const Feed=lazy(()=>import("./Component/feedpage/feed"));
 const AboutUs=(()=>import("./Component/aboutus/aboutus"));
 
 
@@ -20,7 +20,7 @@ const App = () => {
     <Suspense fallback={<Preloader />}>
   <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Homepage} />
+        <Route path="/" exact component={Signup} />
         <Route path="/signup"  component={Signup} />
         <Route path="/signin"  component={Signin} />
         <Route path="/feed"  component={Feed} />

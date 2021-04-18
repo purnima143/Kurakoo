@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AddAQuestion.css";
 import closeIcon from "./svgs/closesvg.svg";
-import logo from "../../components/kurakoo-logo.png";
+import logo from "../../Component/kurakoo-logo.png";
 import link from "./svgs/linksvg.svg";
 
 import { Avatar } from "@material-ui/core";
