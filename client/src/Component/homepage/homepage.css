@@ -1,10 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
-:root {
-  --black: rgba(0, 0, 0, 0.54);
-  --blaze-orange: rgba(255, 111, 0, 0.78);
-  --crusta: rgba(249, 137, 50, 1);
-}
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -275,6 +270,8 @@ width: 40vw;
     position: relative;
   }
 }
+=======
+
 .landing-page-orange .aboutus {
   left: 860px; 
   transition: 0.2s ease-in;
@@ -410,95 +407,4 @@ width: 40vw;
 #name8 {top: 1190px;}
 #name9 {top: 1230px;}
 #name10 {top: 1270px;}
-
-.landing-page-orange .text-1{
-  top: 1100px;
-}
-.landing-page-orange .group-9 {
-
-  top: 1300px;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  left: -60px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #2f2e41;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 3px;
-  background-color: var(--crusta);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #fff;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(23px);
-  -ms-transform: translateX(23px);
-  transform: translateX(23px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 30px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-#switchtoggle{
-  left: 2400px;
-    top: 865px;
-    letter-spacing: 0px;
-    position: absolute;
-    
-}
-.dark-mode{
-  filter: invert(1) hue-rotate(180deg);
-}
-.dark-mode .text-1{
-  color: black;
-}
-.dark-mode input:checked + .slider  {
-  background-color: black;
-}
-.darkorlight{
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
 
