@@ -1,13 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavBar.css";
 import {Link} from 'react-router-dom';
+import AddAQuestion from "../AddAQuestion/AddAQuestion";
 import { SearchBar } from '../searchbar/SearchBar';
 import Logo from '../kurakoo-logo.png';
 import {Button} from '@material-ui/core'
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
+
+// function rand() {
+//     return Math.round(Math.random() * 20) - 10;
+//   }
+  
+//   function getModalStyle() {
+//     const top = 50 + rand();
+//     const left = 50 + rand();
+  
+//     return {
+//       top: `${top}%`,
+//       left: `${left}%`,
+//       transform: `translate(-${top}%, -${left}%)`,
+//     };
+//   }
+  
+  const useStyles = makeStyles((theme) => ({
+    paper: {
+      position: 'absolute',
+      top: 45,
+      left: 350,
+      width: 775,
+      height: 580,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      
+    },
+  }));
+  
 
 export default function Navbar() {
+    const classes = useStyles();
+    // const [modalStyle] = React.useState(getModalStyle);
+    const [openPopup, setOpenPopup] = useState(false);
+    
+    const handleOpen = () => {
+        setOpenPopup(true);
+      };
+
+      const handleClose = () => {
+        setOpenPopup(false);
+      }
 
     return (
         <div>
@@ -26,7 +69,10 @@ export default function Navbar() {
                         <SearchBar/>
                     </div>
                     <div className = "option">
-                    <Button variant="contained" color="secondary" size="large" href="/addaquestion">
+                    <Button variant="contained" 
+                    type="button"
+                    color="secondary" size="large"
+                    onClick={handleOpen} >
                        <QuestionAnswerIcon/> &emsp; Ask Question
                     </Button>
 
@@ -36,6 +82,14 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            <Modal
+            open ={openPopup}
+            onClose={handleClose}>
+                <div  className={classes.paper}>
+                <AddAQuestion/>
+                </div>
+                
+            </Modal>
         </div>
     );
   

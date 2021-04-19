@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 .addaquestionpage {
-  min-height: 100vh;
+  height: inherit;
   background-color: white;
 }
 .addaquestionpage_header {

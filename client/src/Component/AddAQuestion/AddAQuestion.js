@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./AddAQuestion.css";
-import closeIcon from "./svgs/closesvg.svg";
 import logo from "../../components/kurakoo-logo.png";
 import link from "./svgs/linksvg.svg";
 
@@ -43,11 +42,6 @@ const AddAQuestion = () => {
       {/* add question form */}
       <form onSubmit={addquestion} className="addaquestionpage">
         <div className="addaquestionpage_header">
-          <img
-            src={closeIcon}
-            alt="close icons"
-            className="addaquestionpage_header_close"
-          />
           <div className="addaquestionpage_header_selectdiv">
             <label>
               <select>
@@ -93,11 +87,12 @@ const AddAQuestion = () => {
             </button>
           </div>
           <div className="addaquestionpage_bottomsection">
-            <button className="addaquestionpage_cancelbtn">Cancel</button>
             <button
               type="submit"
               className="addaquestionpage_btn"
               onClick={addquestion}
+              aria-labelledby="simple-modal-title"
+              aria-describedby="simple-modal-description"
             >
               Add question
             </button>
