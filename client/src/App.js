@@ -1,17 +1,18 @@
 import React , {lazy,Suspense} from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Preloader from "./Component/Preloader/Preloader";
-import NotificationPage from "./Component/NotificationPage/NotificationPage";
-import AddAQuestion from "./Component/AddAQuestion/AddAQuestion";
-import NotFound from "./Component/NotFound/NotFound"
+import Preloader from "./components/Preloader/Preloader";
+import NotificationPage from "./components/NotificationPage/NotificationPage";
+import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
+import NotFound from "./components/NotFound/NotFound";
+import Scroll from "./components/ScrollToTop/ScrollToTop"
 
 
-const Homepage=lazy(()=> import("./Component/homepage/homepage"));
-const Signup=lazy(()=>import("./Component/SignUp/SignUp"));
-const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
-const Feed=lazy(()=>import("./components/feed"));
-const AboutUs=(()=>import("./Component/aboutus/aboutus"));
+const Homepage=lazy(()=> import("./components/homepage/homepage"));
+const Signup=lazy(()=>import("./components/SignUp/SignUp"));
+const Signin=lazy(()=>import("./components/SignIn/SignIn"));
+const Feed=lazy(()=>import("./components/feed/feed"));
+const AboutUs=(()=>import("./components/aboutus/aboutus"));
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         
       </Switch>
     </BrowserRouter>
+    <Scroll/>
       </Suspense>
     </>
   );

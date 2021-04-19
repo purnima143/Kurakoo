@@ -472,3 +472,8 @@ input:checked + .slider:before {
   top: 0px;
   position: absolute;
 }
+.hfooter{
+  margin-top: 50%;
+  margin-left: -100%;
+  width: 100%;
+}
