@@ -130,6 +130,18 @@ const SignUp = ()=>{
 <input type="checkbox" id="show" className="show" />
 <label for="show" class="title">sign up<i class="flag left"></i><i class="flag right"></i></label>
 <form className="form"> 
+    <div className="col-1">
+            <label for="firstName">First Name</label>
+        </div>
+        <div class="colm-2">
+            <input type="text" placeholder="first name" name="name" onChange={handleChange} required/>
+    </div>
+    <div className="col-1">
+            <label for="lastName">Last Name</label>
+        </div>
+        <div class="colm-2">
+            <input type="text" placeholder="last name" name="name" onChange={handleChange} required/>
+    </div>
     <div className="group">
         <div className="col-1">
             <label for="name">Username</label>
@@ -177,6 +189,14 @@ const SignUp = ()=>{
         </div>
         <div className="colm-2">
             <input type="text" placeholder="college name" name="college" onChange={handleChange} required/>
+        </div>
+    </div>
+    <div className="group">
+        <div className="col-1">
+            <label for="contactNumber">Contact Number</label>
+        </div>
+        <div className="colm-2">
+            <input type="number" placeholder="contact number" name="number" onChange={handleChange} />
         </div>
     </div>
     <input type="submit" className="submit" value="submit" onClick={PostData}/><br/>
