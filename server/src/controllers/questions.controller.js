@@ -64,8 +64,22 @@ const editQuestion = async(req, res) =>{
     }
 }
 
+const deleteQuestion = async(req, res) => {
+    try{
+        const question = await Questions.findOneAndDelete({_id: req.params.id, createdBy: req.user._id})
+        if(!question){  
+            return res.status(400).send({message:"question not found"})
+        }
+        await Answers.deleteMany({questionId: question._id})
+        res.status(200).send({message: "quetsion deleted!"}) 
+    }catch(e){
+        res.status(400).send({message:"something went wrong!"})  
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
-    editQuestion
+    editQuestion,
+    deleteQuestion
 };
