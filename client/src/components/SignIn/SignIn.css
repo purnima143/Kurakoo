@@ -11,8 +11,8 @@
 
 .logo {
     max-width: 60%;
-    margin-top: 30%;
-    margin-left: 10%;
+    margin-top: 25%;
+    margin-left: 40%;
     
 }
 
@@ -79,7 +79,7 @@ header {
   }
 
 .form1 input {
-    width: 80%;
+    width: 100%;
     padding: 13px 15px;
     margin: 0.7em auto;
     border-radius: 100px;
@@ -88,6 +88,7 @@ header {
     font-family: 'Poppins', sans-serif;
     outline: none;
     color: #fff;
+    margin-left: 10%;
 }
 input::placeholder {
     color: #fff;

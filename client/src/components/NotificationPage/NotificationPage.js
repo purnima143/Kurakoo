@@ -3,6 +3,7 @@ import './NotificationPage.css';
 import Navbar from '../navbar/Navbar';
 import Sidebar from './sideBar';
 import Notification from './NotficationComp';
+import Footer from '../Footer/footer';
 import { currentuser, data } from './DummyData';
 import Image from './images/Vector.png';
 
@@ -66,6 +67,7 @@ function NotificationPage(){
 
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
