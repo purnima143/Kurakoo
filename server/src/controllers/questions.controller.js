@@ -1,5 +1,6 @@
 const Questions = require('../models/questions.models');
 const responseHandler = require('../helpers/responseHandler');
+const Answers = require('../models/answers.model')
 
 const createQuestions = (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
@@ -70,8 +71,8 @@ const deleteQuestion = async(req, res) => {
         if(!question){  
             return res.status(400).send({message:"question not found"})
         }
-        await Answers.deleteMany({questionId: question._id})
-        res.status(200).send({message: "quetsion deleted!"}) 
+        await Answers.deleteMany({questionId: req.params.id})
+        res.status(200).send({message: "question deleted!"}) 
     }catch(e){
         res.status(400).send({message:"something went wrong!"})  
     }
