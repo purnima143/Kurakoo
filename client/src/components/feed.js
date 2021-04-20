@@ -2,7 +2,7 @@ import React from 'react';
 import './feed.css';
 import Feed from './feedComponent';
 import {feedData, connect} from './dummyData';
-import NavBar from '../navbar/Navbar';
+import NavBar from '../Component/navbar/Navbar';
 
 function FeedPage() {
 
