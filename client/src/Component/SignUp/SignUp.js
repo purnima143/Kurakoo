@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import {Link,useHistory} from 'react-router-dom';
+import {Link,useHistory,Redirect} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { signup } from "../../actions/user.constants"
 import './SignUp.css';
 import { useMediaQuery } from 'react-responsive';
 import Grid from '@material-ui/core/Grid';
@@ -28,6 +30,37 @@ const SignUp = ()=>{
         query: '(max-width: 959.5px)'
     });
 
+  const [ firstName, setFirstName ] = useState('');
+  const [ lastName, setLastName ] = useState('');
+  const [ userName, setUserName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ course, setCourse ] = useState('');
+  const [ year, setYear ] = useState('');
+  const [ collegeName, setCollegeName ] = useState('');
+  const [ contactNumber, setContactNumber ] = useState('');
+  const auth = useSelector( state => state.auth );
+  const user = useSelector( state => state.user );
+  const dispatch = useDispatch();
+
+  const userSignup = (e) => {
+
+    e.preventDefault();
+
+    const user = {
+      firstName, lastName, email, password
+    }
+    dispatch(signup(user));
+
+  }
+
+  if( auth.authenticate ){
+    return <Redirect to= { '/' } />
+  }
+
+  if( user.loading ){
+    return <p>Loading...!</p>
+  }
 
 
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
@@ -129,13 +162,47 @@ const SignUp = ()=>{
 {/* //INPUT CONTENT */}
 <input type="checkbox" id="show" className="show" />
 <label for="show" class="title">sign up<i class="flag left"></i><i class="flag right"></i></label>
-<form className="form"> 
+<form className="form" onSubmit={userSignup}> 
+    <div className="group">
+                <div className="col-1">
+                    <label for="name">First Name</label>
+                </div>
+                <div class="col-2">
+                    <input 
+                        type="text" 
+                        placeholder="first name" 
+                        name="firstName"
+                        value={firstName} 
+                        onChange={ (e) => setFirstName(e.target.value) } 
+                    required/>
+                </div>
+    </div>
+        <div className="group">
+                <div className="col-1">
+                    <label for="name">Last Name</label>
+                </div>
+                <div class="col-2">
+                    <input 
+                        type="text" 
+                        placeholder="last name" 
+                        name="lasttName" 
+                        value={lastName}
+                        onChange={ (e) => setLastName(e.target.value) } 
+                    required/>
+                </div>
+    </div>
     <div className="group">
         <div className="col-1">
             <label for="name">Username</label>
         </div>
         <div class="col-2">
-            <input type="text" placeholder="Username" name="name" onChange={handleChange} required/>
+            <input 
+                type="text" 
+                placeholder="Username" 
+                name="name" 
+                value={userName}
+                onChange={ (e) => setUserName(e.target.value) } 
+            required/>
         </div>
     </div>
      
@@ -144,7 +211,13 @@ const SignUp = ()=>{
             <label for="email">Email</label>
         </div>
         <div className="col-2">
-            <input type="email" placeholder="example@email.com" name="email" onChange={handleChange} required/>
+            <input 
+                type="email" 
+                placeholder="example@email.com" 
+                name="email" 
+                value={email}
+                onChange={ (e) => setEmail(e.target.value) } 
+            required/>
         </div>
     </div>
     <div className="group">
@@ -152,7 +225,13 @@ const SignUp = ()=>{
             <label for="password">Password</label>
         </div>
         <div className="col-2">
-            <input type="password" placeholder="password" name="password" onChange={handleChange} required/>
+            <input 
+                type="password" 
+                placeholder="password" 
+                name="password" 
+                value={password}
+                onChange={ (e) => setPassword(e.target.value) }
+            required/>
         </div>
     </div>
     <div className="group">
@@ -160,7 +239,13 @@ const SignUp = ()=>{
             <label for="course">Course</label>
         </div>
         <div className="col-2">
-            <input type="text" placeholder="course" name="course" onChange={handleChange} required/>
+            <input
+                type="text" 
+                placeholder="course" 
+                name="course" 
+                value={course}
+                onChange={ (e) => setCourse(e.target.value) } 
+            required/>
         </div>
     </div>
     <div className="group">
@@ -168,7 +253,13 @@ const SignUp = ()=>{
             <label for="year">Year</label>
         </div>
         <div className="col-2">
-            <input type="number" placeholder="year" name="year" onChange={handleChange} required/>
+            <input 
+                type="number" 
+                placeholder="year" 
+                name="year" 
+                value={year}
+                onChange={ (e) => setYear(e.target.value) } 
+            required/>
         </div>
     </div>
     <div className="group">
@@ -176,8 +267,28 @@ const SignUp = ()=>{
             <label for="college">College Name</label>
         </div>
         <div className="col-2">
-            <input type="text" placeholder="college name" name="college" onChange={handleChange} required/>
+            <input 
+                type="text" 
+                placeholder="college name" 
+                name="college" 
+                value={collegeName}
+                onChange={ (e) => setCollegeName(e.target.value) } 
+            required/>
         </div>
+    </div>
+    <div className="group">
+            <div className="col-1">
+                <label for="name">Contact Number</label>
+            </div>
+            <div class="col-2">
+                <input 
+                    type="text" 
+                    placeholder="contact number" 
+                    name="contactNumber" 
+                    value={contactNumber}
+                    onChange={ (e) => setContactNumber(e.target.value) }
+                />
+            </div>
     </div>
     <input type="submit" className="submit" value="submit" onClick={PostData}/><br/>
     <p className="signup_signin_message">Already a user? 
