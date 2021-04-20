@@ -1,29 +1,29 @@
-:root{
-    --primary-color: #FF6F00;
-    --secondary-color: #FFBB00;
+:root {
+    --primary-color: #ff6f00;
+    --secondary-color: #ffbb00;
     --secondary-light: #fce29c;
     --secondary-lighter: #ffbb004b;
     --tertiary-color: #411818;
 }
 
-body{
+body {
     background-color: var(--secondary-light);
 }
 
 @media screen and (max-width: 1150px) {
     .side-bar-right {
-      display: none;
+        display: none;
     }
-    #feeds{
+    #feeds {
         transform: translate(5rem);
         width: 70rem;
         display: flex;
         flex-direction: column;
     }
-  }
+}
 
 /* Left sidebar */
-.side-bar-left{
+.side-bar-left {
     position: fixed;
     height: 100%;
     background-color: var(--secondary-color);
@@ -34,17 +34,17 @@ body{
     z-index: 1;
 }
 
-.sidebar-left-categories{
+.sidebar-left-categories {
     list-style-type: none;
     padding: 0rem;
     margin: 0rem;
 }
 
-.sidebar-left-items{
+.sidebar-left-items {
     padding: 0.1rem 0rem;
 }
 
-.sidebar-left-categories a{
+.sidebar-left-categories a {
     text-decoration: none;
     color: white;
     display: block;
@@ -52,12 +52,12 @@ body{
     margin: 0px 1.5rem;
 }
 
-.sidebar-left-categories a:hover{
+.sidebar-left-categories a:hover {
     background-color: var(--tertiary-color);
     border-radius: 1.5rem;
 }
 
-#category-heading{
+#category-heading {
     color: var(--tertiary-color);
     margin-bottom: 0.7rem;
     padding-left: 2rem;
@@ -66,7 +66,7 @@ body{
 }
 
 /* Right sidebar */
-.side-bar-right{
+.side-bar-right {
     position: fixed;
     height: 100%;
     background-color: var(--secondary-color);
@@ -75,17 +75,16 @@ body{
     top: 5.5rem;
     right: 0;
     z-index: 1;
-    
 }
 
-.sidebar-right-categories{
+.sidebar-right-categories {
     list-style-type: none;
     padding: 0rem;
     margin: 0rem;
     text-align: left;
 }
 
-#connect-heading{
+#connect-heading {
     color: var(--tertiary-color);
     margin-bottom: 0.7rem;
     padding-left: 2rem;
@@ -93,7 +92,7 @@ body{
     font-size: larger;
 }
 
-.sidebar-right-categories a{
+.sidebar-right-categories a {
     text-decoration: none;
     color: white;
     display: block;
@@ -101,11 +100,11 @@ body{
     padding-left: 1.2rem;
 }
 
-.sidebar-right-categories :hover{
+.sidebar-right-categories :hover {
     background-color: var(--tertiary-color);
 }
 
-.profile-pic{
+.profile-pic {
     vertical-align: middle;
     width: 25px;
     height: 25px;

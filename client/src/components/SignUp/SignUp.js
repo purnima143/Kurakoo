@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
-import {Link,useHistory} from 'react-router-dom';
-import './SignUp.css';
-import { useMediaQuery } from 'react-responsive';
-import Grid from '@material-ui/core/Grid';
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import "./SignUp.css";
+import { useMediaQuery } from "react-responsive";
+import Grid from "@material-ui/core/Grid";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-
 const initialState = {
-    name:'',email:'',password:'',course:'',year:2021,college:''
-}
-const SignUp = ()=>{
-    
+    name: "",
+    email: "",
+    password: "",
+    course: "",
+    year: 2021,
+    college: ""
+};
+const SignUp = () => {
     //STATE HOOK FOR INPUT DETAILS
-    const [formData,setFormData] = useState(initialState);
+    const [formData, setFormData] = useState(initialState);
 
     //MAKING CHANGE IN STATE VALUES FROM USER INPUT
-    const handleChange = (e)=>{
-        setFormData({...formData,[e.target.name]:e.target.value});
-    }
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
     const history = useHistory();
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
-        query: '(max-width: 959.5px)'
+        query: "(max-width: 959.5px)"
     });
 
-
-
     //TOAST TO DISPLAY FOR INVALID INPUTS WITH CUSTOM MESSAGE PARAMETER
-    
-     const errorToast = (message) =>{
+
+    const errorToast = (message) => {
         toast.error(message, {
             position: "top-center",
             autoClose: 3000,
@@ -40,57 +41,57 @@ const SignUp = ()=>{
             hideProgressBar: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
-        })
-     }
+            progress: undefined
+        });
+    };
     //TOAST TO DISPLAY FOR SUCCESSFULL SIGNUP
     const successToast = (message) => {
         toast.success(message, {
             position: "top-right",
-            autoClose: 2000 ,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
+            progress: undefined
         });
-    }
-    
+    };
+
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
-    const PostData = ()=>{
+    const PostData = () => {
         //CONDITIONS TO CHECK VALID INPUT DETAILS
-        if(formData.name !== ""){
-            if(formData.email!==""){
+        if (formData.name !== "") {
+            if (formData.email !== "") {
                 // eslint-disable-next-line
                 const re = /^(([^<>()[\]\\.,;:"\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if(re.test(formData.email)){
-                    if(formData.password!==""){
-                        if(formData.course!==""){
-                            if(formData.year!==""){
-                                if(formData.college!==""){
+                if (re.test(formData.email)) {
+                    if (formData.password !== "") {
+                        if (formData.course !== "") {
+                            if (formData.year !== "") {
+                                if (formData.college !== "") {
                                     // If signup process is successfull via an api then
                                     // we will show a toast and redirect the user in a .then() block
-                                    successToast("Signup successfull")
-                                    history.push("/")
-                                }else{
+                                    successToast("Signup successfull");
+                                    history.push("/");
+                                } else {
                                     errorToast("Please enter college name");
                                 }
-                            }else{
+                            } else {
                                 errorToast("Please enter year");
                             }
-                        }else{
+                        } else {
                             errorToast("Please enter course name");
                         }
-                    }else{
+                    } else {
                         errorToast("Please enter password");
                     }
-                }else{
-                   errorToast("Invalid email id"); 
+                } else {
+                    errorToast("Invalid email id");
                 }
-            }else{
+            } else {
                 errorToast("Please enter email");
-            }    
-        }else{
+            }
+        } else {
             errorToast("Please enter name");
         }
     };
@@ -126,86 +127,112 @@ const SignUp = ()=>{
                     <div></div>
                 )}
 
-{/* //INPUT CONTENT */}
-<input type="checkbox" id="show" className="show" />
-<label for="show" class="title">sign up<i class="flag left"></i><i class="flag right"></i></label>
-<form className="form"> 
-    <div className="col-1">
-            <label for="firstName">First Name</label>
-        </div>
-        <div class="colm-2">
-            <input type="text" placeholder="first name" name="name" onChange={handleChange} required/>
-    </div>
-    <div className="col-1">
-            <label for="lastName">Last Name</label>
-        </div>
-        <div class="colm-2">
-            <input type="text" placeholder="last name" name="name" onChange={handleChange} required/>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="name">Username</label>
-        </div>
-        <div class="colm-2">
-            <input type="text" placeholder="Username" name="name" onChange={handleChange} required/>
-        </div>
-    </div>
-     
-    <div className="group">
-        <div className="col-1">
-            <label for="email">Email</label>
-        </div>
-        <div className="colm-2">
-            <input type="email" placeholder="example@email.com" name="email" onChange={handleChange} required/>
-        </div>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="password">Password</label>
-        </div>
-        <div className="colm-2">
-            <input type="password" placeholder="password" name="password" onChange={handleChange} required/>
-        </div>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="course">Course</label>
-        </div>
-        <div className="colm-2">
-            <input type="text" placeholder="course" name="course" onChange={handleChange} required/>
-        </div>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="year">Year</label>
-        </div>
-        <div className="colm-2">
-            <input type="number" placeholder="year" name="year" onChange={handleChange} required/>
-        </div>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="college">College</label>
-        </div>
-        <div className="colm-2">
-            <input type="text" placeholder="college name" name="college" onChange={handleChange} required/>
-        </div>
-    </div>
-    <div className="group">
-        <div className="col-1">
-            <label for="contactNumber">Contact Number</label>
-        </div>
-        <div className="colm-2">
-            <input type="number" placeholder="contact number" name="number" onChange={handleChange} />
-        </div>
-    </div>
-    <input type="submit" className="submit" value="submit" onClick={PostData}/><br/>
-    <p className="signup_signin_message">Already a user? 
-                    {/* <a href="/signin" className="signin_link">Sign In</a> */}
-                    <Link to="/signin" >Sign In</Link>
+                {/* //INPUT CONTENT */}
+                <input type="checkbox" id="show" className="show" />
+                <label for="show" class="title">
+                    sign up<i class="flag left"></i>
+                    <i class="flag right"></i>
+                </label>
+                <form className="form">
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="name">Username</label>
+                        </div>
+                        <div class="colm-2">
+                            <input
+                                type="text"
+                                placeholder="Username"
+                                name="name"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="email">Email</label>
+                        </div>
+                        <div className="colm-2">
+                            <input
+                                type="email"
+                                placeholder="example@email.com"
+                                name="email"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="password">Password</label>
+                        </div>
+                        <div className="colm-2">
+                            <input
+                                type="password"
+                                placeholder="password"
+                                name="password"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="course">Course</label>
+                        </div>
+                        <div className="colm-2">
+                            <input
+                                type="text"
+                                placeholder="course"
+                                name="course"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="year">Year</label>
+                        </div>
+                        <div className="colm-2">
+                            <input
+                                type="number"
+                                placeholder="year"
+                                name="year"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="group">
+                        <div className="col-1">
+                            <label for="college">College</label>
+                        </div>
+                        <div className="colm-2">
+                            <input
+                                type="text"
+                                placeholder="college name"
+                                name="college"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <input
+                        type="submit"
+                        className="submit"
+                        value="submit"
+                        onClick={PostData}
+                    />
+                    <br />
+                    <p className="signup_signin_message">
+                        Already a user?
+                        {/* <a href="/signin" className="signin_link">Sign In</a> */}
+                        <Link to="/signin">Sign In</Link>
                     </p>
-                    </form>
-            </Grid>   
+                </form>
+            </Grid>
         </Grid>
     );
 };
