@@ -10,7 +10,7 @@ import NotFound from "./Component/NotFound/NotFound"
 const Homepage=lazy(()=> import("./Component/homepage/homepage"));
 const Signup=lazy(()=>import("./Component/SignUp/SignUp"));
 const Signin=lazy(()=>import("./Component/SignIn/SignIn"));
-const Feed=lazy(()=>import("./Component/feedpage/feed"));
+const Feed=lazy(()=>import("./components/feed"));
 const AboutUs=(()=>import("./Component/aboutus/aboutus"));
 
 
