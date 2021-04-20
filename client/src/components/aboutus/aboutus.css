@@ -35,13 +35,22 @@
 .text-2 {
     left: 39px;
     position: absolute;
-    top: 223px;
-    width: 691px;
-    font-size: 35px;
+    top: 213px;
+    width: 782px;
+    font-size: 25px;
     font-family: 'Montserrat';
     z-index: +1;
 
     
+}
+.text-6 {
+    left: 39px;
+    position: absolute;
+    top: 466px;
+    width: 782px;
+    font-size: 27px;
+    font-family: 'Montserrat';
+    z-index: +2000;
 }
 
 .title-text1::after{
