@@ -9,11 +9,11 @@
     color: #fff;
     transition: display 0.5s ease-in-out;
     z-index: 99999;
-  }
-  
-  .scrollButton {
+}
+
+.scrollButton {
     z-index: 200;
     position: fixed;
     bottom: 0;
     transition: opacity 0.3s ease;
-  }
+}
