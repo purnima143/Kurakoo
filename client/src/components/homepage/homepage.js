@@ -121,7 +121,7 @@ function LandingPageorange(props) {
                     </div>
                 </div>
             </div>
-            <div className="hfooter"><Footer /></div>
+            <div className="footer-components"><Footer /></div>
         </div>
 
     );

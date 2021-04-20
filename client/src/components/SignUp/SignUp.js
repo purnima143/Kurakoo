@@ -134,7 +134,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="name">Username</label>
         </div>
-        <div class="co-2">
+        <div class="colm-2">
             <input type="text" placeholder="Username" name="name" onChange={handleChange} required/>
         </div>
     </div>
@@ -143,7 +143,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="email">Email</label>
         </div>
-        <div className="co-2">
+        <div className="colm-2">
             <input type="email" placeholder="example@email.com" name="email" onChange={handleChange} required/>
         </div>
     </div>
@@ -151,7 +151,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="password">Password</label>
         </div>
-        <div className="co-2">
+        <div className="colm-2">
             <input type="password" placeholder="password" name="password" onChange={handleChange} required/>
         </div>
     </div>
@@ -159,7 +159,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="course">Course</label>
         </div>
-        <div className="co-2">
+        <div className="colm-2">
             <input type="text" placeholder="course" name="course" onChange={handleChange} required/>
         </div>
     </div>
@@ -167,7 +167,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="year">Year</label>
         </div>
-        <div className="co-2">
+        <div className="colm-2">
             <input type="number" placeholder="year" name="year" onChange={handleChange} required/>
         </div>
     </div>
@@ -175,7 +175,7 @@ const SignUp = ()=>{
         <div className="col-1">
             <label for="college">College</label>
         </div>
-        <div className="co-2">
+        <div className="colm-2">
             <input type="text" placeholder="college name" name="college" onChange={handleChange} required/>
         </div>
     </div>
