@@ -20,5 +20,6 @@ router.patch(
     userMiddleWare,
     questionController.editQuestion
 )
+router.delete("/deleteQuestion/:id",  requireSignin, userMiddleWare, questionController.deleteQuestion)
 
 module.exports = router;

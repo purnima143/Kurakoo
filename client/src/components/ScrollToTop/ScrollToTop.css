@@ -1,0 +1,19 @@
+.back-to-top {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    right: 15px;
+    bottom: 15px;
+    background: #5d6266;
+    color: #fff;
+    transition: display 0.5s ease-in-out;
+    z-index: 99999;
+}
+
+.scrollButton {
+    z-index: 200;
+    position: fixed;
+    bottom: 0;
+    transition: opacity 0.3s ease;
+}

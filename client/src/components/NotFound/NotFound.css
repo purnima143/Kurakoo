@@ -1,0 +1,55 @@
+body {
+    background-color: #f0d84e;
+}
+
+.mainbox {
+    background-color: #f0d84e;
+    margin-left: 27rem;
+    margin-top: 4rem;
+    height: 600px;
+    width: 600px;
+    position: relative;
+}
+
+.err {
+    color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.far {
+    position: absolute;
+    font-size: 8.5rem;
+    left: 42%;
+    top: 15%;
+    color: #ffffff;
+}
+
+.err2 {
+    color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.msg {
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+.spinner {
+    position: absolute;
+    left: 17rem;
+    top: 7rem;
+    width: 80px !important;
+    height: 80px !important;
+}
