@@ -13,4 +13,13 @@ router.post(
     questionController.createQuestions
 );
 
+router.get("/allQuestions",  requireSignin, userMiddleWare, questionController.getQuestions)
+router.patch(
+    "/question/:id",
+    requireSignin,
+    userMiddleWare,
+    questionController.editQuestion
+)
+router.delete("/deleteQuestion/:id",  requireSignin, userMiddleWare, questionController.deleteQuestion)
+
 module.exports = router;

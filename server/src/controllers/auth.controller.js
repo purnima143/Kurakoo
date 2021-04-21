@@ -22,7 +22,26 @@ const signup = (req, res) => {
                     )
                 );
 
-        const { firstName, lastName, email, password } = req.body;
+        const { 
+            firstName, 
+            lastName, 
+            email, 
+            password,
+            confirmPassword
+        } = req.body;
+        if(password != confirmPassword){
+            return res
+                .status(400)
+                .json(
+                    responseHandler(
+                        false,
+                        400,
+                        "Password doesn't match",
+                        null
+                    )
+                );
+        }
+
         const _user = new User({
             firstName,
             lastName,

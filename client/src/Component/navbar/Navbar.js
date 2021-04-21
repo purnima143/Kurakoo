@@ -9,21 +9,6 @@ import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 
-
-// function rand() {
-//     return Math.round(Math.random() * 20) - 10;
-//   }
-  
-//   function getModalStyle() {
-//     const top = 50 + rand();
-//     const left = 50 + rand();
-  
-//     return {
-//       top: `${top}%`,
-//       left: `${left}%`,
-//       transform: `translate(-${top}%, -${left}%)`,
-//     };
-//   }
   
   const useStyles = makeStyles((theme) => ({
     paper: {
