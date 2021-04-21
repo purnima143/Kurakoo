@@ -39,7 +39,7 @@ const createAnswers = async (req, res) => {
                 }
             }
             else{
-                return res.status(400).json(responseHandler(true, 400, {message: "invalid questioId!"}));
+                return res.status(400).json(responseHandler(true, 400, {message: "invalid questionId!"}));
             }
         }
         catch(e){
@@ -47,7 +47,7 @@ const createAnswers = async (req, res) => {
         }    
     }
     else{
-        return res.status(400).json(responseHandler(true, 400, {message: "invalid questioId!"}));
+        return res.status(400).json(responseHandler(true, 400, {message: "invalid questionId!"}));
     }     
     
 };
