@@ -12,25 +12,26 @@ const initState = {
     authenticating: false,
     loading: false,
     error: null,
-    message: ""
+    message: ''
 };
 
-export default (state = initState, action) => {
+export default ( state = initState, action ) => {
+
     console.log(action);
 
-    switch (action.type) {
+    switch(action.type){
         case authConstants.LOGIN_REQUEST:
             state = {
                 ...state,
-                authenticating: true
-            };
-            break;
+                authenticating:true
+            }
+        break;
         case authConstants.LOGIN_SUCCESS:
             state = {
                 ...initState
-            };
-            break;
+            }
+        break;
     }
 
     return state;
-};
+} 
