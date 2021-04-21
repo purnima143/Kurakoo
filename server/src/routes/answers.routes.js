@@ -12,5 +12,6 @@ router.post(
     userMiddleWare,
     answerController.createAnswers
 );
+router.delete('/deleteAnswer/:id', requireSignin, userMiddleWare, answerController.deleteAnswer)
 
 module.exports = router;

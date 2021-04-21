@@ -3,7 +3,6 @@
     display: flex;
     width: 100%;
     position: relative;
-
 }
 
 /*div containing input box*/
@@ -100,7 +99,7 @@
 /*adjustment of search on some actions*/
 .btn_class span:before,
 .btn_class span:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -121,7 +120,7 @@
     border-radius: 20px;
 }
 
-#s-cover{
+#s-cover {
     transform: translateX(-1.1rem);
 }
 

@@ -1,5 +1,6 @@
 const Questions = require('../models/questions.models');
 const responseHandler = require('../helpers/responseHandler');
+const Answers = require('../models/answers.model')
 
 const createQuestions = (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
@@ -64,8 +65,22 @@ const editQuestion = async(req, res) =>{
     }
 }
 
+const deleteQuestion = async(req, res) => {
+    try{
+        const question = await Questions.findOneAndDelete({_id: req.params.id, createdBy: req.user._id})
+        if(!question){  
+            return res.status(400).send({message:"question not found"})
+        }
+        await Answers.deleteMany({questionId: req.params.id})
+        res.status(200).send({message: "question deleted!"}) 
+    }catch(e){
+        res.status(400).send({message:"something went wrong!"})  
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
-    editQuestion
+    editQuestion,
+    deleteQuestion
 };

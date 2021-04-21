@@ -1,8 +1,8 @@
-:root{
-    --sec-bg-shade: #FFF4D9;
+:root {
+    --sec-bg-shade: #fff4d9;
 }
 
-.sidebar{
+.sidebar {
     height: 100%;
     width: 500px;
     position: sticky;
@@ -10,15 +10,15 @@
     bottom: 0;
 }
 
-body{
+body {
     letter-spacing: 1px;
 }
 
-.line-word-space{
+.line-word-space {
     line-height: 1.3;
 }
 
-.activities-div{
+.activities-div {
     border: solid 1px var(--darker-shade);
     border-radius: 25px;
     background-color: var(--white);
@@ -26,7 +26,7 @@ body{
     box-shadow: 5px 5px 2px var(--shadow-color);
 }
 
-.activities-head{
+.activities-head {
     border-radius: 50px;
     background-color: var(--sec-bg-shade);
     margin: 5px;
@@ -35,57 +35,57 @@ body{
     width: 400px;
 }
 
-.activities-head h2{
-    padding: .5rem;
+.activities-head h2 {
+    padding: 0.5rem;
     margin: auto 2rem;
 }
 
-.activity{
+.activity {
     display: flex;
 }
 
-.image-div{
+.image-div {
     position: relative;
     height: 50px;
     width: 50px;
     margin: 10px;
 }
 
-.activity .content{
-    margin: .8rem;
+.activity .content {
+    margin: 0.8rem;
 }
 
-.activity .rare-img{
+.activity .rare-img {
     width: 50px;
 }
 
-.activity .front-img{
+.activity .front-img {
     width: 35px;
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
-.activity .topic{
+.activity .topic {
     font-size: 14px;
     font-weight: bolder;
 }
 
-.activities-list{
-    margin-bottom: .5rem;
+.activities-list {
+    margin-bottom: 0.5rem;
 }
 
-.activities-div{
+.activities-div {
     margin-bottom: 1rem;
 }
 
-.activity .detail{
+.activity .detail {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
-.content p{
+.content p {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -93,7 +93,7 @@ body{
     font-size: 13px;
 }
 
-.content button{
+.content button {
     background-color: var(--sec-bg-shade);
     border: 0px;
     box-shadow: 5px 5px 2px var(--shadow-color);
@@ -109,49 +109,51 @@ body{
     cursor: pointer;
 }
 
-.sidebar .footer{
+.sidebar .footer {
     text-align: center;
 }
 
-.sidebar .footer-line1, .footer-line2, .footer-line3{
+.sidebar .footer-line1,
+.footer-line2,
+.footer-line3 {
     display: flex;
     justify-content: center;
 }
 
-.footer .logo{
+.footer .logo {
     padding: 0px;
     transform: translateY(-2px);
 }
 
-.logo img{
+.logo img {
     width: 6rem;
 }
 
-.footer div{
-    padding: .3rem;
+.footer div {
+    padding: 0.3rem;
     font-weight: bold;
 }
 
-.footer-line1{
+.footer-line1 {
     font-size: 11px;
     word-spacing: 5px;
 }
 
-.footer-line2{
+.footer-line2 {
     font-size: 13px;
     font-weight: bolder;
     margin-top: 5px;
 }
 
-.footer-line2 .email{
+.footer-line2 .email {
     font-size: 10px;
-    margin: 0px .5rem;
+    margin: 0px 0.5rem;
 }
 
-.footer-line3{
+.footer-line3 {
     font-size: 10px;
 }
 
-.footer .copyright{
+.footer .copyright {
     transform: translateX(-20px);
 }
