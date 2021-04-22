@@ -1,6 +1,7 @@
 // main server file
 
 require("dotenv").config();
+const path = require("path");
 const cors = require("cors");
 const http = require("http");
 const morgan = require("morgan");
@@ -54,6 +55,8 @@ mongoose.connect(
 // all the api routes
 app.use('/api', root);
 
+//make the upload folder static
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
 
 // server setup
