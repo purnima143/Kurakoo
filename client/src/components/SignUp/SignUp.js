@@ -17,18 +17,6 @@ const SignUp = () => {
         query: "(max-width: 959.5px)"
     });
 
-        dispatch(signup({
-            firstName,
-            lastName,
-            userName,
-            email,
-            password,
-            course,
-            year,
-            collegeName,
-            contactNumber
-        }));
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [userName, setUserName] = useState("");
@@ -45,7 +33,7 @@ const SignUp = () => {
     const userSignup = (e) => {
         e.preventDefault();
 
-        const user = {
+        dispatch(signup({
             firstName,
             lastName,
             userName,
@@ -55,8 +43,7 @@ const SignUp = () => {
             year,
             collegeName,
             contactNumber
-        };
-        dispatch(signup(user));
+        }));
     };
 
     if (auth.authenticate) {
