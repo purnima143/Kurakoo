@@ -8,7 +8,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
-// import Footer from "../Footer/footer";
+import Footer from "../Footer/footer";
 
 function homepage() {
     return <LandingPageorange {...landingPageorangeData} />;
@@ -120,6 +120,10 @@ function LandingPageorange(props) {
         {/* Explore */}
         <button className="explore"><a>Explore</a></button>
       </div>
+      {/* Footer */}
+      <div className="footer-components">
+                <Footer />
+            </div>
     </div>
     );
 }
