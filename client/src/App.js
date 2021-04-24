@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isUserLoggedIn } from "./actions/auth.constants";
 
 
-const Homepage=lazy(()=> import("./components/homepage/homepage"));
+const Homepage=lazy(()=> import("./components/Homepage-UI/homepage1"));
 const Signup=lazy(()=>import("./components/SignUp/SignUp"));
 const Signin=lazy(()=>import("./components/SignIn/SignIn"));
 const Feed=lazy(()=>import("./components/feed/feed"));
