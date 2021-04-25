@@ -1,12 +1,21 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "./feed.css";
 import Feed from "./feedComponent";
 import { feedData, connect } from "./dummyData";
 import NavBar from "../navbar/Navbar";
 
 function FeedPage() {
+
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     return (
-        <div>
+        <div className={dark?"dark-mode":""}>
             <NavBar />
             <div className="side-bar-left">
                 <h3 id="category-heading">Categories</h3>
@@ -37,6 +46,11 @@ function FeedPage() {
                         <a href="/">Placement</a>
                     </li>
                 </ul>
+                <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
             </div>
 
             <div className="side-bar-right">

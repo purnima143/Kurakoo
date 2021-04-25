@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./AddAQuestion.css";
 import closeIcon from "./svgs/closesvg.svg";
 import logo from "../../components/kurakoo-logo.png";
@@ -6,6 +6,14 @@ import link from "./svgs/linksvg.svg";
 
 import { Avatar } from "@material-ui/core";
 const AddAQuestion = () => {
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     const [question, setQuestion] = useState("");
     const [modal, setModal] = useState(false);
     const [addlink, setAddlink] = useState("");
@@ -41,7 +49,7 @@ const AddAQuestion = () => {
                 </div>
             )}
             {/* add question form */}
-            <form onSubmit={addquestion} className="addaquestionpage">
+            <form onSubmit={addquestion} className={dark?"addaquestionpage dark-mode":"addaquestionpage"} >
                 <div className="addaquestionpage_header">
                     <img
                         src={closeIcon}
@@ -57,6 +65,11 @@ const AddAQuestion = () => {
                             </select>
                         </label>
                     </div>
+                    <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
                     <img
                         src={logo}
                         alt="logo"
