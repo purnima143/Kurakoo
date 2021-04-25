@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { signup } from "../../actions/user.constants";
+import { signup } from "../../actions";
 import "./SignUp.css";
 import { useMediaQuery } from "react-responsive";
 import Grid from "@material-ui/core/Grid";
