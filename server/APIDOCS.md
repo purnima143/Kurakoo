@@ -7,8 +7,15 @@
     `POST`
 
 * **PASSED OBJETCS**
-    `firstName [required] , lastName [required], password [required], confirmPassword [required],` 
-    ` email [required], userName, year, collegeName, contactNumber`
+    `firstName [required] ,` <br />
+    `lastName [required],` <br />
+    ` password [required],` <br />
+    ` confirmPassword [required],` <br /> 
+    ` email [required],` <br />
+    ` userName,` <br />
+    ` year,` <br />
+    ` collegeName,` <br />
+    ` contactNumber`
 
 * **Success Response**<br />
     * **Code:** `201` <br />
