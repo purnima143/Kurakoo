@@ -7,7 +7,7 @@
     `POST`
 
 * **PASSED OBJETCS**
-    `firstName [required] ,` <br />
+    `firstName [required],` <br />
     `lastName [required],` <br />
     ` password [required],` <br />
     ` confirmPassword [required],` <br /> 
