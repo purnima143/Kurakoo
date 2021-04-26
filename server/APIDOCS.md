@@ -6,7 +6,7 @@
 * **METHOD**
     `POST`
 
-* **PASSED OBJETCS**
+* **PASSED OBJETCS** <br />
     `firstName [required],` <br />
     `lastName [required],` <br />
     ` password [required],` <br />
