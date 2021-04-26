@@ -6,6 +6,7 @@ import Notification from "./NotficationComp";
 import Footer from "../Footer/footer";
 import { currentuser, data } from "./DummyData";
 import Image from "./images/Vector.png";
+import Meta from "../../helpers/Meta"
 
 function getTime() {
     var hours = new Date().getHours();
@@ -23,6 +24,7 @@ function getTime() {
 function NotificationPage() {
     return (
         <div>
+            <Meta title="Notifications ​🔔​| Kurakoo"/>
             <Navbar />
             <br />
             <br />
