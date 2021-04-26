@@ -13,9 +13,14 @@ const questionRoutes = require("./questions.routes");
 // Answer route
 const answerRoutes = require("./answers.routes");
 
+//Upload route
+const uploadRoutes =require("./upload.routes");
+
 router.use("/example", example);
 router.use("/", authRoutes);
 router.use("/", questionRoutes);
 router.use("/", answerRoutes);
+router.use("/", uploadRoutes);
+
 
 module.exports = router;
