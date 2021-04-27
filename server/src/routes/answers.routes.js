@@ -13,5 +13,6 @@ router.post(
     answerController.createAnswers
 );
 router.delete('/deleteAnswer/:id', requireSignin, userMiddleWare, answerController.deleteAnswer)
+router.patch('/editAnswer/:id', requireSignin, userMiddleWare, answerController.editAnswer)
 
 module.exports = router;
