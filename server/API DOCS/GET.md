@@ -18,4 +18,5 @@
       **Message:** `authorization required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
