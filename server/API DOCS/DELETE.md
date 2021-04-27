@@ -40,3 +40,24 @@
 
 * **Required Filed**
     * **Auth/ Admin Auth: true/true**
+
+**3. DELETE profile**
+* **URL**
+    `/api/deleteProfile`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `none`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `profile deleted` <br />
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Something went wrong` <br />
+
+* **Required Filed**
+    * **Auth/ Admin Auth: true/true**
