@@ -78,9 +78,23 @@ const deleteQuestion = async(req, res) => {
     }
 }
 
+const getAnswers = async (req, res) => {
+    try{
+        const answers = await Answers.find({questionId: req.params.id})
+        if(!answers){
+            return res.status(200).json(responseHandler(true, 200, {message: "answers not found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, answers));
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
     editQuestion,
-    deleteQuestion
+    deleteQuestion,
+    getAnswers
 };
