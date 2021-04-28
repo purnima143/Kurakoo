@@ -37,4 +37,4 @@
       **Message:** `something went wrong` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth/ Admin Auth: true/false**
