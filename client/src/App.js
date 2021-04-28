@@ -5,13 +5,14 @@ import Preloader from "./components/Preloader/Preloader";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
 import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
 import NotFound from "./components/NotFound/NotFound";
+import AboutUs from "./components/aboutus/aboutus"
 import { useDispatch, useSelector } from "react-redux";
 
 const Homepage = lazy(() => import("./components/Homepage-UI/homepage1"));
 const Signup = lazy(() => import("./components/SignUp/SignUp"));
 const Signin = lazy(() => import("./components/SignIn/SignIn"));
 const Feed = lazy(() => import("./components/feed/feed"));
-const AboutUs = () => import("./components/aboutus/aboutus");
+//const AboutUs = () => import("./components/aboutus/aboutus");
 
 const App = () => {
     const dispatch = useDispatch();
