@@ -3,10 +3,12 @@ import "./feed.css";
 import Feed from "./feedComponent";
 import { feedData, connect } from "./dummyData";
 import NavBar from "../navbar/Navbar";
+import Meta from "../../helpers/Meta"
 
 function FeedPage() {
     return (
         <div>
+            <Meta title="Feed ​📰​| Kurakoo"/>
             <NavBar />
             <div className="side-bar-left">
                 <h3 id="category-heading">Categories</h3>
