@@ -1,0 +1,103 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:700");
+:root {
+    --black: rgba(0, 0, 0, 0.54);
+    --blaze-orange: rgba(255, 111, 0, 0.78);
+    --crusta: rgba(249, 137, 50, 1);
+}
+body {
+    background: white;
+    font-family: "Poppins";
+    width: 100vw;
+}
+.rounded-circle {
+    position: relative;
+    margin-top: 7%;
+    display: flex;
+    margin-left: 15%;
+    width: 15rem;
+    height: 15rem;
+    border: #ffc107 3px solid;
+    border-radius: 100%;
+}
+.Intro {
+    margin-left: 42%;
+    width: 100%;
+    line-height: 2.5rem;
+}
+.Intro h1 {
+    position: relative;
+    margin-top: -15rem;
+    justify-content: center;
+    font-size: 3rem;
+}
+.Intro h5 {
+    position: relative;
+    margin-left: 2.8rem;
+    font-size: 1.2rem;
+    color: #808080;
+}
+.Header {
+    font-size: 2rem;
+    margin-top: 3.5rem;
+    margin-left: 30rem;
+}
+.Header span {
+    margin: 2rem;
+    color: #808080;
+    font-weight: lighter;
+}
+.Header hr {
+    width: 38rem;
+    margin-left: -1rem;
+    font-weight: 900;
+}
+a {
+    text-decoration: none;
+    color: #808080;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+.profile {
+    color: black;
+}
+.followers {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-left: 34.5rem;
+}
+.followers h3 {
+    color: #808080;
+}
+.followers span {
+    color: black;
+}
+.Content {
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    margin-left: 13%;
+    width: 75%;
+    color: #808080;
+    text-align: center;
+    line-height: 1.2rem;
+}
+.foot {
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    margin-left: 13%;
+    width: 75%;
+    text-align: center;
+}
+.foot h1 {
+    font-size: 1.5rem;
+}
+.foot h2 {
+    font-size: 1.5rem;
+    color: #484848;
+}
+.foot i {
+    margin-left: 55rem;
+    margin-top: -2rem;
+}
