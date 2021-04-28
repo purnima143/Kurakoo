@@ -6,6 +6,8 @@ import "font-awesome/css/font-awesome.min.css";
 import logo from "../../components/profile-pic.png";
 import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
+const followers = 0;
+const following = 0;
 class profilePage extends Component {
     render() {
         return (
@@ -36,8 +38,8 @@ class profilePage extends Component {
                 <div className="followers">
                     <h3>
                         {" "}
-                        Following - <span>10</span> &nbsp; &nbsp;
-                        &nbsp;Followers - <span>5K</span>{" "}
+                        Following - <span>{following}</span> &nbsp; &nbsp;
+                        &nbsp;Followers - <span>{followers}</span>{" "}
                     </h3>
                 </div>
                 <div className="Content">
