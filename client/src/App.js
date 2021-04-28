@@ -5,6 +5,7 @@ import Preloader from "./components/Preloader/Preloader";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
 import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
 import NotFound from "./components/NotFound/NotFound";
+import Profile from "./components/profilePage/profilePage";
 import { useDispatch, useSelector } from "react-redux";
 
 const Homepage = lazy(() => import("./components/Homepage-UI/homepage1"));
@@ -32,6 +33,7 @@ const App = () => {
                         />
                         <Route path="/addaquestion" component={AddAQuestion} />
                         <Route path="/aboutus" component={AboutUs} />
+                        <Route path="/profile" component={Profile} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
