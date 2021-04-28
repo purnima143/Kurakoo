@@ -1,13 +1,13 @@
 import React, { useState,useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { signup } from "../../actions/user.constants";
+import { signup } from "../../actions";
 import "./SignUp.css";
 import { useMediaQuery } from "react-responsive";
 import Grid from "@material-ui/core/Grid";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
- 
+import Meta from "../../helpers/Meta"
 toast.configure();
 const SignUp = () => {
     const getMode = ()=>{
@@ -63,6 +63,8 @@ const SignUp = () => {
     return (
         <div className={dark?"dark-mode main":"main"}>
         <Grid container >
+      
+            <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
             {!isSmallScreen ? (
                 <Grid item md={6} lg={6}>

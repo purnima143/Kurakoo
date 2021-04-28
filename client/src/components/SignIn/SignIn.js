@@ -5,12 +5,17 @@ import Grid from "@material-ui/core/Grid";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useHistory } from "react-router-dom";
+import { login } from "../../actions";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+import Meta from "../../helpers/Meta"
 toast.configure();
 
 const initialState = {
     email: "",
     password: ""
 };
+
 const SignIn = () => {
     const getMode = ()=>{
         return JSON.parse(localStorage.getItem("mode")) || false
@@ -21,7 +26,7 @@ const SignIn = () => {
     },[dark])
  
     const history = useHistory();
-
+    
     //STATE HOOK FOR INPUT DETAILS
     const [formData, setFormData] = useState(initialState);
 
@@ -85,10 +90,32 @@ const SignIn = () => {
         }
     };
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const auth = useSelector((state) => state.auth);
+
+    const dispatch = useDispatch();
+    const userLogin = (e) => {
+        e.preventDefault();
+
+        
+        dispatch(
+            login({
+                email,
+                password
+            })
+        );
+    };
+
+    if (auth.authenticate) {
+        return <Redirect to={"/"} />;
+    }
+
     return (
         
         <div className={dark?"dark-mode main":"main"}>
         <Grid container>
+           <Meta title="SignIn ​🚪​🏃​💨​ | Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
             {!isSmallScreen ? (
                 <Grid item md={6} lg={6}>
@@ -135,18 +162,20 @@ const SignIn = () => {
                                 type="text"
                                 placeholder="email"
                                 name="email"
-                                onChange={handleChange}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                             <input
                                 type="password"
                                 placeholder="password"
                                 name="password"
-                                onChange={handleChange}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                     </form>
                     <footer>
-                        <button type="submit" onClick={PostData}>
+                        <button type="submit" onClick={userLogin}>
                             Continue
                         </button>
                         <p className="para">

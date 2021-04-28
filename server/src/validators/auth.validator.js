@@ -9,13 +9,13 @@ const validateSignupRequest = [
     .withMessage('lastName is required'),
     check('email')
     .isEmail()
-    .withMessage('lastName is required'),
+    .withMessage('email is required'),
     check('password')
     .isLength({min: 6})
     .withMessage('Password must be off 6 character long'),
     check('confirmPassword')
     .isLength({min:6})
-    .withMessage('confirmPAssword field is missing')
+    .withMessage('confirmPassword field is missing')
 ];
 
 const validateSigninRequest = [

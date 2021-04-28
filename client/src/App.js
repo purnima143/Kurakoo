@@ -1,30 +1,21 @@
-import React , {lazy,Suspense, useEffect} from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./components/Preloader/Preloader";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
 import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
 import NotFound from "./components/NotFound/NotFound";
-import Scroll from "./components/ScrollToTop/ScrollToTop";
-import { useDispatch, useSelector } from 'react-redux';
-import { isUserLoggedIn } from "./actions/auth.constants";
+import { useDispatch, useSelector } from "react-redux";
 
-
-const Homepage=lazy(()=> import("./components/Homepage-UI/homepage1"));
-const Signup=lazy(()=>import("./components/SignUp/SignUp"));
-const Signin=lazy(()=>import("./components/SignIn/SignIn"));
-const Feed=lazy(()=>import("./components/feed/feed"));
-const AboutUs=(()=>import("./components/aboutus/aboutus"));
-
+const Homepage = lazy(() => import("./components/Homepage-UI/homepage1"));
+const Signup = lazy(() => import("./components/SignUp/SignUp"));
+const Signin = lazy(() => import("./components/SignIn/SignIn"));
+const Feed = lazy(() => import("./components/feed/feed"));
+const AboutUs = () => import("./components/aboutus/aboutus");
 
 const App = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const auth = useSelector((state) => state.auth);
-    useEffect(() => {
-      if(!auth.authenticate){
-        dispatch(isUserLoggedIn());
-      }
-    }, []);
 
     return (
         <>
