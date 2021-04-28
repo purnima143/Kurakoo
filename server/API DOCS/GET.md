@@ -18,7 +18,8 @@
       **Message:** `authorization required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
 
 
 **2. Get answers**
@@ -37,4 +38,5 @@
       **Message:** `something went wrong` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/false**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**

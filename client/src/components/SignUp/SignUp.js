@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import Grid from "@material-ui/core/Grid";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Meta from "../../helpers/Meta"
 
 toast.configure();
 const SignUp = () => {
@@ -56,6 +57,7 @@ const SignUp = () => {
     
     return (
         <Grid container>
+            <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
             {!isSmallScreen ? (
                 <Grid item md={6} lg={6}>

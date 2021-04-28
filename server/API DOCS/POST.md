@@ -27,7 +27,8 @@
       **Message:** `User is already registered` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: false/false**
+     * **Auth Need : False**
+    * **Admin Auth Need : False**
 
 **2. Signin**
 * **URL**
@@ -50,7 +51,8 @@
       **Message:** `Invalid password or valid email is required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: false/false**
+     * **Auth Need : False**
+    * **Admin Auth Need : False**
 
 **3. Signout**
 * **URL**
@@ -97,7 +99,8 @@
       **Message:** `Question not created ! Something went wrong! or Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/false**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
 
 **5. Add answers**
 * **URL**
@@ -118,4 +121,5 @@
       **Message:** `Something went wrong or Authorization required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/false**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**

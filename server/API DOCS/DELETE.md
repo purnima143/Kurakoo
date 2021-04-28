@@ -18,7 +18,8 @@
       **Message:** `Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
 
 **2. DELETE answer**
 * **URL**
@@ -39,4 +40,5 @@
       **Message:** `Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
