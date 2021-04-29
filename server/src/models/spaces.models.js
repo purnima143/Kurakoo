@@ -7,14 +7,14 @@ const spaceSchema = new mongoose.Schema(
             required: true,
             trim: true,
             min: 3,
-            max: 10
+            max: 25
         },
         description:{
             type: String,
             required: true,
             trim: true,
             min: 5,
-            max: 50
+            max: 100
         },
         role:{
             type: String,
