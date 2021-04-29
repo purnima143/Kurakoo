@@ -123,3 +123,26 @@
 * **Required Filed**
      * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**5. Create Spaces**
+* **URL**
+    `/api/createSpace`
+
+* **METHOD**
+    `POST`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `Space created successfully` <br />
+      **data:** `{  role: [role], _id: "spaceID", spaceName: "space_name", description: "description", createdBy: "user_id" }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Authorization required` <br />
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : True**
+
