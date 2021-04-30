@@ -11,6 +11,7 @@ import Homepage from "./components/Homepage-UI/homepage1"
 import Signup from "./components/SignUp/SignUp"
 import Signin from "./components/SignIn/SignIn"
 import Feed from "./components/feed/feed"
+import Scroll from "./components/ScrollToTop/ScrollToTop"
 
 import Profile from "./components/profilePage/profilePage";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,6 +40,7 @@ const App = () => {
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
+                <Scroll />
             </Suspense>
         </>
     );
