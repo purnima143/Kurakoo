@@ -3,7 +3,7 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import AddAQuestion from "../AddAQuestion/AddAQuestion";
 import { SearchBar } from "../searchbar/SearchBar";
-import Logo from "../kurakoo-logo.png";
+import Logo from "../images/kurakoo-logo.png";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";

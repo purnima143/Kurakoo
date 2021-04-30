@@ -1,6 +1,6 @@
 import React from "react"
 import "./Homepage.css"
-import logo from "../../components/kurakoo-logo.png";
+import logo from "../images/kurakoo-logo.png";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
@@ -17,8 +17,8 @@ const Homepage = () => {
             <div className="content">
                 <h2>Welcome To</h2>
                 <h1>Kurakoo</h1>
-                <h4>Get your answer</h4>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora neque velit et maxime minus, suscipit omnis architecto quia cupiditate aliquam ipsa iusto commodi vero amet quos, eius modi corrupti? Facilis!</h3>
+                <h4>Get your answers</h4>
+                <h3>Kurakoo to ask questions from a community of people who answer them. Kurakoo is especially for the school-college students, people from around the different colleges visit.</h3>
             </div>
             <img src={require('../../Homepage/leaf1.png')} alt="leaf1" className="leaf1" />
             <div className="Vision">
@@ -29,24 +29,24 @@ const Homepage = () => {
                 <div className="card">
                     <img src={require('../../Homepage/01.png')} alt="" />
                     <h3>Share and Grow</h3>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eveniet autem illum animi fugiat optio obcaecati nihil iusto nam ratione.</h5>
+                    <h5>As we grow, we will be able to provide larger and larger audiences to writers, cover more and more topics, and have greater and greater impact on the world.</h5>
                 </div>
                 <div className="card">
                     <img src={require('../../Homepage/02.png')} alt="" />
                     <h3>Create Networks</h3>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eveniet autem illum animi fugiat optio obcaecati nihil iusto nam ratione.</h5>
+                    <h5>We want you to build genuine relationships with your friends and communities close to home or around the world.</h5>
                 </div>
                 <div className="card">
                     <img src={require('../../Homepage/03.png')} alt="" />
                     <h3>Everything in One</h3>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eveniet autem illum animi fugiat optio obcaecati nihil iusto nam ratione.</h5>
+                    <h5>Original, reliable, playful, and relatable. These are the values that connect our users and our employees at Discord.</h5>
                 </div>
             </div>
             <div className="aboutus">
                 <img src={require('../../Homepage/about.png')} className="aboutimage" alt="" />
                 <div className="about-content">
                     <h1 className="head"><span>About</span> Us</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit sapiente molestiae beatae labore. Nulla, explicabo aut beatae non voluptates delectus amet dolorem nostrum consequuntur similique repudiandae, sunt accusantium dolore!</p>
+                    <p>In the majority of the colleges and universities across India, thousands of students have many doubts and queries from "Which branch to choose?" to "How to crack interviews?". Kurakoo is a one-stop solution for all these problems. It serves as a platform where students can drop in their questions for the public view and any person from this vibrant community can help by providing answers.</p>
                 </div>
             </div>
             <div className="reach">
