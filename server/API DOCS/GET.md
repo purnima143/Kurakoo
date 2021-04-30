@@ -18,4 +18,25 @@
       **Message:** `authorization required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+
+**2. Get answers**
+* **URL**
+    `/api/getAnswers/:id`
+
+* **METHOD**
+    `GET`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `{ answers: [ displaying all answers to a particular question] }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**

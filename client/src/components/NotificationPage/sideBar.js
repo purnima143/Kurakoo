@@ -1,6 +1,6 @@
 import React from "react";
 import "./sideBar.css";
-import Logo from "../kurakoo-logo.png";
+import Logo from "../images/kurakoo-logo.png";
 import { activityData } from "./DummyData";
 
 function Sidebar() {

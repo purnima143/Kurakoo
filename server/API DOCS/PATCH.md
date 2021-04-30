@@ -25,7 +25,8 @@
       **Message:** `Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
 
 **2. Update Questions**
 * **URL**
@@ -54,7 +55,8 @@
       **Message:** `Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
 
 **3. Update Answers**
 * **URL**
@@ -83,4 +85,5 @@
       **Message:** `Authorization Required` <br />
 
 * **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**

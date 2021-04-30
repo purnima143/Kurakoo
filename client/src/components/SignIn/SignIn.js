@@ -8,6 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 import { login } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import Meta from "../../helpers/Meta"
 toast.configure();
 
 const initialState = {
@@ -104,6 +105,7 @@ const SignIn = () => {
 
     return (
         <Grid container>
+           <Meta title="SignIn ​🚪​🏃​💨​ | Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
             {!isSmallScreen ? (
                 <Grid item md={6} lg={6}>
@@ -127,7 +129,7 @@ const SignIn = () => {
                         <img
                             draggable={false}
                             className="mobile_logo_img"
-                            src="./images/kurakoo-logo.png"
+                            src="../images/kurakoo-logo.png"
                             alt="mobile_logo_img"
                         ></img>
                     </Link>

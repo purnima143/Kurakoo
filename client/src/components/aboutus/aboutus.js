@@ -15,7 +15,7 @@ function LandingPageorange(props) {
             <img
                 draggable={false}
                 className="mobile_logo_img"
-                src="./images/kurakoo-logo.png"
+                src="../images/kurakoo-logo.png"
                 alt="mobile_logo_img"
             ></img>
             <h1 className="text-10 ">{text10}</h1>

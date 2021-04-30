@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./homepage.css";
 import { Link } from "react-router-dom";
-import logo from "../../components/kurakoo-logo.png";
+import logo from "../images/kurakoo-logo.png";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -45,6 +45,7 @@ function LandingPageorange(props) {
     } = props;
 
     return (
+       
         <div
             className={
                 dark ? "landing-page-orange dark-mode" : "landing-page-orange"
