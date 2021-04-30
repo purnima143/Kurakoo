@@ -1,6 +1,6 @@
 import React from "react"
 import "./Homepage.css"
-import logo from "../../components/kurakoo-logo.png";
+import logo from "../images/kurakoo-logo.png";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
