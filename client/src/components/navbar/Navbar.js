@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import AddAQuestion from "../AddAQuestion/AddAQuestion";
 import { SearchBar } from "../searchbar/SearchBar";
 import Logo from "../images/kurakoo-logo.png";
 import { Button, Menu, MenuItem } from "@material-ui/core";
@@ -8,8 +9,36 @@ import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import EditIcon from "@material-ui/icons/Edit";
 import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+    paper: {
+      position: 'absolute',
+      top: 45,
+      left: 350,
+      width: 775,
+      height: 580,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+
+    },
+  }));
 
 export default function Navbar() {
+    const classes = useStyles();
+    // const [modalStyle] = React.useState(getModalStyle);
+    const [openPopup, setOpenPopup] = useState(false);
+
+    const handleOpen = () => {
+        setOpenPopup(true);
+      };
+
+      const handleCloseModal = () => {
+        setOpenPopup(false);
+      }
+
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -38,7 +67,7 @@ export default function Navbar() {
                             variant="contained"
                             color="secondary"
                             size="large"
-                            href="/addaquestion"
+                            onClick={handleOpen}
                         >
                             <QuestionAnswerIcon /> &emsp; Ask Question
                         </Button>
@@ -75,6 +104,14 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            <Modal
+            open ={openPopup}
+            onClose={handleCloseModal}>
+                <div  className={classes.paper}>
+                <AddAQuestion/>
+                </div>
+
+            </Modal>
         </div>
     );
 }
