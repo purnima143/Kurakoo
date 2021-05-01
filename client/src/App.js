@@ -5,7 +5,7 @@ import Preloader from "./components/Preloader/Preloader";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
 import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
 import NotFound from "./components/NotFound/NotFound";
-
+import Team from "./components/Team/team"
 import AboutUs from "./components/aboutus/aboutus"
 import Homepage from "./components/Homepage-UI/homepage1"
 import Signup from "./components/SignUp/SignUp"
@@ -27,6 +27,7 @@ const App = () => {
                 <BrowserRouter>
                     <Switch>
                         <Route path="/" exact component={Homepage} />
+                        <Route path="/Team" exact component={Team} />
                         <Route path="/signup" component={Signup} />
                         <Route path="/signin" component={Signin} />
                         <Route path="/feed" component={Feed} />
