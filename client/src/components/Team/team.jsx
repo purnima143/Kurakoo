@@ -36,7 +36,7 @@ const Team = () => {
           .then(data => {
             console.log(data);
             setContributors(
-              data.filter(element => !(element.login === "smaranjitghose" || element.login === "anushbhatia"))
+              data.filter(element => !(element.login === "codewithvk" || element.login === "ir2010" || element.login === "maw1a" || element.login === "purnima143"))
             );
           });
       }, []);
