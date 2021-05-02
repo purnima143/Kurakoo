@@ -53,7 +53,7 @@ body {
 }
 
 .sidebar-left-categories a:hover {
-    background-color: var(--tertiary-color);
+    background-color: white;
     border-radius: 1.5rem;
 }
 
@@ -101,7 +101,8 @@ body {
 }
 
 .sidebar-right-categories :hover {
-    background-color: var(--tertiary-color);
+    background-color: white;
+    border-radius: 1.5rem;
 }
 
 .profile-pic {
