@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const classes = useStyles();
-    // const [modalStyle] = React.useState(getModalStyle);
     const [openPopup, setOpenPopup] = useState(false);
 
     const handleOpen = () => {

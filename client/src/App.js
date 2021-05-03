@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./components/Preloader/Preloader";
 import NotificationPage from "./components/NotificationPage/NotificationPage";
-import AddAQuestion from "./components/AddAQuestion/AddAQuestion";
+import Answerquestion from "./components/Answer/Answer";
 import NotFound from "./components/NotFound/NotFound";
 import Team from "./components/Team/team"
 import AboutUs from "./components/aboutus/aboutus"
@@ -35,7 +35,7 @@ const App = () => {
                             path="/notification"
                             component={NotificationPage}
                         />
-                        <Route path="/addaquestion" component={AddAQuestion} />
+                        <Route path="/addaquestion" component={Answerquestion} />
                         <Route path="/aboutus" component={AboutUs} />
                         <Route path="/profile" component={Profile} />
                         <Route component={NotFound} />
