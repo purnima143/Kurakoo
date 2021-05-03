@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "./feed.css";
 import Feed from "./feedComponent";
 import { feedData, connect } from "./dummyData";
@@ -6,7 +6,19 @@ import NavBar from "../navbar/Navbar";
 import Meta from "../../helpers/Meta"
 
 function FeedPage() {
+
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     return (
+      
+        <div className={dark?"dark-mode":""}>
+      
         <div>
             <Meta title="Feed ​📰​| Kurakoo"/>
             <NavBar />
@@ -39,6 +51,11 @@ function FeedPage() {
                         <a href="/">Placement</a>
                     </li>
                 </ul>
+                <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
             </div>
 
             <div className="side-bar-right">
