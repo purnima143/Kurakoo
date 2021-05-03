@@ -1,25 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: none;
+}
 .signup_image {
     width: 100%;
     height: 100vh;
 }
-
+ 
 .mobile_logo_img {
     max-width: 90%;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-
+ 
 .show {
     display: none;
 }
-
+ 
 .title,
 .form {
     margin: 0 auto;
     border-radius: 2px;
 }
-
+ 
 .title {
     margin-bottom: 0.5em;
     display: block;
@@ -52,7 +60,7 @@
     border-top-color: orange;
     border-bottom-color: orange;
 }
-
+ 
 .show ~ .title {
     z-index: 2;
     width: 300px;
@@ -61,80 +69,80 @@
     left: 0;
     transition: width 200ms ease-out, top 200ms ease-out;
 }
-
+ 
 .show ~ .title .flag {
     opacity: 0;
 }
-
+ 
 .show ~ .title .left {
     left: 0;
     border-right-color: orange;
     border-left-color: transparent;
 }
-
+ 
 .show ~ .title .right {
     right: 0;
     border-right-color: transparent;
     border-left-color: orange;
 }
-
+ 
 .show ~ .form {
     opacity: 0;
     transition: opacity 200ms linear;
 }
-
+ 
 .show:checked ~ .title {
     position: relative;
     top: 0;
     width: 500px;
 }
-
+ 
 .show:checked ~ .title .left {
     opacity: 0.7;
     left: -55px;
     transition: opacity 50ms linear 200ms, left 50ms linear 200ms;
 }
-
+ 
 .show:checked ~ .title .right {
     opacity: 0.7;
     right: -55px;
     transition: opacity 50ms linear 200ms, right 50ms linear 200ms;
 }
-
+ 
 .show:checked ~ .form {
     opacity: 1;
 }
-
+ 
 .form {
     width: 500px;
     background: #ddd;
     padding: 2em 0 2em 0;
 }
-
+ 
 .group {
     margin: 0 auto;
     width: 80%;
 }
-
+ 
 .group {
     margin-bottom: 2em;
 }
-
+ 
 .group:after {
     content: "";
     display: block;
     clear: both;
 }
-
+ 
 .col-1,
 .colm-2 {
     float: left;
 }
-
+ 
 .col-1 {
     width: 40%;
 }
-
+ 
 .col-1 label {
     height: 40px;
     line-height: 40px;
@@ -143,11 +151,11 @@
     font-family: "Nunito", sans-serif;
     text-transform: capitalize;
 }
-
+ 
 .colm-2 {
     width: 60%;
 }
-
+ 
 .colm-2 input {
     width: 100%;
     height: 40px;
@@ -161,13 +169,13 @@
     background: rgba(80, 80, 80, 0.1);
     margin-left: 39%;
 }
-
+ 
 input[type="submit"] {
     display: block;
     margin: 0 auto;
     width: 30%;
 }
-
+ 
 .submit {
     border: none;
     outline: none;
@@ -183,18 +191,18 @@ input[type="submit"] {
     font-size: 18px;
     transition: background 70ms linear;
 }
-
+ 
 .submit:hover {
     color: orange;
     background: rgba(0, 0, 0, 1);
 }
-
+ 
 .signup_heading {
     width: 50%;
     border-bottom: 7px solid #ff6f00;
     margin-bottom: 30px;
 }
-
+ 
 .text_ip {
     width: 100%;
     height: 35px;
@@ -203,12 +211,12 @@ input[type="submit"] {
     outline: none;
     margin-bottom: 15px;
 }
-
+ 
 .text_ip:focus {
     border: 1px solid #ff9100;
     outline: 1px solid #ff9100;
 }
-
+ 
 .create_account_button {
     margin-top: 30px;
     background-color: #ff6f00;
@@ -220,14 +228,14 @@ input[type="submit"] {
     outline: none;
     cursor: pointer;
 }
-
+ 
 .signup_signin_message {
     font-weight: 500;
     margin-top: 10px;
     text-align: center;
     font-family: "Nunito", sans-serif;
 }
-
+ 
 .signin_link {
     color: rgb(0, 119, 255);
     cursor: pointer;
@@ -239,7 +247,92 @@ h2 {
     margin: 0;
     padding: 0.5em;
 }
-
+ 
 .show {
     display: none;
 }
+.dark-mode{
+    filter: invert(1) hue-rotate(180deg);
+    transition: 1s ease-in;
+  }
+  .dark-mode .signup_image{
+        filter: invert(1) hue-rotate(180deg);
+        transition: 0.5s ease-in;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    margin: 5px 16rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: orangered;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    background: black;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .switch h2{
+    position: absolute;
+    top: -18px;
+    left: 3rem;
+    font-size: 1.5rem;
+  }
+  .main{
+    background-color: #ff5e14;
+    margin: -1rem;
+    padding: 2rem;
+    transition: 0.5s ease-in;
+  }
+

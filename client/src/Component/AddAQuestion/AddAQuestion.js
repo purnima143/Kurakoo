@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddAQuestion.css";
-import logo from "../../components/kurakoo-logo.png";
+import logo from "../components/images/kurakoo-logo.png";
 import link from "./svgs/linksvg.svg";
 
 import { Avatar } from "@material-ui/core";

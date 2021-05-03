@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./NotificationPage.css";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "./sideBar";
@@ -22,16 +22,32 @@ function getTime() {
 }
 
 function NotificationPage() {
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     return (
+        <div className={dark?"dark-mode":"mainc"}>
+      
         <div>
             <Meta title="Notifications ​🔔​| Kurakoo"/>
-            <Navbar />
+      <Navbar />
             <br />
             <br />
             <br />
+            <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
             <br />
             <br />
             <br />
+
             <div id="notification-container">
                 <div className="greet-msg">
                     <div className="img-div">

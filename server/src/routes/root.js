@@ -16,11 +16,15 @@ const answerRoutes = require("./answers.routes");
 //Upload route
 const uploadRoutes =require("./upload.routes");
 
+//Spaces route
+const spaceRoutes = require("./spaces.routes");
+
 router.use("/example", example);
 router.use("/", authRoutes);
 router.use("/", questionRoutes);
 router.use("/", answerRoutes);
 router.use("/", uploadRoutes);
+router.use("/", spaceRoutes);
 
 
 module.exports = router;

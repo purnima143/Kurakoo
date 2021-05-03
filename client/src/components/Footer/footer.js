@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import Logo from "../kurakoo-logo.png";
+import Logo from "../images/kurakoo-logo.png";
 
 function Footer() {
     return (

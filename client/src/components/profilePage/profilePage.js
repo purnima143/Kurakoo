@@ -3,7 +3,7 @@ import Navbar from "../navbar/Navbar";
 import "./profilePage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import logo from "../../components/profile-pic.png";
+import logo from "../images/profile-pic.png";
 import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
 const followers = 0;

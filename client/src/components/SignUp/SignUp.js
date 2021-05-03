@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup } from "../../actions";
@@ -8,16 +8,21 @@ import Grid from "@material-ui/core/Grid";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from "../../helpers/Meta"
-
 toast.configure();
 const SignUp = () => {
-    
-
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
     const isSmallScreen = useMediaQuery({
         query: "(max-width: 959.5px)"
     });
-
+ 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [userName, setUserName] = useState("");
@@ -30,10 +35,10 @@ const SignUp = () => {
     const auth = useSelector((state) => state.auth);
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
-
+ 
     const userSignup = (e) => {
         e.preventDefault();
-
+ 
         dispatch(signup({
             firstName,
             lastName,
@@ -46,17 +51,19 @@ const SignUp = () => {
             contactNumber
         }));
     };
-
+ 
     if (auth.authenticate) {
         return <Redirect to={"/"} />;
     }
-
+ 
     if (user.loading) {
         return <p>Loading...!</p>;
     }
     
     return (
-        <Grid container>
+        <div className={dark?"dark-mode main":"main"}>
+        <Grid container >
+      
             <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
             {!isSmallScreen ? (
@@ -71,7 +78,7 @@ const SignUp = () => {
             ) : (
                 <Grid item md={12} lg={12}></Grid>
             )}
-
+ 
             <Grid item xs={12} sm={12} md={6} lg={6}>
                 {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
                 {isSmallScreen ? (
@@ -79,15 +86,20 @@ const SignUp = () => {
                         <img
                             draggable={false}
                             className="mobile_logo_img"
-                            src="./images/kurakoo-logo.png"
+                            src="../images/kurakoo-logo.png"
                             alt="mobile_logo_img"
                         ></img>
                     </Link>
                 ) : (
                     <div></div>
                 )}
-
+ 
                 {/* //INPUT CONTENT */}
+                <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
                 <input type="checkbox" id="show" className="show" />
                 <label for="show" class="title">
                     sign up<i class="flag left"></i>
@@ -139,7 +151,7 @@ const SignUp = () => {
                             />
                         </div>
                     </div>
-
+ 
                     <div className="group">
                         <div className="col-1">
                             <label for="email">Email</label>
@@ -246,7 +258,10 @@ const SignUp = () => {
                 </form>
             </Grid>
         </Grid>
+        </div>
     );
 };
-
+ 
 export default SignUp;
+ 
+
