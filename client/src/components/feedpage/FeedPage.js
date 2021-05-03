@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar } from "../navbar/Navbar";
 import "./FeedPage.css";
 
+
 export class FeedPage extends Component {
     render() {
         return (
