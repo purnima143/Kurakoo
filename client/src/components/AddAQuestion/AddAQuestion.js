@@ -48,7 +48,7 @@ const AddAQuestion = () => {
                         </button>
                     </form>
                 </div>
-            )}
+             ) }
             {/* add question form */}
             <form onSubmit={addquestion} className={dark?"addaquestionpage dark-mode":"addaquestionpage"} >
                 <div className="addaquestionpage_header">
@@ -77,20 +77,21 @@ const AddAQuestion = () => {
                         className="addaquestionpage_header_logo"
                     />
                 </div>
+                </form>
                 <div className="semicircle1"></div>
                 <div className="semicircle2"></div>
                 <div className="addaquestionpage_questionsection">
                     <div className="addaquestionpage_askerdetails">
                         <Avatar />
                         <p>Gaurav Chanda asked</p>
-
+</div></div>
   const [question, setQuestion] = useState("");
   const [modal, setModal] = useState(false);
   const [addlink, setAddlink] = useState("");
 
-  const addquestion = (e) => {
+  const addquestion = {(e)  =>
     //code to add the question to the backend
-    e.preventDefault();
+    e.preventDefault()
   };
   return (
     <>
@@ -178,6 +179,7 @@ const AddAQuestion = () => {
           </div>
         </div>
       </form>
+    </>
     </>
   );
 };

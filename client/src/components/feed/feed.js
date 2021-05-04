@@ -20,7 +20,7 @@ function FeedPage() {
         <div className={dark?"dark-mode":""}>
       
         <div>
-            <Meta title="Feed ​📰​| Kurakoo"/>
+            <Meta title="Feed ​📰​| Kurakoo"/></div>
             <NavBar />
             <div className="side-bar-left">
                 <h3 id="category-heading">Categories</h3>
