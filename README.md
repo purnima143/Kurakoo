@@ -22,7 +22,7 @@ In the majority of the colleges and universities across India, thousands of stud
 
 ## Areas of Collaboration 👨‍🏭
 
-Project Managers, Developers and Designers would be collaborating on various domains like:
+Project Managers, Developers, and Designers would be collaborating on various domains like:
 
 -   **UI Prototyping** with figma tool [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
     
@@ -35,7 +35,7 @@ Project Managers, Developers and Designers would be collaborating on various dom
 -   **Working on a User-Experience rich platform for a Social Cause**
     
 
-This would be an enriching experience for all Student Developers, Project Managers and Designers.
+This would be an enriching experience for all Student Developers, Project Managers, and Designers.
 
 
 ## Technology Stack 🛠️
@@ -58,8 +58,8 @@ Below is a basic idea as to how the website works. We will also be working on ad
 
 
 ## General Guidelines :dart:
- - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme file carefully.
- - For each issue, a detailed explanation is mentioned in issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
+ - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme the file carefully.
+ - For each issue, a detailed explanation is mentioned in the issue ticket itself, for more details refer to [figma design](https://www.figma.com/file/1gYZlafa8bUZu61ji10unF/Kurakoo?node-id=0%3A1).
 
  - While making any component, make sure that the code for the all generalised/common components is kept in [src->components->common](src/components/common) folder.
  - Kindly keep the source code in the [src->components](src/components/) folder while making specific components.
@@ -111,7 +111,7 @@ git clone https://github.com/purnima143/Kurakoo.git
     ```
     npm start
     ```
-_NOTE: To run the Frontend side of the application it recommended to run the backend server too._
+_NOTE: To run the Frontend side of the application is recommended to run the backend server too._
 
 ## Start Frontend & Backend simultaneously
 
@@ -202,3 +202,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+

@@ -44,6 +44,7 @@ function NotificationPage() {
                     <span className="slider round"></span>
                     <h2>{dark?"Dark":"Light"}</h2>
                 </label>
+                </div>
             <br />
             <br />
             <br />
@@ -88,9 +89,9 @@ function NotificationPage() {
                             })}
                         </ul>
                     </div>
+                    </div>
                     <Sidebar />
                 </div>
-            </div>
             <Footer />
         </div>
     );
