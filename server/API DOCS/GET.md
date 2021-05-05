@@ -40,3 +40,22 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**3. Get specific questions**
+* **URL**
+    `/api/searchQuestions`
+
+* **METHOD**
+    `GET`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `{ questions: [ displaying all questions related to the search] }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
