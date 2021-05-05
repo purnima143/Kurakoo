@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./SignIn.css";
 import { useMediaQuery } from "react-responsive";
 import Grid from "@material-ui/core/Grid";
@@ -17,6 +17,14 @@ const initialState = {
 };
 
 const SignIn = () => {
+    const getMode = ()=>{
+        return JSON.parse(localStorage.getItem("mode")) || false
+      }
+    const [dark,setmode]=useState(getMode());
+    useEffect(()=>{
+      localStorage.setItem("mode",JSON.stringify(dark))
+    },[dark])
+ 
     const history = useHistory();
     
     //STATE HOOK FOR INPUT DETAILS
@@ -104,6 +112,8 @@ const SignIn = () => {
     }
 
     return (
+        
+        <div className={dark?"dark-mode main":"main"}>
         <Grid container>
            <Meta title="SignIn ​🚪​🏃​💨​ | Kurakoo"/>
             {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
@@ -136,6 +146,11 @@ const SignIn = () => {
                 )}
 
                 {/* Form to take input */}
+                <label className="switch">
+                    <input type="checkbox" checked={dark} onChange={()=>{setmode(!dark)}}/>
+                    <span className="slider round"></span>
+                    <h2>{dark?"Dark":"Light"}</h2>
+                </label>
                 <div className="app">
                     <div className="bg"></div>
                     <form className="form1">
@@ -171,6 +186,7 @@ const SignIn = () => {
                 </div>
             </Grid>
         </Grid>
+        </div>
     );
 };
 

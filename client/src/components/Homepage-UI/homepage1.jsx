@@ -8,7 +8,7 @@ const Homepage = () => {
         <div className="LandingPage">
             <img src={require('../../Homepage/main.png')} alt="main" className="mainvector" />
             <div className="navbar">
-                <img src={logo} className="logo" alt="" />
+                <img src={logo} id="logo" alt="" />
                 <div className="links">
                     <Link to ="/signin" className="login">Login</Link>
                     <Link to = "/signup" className="signup">SignUp</Link>
@@ -47,6 +47,7 @@ const Homepage = () => {
                 <div className="about-content">
                     <h1 className="head"><span>About</span> Us</h1>
                     <p>In the majority of the colleges and universities across India, thousands of students have many doubts and queries from "Which branch to choose?" to "How to crack interviews?". Kurakoo is a one-stop solution for all these problems. It serves as a platform where students can drop in their questions for the public view and any person from this vibrant community can help by providing answers.</p>
+                    <Link to = "/team" className="signup">Team</Link>
                 </div>
             </div>
             <div className="reach">

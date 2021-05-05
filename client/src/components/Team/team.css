@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-color: #e85d04;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 220px;
+    overflow: hidden;
+    background-color: #f0e6e6;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.2), 
+    -10px -10px 10px rgba(255,255,255,0.5) ;
+    margin: auto;
+}
+.cards img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.colabcards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    flex-wrap: wrap;
+}
+.colabcards .cards{
+    margin: 0 2rem;
+}
+.concards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.profile{
+    width: 60px;
+    border-radius: 50%;
+    margin: 1rem;
+}
