@@ -15,6 +15,7 @@
     "helmet": "^4.5.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.2",
+    "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
@@ -24,6 +25,7 @@
     "react-scripts": "3.4.3",
     "react-scroll": "^1.8.2",
     "react-toastify": "^7.0.3",
+    "react-visibility-sensor": "^5.1.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0"
