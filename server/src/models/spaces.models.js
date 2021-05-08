@@ -16,6 +16,9 @@ const spaceSchema = new mongoose.Schema(
             min: 5,
             max: 100
         },
+        count:{
+            type: Number
+        },
         role:{
             type: String,
             enum: ["user"],

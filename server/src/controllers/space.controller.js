@@ -2,12 +2,13 @@ const Space = require("../models/spaces.models");
 const responseHandler = require("../helpers/responseHandler");
 
 const createSpaces = (req, res) => {
-    const { spaceName, description } = req.body;
+    const { spaceName, description, count } = req.body;
 
     const space = new Space({
         spaceName: spaceName,
         description: description,
-        createdBy: req.user._id
+        createdBy: req.user._id,
+        count: count
     });
 
 
