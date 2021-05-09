@@ -6,8 +6,7 @@ const validateSpaceRequest = [
     .withMessage("spaceName is required"),
     check("description")
     .notEmpty()
-    .withMessage("description is Required")
-
+    .withMessage("description is Required"),
 ]
 
 const isRequestValidated = ( req, res, next ) => {

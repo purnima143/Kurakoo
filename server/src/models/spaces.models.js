@@ -17,7 +17,10 @@ const spaceSchema = new mongoose.Schema(
             max: 100
         },
         count:{
-            type: Number
+            type: Number,
+            min: 1,
+            max: 2,
+            trim: true
         },
         role:{
             type: String,

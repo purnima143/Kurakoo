@@ -23,7 +23,18 @@ const userMiddleWare = (req, res, next) => {
     next();
 };
 
+const spaceMiddleware = (req, res, next) => {
+    if(req.user.role == "user"){
+        const countCheck = req.user._id.count;
+        if( countCheck > 3 ){
+            return res.json(responseHandler(false, 401, "Space limits exceeded", null));
+        } 
+    }
+    next();
+}
+
 module.exports = commonMiddleware = {
     requireSignin,
-    userMiddleWare
+    userMiddleWare,
+    spaceMiddleware
 };
