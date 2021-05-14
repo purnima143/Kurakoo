@@ -30,7 +30,7 @@ const signup = (req, res) => {
             email, 
             password,
             confirmPassword,
-            isAmin
+            isAdmin
         } = req.body;
         if(password != confirmPassword){
             return res
