@@ -2,17 +2,47 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup } from "../../actions";
-import "../SignUp/SignUp.css";
 import { useMediaQuery } from "react-responsive";
-import Grid from "@material-ui/core/Grid";
+import TextField from '@material-ui/core/TextField';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from "../../helpers/Meta";
 import usePasswordToggle from "../../hooks/usePasswordToggle";
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import InputLabel from '@material-ui/core/Grid';
+import '../SignUp/SignUp.css'
+import Navbar from "../navbar/Navbar"
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  heading:{
+      textAlign:"center"
+  },
+  formLabel:{
+      marginLeft:'20px',
+      fontSize:'20px',
+      fontWeight:600,
+      marginTop:'120px'
+
+
+  },
+  formBox:{
+     marginLeft:'20px', 
+     width:"80%"
+    }
+}));
 toast.configure();
 const SignUp = () => {
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
-
+    const classes = useStyles();
     const getMode = () => {
         return JSON.parse(localStorage.getItem("mode")) || false;
     };
@@ -29,24 +59,16 @@ const SignUp = () => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [ComfirmPassword, setConfirmPassword] = useState("");
+    const [ConfirmPassword, setConfirmPassword] = useState("");
 
     const auth = useSelector((state) => state.auth);
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    const userSignup = (e) => {
+    const updateUser = (e) => {
         e.preventDefault();
-
-        dispatch(
-            signup({
-                firstName,
-                lastName,
-                              email,
-                password,
-                
-            })
-        );
+        //dispatch
+    
     };
 
     if (auth.authenticate) {
@@ -58,48 +80,38 @@ const SignUp = () => {
     }
 
     return (
-        <div className={dark ? "dark-mode main" : "main"}>
-            <Grid container>
-                <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo" />
-                {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
-                {!isSmallScreen ? (
-                    <Grid item md={6} lg={6}>
-                        <img
-                            draggable={false}
-                            className="signup_image"
-                            src="./images/Formimage.png"
-                            alt="signup_image"
-                        ></img>
-                    </Grid>
-                ) : (
-                    <Grid item md={12} lg={12}></Grid>
-                )}
-
-                <Grid item xs={12} sm={12} md={6} lg={6}>
-                    {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
-                    {isSmallScreen ? (
-                        <Link to="/">
-                            <img
-                                draggable={false}
-                                className="mobile_logo_img"
-                                src="../images/kurakoo-logo.png"
-                                alt="mobile_logo_img"
-                            ></img>
-                        </Link>
-                    ) : (
-                        <div></div>
-                    )}
-
-                    {/* //INPUT CONTENT */}
-                    <label className="switch">
-                     <h1>Update</h1>
-                    </label>
-                    <form className="form">
+        <div>
+              <Navbar/>
+        <div className={"main"} style={{marginTop:"50px"}}>
+          
+            <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo" />
+            <Grid container spacing={1}>
+            <Grid item xs={4}>
+            <h2 className={classes.heading}>My Questions</h2>
+          <Paper>
+          <img src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
+    style={{width:"100%", height:"480px", opacity:0.5}}
+    />
+          </Paper>
+        </Grid>
+        <Grid item xs={4}>
+        <h2 className={classes.heading}>My Answers</h2>
+          <Paper>
+    <img src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
+    style={{width:"100%", height:"480px", opacity:0.5}}
+    />
+          </Paper>
+        </Grid>
+        <Grid item xs={4}>
+            <h2 className={classes.heading}>Update Profile</h2>
+          <Paper>
+           
+          <form className="form">
                         <div className="group">
                             <div className="col-1">
-                                <label for="name">FirstName</label>
+                                <label for="name" style={{marginLeft:'40px'}}>FirstName</label>
                             </div>
-                            <div class="colm-2">
+                            <div class="colm-2" style={{marginLeft:'-45px'}}>
                                 <input
                                     type="text"
                                     placeholder="first name"
@@ -114,9 +126,9 @@ const SignUp = () => {
                         </div>
                         <div className="group">
                             <div className="col-1">
-                                <label for="name">LastName</label>
+                                <label for="name"  style={{marginLeft:'40px'}}>LastName</label>
                             </div>
-                            <div class="colm-2">
+                            <div className="colm-2" style={{marginLeft:'-45px'}}>
                                 <input
                                     type="text"
                                     placeholder="last name"
@@ -129,12 +141,12 @@ const SignUp = () => {
                                 />
                             </div>
                         </div>
-                     
+
                         <div className="group">
                             <div className="col-1">
-                                <label for="email">Email</label>
+                                <label for="email"  style={{marginLeft:'40px'}}>Email</label>
                             </div>
-                            <div className="colm-2">
+                            <div className="colm-2" style={{marginLeft:'-45px'}}>
                                 <input
                                     type="email"
                                     placeholder="example@email.com"
@@ -147,9 +159,9 @@ const SignUp = () => {
                         </div>
                         <div className="group">
                             <div className="col-1">
-                                <label for="password">Password</label>
+                                <label for="password"  style={{marginLeft:'40px'}}>Password</label>
                             </div>
-                            <div className="colm-2">
+                            <div className="colm-2" style={{marginLeft:'-45px'}}>
                                 <input
                                     name="password"
                                     placeholder="password"
@@ -160,19 +172,20 @@ const SignUp = () => {
                                     }
                                     required
                                 />
-                                
+                               
                             </div>
                         </div>
+                       
                         <div className="group">
                             <div className="col-1">
-                                <label for="password">Confirm Password</label>
+                                <label for="password"  style={{marginLeft:'40px'}}>Password</label>
                             </div>
-                            <div className="colm-2">
+                            <div className="colm-2" style={{marginLeft:'-45px'}}>
                                 <input
-                                    name="confirmPassword"
-                                    placeholder="Confirm Password"
+                                    name="password"
+                                    placeholder="password"
                                     type={PasswordInputType}
-                                    value={ComfirmPassword}
+                                    value={ConfirmPassword}
                                     onChange={(e) =>
                                         setConfirmPassword(e.target.value)
                                     }
@@ -181,18 +194,26 @@ const SignUp = () => {
                                 
                             </div>
                         </div>
+                      
+                        
                         
                         <input
                             type="submit"
                             className="submit"
                             value="Update"
-                            onClick={userSignup}
+                            onClick={updateUser}
                         />
                         <br />
-                        
+                       
                     </form>
-                </Grid>
+        
+
+       </Paper>
+
+        </Grid>
+               
             </Grid>
+        </div>
         </div>
     );
 };
