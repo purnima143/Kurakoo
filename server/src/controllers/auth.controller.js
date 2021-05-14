@@ -29,7 +29,8 @@ const signup = (req, res) => {
             lastName, 
             email, 
             password,
-            confirmPassword
+            confirmPassword,
+            isAmin
         } = req.body;
         if(password != confirmPassword){
             return res
@@ -49,7 +50,8 @@ const signup = (req, res) => {
             lastName,
             email,
             password,
-            userName: Math.random().toString()
+            userName: Math.random().toString(),
+            isAdmin,
         });
 
         _user.save((error, data) => {
@@ -105,7 +107,8 @@ const signin = (req, res) => {
                     lastName,
                     email,
                     role,
-                    fullName
+                    fullName,
+                    isAdmin,
                 } = user;
                 res.status(200).json(
                     responseHandler(true, 200, "User Logged in", {
