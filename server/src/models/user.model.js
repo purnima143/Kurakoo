@@ -56,7 +56,12 @@ const userSchema = new mongoose.Schema(
             type: Number,
             integer: true,
             max : 12
-        }
+        },
+        isAdmin: {
+            type: Boolean,
+            required: true,
+            default: false,
+          }
 
         //profilePicture: { type: String} will be added later in future
     },
