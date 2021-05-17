@@ -14,5 +14,7 @@ router.post(
 );
 router.delete('/deleteAnswer/:id', requireSignin, userMiddleWare, answerController.deleteAnswer)
 router.patch('/editAnswer/:id', requireSignin, userMiddleWare, answerController.editAnswer)
+router.get('/upvote/:id', requireSignin, userMiddleWare, answerController.upvoteAnswer)
+router.get('/downvote/:id', requireSignin, userMiddleWare, answerController.downvoteAnswer)
 
 module.exports = router;
