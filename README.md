@@ -181,7 +181,7 @@ Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long 
 </a> </td>
     <td align="center"><a href="https://www.linkedin.com/in/ir2010/"><img src="https://avatars.githubusercontent.com/u/46022116?s=460&u=5a5db16a4d00686752dff0cd7b3c7e03c1e956df&v=4" width="100px;" alt=""/><br /><sub><b>Ishu Raj</b></sub></a><br /><a href="https://github.com/ir2010" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
-   <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQE_HdDdCi3-6Q/profile-displayphoto-shrink_400_400/0/1614427384874?e=1621468800&v=beta&t=y0RZx3GO-ybJGhtgQ4tVb3lr5zT2Szvp6tMHdm4mJjs" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
+   <td align="center"><a href="https://www.linkedin.com/in/vivekkumarjaviya/"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFXupHLPz5GOA/profile-displayphoto-shrink_800_800/0/1620704251868?e=1626307200&v=beta&t=JF_Xc9XBCsX1hJBIuwmkX9NjDH6Piq9KfUH2PPzydLQ" width="100px;" alt=""/><br /><sub><b>Vivekkumar Javiya</b></sub></a><br /><a href="https://github.com/codewithvk" >  <img src="https://user-images.githubusercontent.com/57852378/93742503-d664ee00-fc0b-11ea-8f75-db2448ff01f1.png"  width="40" height="40"/>
 </a></td>
 
   </tr>

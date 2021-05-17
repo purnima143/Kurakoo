@@ -1,21 +1,64 @@
 import React, {  Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Preloader from "./components/Preloader/Preloader";
-import NotificationPage from "./components/NotificationPage/NotificationPage";
-import Answerquestion from "./components/Answer/Answer";
-import NotFound from "./components/NotFound/NotFound";
-import Team from "./components/Team/team"
-import AboutUs from "./components/aboutus/aboutus"
-import Homepage from "./components/Homepage-UI/homepage1"
-import Signup from "./components/SignUp/SignUp"
-import Signin from "./components/SignIn/SignIn"
-import Feed from "./components/feed/feed"
-import Scroll from "./components/ScrollToTop/ScrollToTop"
-
-import Profile from "./components/profilePage/profilePage";
 import { useDispatch, useSelector } from "react-redux";
+import Preloader from "./components/Preloader/Preloader";
+import NotFound from "./components/NotFound/NotFound";
+import Scroll from "./components/ScrollToTop/ScrollToTop"
+import UserEdit from "./components/UserEditScreen/UserEdit"
 
+const NotificationPage = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/NotificationPage/NotificationPage')), 5000);
+    });
+  });
+
+const Answerquestion = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/Answer/Answer')), 5000);
+    });
+  });
+
+const Team = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/Team/team')), 5000);
+    });
+  });
+
+const AboutUs = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/aboutus/aboutus')), 5000);
+    });
+  });
+const Homepage = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/Homepage-UI/homepage1')), 5000);
+    });
+  });
+
+const Signup = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/SignUp/SignUp')), 5000);
+    });
+  });
+
+const Signin = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/SignIn/SignIn')), 5000);
+    });
+  });
+
+const Feed = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/feed/feed')), 5000);
+    });
+  });
+  
+const Profile = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/profilePage/profilePage')), 5000);
+    });
+  });
 
 const App = () => {
     const dispatch = useDispatch();
@@ -38,6 +81,7 @@ const App = () => {
                         <Route path="/addaquestion" component={Answerquestion} />
                         <Route path="/aboutus" component={AboutUs} />
                         <Route path="/profile" component={Profile} />
+                        <Route path="/useredit" component={UserEdit} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
