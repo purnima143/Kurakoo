@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-animation: backgroundcolorchange 20s infinite alternate;
-    animation: backgroundcolorchange 20s infinite alternate;
+    -webkit-animation: backgroundcolorchange 5s infinite alternate;
+    animation: backgroundcolorchange 5s infinite alternate;
 }
 .preloader img {
     width: 9rem;
@@ -39,40 +39,20 @@
         background: #ffff00;
     }
 
-    10% {
+    20% {
         background: #8e44ad;
     }
 
-    20% {
+    40% {
         background: #1abc9c;
     }
 
-    30% {
+    60% {
         background: #d35400;
     }
 
-    40% {
-        background: #0000ff;
-    }
-
-    50% {
-        background: #34495e;
-    }
-
-    60% {
-        background: blue;
-    }
-
-    70% {
-        background: #2980b9;
-    }
-
     80% {
-        background: #f1c40f;
-    }
-
-    90% {
-        background: #2980b9;
+        background: blue;
     }
 
     100% {

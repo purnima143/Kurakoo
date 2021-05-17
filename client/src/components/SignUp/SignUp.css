@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: none;
+    background-color: #ff5e14;
 }
 .signup_image {
     width: 100%;
@@ -120,7 +120,7 @@ body {
 }
 
 .group {
-    margin: 0 auto;
+    margin: 0 8px;
     width: 80%;
 }
 
