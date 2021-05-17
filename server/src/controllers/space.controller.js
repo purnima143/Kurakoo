@@ -24,8 +24,8 @@ const createSpaces = (req, res) => {
 };
 
 const getSpaces = async( req, res ) => {
-    spaces = await Space.find({ createdBy: req.user._id })
-                .populate("createdBy", "_id firstName lastName")
+    spaces = await Space.find({ id: req._id })
+                .populate("createdBy", "_id spaceName description")
                 .sort("-createdAt")
     try{
         res.status(200).send({spaces})
@@ -35,9 +35,37 @@ const getSpaces = async( req, res ) => {
     }
 }
 
+const deleteSpaces  = async( req, res ) => {
+    try{
+        const space = await Space.findOneAndDelete({id: req.params.id, createdBy: req.user._id})
+        if(!space) {
+            res.status(400).send({message:"cannot delete"})
+        }
+        res.status(200).send({message:"Deleted"})
+    }
+    catch(e){
+        res.status(500).send;
+    }
+}
+
+const getSpacesbyId = async( req, res ) => {
+    try{
+        const space = await Space.find({createdBy: req.user._id})
+        if(!space) {
+            res.status(400).send({message:"cannot find spaces with respective user id"})
+        }
+        res.status(200).send({space})
+    }
+    catch(e){
+        res.status(500).send;
+    }
+}
+
 module.exports = spaceController = {
     createSpaces,
-    getSpaces
+    getSpaces,
+    deleteSpaces,
+    getSpacesbyId
 };
 
 
