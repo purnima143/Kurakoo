@@ -6,5 +6,6 @@ const { validateSpaceRequest, isRequestValidated } = require("../validators/spac
 const router = express.Router();
 
 router.post("/createSpace", validateSpaceRequest, isRequestValidated, requireSignin, userMiddleWare, spaceController.createSpaces);
+router.get("/getSpaces", requireSignin, userMiddleWare, spaceController.getSpaces);
 
 module.exports = router;

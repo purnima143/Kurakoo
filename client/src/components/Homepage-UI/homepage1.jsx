@@ -2,6 +2,8 @@ import React from "react"
 import "./Homepage.css"
 import logo from "../images/kurakoo-logo.png";
 import { Link } from "react-router-dom";
+import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Homepage = () => {
     return (
@@ -55,17 +57,38 @@ const Homepage = () => {
                 <div className="reach-cards">
                     <div className="card">
                         <img src={require('../../Homepage/student.png')} alt="" />
-                        <h2>30+</h2>
+                        <h2><CountUp end={30} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5>Contributors</h5>
                     </div>
                     <div className="card">
                         <img src={require('../../Homepage/calendar.png')} alt="" />
-                        <h2 className="red">260+</h2>
+                        <h2 className="red"><CountUp end={260} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5>Commits</h5>
                     </div>
                     <div className="card">
                         <img src={require('../../Homepage/leadership.png')} alt="" />
-                        <h2 className="red">60+</h2>
+                        <h2 className="red"><CountUp end={60} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5 className>Stars</h5>
                     </div>
                 </div>

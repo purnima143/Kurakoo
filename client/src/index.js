@@ -1,10 +1,13 @@
 import React from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./store";
 import * as serviceWorker from "./serviceWorker";
+library.add(faEyeSlash, faEye);
 
 ReactDOM.render(
     <Provider store={store}>

@@ -2,6 +2,7 @@ const Answers = require("../models/answers.model");
 const responseHandler = require("../helpers/responseHandler");
 const Question = require("../models/questions.models")
 const ObjectID = require('mongodb').ObjectID;
+const User = require('../models/user.model')
 
 const createAnswers = async (req, res) => {
     const { answerText, questionId, tags } = req.body;
@@ -16,7 +17,9 @@ const createAnswers = async (req, res) => {
                         answerText: answerText,
                         tags: tags,
                         questionId: questionId,
-                        createdBy: req.user._id
+                        createdBy: req.user._id,
+                        upvotes:0,
+                        downvotes:0
                     });
                     answer.save((error, answer) => {
                         if (error)
@@ -94,8 +97,85 @@ const editAnswer = async(req, res) =>{
     }
 }
 
+const upvoteAnswer = async(req, res) => {
+    try{
+        const ans = await Answers.findById(req.params.id)
+        console.log(ans)
+        if(!ans){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findById(req.user._id)
+            console.log(user)
+            const isUpvoted = user.upvotedAns.includes(ans._id)
+            const isDownvoted = user.downvotedAns.includes(ans._id)
+            console.log(user.upvotedAns.includes(ans._id))
+            console.log(isDownvoted)
+            if(isUpvoted){
+                console.log('already')
+                return res.status(200).send({message: "already upvoted!"})
+                
+            }
+            if(!isUpvoted){
+                if(isDownvoted){
+                    ans.downvotes = ans.downvotes - 1
+                    const index = user.downvotedAns.indexOf(ans._id);
+                    if (index > -1) {
+                        user.downvotedAns.splice(index, 1);
+                    }    
+                }
+                ans.upvotes = ans.upvotes + 1
+                await ans.save()
+                user.upvotedAns.push(ans._id)
+                await user.save()
+                return res.status(200).send({message: "upvoted!"})
+            }
+        }
+    }
+    catch(e){
+        console.log(e)
+        return res.status(400).send({message: "something went wrong!"})
+    }
+}
+
+const downvoteAnswer = async(req, res) => {
+    try{
+        const ans = await Answers.findById(req.params.id)
+        if(!ans){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findById(req.user._id)
+            const isUpvoted = user.upvotedAns.includes(ans._id)
+            const isDownvoted = user.downvotedAns.includes(ans._id)
+            if(isDownvoted){
+                return res.status(200).send({message: "already downvoted!"})
+            }
+            if(!isDownvoted){
+                if(isUpvoted){
+                    ans.upvotes = ans.upvotes - 1
+                    const index = user.upvotedAns.indexOf(ans._id);
+                    if (index > -1) {
+                        user.upvotedAns.splice(index, 1);
+                    }    
+                }
+                ans.downvotes = ans.downvotes + 1
+                await ans.save()
+                user.downvotedAns.push(ans._id)
+                await user.save()
+                return res.status(200).send({message: "downvoted!"})
+            }
+        }
+    }
+    catch(e){
+        res.status(400).send({message: "something went wrong!"})
+    }
+}
+
 module.exports = answerController = {
     createAnswers,
     deleteAnswer,
-    editAnswer
+    editAnswer,
+    upvoteAnswer,
+    downvoteAnswer
 };

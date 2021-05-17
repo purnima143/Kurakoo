@@ -59,3 +59,25 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
+
+    **4. Get All Spaces**
+* **URL**
+    `/api/getSpaces`
+
+* **METHOD**
+    `GET`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+
+* **Success Response**<br />
+    * **Code:** `201` <br />
+      **data:** `{ Spaces: [ displaying all available spaces] }`
+
+* **Error Response**
+    * **Code:** `401` <br />
+      **Message:** `authorization required` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
