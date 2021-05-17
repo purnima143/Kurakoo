@@ -23,8 +23,21 @@ const createSpaces = (req, res) => {
     });
 };
 
+const getSpaces = async( req, res ) => {
+    spaces = await Space.find({ createdBy: req.user._id })
+                .populate("createdBy", "_id firstName lastName")
+                .sort("-createdAt")
+    try{
+        res.status(200).send({spaces})
+    }
+    catch(e){
+        res.status(400).send("Something went wrong!")
+    }
+}
+
 module.exports = spaceController = {
-    createSpaces
+    createSpaces,
+    getSpaces
 };
 
 

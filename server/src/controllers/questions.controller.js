@@ -91,10 +91,37 @@ const getAnswers = async (req, res) => {
     }
 }
 
+const searchQuestions = async(req, res) => {
+    const match ={createdBy: req.user._id}
+
+    if(req.query.id){
+        match._id = req.query.id
+    }
+    if(req.query.questionText){
+        match.questionText = req.query.questionText
+    }
+    if(req.query.tags){
+        match.tags = req.query.tags
+    }
+
+    const questions = await Questions.find(match)
+
+    try{
+        if(questions.length===0){
+            return res.status(200).json(responseHandler(true, 200, {message: "no questions found"})); 
+        }
+        res.status(200).send(questions)
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
     editQuestion,
     deleteQuestion,
-    getAnswers
+    getAnswers,
+    searchQuestions
 };

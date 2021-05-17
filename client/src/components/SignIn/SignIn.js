@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SignIn.css";
 import { useMediaQuery } from "react-responsive";
 import Grid from "@material-ui/core/Grid";
@@ -8,7 +8,8 @@ import { Link, useHistory } from "react-router-dom";
 import { login } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Meta from "../../helpers/Meta"
+import Meta from "../../helpers/Meta";
+import usePasswordToggle from "../../hooks/usePasswordToggle";
 toast.configure();
 
 const initialState = {
@@ -17,8 +18,17 @@ const initialState = {
 };
 
 const SignIn = () => {
+    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
+    const getMode = () => {
+        return JSON.parse(localStorage.getItem("mode")) || false;
+    };
+    const [dark, setmode] = useState(getMode());
+    useEffect(() => {
+        localStorage.setItem("mode", JSON.stringify(dark));
+    }, [dark]);
+
     const history = useHistory();
-    
+
     //STATE HOOK FOR INPUT DETAILS
     const [formData, setFormData] = useState(initialState);
 
@@ -90,7 +100,6 @@ const SignIn = () => {
     const userLogin = (e) => {
         e.preventDefault();
 
-        
         dispatch(
             login({
                 email,
@@ -104,73 +113,94 @@ const SignIn = () => {
     }
 
     return (
-        <Grid container>
-           <Meta title="SignIn ​🚪​🏃​💨​ | Kurakoo"/>
-            {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
-            {!isSmallScreen ? (
-                <Grid item md={6} lg={6}>
-                    <img
-                        draggable={false}
-                        className="signin_image"
-                        src="./images/Formimage.png"
-                        alt="signin_image"
-                    ></img>
-                </Grid>
-            ) : (
-                <Grid item md={12} lg={12}></Grid>
-            )}
-
-            <Grid item xs={12} sm={12} md={6} lg={6}>
-                {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
+        <div className={dark ? "dark-mode main" : "main"}>
+            <Grid container>
+                <Meta title="SignIn ​🚪​🏃​💨​ | Kurakoo" />
+                {/* SHOW THE SIDE IMAGE ONLY ON LARGE WIDTH SCREENS */}
                 {!isSmallScreen ? (
-                    <div></div>
-                ) : (
-                    <Link to="/">
+                    <Grid item md={6} lg={6}>
                         <img
                             draggable={false}
-                            className="mobile_logo_img"
-                            src="../images/kurakoo-logo.png"
-                            alt="mobile_logo_img"
+                            className="signin_image"
+                            src="./images/Formimage.png"
+                            alt="signin_image"
                         ></img>
-                    </Link>
+                    </Grid>
+                ) : (
+                    <Grid item md={12} lg={12}></Grid>
                 )}
 
-                {/* Form to take input */}
-                <div className="app">
-                    <div className="bg"></div>
-                    <form className="form1">
-                        <header>
-                            <img src="./images/favicon.png" className="logo" />
-                        </header>
-                        <div className="inputs">
-                            <input
-                                type="text"
-                                placeholder="email"
-                                name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <input
-                                type="password"
-                                placeholder="password"
-                                name="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                    </form>
-                    <footer>
-                        <button type="submit" onClick={userLogin}>
-                            Continue
-                        </button>
-                        <p className="para">
-                            Don't have an account?{" "}
-                            <Link to="/signup">Sign Up</Link>
-                        </p>
-                    </footer>
-                </div>
+                <Grid item xs={12} sm={12} md={6} lg={6}>
+                    {/* SHOW KURAKOO LOGO RATHER THAN IMAGE ON SMALL SCREENS */}
+                    {!isSmallScreen ? (
+                        <div></div>
+                    ) : (
+                        <Link to="/">
+                            <img
+                                draggable={false}
+                                className="mobile_logo_img"
+                                src="../images/kurakoo-logo.png"
+                                alt="mobile_logo_img"
+                            ></img>
+                        </Link>
+                    )}
+
+                    {/* Form to take input */}
+                    <label className="switch">
+                        <input
+                            type="checkbox"
+                            checked={dark}
+                            onChange={() => {
+                                setmode(!dark);
+                            }}
+                        />
+                        <span className="slider round"></span>
+                        <h2>{dark ? "Dark" : "Light"}</h2>
+                    </label>
+                    <div className="app">
+                        <div className="bg"></div>
+                        <form className="form1">
+                            <header>
+                                <img
+                                    src="./images/favicon.png"
+                                    className="logo"
+                                />
+                            </header>
+                            <div className="inputs">
+                                <input
+                                    type="text"
+                                    placeholder="email"
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <input
+                                    type={PasswordInputType}
+                                    placeholder="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
+                                />
+                                <span className="password-toggle-icon-signin">
+                                    {ToggleIcon}
+                                </span>
+                            </div>
+                        </form>
+                        <footer>
+                            <button type="submit" onClick={userLogin}>
+                                Continue
+                            </button>
+                            <p className="para">
+                                Don't have an account?{" "}
+                                <Link to="/signup">Sign Up</Link>
+                            </p>
+                        </footer>
+                    </div>
+                </Grid>
             </Grid>
-        </Grid>
+            </div>
     );
 };
 

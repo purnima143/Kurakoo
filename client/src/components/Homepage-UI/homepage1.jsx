@@ -2,13 +2,15 @@ import React from "react"
 import "./Homepage.css"
 import logo from "../images/kurakoo-logo.png";
 import { Link } from "react-router-dom";
+import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Homepage = () => {
     return (
         <div className="LandingPage">
             <img src={require('../../Homepage/main.png')} alt="main" className="mainvector" />
             <div className="navbar">
-                <img src={logo} className="logo" alt="" />
+                <img src={logo} id="logo" alt="" />
                 <div className="links">
                     <Link to ="/signin" className="login">Login</Link>
                     <Link to = "/signup" className="signup">SignUp</Link>
@@ -47,6 +49,7 @@ const Homepage = () => {
                 <div className="about-content">
                     <h1 className="head"><span>About</span> Us</h1>
                     <p>In the majority of the colleges and universities across India, thousands of students have many doubts and queries from "Which branch to choose?" to "How to crack interviews?". Kurakoo is a one-stop solution for all these problems. It serves as a platform where students can drop in their questions for the public view and any person from this vibrant community can help by providing answers.</p>
+                    <Link to = "/team" className="signup">Team</Link>
                 </div>
             </div>
             <div className="reach">
@@ -54,17 +57,38 @@ const Homepage = () => {
                 <div className="reach-cards">
                     <div className="card">
                         <img src={require('../../Homepage/student.png')} alt="" />
-                        <h2>30+</h2>
+                        <h2><CountUp end={30} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5>Contributors</h5>
                     </div>
                     <div className="card">
                         <img src={require('../../Homepage/calendar.png')} alt="" />
-                        <h2 className="red">260+</h2>
+                        <h2 className="red"><CountUp end={260} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5>Commits</h5>
                     </div>
                     <div className="card">
                         <img src={require('../../Homepage/leadership.png')} alt="" />
-                        <h2 className="red">60+</h2>
+                        <h2 className="red"><CountUp end={60} redraw={true}>
+                            {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                            <span ref={countUpRef} />
+                            </VisibilitySensor>
+                            )}
+                            </CountUp>+
+                        </h2>
                         <h5 className>Stars</h5>
                     </div>
                 </div>

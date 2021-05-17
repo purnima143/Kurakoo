@@ -6,17 +6,39 @@ import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
 import InsertCommentOutlinedIcon from "@material-ui/icons/InsertCommentOutlined";
 import { makeStyles } from "@material-ui/core/styles";
+import Modal from '@material-ui/core/Modal';
+import AnswerQuestion from '../Answer/Answer';
 
 const useStyles = makeStyles({
     root: {
         width: "18px",
         padding: "4px 18px",
         margin: "0px"
-    }
+    },
+    paper: {
+        position: 'absolute',
+        top: 45,
+        left: 350,
+        width: 752,
+        height: 512,
+        border: '2px solid #000',
+        // boxShadow: theme.shadows[5],
+  
+      },
 });
 
 function Feed({ username, question, img, profession, answer }) {
     const [likeDislike, setLikeDislike] = useState([false, false]);
+
+    const [openPopup, setOpenPopup] = useState(false);
+
+    const handleOpen = () => {
+        setOpenPopup(true);
+      };
+
+      const handleCloseModal = () => {
+        setOpenPopup(false);
+      }
 
     const classes = useStyles();
     return (
@@ -68,9 +90,17 @@ function Feed({ username, question, img, profession, answer }) {
                         <InsertCommentOutlinedIcon className={classes.root} />
                     </button>
 
-                    <button class="ans_button">Answer</button>
+                    <button class="ans_button" onClick={handleOpen}>Answer</button>
                 </div>
             </section>
+            <Modal
+            open ={openPopup}
+            onClose={handleCloseModal}>
+                <div  className={classes.paper}>
+                <AnswerQuestion/>
+                </div>
+
+            </Modal>
         </div>
     );
 }
