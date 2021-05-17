@@ -20,6 +20,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "concurrently": "^6.0.0",
+    "express-async-handler": "^1.1.4",
     "nodemon": "^2.0.7",
     "suspense": "^0.0.1"
   }
