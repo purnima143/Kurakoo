@@ -61,7 +61,16 @@ const userSchema = new mongoose.Schema(
             type: Boolean,
             required: true,
             default: false,
-          }
+        },
+        upvotedAns: [{
+            
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        downvotedAns: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
 
         //profilePicture: { type: String} will be added later in future
     },

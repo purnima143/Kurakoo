@@ -21,6 +21,12 @@ const answersSchema = new mongoose.Schema(
             ref: "User",
             required: true
         },
+        upvotes: {
+            type: Number
+        },
+        downvotes: {
+            type: Number
+        },
         updatedAt: Date
     },
     { timeStamps: true }
