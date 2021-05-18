@@ -64,3 +64,26 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**3. DELETE spaces**
+* **URL**
+    `/api/deleteSpace/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `none`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `space deleted` <br />
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Something went wrong` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+

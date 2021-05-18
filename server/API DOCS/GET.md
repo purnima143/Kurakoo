@@ -60,7 +60,7 @@
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
-    **4. Get All Spaces**
+**4. Get All Spaces**
 * **URL**
     `/api/getSpaces`
 
@@ -76,6 +76,28 @@
 
 * **Error Response**
     * **Code:** `401` <br />
+      **Message:** `authorization required` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+**5. Get All Spaces**
+* **URL**
+    `/api/getSpacebyId`
+
+* **METHOD**
+    `GET`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `{ Spaces: [ displaying all spaces created by the specific user] }`
+
+* **Error Response**
+    * **Code:** `400` <br />
       **Message:** `authorization required` <br />
 
 * **Required Filed**
