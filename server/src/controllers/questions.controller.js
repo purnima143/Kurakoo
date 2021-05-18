@@ -24,7 +24,7 @@ const createQuestions = (req, res) => {
 };
 
 const getQuestions = async(req, res) => {
-    questions = await Questions.find({createdBy: req.user._id})
+    questions = await Questions.find({id: req._id})
                     .populate("createdBy", "_id firstName lastName")
                     .sort("-createdAt")
     try{

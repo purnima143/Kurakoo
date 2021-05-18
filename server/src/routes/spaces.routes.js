@@ -7,5 +7,7 @@ const router = express.Router();
 
 router.post("/createSpace", validateSpaceRequest, isRequestValidated, requireSignin, userMiddleWare, spaceController.createSpaces);
 router.get("/getSpaces", requireSignin, userMiddleWare, spaceController.getSpaces);
+router.delete("/deleteSpace/:id", requireSignin, userMiddleWare, spaceController.deleteSpaces);
+router.get("/getSpacebyId", requireSignin, userMiddleWare, spaceController.getSpacesbyId);
 
 module.exports = router;
