@@ -74,11 +74,63 @@ const getUserById = asyncHandler(async (req, res) => {
       .json(responseHandler(false, 404, "User not found", null));
   }
 })
+
+// @desc    Delete user
+// @route   DELETE /admin/user/:id
+// @access  Private/Admin
+const deleteUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+
+  if (user) {
+    await user.remove()
+    res.json({ message: 'User removed' })
+  } else {
+    res.status(404)
+      .json(responseHandler(false, 404, "User not found", null));
+  }
+})
+
+
+// @desc    Delete answer
+// @route   DELETE /admin/answer/:id
+// @access  Private/Admin
+const deleteAnswer = asyncHandler(async (req, res) => {
+  const answer = await Answer.findById(req.params.id)
+
+  if (answer) {
+    await answer.remove()
+    res.json({ message: 'Answer removed' })
+  } else {
+    res.status(404)
+      .json(responseHandler(false, 404, "Answer not found", null));
+  }
+})
+
+
+// @desc    Delete question
+// @route   DELETE /admin/question/:id
+// @access  Private/Admin
+const deleteQuestion = asyncHandler(async (req, res) => {
+  const question = await Question.findById(req.params.id)
+
+  if (question) {
+    await question.remove()
+    res.json({ message: 'Question removed' })
+  } else {
+    res.status(404)
+      .json(responseHandler(false, 404, "Question not found", null));
+  }
+})
+
+
 module.exports = adminController = {
     getAnswers,
     getQuestions,
     getUsers,
     getQuestionById,
     getAnswerById,
-    getUserById
+    getUserById,
+    deleteAnswer,
+    deleteQuestion,
+    deleteUser
 };
