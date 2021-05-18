@@ -8,7 +8,7 @@ const createQuestions = (req, res) => {
     const question = new Questions({
         questionText: questionText,
         questionLinks: questionLinks,
-        tags: tags,
+        tags: tags.split(" "),
         createdBy: req.user._id
     });
 
@@ -80,7 +80,7 @@ const deleteQuestion = async(req, res) => {
 
 const getAnswers = async (req, res) => {
     try{
-        const answers = await Answers.find({questionId: req.params.id})
+        const answers = await Answers.find({questionId: req.params.id}).sort("-upvotes")
         if(!answers){
             return res.status(200).json(responseHandler(true, 200, {message: "answers not found"})); 
         }
