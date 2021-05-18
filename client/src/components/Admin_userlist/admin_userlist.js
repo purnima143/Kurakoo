@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { useSelector, useDispatch } from "react-redux";
+import {  Redirect } from "react-router-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,55 +11,59 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Navbar from '../navbar/Navbar';
-
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import CheckIcon from '@material-ui/icons/Check';
+import ClearIcon from '@material-ui/icons/Clear';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'code', label: 'Is Admin', minWidth: 100 },
   {
     id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
+    label: 'Number of Questions Asked',
+    minWidth: 280,
+    align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    label: 'Number of Questions Answered',
     minWidth: 170,
-    align: 'right',
+    align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
+    label: '',
+    minWidth:150,
+    align: 'left',
+    // format: (value) => value.toFixed(2),
   },
 ];
 
 function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+ 
+  return { name, code, population, size,};
 }
 
+//Dummy data
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('User1', <ClearIcon/>, 130, 45),
+  createData('User2', <ClearIcon/>, 140, 9),
+  createData('User3', <ClearIcon/>, 604, 301),
+  createData('User4', <CheckIcon/>, 327, 20),
+  createData('User5', <ClearIcon/>,103, 99),
+  createData('User6',<ClearIcon/>, 400, 2024),
+  createData('User7', <CheckIcon/>, 200,8),
+  createData('User8', <CheckIcon/>, 4, 7),
+  createData('User9', <ClearIcon/>, 121, 190),
+  createData('User10', <ClearIcon/>, 120,3),
+  createData('User11', <ClearIcon/>, 6702, 485),
+  createData('User12', <ClearIcon/>, 57, 245),
+  createData('User13', <ClearIcon/>, 14, 17),
+  createData('User14', <ClearIcon/>, 200, 68),
+  createData('User15',<ClearIcon/>, 21, 87),
 ];
 
 const useStyles = makeStyles({
@@ -83,11 +89,24 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
+
+  const auth = useSelector((state) => state.auth);
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+        if (auth.authenticate) {
+        return <Redirect to={"/"} />;
+    }
+
+    if (user.loading) {
+        return <p>Loading...!</p>;
+    }
+
   return (
       <>
-      {/* <Navbar/> */}
-    <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
+      <Navbar/>
+    <Paper className={classes.root} >
+      <TableContainer className={classes.container} style={{marginTop:'80px'}}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -98,6 +117,7 @@ export default function StickyHeadTable() {
                   style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
+              
                 </TableCell>
               ))}
             </TableRow>
@@ -111,9 +131,12 @@ export default function StickyHeadTable() {
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
+              
                       </TableCell>
                     );
                   })}
+                        {<EditIcon/>}
+                        {<DeleteIcon/>}
                 </TableRow>
               );
             })}
