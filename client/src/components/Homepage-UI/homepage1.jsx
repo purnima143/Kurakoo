@@ -1,5 +1,7 @@
 import React from "react";
 import "./Homepage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 import logo from "../images/kurakoo-logo.png";
 import { Link } from "react-router-dom";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
@@ -7,6 +9,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import Footer from "../Footer/footer";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -18,6 +21,7 @@ const Homepage = () => {
                 alt="main"
                 className="mainvector"
             />
+          
             <div className="navbar">
                 <img src={logo} id="logo" alt="" />
                 <div className="links">
@@ -78,19 +82,25 @@ const Homepage = () => {
                 src={require("../../Homepage/leaf1.png")}
                 alt="leaf1"
                 className="leaf1"
-            />
-            <div className="Vision">
-                <h1 className="head">
-                    <span>Our</span> Vision
+            /><br/>
+            <div className='container-fluid' style={{marginTop:'6%'}}>
+      <br />
+      <h1 className='text-center mb-3 headercontent'>
+      Our <span>Vision</span>
                 </h1>
                 <h5>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Aliquam quasi ipsum{" "}
                 </h5>
-            </div>
-            <div className="VisionCards">
-                <div className="card">
-                    <img src={require("../../Homepage/01.png")} alt="" />
+            <br/><br/>
+            <div className='row' style={{ justifyContent: 'space-evenly' }}>
+        <div className='col-md-3 c2'>
+          <div className='text-white mb-3 cards2'>
+            <div className='card-body color4'>
+
+                    <img src={require("../../Homepage/01.png")} alt="" className='mx-auto d-block'
+/>
+<br/>
                     <h3>Share and Grow</h3>
                     <h5>
                         As we grow, we will be able to provide larger and larger
@@ -98,8 +108,15 @@ const Homepage = () => {
                         have greater and greater impact on the world.
                     </h5>
                 </div>
-                <div className="card">
-                    <img src={require("../../Homepage/02.png")} alt="" />
+                </div>
+          </div>
+          <div className='col-md-3'>
+          <div className='text-white mb-3 cards2'>
+            <div className='card-body color4'>
+
+                    <img src={require("../../Homepage/02.png")} alt="" className='mx-auto d-block'
+/>
+<br/>
                     <h3>Create Networks</h3>
                     <h5>
                         We want you to build genuine relationships with your
@@ -107,15 +124,25 @@ const Homepage = () => {
                         world.
                     </h5>
                 </div>
-                <div className="card">
-                    <img src={require("../../Homepage/03.png")} alt="" />
+                </div></div>
+                <div className='col-md-3'>
+          <div className='text-white mb-3 cards2'>
+            <div className='card-body color4'>
+
+                    <img src={require("../../Homepage/03.png")} alt="" className='mx-auto d-block'
+/>
+<br/>
                     <h3>Everything in One</h3>
+                   
                     <h5>
                         Original, reliable, playful, and relatable. These are
                         the values that connect our users and our employees at
                         Discord.
                     </h5>
                 </div>
+            </div>
+            </div>
+            </div>
             </div>
             <div className="aboutus">
                 <img
@@ -142,17 +169,25 @@ const Homepage = () => {
                     </Link>
                 </div>
             </div>
-            <div className="reach">
-                <h1 className="head">
-                    <span>Our </span>Reach
-                </h1>
-                <div className="reach-cards">
-                    <div className="card">
+            <div className='container-fluid'>
+        <br />
+        <h1 className='text-center mb-3 headercontent'>
+          Our <span>Reach</span>
+        </h1>
+        <br/>
+
+        <div className='row' style={{ justifyContent: 'space-evenly' }}>
+          <div className='col-md-3'>
+            <div className='text-white mb-3 cards2'>
+              <div className='card-body color1'>
+
                         <img
                             src={require("../../Homepage/student.png")}
                             alt=""
-                        />
-                        <h2>
+                            className='mx-auto d-block'
+
+                        /><br/>
+                        <h2 className='card-title text-center black'>
                             <CountUp end={30} redraw={true}>
                                 {({ countUpRef, start }) => (
                                     <VisibilitySensor
@@ -165,14 +200,22 @@ const Homepage = () => {
                             </CountUp>
                             +
                         </h2>
-                        <h5>Contributors</h5>
+                        <h5 className='text-center'>Contributors</h5>
                     </div>
-                    <div className="card">
+                    </div></div>
+                
+          <div className='col-md-3'>
+            <div className='text-white mb-3 cards2'>
+              <div className='card-body color2'>
+
                         <img
                             src={require("../../Homepage/calendar.png")}
                             alt=""
-                        />
-                        <h2 className="red">
+                            className='mx-auto d-block'
+
+                        /><br/>
+                        <h2 className='card-title text-center black'>
+
                             <CountUp end={260} redraw={true}>
                                 {({ countUpRef, start }) => (
                                     <VisibilitySensor
@@ -185,14 +228,22 @@ const Homepage = () => {
                             </CountUp>
                             +
                         </h2>
-                        <h5>Commits</h5>
+                        <h5 className='text-center'>Commits</h5>
                     </div>
-                    <div className="card">
+                    </div></div>
+                    
+          <div className='col-md-3'>
+            <div className='text-white mb-3 cards2 media'>
+              <div className='card-body color3'>
+
                         <img
                             src={require("../../Homepage/leadership.png")}
                             alt=""
-                        />
-                        <h2 className="red">
+                            className='mx-auto d-block'
+
+                        /><br/>
+                        <h2 className='card-title text-center yellow'>
+
                             <CountUp end={60} redraw={true}>
                                 {({ countUpRef, start }) => (
                                     <VisibilitySensor
@@ -205,16 +256,19 @@ const Homepage = () => {
                             </CountUp>
                             +
                         </h2>
-                        <h5 className>Stars</h5>
+                        <h5 className='text-center'>Stars</h5>
                     </div>
                 </div>
+                </div></div>
                 <img
                     src={require("../../Homepage/leaf2.png")}
                     className="leaf2"
                     alt=""
                 />
-            </div>
+            </div><br/><br/><br/><br/>
+            <Footer/>
         </div>
+       
     );
 };
 export default Homepage;

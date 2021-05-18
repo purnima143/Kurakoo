@@ -150,6 +150,7 @@ body {
     text-shadow: 0.5px 0.5px 0 #fff;
     font-family: "Nunito", sans-serif;
     text-transform: capitalize;
+    margin-left: 10%;
 }
 
 .colm-2 {
@@ -167,7 +168,7 @@ body {
     box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3), 0.5px 0.5px 0 0 #fff;
     padding: 1em;
     background: rgba(80, 80, 80, 0.1);
-    margin-left: 39%;
+    margin-left: 10%;
 }
 
 input[type="submit"] {
