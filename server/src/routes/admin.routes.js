@@ -9,5 +9,10 @@ router.get('/users', requireSignin, admin, adminController.getUsers);
 router.get('/answers', requireSignin, admin, adminController.getAnswers);
 router.get('/questions', requireSignin, admin, adminController.getQuestions);
 
+router.get('/question/:id', requireSignin, admin, adminController.getQuestionById);
+router.get('/user/:id', requireSignin, admin, adminController.getUserById);
+router.get('/answer/:id', requireSignin, admin, adminController.getAnswerById);
+
+
 
 module.exports = router;
