@@ -172,10 +172,33 @@ const downvoteAnswer = async(req, res) => {
     }
 }
 
+const getUpvotedAnswers = async (req, res) => {
+    try{
+        const user = await User.findById(req.user._id)
+        let upvotedAnswers = user.upvotedAns
+        for (i = 0; i < upvotedAnswers.length; i++) {
+            try{
+                upvotedAnswers[i] = await Answers.findById(upvotedAnswers[i])
+            }
+            catch(e){
+                console.log(e)
+            }
+        } 
+        if(!upvotedAnswers){
+            return res.status(200).json(responseHandler(true, 200, {message: "upvoted answers not found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, upvotedAnswers));
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+
 module.exports = answerController = {
     createAnswers,
     deleteAnswer,
     editAnswer,
     upvoteAnswer,
-    downvoteAnswer
+    downvoteAnswer,
+    getUpvotedAnswers
 };

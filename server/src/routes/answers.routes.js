@@ -16,5 +16,5 @@ router.delete('/deleteAnswer/:id', requireSignin, userMiddleWare, answerControll
 router.patch('/editAnswer/:id', requireSignin, userMiddleWare, answerController.editAnswer)
 router.get('/upvote/:id', requireSignin, userMiddleWare, answerController.upvoteAnswer)
 router.get('/downvote/:id', requireSignin, userMiddleWare, answerController.downvoteAnswer)
-
+router.get('/getUpvotedAnswers', requireSignin, userMiddleWare, answerController.getUpvotedAnswers)
 module.exports = router;
