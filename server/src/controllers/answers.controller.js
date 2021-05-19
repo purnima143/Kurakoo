@@ -15,7 +15,7 @@ const createAnswers = async (req, res) => {
                 if(!duplicate){
                     const answer = new Answers({
                         answerText: answerText,
-                        tags: tags,
+                        tags: tags.split(" "),
                         questionId: questionId,
                         createdBy: req.user._id,
                         upvotes:0,
@@ -172,6 +172,7 @@ const downvoteAnswer = async(req, res) => {
     }
 }
 
+
 const getUpvotedAnswers = async (req, res) => {
     try{
         const user = await User.findById(req.user._id)
@@ -193,6 +194,29 @@ const getUpvotedAnswers = async (req, res) => {
         return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
     }
 }
+      
+const searchAnswers = async(req, res) => {
+    const match = {}
+    if(req.query.createdBy){
+        match.createdBy = req.query.createdBy
+    }
+    if(req.query.questionId){
+        match.questionId = req.query.questionId
+    }
+    if(req.query.tags){
+        match.tags = { $in: req.query.tags }
+    }
+    const answers = await Answers.find(match)
+    try{
+        if(answers.length===0){
+            return res.status(200).json(responseHandler(true, 200, {message: "no answers found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, answers)); 
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
 
 module.exports = answerController = {
     createAnswers,
@@ -200,5 +224,6 @@ module.exports = answerController = {
     editAnswer,
     upvoteAnswer,
     downvoteAnswer,
-    getUpvotedAnswers
+    getUpvotedAnswers,
+    searchAnswers
 };

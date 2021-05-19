@@ -14,5 +14,9 @@ router.get('/user/:id', requireSignin, admin, adminController.getUserById);
 router.get('/answer/:id', requireSignin, admin, adminController.getAnswerById);
 
 
+router.delete('/question/:id', requireSignin, admin, adminController.deleteQuestion);
+router.delete('/user/:id', requireSignin, admin, adminController.deleteUser);
+router.delete('/answer/:id', requireSignin, admin, adminController.deleteAnswer);
+
 
 module.exports = router;

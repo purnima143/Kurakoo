@@ -12,10 +12,10 @@ const answersSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        tags: {
-            type: [String],
+        tags: [{
+            type: String,
             trim: true
-        },
+        }],
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",

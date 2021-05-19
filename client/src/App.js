@@ -6,6 +6,7 @@ import Preloader from "./components/Preloader/Preloader";
 import NotFound from "./components/NotFound/NotFound";
 import Scroll from "./components/ScrollToTop/ScrollToTop"
 import UserEdit from "./components/UserEditScreen/UserEdit"
+import AdminUserList from "./components/Admin_userlist/admin_userlist"
 
 const NotificationPage = React.lazy(() => {
     return new Promise(resolve => {
@@ -82,6 +83,7 @@ const App = () => {
                         <Route path="/aboutus" component={AboutUs} />
                         <Route path="/profile" component={Profile} />
                         <Route path="/useredit" component={UserEdit} />
+                        <Route path="/admin/userlist" component={AdminUserList} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
