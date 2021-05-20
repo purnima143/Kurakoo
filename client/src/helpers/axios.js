@@ -1,12 +1,13 @@
-import axios from "axios";
- import store from "../store";
+import axios from 'axios';
+import { api } from '../urlConfig';
+import store from '../store/index';
 import { authConstants } from "../actions/constants";
 
-const token = window.localStorage.getItem("token");
+const token = window.localStorage.getItem('token');
 
 const axiosIntance = axios.create({
-    baseURL: process.env.API,
-    headers: {
+    baseURL: api,
+     headers: {
         'Authorization': token ? `Bearer ${token}` : ''
     }
 });
@@ -21,7 +22,7 @@ axiosIntance.interceptors.response.use((res) => {
     const { status } = error.response;
     if( status === 500 ) {
         localStorage.clear();
-       store.dispatch({ type: authConstants.LOGOUT_SUCCESS });
+        store.dispatch({ type: authConstants.LOGOUT_SUCCESS });
     }
     return Promise.reject(error);
 })

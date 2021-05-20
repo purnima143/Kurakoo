@@ -1,6 +1,8 @@
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const responseHandler = require("../helpers/responseHandler");
+const Question = require ('../models/questions.models')
+const Answer = require('../models/answers.model')
 
 const signup = (req, res) => {
     User.findOne({ email: req.body.email }).exec((error, user) => {
@@ -27,7 +29,8 @@ const signup = (req, res) => {
             lastName, 
             email, 
             password,
-            confirmPassword
+            confirmPassword,
+            isAdmin
         } = req.body;
         if(password != confirmPassword){
             return res
@@ -47,7 +50,8 @@ const signup = (req, res) => {
             lastName,
             email,
             password,
-            userName: Math.random().toString()
+            userName: Math.random().toString(),
+            isAdmin,
         });
 
         _user.save((error, data) => {
@@ -103,7 +107,8 @@ const signin = (req, res) => {
                     lastName,
                     email,
                     role,
-                    fullName
+                    fullName,
+                    isAdmin,
                 } = user;
                 res.status(200).json(
                     responseHandler(true, 200, "User Logged in", {
@@ -163,9 +168,41 @@ const update = async (req, res) => {
     }
 };
 
+const deleteProfile = async(req, res) => {
+    try{
+        const questions = await Question.find({createdBy: req.user._id})
+        const _user = await User.findOne({email:"user1234@example.com"})
+        if(!_user){
+                var user_ = new User({
+                firstName: "user",
+                lastName: "1234",
+                email: "user1234@example.com",
+                password: "default1234",
+                userName: Math.random().toString()
+            });
+            await user_.save()
+        }
+        const def_user = !_user ? user_ : _user
+        if(questions){
+            questions.forEach(async (question)=>{
+                question.createdBy = def_user._id
+                await question.save()
+            })
+        }
+        
+        await Answer.deleteMany({createdBy: req.user._id})
+        await User.findByIdAndDelete(req.user._id)
+        return res.status(200).json( responseHandler(true, 200, {message:"profile deleted"}) );
+    }
+    catch(e){
+        return res.status(400).json( responseHandler(false, 400, {message:"something went wrong!"}) );
+    } 
+}
+
 module.exports = authController = {
     signup,
     signin,
     signout,
-    update
+    update,
+    deleteProfile
 };

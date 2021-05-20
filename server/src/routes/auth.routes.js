@@ -34,4 +34,6 @@ router.patch(
     authController.update
 );
 
+router.delete('/deleteProfile', requireSignin, authController.deleteProfile)
+
 module.exports = router;

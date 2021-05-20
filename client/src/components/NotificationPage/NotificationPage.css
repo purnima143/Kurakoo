@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
-:root{
-    --primary-color-nav: #FFE7A6;
-    --secondary-color-bg: #FFFCF5;
-    --darker-shade: #FFE293;
+:root {
+    --primary-color-nav: #ffe7a6;
+    --secondary-color-bg: #fffcf5;
+    --darker-shade: #ffe293;
     --shadow-color: #00000017;
-    --white: #FFFFFF;
+    --white: #ffffff;
 }
 
-body{
+body {
     background-color: var(--secondary-color-bg);
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--tertiary-color);
 }
 
-.greet-msg{
+.greet-msg {
     width: 90%;
     margin: auto;
     border: solid 1px var(--darker-shade);
@@ -24,34 +24,124 @@ body{
     box-shadow: 5px 5px 2px var(--shadow-color);
 }
 
-.content-div{
+.content-div {
     margin: 5px;
 }
 
-.content-head{
+.content-head {
     font-size: 1.5rem;
     font-weight: bolder;
     margin: 2px auto;
 }
 
-.content-body{
+.content-body {
     font-size: 1.4rem;
 }
 
-.img-div{
+.img-div {
     width: 110px;
     height: 110px;
     margin: 8px 8px;
 }
 
-.img{
+.img {
     width: 110px;
     border: solid 2px var(--darker-shade);
     border-radius: 100px;
     box-shadow: 5px 5px 2px var(--shadow-color);
 }
 
-.notification-body{
+.notification-body {
     display: flex;
-    margin: .7rem 4rem;
+    margin: 0.7rem 4rem;
 }
+.mainc{
+    transition: 0.5s ease-out;
+}
+.dark-mode{
+    filter: invert(1) hue-rotate(180deg);
+    transition: 1s ease-in;
+  }
+  .dark-mode #notification-container img{
+        filter: invert(1) hue-rotate(180deg);
+        transition: 0.5s ease-in;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    margin: 2rem 37rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: orangered;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    background: black;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .switch h2{
+    position: absolute;
+    top: -6px;
+    left: 4rem;
+    font-size: 1.5rem;
+  }
+  .main{
+    background-color: #ff5e14;
+    margin: -1rem;
+    padding: 2rem;
+    transition: 0.5s ease-in;
+  }
+  .dark-mode .switch h2{
+      color: white;
+  }

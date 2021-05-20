@@ -1,5 +1,6 @@
 const Questions = require('../models/questions.models');
 const responseHandler = require('../helpers/responseHandler');
+const Answers = require('../models/answers.model')
 
 const createQuestions = (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
@@ -64,8 +65,63 @@ const editQuestion = async(req, res) =>{
     }
 }
 
+const deleteQuestion = async(req, res) => {
+    try{
+        const question = await Questions.findOneAndDelete({_id: req.params.id, createdBy: req.user._id})
+        if(!question){  
+            return res.status(400).send({message:"question not found"})
+        }
+        await Answers.deleteMany({questionId: req.params.id})
+        res.status(200).send({message: "question deleted!"}) 
+    }catch(e){
+        res.status(400).send({message:"something went wrong!"})  
+    }
+}
+
+const getAnswers = async (req, res) => {
+    try{
+        const answers = await Answers.find({questionId: req.params.id})
+        if(!answers){
+            return res.status(200).json(responseHandler(true, 200, {message: "answers not found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, answers));
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
+
+const searchQuestions = async(req, res) => {
+    const match ={createdBy: req.user._id}
+
+    if(req.query.id){
+        match._id = req.query.id
+    }
+    if(req.query.questionText){
+        match.questionText = req.query.questionText
+    }
+    if(req.query.tags){
+        match.tags = req.query.tags
+    }
+
+    const questions = await Questions.find(match)
+
+    try{
+        if(questions.length===0){
+            return res.status(200).json(responseHandler(true, 200, {message: "no questions found"})); 
+        }
+        res.status(200).send(questions)
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
-    editQuestion
+    editQuestion,
+    deleteQuestion,
+    getAnswers,
+    searchQuestions
 };

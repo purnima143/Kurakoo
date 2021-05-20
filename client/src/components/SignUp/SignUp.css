@@ -1,15 +1,22 @@
-.signup_image{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ff5e14;
+}
+.signup_image {
     width: 100%;
     height: 100vh;
 }
 
-.mobile_logo_img{
+.mobile_logo_img {
     max-width: 90%;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .show {
     display: none;
@@ -25,7 +32,7 @@
     margin-bottom: 0.5em;
     display: block;
     background: orange;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 22px;
     padding: 1em;
     text-transform: uppercase;
@@ -33,19 +40,17 @@
     text-align: center;
     cursor: pointer;
 }
-.user{
-    
+.user {
     margin-bottom: 0.5em;
     display: block;
     background: orange;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 22px;
     padding: 1em;
     text-transform: uppercase;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
-
 }
 .flag {
     position: absolute;
@@ -62,13 +67,11 @@
     position: relative;
     top: 250px;
     left: 0;
-    transition:
-        width 200ms ease-out,
-        top 200ms ease-out;
+    transition: width 200ms ease-out, top 200ms ease-out;
 }
 
 .show ~ .title .flag {
-    opacity: 0; 
+    opacity: 0;
 }
 
 .show ~ .title .left {
@@ -85,8 +88,7 @@
 
 .show ~ .form {
     opacity: 0;
-    transition:
-        opacity 200ms linear;
+    transition: opacity 200ms linear;
 }
 
 .show:checked ~ .title {
@@ -98,17 +100,13 @@
 .show:checked ~ .title .left {
     opacity: 0.7;
     left: -55px;
-    transition: 
-        opacity 50ms linear 200ms,
-        left 50ms linear 200ms;
+    transition: opacity 50ms linear 200ms, left 50ms linear 200ms;
 }
 
 .show:checked ~ .title .right {
     opacity: 0.7;
     right: -55px;
-    transition: 
-        opacity 50ms linear 200ms,
-        right 50ms linear 200ms;
+    transition: opacity 50ms linear 200ms, right 50ms linear 200ms;
 }
 
 .show:checked ~ .form {
@@ -122,7 +120,7 @@
 }
 
 .group {
-    margin: 0 auto;
+    margin: 0 8px;
     width: 80%;
 }
 
@@ -131,7 +129,7 @@
 }
 
 .group:after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
 }
@@ -150,7 +148,7 @@
     line-height: 40px;
     font-size: 18px;
     text-shadow: 0.5px 0.5px 0 #fff;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     text-transform: capitalize;
 }
 
@@ -161,16 +159,14 @@
 .colm-2 input {
     width: 100%;
     height: 40px;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     outline: none;
     border: none;
     border-radius: 20px;
     box-sizing: border-box;
-    box-shadow: 
-        inset 0 0 3px 0 rgba(0,0,0,0.3),
-        0.5px 0.5px 0 0 #fff;
+    box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3), 0.5px 0.5px 0 0 #fff;
     padding: 1em;
-    background: rgba(80,80,80,0.1);
+    background: rgba(80, 80, 80, 0.1);
     margin-left: 39%;
 }
 
@@ -180,17 +176,16 @@ input[type="submit"] {
     width: 30%;
 }
 
-
 .submit {
     border: none;
     outline: none;
     position: relative;
     height: 40px;
     color: #fff;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     text-transform: uppercase;
     border-radius: 2px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 1px 0 #000;
     letter-spacing: 1.5px;
     font-size: 18px;
@@ -199,18 +194,16 @@ input[type="submit"] {
 
 .submit:hover {
     color: orange;
-    background: rgba(0,0,0,1);
+    background: rgba(0, 0, 0, 1);
 }
 
-
-
-.signup_heading{
+.signup_heading {
     width: 50%;
-    border-bottom: 7px solid #FF6F00;
+    border-bottom: 7px solid #ff6f00;
     margin-bottom: 30px;
 }
 
-.text_ip{
+.text_ip {
     width: 100%;
     height: 35px;
     margin-top: 10px;
@@ -219,14 +212,14 @@ input[type="submit"] {
     margin-bottom: 15px;
 }
 
-.text_ip:focus{
+.text_ip:focus {
     border: 1px solid #ff9100;
     outline: 1px solid #ff9100;
 }
 
-.create_account_button{
+.create_account_button {
     margin-top: 30px;
-    background-color: #FF6F00;
+    background-color: #ff6f00;
     color: white;
     width: 100%;
     height: 50px;
@@ -236,19 +229,21 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-.signup_signin_message{
+.signup_signin_message {
     font-weight: 500;
     margin-top: 10px;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
-.signin_link{
+.signin_link {
     color: rgb(0, 119, 255);
     cursor: pointer;
     text-decoration: underline;
 }
-html, body, h2 {
+html,
+body,
+h2 {
     margin: 0;
     padding: 0.5em;
 }
@@ -256,4 +251,93 @@ html, body, h2 {
 .show {
     display: none;
 }
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+    transition: 1s ease-in;
+}
+.dark-mode .signup_image {
+    filter: invert(1) hue-rotate(180deg);
+    transition: 0.5s ease-in;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    margin: 5px 16rem;
+    margin-bottom: 1rem;
+}
 
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: orangered;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    background: black;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.switch h2 {
+    position: absolute;
+    top: -18px;
+    left: 3rem;
+    font-size: 1.5rem;
+}
+.main {
+    background-color: #ff5e14;
+    margin: -1rem;
+    padding: 2rem;
+    transition: 0.5s ease-in;
+}
+.password-toggle-icon-signup {
+    position: absolute;
+    cursor: pointer;
+    right: 13%;
+    top: 82.5%;
+}

@@ -1,8 +1,8 @@
-.signin_image{
+.signin_image {
     width: 100%;
     height: 100vh;
 }
-.mobile_logo_img{
+.mobile_logo_img {
     max-width: 90%;
     margin-top: 20px;
     margin-left: auto;
@@ -13,25 +13,24 @@
     max-width: 60%;
     margin-top: 25%;
     margin-left: 40%;
-    
 }
 
 .app {
-  background-color: #fff;
-  width: 330px;
-  height: 570px;
-  margin: 2em auto;
-  border-radius: 5px;
-  padding: 1em;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 6px 31px -2px rgba(0, 0, 0, .3);
-  margin-top: 0%;
+    background-color: #fff;
+    width: 330px;
+    height: 570px;
+    margin: 2em auto;
+    border-radius: 5px;
+    padding: 1em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.3);
+    margin-top: 0%;
 }
 
 a {
     text-decoration: none;
-    color: #FF6F00;
+    color: #ff6f00;
 }
 
 footer p {
@@ -39,13 +38,13 @@ footer p {
     color: #333;
     line-height: 2;
 }
-    .light {
-        text-align: right;
-        color: #fff;
-    }
-        .light a {
-            color: #fff;
-        }
+.light {
+    text-align: right;
+    color: #fff;
+}
+.light a {
+    color: #fff;
+}
 
 .bg {
     width: 400px;
@@ -76,7 +75,7 @@ header {
     width: 220px;
     height: 220px;
     margin: 1em auto;
-  }
+}
 
 .form1 input {
     width: 100%;
@@ -84,8 +83,8 @@ header {
     margin: 0.7em auto;
     border-radius: 100px;
     border: none;
-    background: rgb(255,255,255,0.3);
-    font-family: 'Poppins', sans-serif;
+    background: rgb(255, 255, 255, 0.3);
+    font-family: "Poppins", sans-serif;
     outline: none;
     color: #fff;
     margin-left: 10%;
@@ -114,31 +113,125 @@ footer button {
     border-radius: 100px;
     border: none;
     background: #ff9f00;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     outline: none;
     color: #fff;
 }
 
 @media screen and (max-width: 640px) {
-        .app {
-            width: 100%;
-            height: 100vh;
-            border-radius: 0;
-        }
-
-        .bg {
-            top: -7em;
-            width: 450px;
-            height: 115vh;
-        }
-        header {
-            width: 90%;
-            height: 250px;
-        }
-        .inputs {
-            margin: 0;
-        }
-        input, button {
-            padding: 18px 15px;
-        }
+    .app {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
     }
+
+    .bg {
+        top: -7em;
+        width: 450px;
+        height: 115vh;
+    }
+    header {
+        width: 90%;
+        height: 250px;
+    }
+    .inputs {
+        margin: 0;
+    }
+    input,
+    button {
+        padding: 18px 15px;
+    }
+}
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+    transition: 0.5s ease-in;
+}
+.dark-mode .signin_image {
+    filter: invert(1) hue-rotate(180deg);
+    transition: 0s ease-in;
+}
+.dark-mode .bg {
+    filter: invert(1) hue-rotate(180deg);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    margin: 5px 16rem;
+    margin-bottom: 1rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: orangered;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    background: black;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.switch h2 {
+    position: absolute;
+    top: -7px;
+    left: 3rem;
+    font-size: 1.5rem;
+}
+.main {
+    background-color: #ff5e14;
+    margin: -1rem;
+    padding: 2rem;
+    transition: 0.5s ease-in;
+}
+.password-toggle-icon-signin {
+    position: absolute;
+    cursor: pointer;
+    right: 8%;
+    top: 82.5%;
+}

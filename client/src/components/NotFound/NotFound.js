@@ -1,16 +1,19 @@
-import React from 'react'
-import './NotFound.css'
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React from "react";
+import "./NotFound.css";
+import Img404 from '../images/404.png';
 
 const NotFound = () => {
-    return (
-        <div class="mainbox">
-        <div class="err">4</div>
-        <CircularProgress  className="spinner"/>
-        <div class="err2">4</div>
-        <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?<p>Let's go <a href="/">home</a> and try from there.</p></div>
-          </div>
-    )
-}
+    return (<div>
+        <h1 className='error_heading1'>
+        Oops &#44; the page you&apos;re looking for doesn&apos;t exist
+      </h1>
+      <img src={Img404} className='error_img' alt='Img404'></img>
+                <h1 className='error_heading2'>
+                    Let's go <a href="/" className="HOME">home</a> and try from there.
+                </h1>
+            </div>
+        
+    );
+};
 
-export default NotFound
+export default NotFound;
