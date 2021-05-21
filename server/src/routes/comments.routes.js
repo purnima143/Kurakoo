@@ -12,4 +12,9 @@ router.post('/postComment', requireSignin, userMiddleWare, commentController.pos
 router.patch('/updateComment/:id', requireSignin, userMiddleWare, commentController.updateComment)
 router.delete('/deleteComment/:id', requireSignin, userMiddleWare, commentController.deleteComment)
 
+router.get('/getCommentById/:id', requireSignin, userMiddleWare, commentController.getCommentById);
+router.get('/getMyComments', requireSignin, userMiddleWare, commentController.getMyComments);
+
+router.get('/getCommentsForAnswer/:id', requireSignin, userMiddleWare, commentController.getCommentsForAnswer);
+
 module.exports = router;
