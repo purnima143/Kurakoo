@@ -18,5 +18,6 @@ router.delete('/question/:id', requireSignin, admin, adminController.deleteQuest
 router.delete('/user/:id', requireSignin, admin, adminController.deleteUser);
 router.delete('/answer/:id', requireSignin, admin, adminController.deleteAnswer);
 
+router.put('/user/:id', requireSignin,admin,adminController.updateUser)
 
 module.exports = router;
