@@ -13,7 +13,19 @@ router.post(
     questionController.createQuestions
 );
 
-router.get("/allQuestions",  requireSignin, userMiddleWare, questionController.getQuestions)
+router.post(
+    "/bookmarkQues",
+    requireSignin,
+    userMiddleWare,
+    questionController.bookMarkques
+);
+
+router.get( 
+            "/allQuestions",  
+            requireSignin, 
+            userMiddleWare, 
+            questionController.getQuestions
+        )
 router.patch(
     "/question/:id",
     requireSignin,
