@@ -35,7 +35,7 @@ app.use(express.json());
 
 // database connection
 mongoose.connect(
-  process.env.MONGO_URL,
+  "mongodb://localhost:27017/kurakooDB",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
