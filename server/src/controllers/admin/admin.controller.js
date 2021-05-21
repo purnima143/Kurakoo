@@ -1,10 +1,47 @@
 const asyncHandler = require("express-async-handler")
-const User = require("../models/user.model");
-const Answer = require("../models/answers.model");
-const Question = require("../models/questions.models");
-const responseHandler = require("../helpers/responseHandler");
+const User = require("../../models/user.model");
+const Answer = require("../../models/answers.model");
+const Question = require("../../models/questions.models");
+const responseHandler = require("../../helpers/responseHandler");
 
+exports.signup = (req,res) => {
+  User.findOne({ email: req.body.email})
+  .exec((error, user) => {
+      if(user) return res.status(400).json(responseHandler(fasle, 400, "Admin is already registered"));
 
+      const {
+          firstName, 
+          lastName,
+          email,
+          password,
+          confirmPassword
+      } = req.body;
+      if(password != confirmPassword){
+        return res
+            .status(400)
+            .json(responseHandler( false, 400, "Password doesn't match", null ));
+    }
+
+      const _user = new User({
+          firstName,
+          lastName,
+          email,
+          password,
+          username: Math.random().toString() ,
+          role: 'admin'
+      });
+
+      _user.save((error, data) => {
+          if (error){
+              res.status(400).json(responseHandle(false, 400, "Admin is not created! Something went wrong!"));
+          }
+
+          if (data){
+              res.status(201).json(responseHandler(true, 201, "Admn is created successfully", {data}))
+          }
+      });
+  });
+}
 // @desc    Get all users
 // @route   GET /admin/users
 // @access  Private/Admin

@@ -29,8 +29,7 @@ const signup = (req, res) => {
             lastName, 
             email, 
             password,
-            confirmPassword,
-            isAdmin
+            confirmPassword
         } = req.body;
         if(password != confirmPassword){
             return res
@@ -51,7 +50,6 @@ const signup = (req, res) => {
             email,
             password,
             userName: Math.random().toString(),
-            isAdmin,
         });
 
         _user.save((error, data) => {
@@ -62,7 +60,7 @@ const signup = (req, res) => {
                         responseHandler(
                             false,
                             400,
-                            "User Don't Created ! Something went wrong...!",
+                            "User is not Created ! Something went wrong...!",
                             null
                         )
                     );
@@ -107,8 +105,7 @@ const signin = (req, res) => {
                     lastName,
                     email,
                     role,
-                    fullName,
-                    isAdmin,
+                    fullName
                 } = user;
                 res.status(200).json(
                     responseHandler(true, 200, "User Logged in", {

@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const adminController = require("../controllers/admin.controller")
+const adminController = require("..controllers/admin/admin.controller");
 const { requireSignin } = require("../common-middleware/middleware");
-const admin =require("../common-middleware/admin")
+const admin =require("../common-middleware/admin");
 
+router.post('/admin/signup', validateSignupRequest, authController.signup);
 
 router.get('/users', requireSignin, admin, adminController.getUsers);
 router.get('/answers', requireSignin, admin, adminController.getAnswers);
