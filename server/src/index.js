@@ -6,6 +6,8 @@ const cors = require("cors");
 const http = require("http");
 const morgan = require("morgan");
 const helmet = require("helmet");
+const rateLimit = require('express-rate-limit');
+const mongoSanitize = require('express-mongo-sanitize');
 const clc = require("cli-color");
 const compression = require("compression");
 const mongoose = require("mongoose");
@@ -25,6 +27,18 @@ app.use(compression());
 
 // security config
 app.use(helmet());
+
+//limit requests from same IP
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: 'To many request from this IP, please try again after an hour!',
+});
+
+app.use('/', limiter);
+
+//data sanitization against noSQL query injection
+app.use(mongoSanitize());
 
 // cors enable
 app.options("*", cors());
