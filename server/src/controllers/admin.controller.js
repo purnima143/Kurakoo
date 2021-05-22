@@ -124,7 +124,7 @@ const deleteQuestion = asyncHandler(async (req, res) => {
 
 
 // @desc    Update user
-// @route   PUT /api/user/:id
+// @route   PUT /admin/user/:id
 // @access  Private/Admin
 const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
