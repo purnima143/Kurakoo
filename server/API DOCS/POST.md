@@ -146,3 +146,25 @@
      * **Auth Need : True**
     * **Admin Auth Need : True**
 
+
+**6. Post Commment**
+* **URL**
+    `/api/postComment`
+
+* **METHOD**
+    `POST`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `comment saved!` <br />
+      **data:** `{  comment:[answerId,text, updatedAt, created_by: user.firstName + user.lastName ] }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**

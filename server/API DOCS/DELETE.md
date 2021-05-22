@@ -87,3 +87,73 @@
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
+
+**4. ADMIN: DELETE user**
+* **URL**
+    `/api/admin/user/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `User removed` <br />
+
+* **Error Response**
+    * **Code:** `404` <br />
+      **Message:** `User not found` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : True**
+
+
+
+**5. ADMIN: DELETE question**
+* **URL**
+    `/api/admin/question/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `Question removed` <br />
+
+* **Error Response**
+    * **Code:** `404` <br />
+      **Message:** `Question not found` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : True**
+
+
+
+**6. ADMIN: DELETE answer**
+* **URL**
+    `/api/admin/answer/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `Answer removed` <br />
+
+* **Error Response**
+    * **Code:** `404` <br />
+      **Message:** `Answer not found` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : True**
