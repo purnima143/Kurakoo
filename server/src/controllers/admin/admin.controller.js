@@ -4,7 +4,7 @@ const Answer = require("../../models/answers.model");
 const Question = require("../../models/questions.models");
 const responseHandler = require("../../helpers/responseHandler");
 
-exports.signup = (req,res) => {
+const signup = async (req,res) => {
   User.findOne({ email: req.body.email})
   .exec((error, user) => {
       if(user) return res.status(400).json(responseHandler(fasle, 400, "Admin is already registered"));
@@ -41,6 +41,24 @@ exports.signup = (req,res) => {
           }
       });
   });
+}
+
+const signin = async(req, res) => {
+  user.findOne({ email: req.body.email })
+      .exe((error, user) => {
+        if(error) return res.status(400).json(responseHandler(false, 400, "Something went wrong!"));
+
+        if(user) {
+          if(user.authenticate(req.body.password) && user.role === "admin"){
+            const token = jwt.sign({ _id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '5h'});
+            const { _id, firstName, lastName, email, role } = user;
+            res.cookie( 'token' , token , {expiresIn : '5h'});
+            res.status(200).json(responseHandler(true, 200, "Successfully Signin", user));
+          } else {
+            res.status(400).json(responseHandler(false, 400, "Invalid Cradentials", null));
+          }
+        }
+      })
 }
 // @desc    Get all users
 // @route   GET /admin/users
@@ -188,6 +206,8 @@ const updateUser = asyncHandler(async (req, res) => {
 }) 
 
 module.exports = adminController = {
+    signup,
+    signin,
     getAnswers,
     getQuestions,
     getUsers,
