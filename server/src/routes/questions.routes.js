@@ -35,5 +35,6 @@ router.patch(
 router.delete("/deleteQuestion/:id",  requireSignin, userMiddleWare, questionController.deleteQuestion)
 router.get('/getAnswers/:id', requireSignin, userMiddleWare, questionController.getAnswers)
 router.get('/searchQuestions', requireSignin, userMiddleWare, questionController.searchQuestions)
+router.get('/getQuestion/:id', requireSignin, userMiddleWare, questionController.getQuestion)
 
 module.exports = router;

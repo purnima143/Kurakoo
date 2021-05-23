@@ -18,5 +18,6 @@ router.get('/upvote/:id', requireSignin, userMiddleWare, answerController.upvote
 router.get('/downvote/:id', requireSignin, userMiddleWare, answerController.downvoteAnswer)
 router.get('/getUpvotedAnswers', requireSignin, userMiddleWare, answerController.getUpvotedAnswers)
 router.get('/searchAnswers', requireSignin, userMiddleWare, answerController.searchAnswers)
+router.get('/getAnswer/:id', requireSignin, userMiddleWare, answerController.getAnswer)
 
 module.exports = router;
