@@ -12,6 +12,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import Footer from "../Footer/footer";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import Alert from '../Alert/alert'
+
 
 const Homepage = () => {
     return (
@@ -33,6 +35,7 @@ const Homepage = () => {
                     </Link>
                 </div>
             </div>
+            <Alert/>
             <div className="content">
                 <h2>Welcome To</h2>
                 <h1>Kurakoo</h1>
