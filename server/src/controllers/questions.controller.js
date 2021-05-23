@@ -117,11 +117,35 @@ const searchQuestions = async(req, res) => {
     }
 }
 
+const bookMarkques = async(req, res) => {
+    try {
+        const bool = req.body.bookmark === "true";
+        const question = await Questions.findById(req.params.id);
+        if (bool) {
+          if (!question.bookmarkedBy.includes(req.user._id)) {
+            question.bookmarkedBy.push(req.user._id);
+            await question.save();
+          }
+          return res.status(200).json(responseHandler(true, 200,{ message: "bookmarked your question!" }));
+        } else {
+          const i = question.bookmarkedBy.indexOf(req.user._id);
+          if (i < 0) {
+            return res.status(200).json(responseHandler(true, 200,{ message: "question not found!" }));
+          }
+          question.bookmarkedBy.splice(i, 1);
+          await question.save();
+          return res.status(200).json(responseHandler(true, 200,{ message: "the question is not included in your bookmarked list anymore!" }));
+        }
+      } catch (e) {
+        return res.status(400).json(responseHandler(false, 400,{ message: "something went wrong" }));
+      }
+    };
 module.exports = questionController = {
     createQuestions,
     getQuestions,
     editQuestion,
     deleteQuestion,
     getAnswers,
-    searchQuestions
+    searchQuestions,
+    bookMarkques
 };
