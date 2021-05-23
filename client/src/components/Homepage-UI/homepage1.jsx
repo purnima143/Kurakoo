@@ -12,9 +12,24 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import Footer from "../Footer/footer";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+const successToast = (message) => {
+    toast.warning(message, {
+        position: "top-center",
+        autoClose: 3000,
+        closeOnClick: true,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+    });
+};
+successToast("Great Landing! Create a profile to get started.")
 const Homepage = () => {
     return (
+        
         <div className="LandingPage">
             <img
                 src={require("../../Homepage/main.png")}

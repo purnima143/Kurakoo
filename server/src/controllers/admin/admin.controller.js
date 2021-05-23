@@ -60,6 +60,11 @@ const signin = async(req, res) => {
         }
       })
 }
+
+const signout = async( req, res ) => {
+  res.clearCookie( 'token' );
+  res.status(200).json(responseHandler(true, 200, "Successfully Signout"));
+}
 // @desc    Get all users
 // @route   GET /admin/users
 // @access  Private/Admin
@@ -208,6 +213,7 @@ const updateUser = asyncHandler(async (req, res) => {
 module.exports = adminController = {
     signup,
     signin,
+    signout,
     getAnswers,
     getQuestions,
     getUsers,
