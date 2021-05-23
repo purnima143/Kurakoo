@@ -6,8 +6,12 @@ const { requireSignin } = require("../../common-middleware/common-middleware");
 const { adminMiddleWare } =require("../../common-middleware/common-middleware");
 
 router.post('/admin/signup', validateSignupRequest, authController.signup);
+
+//router.post('/admin/signin', validateSigninRequest, authController.signin);
+
 router.post('/admin/signin', validateSigninRequest, authController.signin);
 router.post('/admin/signout', requireSignin, authController.signout);
+
 
 router.get('/users', requireSignin, adminMiddleWare, adminController.getUsers);
 router.get('/answers', requireSignin, adminMiddleWare, adminController.getAnswers);
