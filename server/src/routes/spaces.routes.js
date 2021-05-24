@@ -1,5 +1,5 @@
 const express = require("express");
-const { requireSignin, userMiddleWare } = require("../common-middleware/middleware");
+const { requireSignin, userMiddleWare } = require("../common-middleware/common-middleware");
 const spaceController = require("../controllers/space.controller");
 const { validateSpaceRequest, isRequestValidated } = require("../validators/space.validator");
 
