@@ -94,14 +94,15 @@ const signin = async (req,res) => {
               const token = jwt.sign({ _id: user._id, role: user.role}, process.env.JWT_SECRET, { expiresIn: '5h'});
               const {_id, firstName, lastName, email, role, fullName} = user;
               res.cookie( 'token', token, { expiresIn:'2h' });
-              res.status(200).json({
-                  token,
-                  user: {
-                      _id, firstName, lastName, email, role, fullName
-                  }
-              });
+              res.status(200).json(responseHandler(
+                  200,
+                  true,
+                  "Successfully Signin",
+                  {token,
+                  user}
+              ));
           } else {
-              res.status(400).json({ message: 'Invalid Cradentials'});
+              res.status(400).json(responseHandler(false, 400, "Invalid Cradentials", null));
           }
       }
   })
