@@ -8,6 +8,9 @@ import InsertCommentOutlinedIcon from "@material-ui/icons/InsertCommentOutlined"
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal';
 import AnswerQuestion from '../Answer/Answer';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const useStyles = makeStyles({
     root: {
@@ -25,12 +28,31 @@ const useStyles = makeStyles({
         // boxShadow: theme.shadows[5],
   
       },
+      typography: {
+        //padding: theme.spacing(2),
+      },
 });
+
+
 
 function Feed({ username, question, img, profession, answer }) {
     const [likeDislike, setLikeDislike] = useState([false, false]);
 
     const [openPopup, setOpenPopup] = useState(false);
+
+    const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
     const handleOpen = () => {
         setOpenPopup(true);
@@ -40,7 +62,7 @@ function Feed({ username, question, img, profession, answer }) {
         setOpenPopup(false);
       }
 
-    const classes = useStyles();
+    
     return (
         <div>
             <section className="feed-component">
@@ -67,9 +89,9 @@ function Feed({ username, question, img, profession, answer }) {
                         }
                     >
                         {likeDislike[0] ? (
-                            <ThumbUpIcon className={classes.root} />
+                            <ThumbUpIcon  />
                         ) : (
-                            <ThumbUpOutlinedIcon className={classes.root} />
+                            <ThumbUpOutlinedIcon />
                         )}
                     </button>
                     <button
@@ -81,13 +103,13 @@ function Feed({ username, question, img, profession, answer }) {
                         }
                     >
                         {likeDislike[1] ? (
-                            <ThumbDownIcon className={classes.root} />
+                            <ThumbDownIcon  />
                         ) : (
-                            <ThumbDownOutlinedIcon className={classes.root} />
+                            <ThumbDownOutlinedIcon  />
                         )}
                     </button>
-                    <button class="button">
-                        <InsertCommentOutlinedIcon className={classes.root} />
+                    <button class="button" onClick={handleClick}>
+                        <InsertCommentOutlinedIcon  />
                     </button>
 
                     <button class="ans_button" onClick={handleOpen}>Answer</button>
@@ -101,6 +123,22 @@ function Feed({ username, question, img, profession, answer }) {
                 </div>
 
             </Modal>
+            <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+      >
+        <Typography className={classes.typography}><TextareaAutosize aria-label="empty textarea" placeholder="Empty" /><button>Submit</button></Typography>
+      </Popover>
         </div>
     );
 }
