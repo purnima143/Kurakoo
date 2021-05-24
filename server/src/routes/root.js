@@ -20,7 +20,7 @@ const uploadRoutes =require("./upload.routes");
 const spaceRoutes = require("./spaces.routes");
 
 //Admin route
-const adminRoutes = require("./admin.routes")
+const adminRoutes = require("../routes/admin/admin.routes")
 
 
 //User route

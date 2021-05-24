@@ -25,7 +25,8 @@ const questionsSchema = new mongoose.Schema(
             ref: "User",
             required: true
         },
-        updatedAt: Date
+        updatedAt: Date,
+        views: Number
     },
     { timeStamps: true }
 );
