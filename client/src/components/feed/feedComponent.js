@@ -28,9 +28,16 @@ const useStyles = makeStyles({
         // boxShadow: theme.shadows[5],
   
       },
+      commentArea:{
+          width:"810px",
+        //   marginLeft:"780px"
+      },
       typography: {
         //padding: theme.spacing(2),
       },
+      pop:{
+          marginLeft:"120px"
+      }
 });
 
 
@@ -123,7 +130,8 @@ function Feed({ username, question, img, profession, answer }) {
                 </div>
 
             </Modal>
-            <Popover
+        <Popover
+        className={classes.pop}
         id={id}
         open={open}
         anchorEl={anchorEl}
@@ -137,7 +145,7 @@ function Feed({ username, question, img, profession, answer }) {
           horizontal: 'center',
         }}
       >
-        <Typography className={classes.typography}><TextareaAutosize aria-label="empty textarea" placeholder="Empty" /><button>Submit</button></Typography>
+        <Typography className={classes.typography}><TextareaAutosize className={classes.commentArea} aria-label="empty textarea" placeholder="Empty" /><button>Submit</button></Typography>
       </Popover>
         </div>
     );
