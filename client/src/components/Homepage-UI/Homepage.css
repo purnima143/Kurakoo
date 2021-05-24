@@ -37,13 +37,19 @@ body {
 }
 .links {
     margin: -13rem;
+    margin-top: -44%;
 }
 .login {
     color: #6a040f;
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-bottom:10px;
+}
+.clock{
+    margin-left: -25%;
+    margin-top: -13%;
 }
 .signup {
-    margin-left: 0rem;
+    margin-right: -2rem;
     /* color: #6a040f00; */
     background-color: #6a040f;
     color: #fff;
