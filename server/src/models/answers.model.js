@@ -27,7 +27,8 @@ const answersSchema = new mongoose.Schema(
         downvotes: {
             type: Number
         },
-        updatedAt: Date
+        updatedAt: Date,
+        views: Number
     },
     { timeStamps: true }
 );
