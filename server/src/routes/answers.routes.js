@@ -2,7 +2,7 @@ const express = require("express");
 const {
     requireSignin,
     userMiddleWare
-} = require("../common-middleware/middleware");
+} = require("../common-middleware/common-middleware");
 const answerController = require("../controllers/answers.controller");
 const router = express.Router();
 
