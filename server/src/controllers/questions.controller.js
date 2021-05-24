@@ -140,6 +140,38 @@ const bookMarkques = async(req, res) => {
         return res.status(400).json(responseHandler(false, 400,{ message: "something went wrong" }));
       }
     };
+
+    const allBookmarkQues = async ( req, res ) => {
+        try {
+            const questions = await Questions.find({ bookmarkedBy: req.user._id });
+            const questions_list = [];
+
+            questions.forEach((question) => {
+                const {
+                    _id,
+                    questionText,
+                    questionLinks,
+                    tags,
+                    createdBy
+                } = question;
+
+                const obj = {
+                    _id,
+                    questionText,
+                    questionLinks,
+                    tags,
+                    createdBy
+                };
+
+                questions_list.push(obj);
+            });
+            return res.status(200).send(questions_list);
+        } catch (e) {
+            res.status(400).json(responseHandler(false, 400, "Something Went Wrong!"))
+        }
+
+        };
+    
 module.exports = questionController = {
     createQuestions,
     getQuestions,
@@ -147,5 +179,6 @@ module.exports = questionController = {
     deleteQuestion,
     getAnswers,
     searchQuestions,
-    bookMarkques
+    bookMarkques,
+    allBookmarkQues
 };

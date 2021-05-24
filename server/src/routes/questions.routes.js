@@ -20,6 +20,13 @@ router.post(
     questionController.bookMarkques
 );
 
+router.post(
+    "/allBookmarkQues", 
+    requireSignin, 
+    userMiddleware, 
+    questionController.allBookmarkQues
+);
+
 router.get( 
             "/allQuestions",  
             requireSignin, 
