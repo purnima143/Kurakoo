@@ -17,7 +17,8 @@ router.post(
     "/signup",
     validateSignupRequest,
     isRequestValidated,
-    authController.signup
+    authController.signup,
+    
 );
 router.post(
     "/signin",
