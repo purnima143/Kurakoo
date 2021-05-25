@@ -8,8 +8,14 @@ import InsertCommentOutlinedIcon from "@material-ui/icons/InsertCommentOutlined"
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal';
 import AnswerQuestion from '../Answer/Answer';
+
+import {Box, Popover,Button, Card, CardContent,CardActions,TextField} from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+
 
 const useStyles = makeStyles({
     root: {
@@ -27,17 +33,60 @@ const useStyles = makeStyles({
         // boxShadow: theme.shadows[5],
   
       },
+
+      commentArea:{
+        width: "545px"
+        //   marginLeft:"780px"
+      },
+      typography: {
+        //padding: theme.spacing(2),
+      },
+      divArea:{
+        width: "596px",
+        height: "66px",
+    
+      },
+      pop:{
+        //   marginLeft:"120px"
+        position:"absolute",
+        left:"750px"
+      },
+      card:{
+          width:"800px",
+          backgroundColor:"#BDEEBE"
+      },
+      button:{
+          marginLeft:"15px"
+      }
+
       bookMarkIcon:{
         marginLeft:"680px",
        marginBottom:"9px"
       }
       
+
 });
+
+
 
 function Feed({ username, question, img, profession, answer }) {
     const [likeDislike, setLikeDislike] = useState([false, false]);
     const [mark,setMark] = useState([false, false]);
     const [openPopup, setOpenPopup] = useState(false);
+
+    const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
     const handleOpen = () => {
         setOpenPopup(true);
@@ -47,7 +96,7 @@ function Feed({ username, question, img, profession, answer }) {
         setOpenPopup(false);
       }
 
-    const classes = useStyles();
+    
     return (
         <div>
             <section className="feed-component">
@@ -89,9 +138,9 @@ function Feed({ username, question, img, profession, answer }) {
                         }
                     >
                         {likeDislike[0] ? (
-                            <ThumbUpIcon className={classes.root} />
+                            <ThumbUpIcon  />
                         ) : (
-                            <ThumbUpOutlinedIcon className={classes.root} />
+                            <ThumbUpOutlinedIcon />
                         )}
                     </button>
                     <button
@@ -103,13 +152,13 @@ function Feed({ username, question, img, profession, answer }) {
                         }
                     >
                         {likeDislike[1] ? (
-                            <ThumbDownIcon className={classes.root} />
+                            <ThumbDownIcon  />
                         ) : (
-                            <ThumbDownOutlinedIcon className={classes.root} />
+                            <ThumbDownOutlinedIcon  />
                         )}
                     </button>
-                    <button class="button">
-                        <InsertCommentOutlinedIcon className={classes.root} />
+                    <button class="button" onClick={handleClick}>
+                        <InsertCommentOutlinedIcon  />
                     </button>
 
                     <button class="ans_button" onClick={handleOpen}>Answer</button>
@@ -123,6 +172,51 @@ function Feed({ username, question, img, profession, answer }) {
                 </div>
 
             </Modal>
+        <Popover
+        className={classes.pop}
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+    {/* <Box className={classes.divArea}>
+        <Typography className={classes.typography}>
+         
+                <TextareaAutosize className={classes.commentArea} aria-label="empty textarea" placeholder="Empty" />
+                <Button variant="contained" color="secondary">
+ Submit
+</Button>
+                </Typography>  
+                </Box> */}
+
+                <div>
+    <Card className={classes.card}>
+    <CardContent>
+        <TextField
+          id="outlined-multiline-static"
+          label=""
+          multiline
+          rows={2}
+          fullWidth
+          variant="outlined"
+        />
+      </CardContent>
+    <CardActions>
+        <Button size="small" variant="contained" color="secondary" className={classes.button}>Submit</Button>
+        </CardActions>
+    </Card>
+
+                </div>
+          
+      </Popover>
         </div>
     );
 }

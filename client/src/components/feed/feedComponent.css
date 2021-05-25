@@ -78,8 +78,8 @@ section hr{
 
 .ans_button{
     position: absolute;
-    left: 51rem;
-    margin-top: 4px;
+    left: 50rem;
+    margin-top: 11px;
     width: 90px;
     height: 29px;
     border-radius: 9px;
@@ -87,3 +87,4 @@ section hr{
     color: black;
     border: 2px solid #28c22e;
 }
+
