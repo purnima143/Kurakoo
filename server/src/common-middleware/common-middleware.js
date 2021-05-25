@@ -28,12 +28,11 @@ const adminMiddleWare = (req, res, next) => {
       res.status(401)
       .json(responseHandler(false, 401, "Not authorized as an admin", null));
     }
+    next();
   }
-
-  module.exports = adminSignin;
 
 module.exports = commonMiddleware = {
     requireSignin,
     userMiddleWare,
-    adminMiddleware
+    adminMiddleWare
 };

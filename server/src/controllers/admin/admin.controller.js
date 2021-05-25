@@ -1,64 +1,111 @@
-const asyncHandler = require("express-async-handler")
+const asyncHandler = require("express-async-handler");
+const jwt = require("jsonwebtoken");
 const User = require("../../models/user.model");
 const Answer = require("../../models/answers.model");
 const Question = require("../../models/questions.models");
 const responseHandler = require("../../helpers/responseHandler");
 
-const signup = async (req,res) => {
-  User.findOne({ email: req.body.email})
-  .exec((error, user) => {
-      if(user) return res.status(400).json(responseHandler(fasle, 400, "Admin is already registered"));
+const signup = (req, res) => {
+  User.findOne({ email: req.body.email }).exec((error, user) => {
+      if (user)
+          return res
+              .status(400)
+              .json(
+                  responseHandler(false, 400, "Admin is Already Registered")
+              );
+      if (error)
+          return res
+              .status(400)
+              .json(
+                  responseHandler(
+                      false,
+                      400,
+                      "Invalid Cradentials or Error occured",
+                      null
+                  )
+              );
 
-      const {
+      const { 
           firstName, 
-          lastName,
-          email,
+          lastName, 
+          email, 
           password,
           confirmPassword
       } = req.body;
       if(password != confirmPassword){
-        return res
-            .status(400)
-            .json(responseHandler( false, 400, "Password doesn't match", null ));
-    }
+          return res
+              .status(400)
+              .json(
+                  responseHandler(
+                      false,
+                      400,
+                      "Password doesn't match",
+                      null
+                  )
+              );
+      }
 
       const _user = new User({
           firstName,
           lastName,
           email,
           password,
-          username: Math.random().toString() ,
-          role: 'admin'
+          userName: Math.random().toString(),
+          role:"admin"
       });
 
       _user.save((error, data) => {
-          if (error){
-              res.status(400).json(responseHandle(false, 400, "Admin is not created! Something went wrong!"));
+          if (error) {
+              return res
+                  .status(400)
+                  .json(
+                      responseHandler(
+                          false,
+                          400,
+                          "Admin is not Created ! Something went wrong...!",
+                          null
+                      )
+                  );
           }
-
-          if (data){
-              res.status(201).json(responseHandler(true, 201, "Admn is created successfully", {data}))
+          if (data) {
+              return res
+                  .status(201)
+                  .json(
+                      responseHandler(
+                          true,
+                          201,
+                          "Admin Created Succesfully...!",
+                          { data }
+                      )
+                  );
           }
       });
   });
-}
+};
 
-const signin = async(req, res) => {
-  user.findOne({ email: req.body.email })
-      .exe((error, user) => {
-        if(error) return res.status(400).json(responseHandler(false, 400, "Something went wrong!"));
+const signin = async (req,res) => {
+  User.findOne({ email: req.body.email})
+  .exec((error, user) => {
+      if(error) return res.status(400).json({ error});
 
-        if(user) {
-          if(user.authenticate(req.body.password) && user.role === "admin"){
-            const token = jwt.sign({ _id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '5h'});
-            const { _id, firstName, lastName, email, role } = user;
-            res.cookie( 'token' , token , {expiresIn : '5h'});
-            res.status(200).json(responseHandler(true, 200, "Successfully Signin", user));
+      if(user) {
+
+          if(user.authenticate(req.body.password) && user.role === 'admin'){
+              const token = jwt.sign({ _id: user._id, role: user.role}, process.env.JWT_SECRET, { expiresIn: '5h'});
+              const {_id, firstName, lastName, email, role, fullName} = user;
+              res.cookie( 'token', token, { expiresIn:'2h' });
+              res.status(200).json(responseHandler(
+                  200,
+                  true,
+                  "Successfully Signin",
+                  {token,
+                  user}
+              ));
           } else {
-            res.status(400).json(responseHandler(false, 400, "Invalid Cradentials", null));
+              res.status(400).json(responseHandler(false, 400, "Invalid Cradentials", null));
           }
-        }
-      })
+      }
+  })
 }
 
 const signout = async( req, res ) => {

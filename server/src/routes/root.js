@@ -36,7 +36,7 @@ router.use("/", questionRoutes);
 router.use("/", answerRoutes);
 router.use("/", uploadRoutes);
 router.use("/", spaceRoutes);
-router.use("/admin",adminRoutes);
+router.use("/",adminRoutes);
 
 router.use("/user",userRoutes);
 

@@ -14,6 +14,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Clockwise from '../Clock/clock';
 
 const successToast = (message) => {
     toast.warning(message, {
@@ -39,6 +40,7 @@ const Homepage = () => {
           
             <div className="navbar">
                 <img src={logo} id="logo" alt="" />
+                <div className="clock"><Clockwise/></div>
                 <div className="links">
                     <Link to="/signin" className="login">
                         Login

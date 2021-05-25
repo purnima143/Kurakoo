@@ -8,9 +8,14 @@ import InsertCommentOutlinedIcon from "@material-ui/icons/InsertCommentOutlined"
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal';
 import AnswerQuestion from '../Answer/Answer';
+
 import {Box, Popover,Button, Card, CardContent,CardActions,TextField} from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+
 
 const useStyles = makeStyles({
     root: {
@@ -28,6 +33,7 @@ const useStyles = makeStyles({
         // boxShadow: theme.shadows[5],
   
       },
+
       commentArea:{
         width: "545px"
         //   marginLeft:"780px"
@@ -52,13 +58,20 @@ const useStyles = makeStyles({
       button:{
           marginLeft:"15px"
       }
+
+      bookMarkIcon:{
+        marginLeft:"680px",
+       marginBottom:"9px"
+      }
+      
+
 });
 
 
 
 function Feed({ username, question, img, profession, answer }) {
     const [likeDislike, setLikeDislike] = useState([false, false]);
-
+    const [mark,setMark] = useState([false, false]);
     const [openPopup, setOpenPopup] = useState(false);
 
     const classes = useStyles();
@@ -91,7 +104,22 @@ function Feed({ username, question, img, profession, answer }) {
                     <img src={img} id="profile-pic" alt="img" />
                     <div id="bio-details">
                         <h4 id="username">{username}</h4>
-                        <small>{profession}</small>
+                        <small>{profession} </small>
+                       
+                        <span
+                   
+                        onClick={() =>
+                           mark[0]
+                                ? setMark([false, false])
+                                : setMark([true, false])
+                        }
+                    >
+                        {mark[0] ? (
+                            <BookmarkIcon className={classes.bookMarkIcon} />
+                        ) : (
+                            <BookmarkBorderIcon className={classes.bookMarkIcon} />
+                        )}
+                    </span>
                     </div>
                 </div>
                 <hr />
@@ -106,7 +134,7 @@ function Feed({ username, question, img, profession, answer }) {
                         onClick={() =>
                             likeDislike[0]
                                 ? setLikeDislike([false, false])
-                                : setLikeDislike([true, false])
+                                : setLikeDislike([false, true])
                         }
                     >
                         {likeDislike[0] ? (
