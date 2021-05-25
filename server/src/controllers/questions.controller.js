@@ -2,6 +2,7 @@ const Questions = require('../models/questions.models');
 const responseHandler = require('../helpers/responseHandler');
 const Answers = require('../models/answers.model')
 const ObjectID = require('mongodb').ObjectID;
+const User = require('../models/user.model')
 
 const createQuestions = async (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
@@ -11,7 +12,9 @@ const createQuestions = async (req, res) => {
         questionLinks: questionLinks,
         tags: tags.split(" "),
         createdBy: req.user._id,
-        views:0
+        views:0,
+        upvotes:0,
+        downvotes:0
     });
     try{
         await question.save()
@@ -143,42 +146,39 @@ const bookMarkques = async(req, res) => {
         }
     } catch (e) {
         return res.status(400).json(responseHandler(false, 400,{ message: "something went wrong" }));
-      }
-    };
-
-    const allBookmarkQues = async ( req, res ) => {
-        try {
-            const questions = await Questions.find({ bookmarkedBy: req.user._id });
-            const questions_list = [];
-
-            questions.forEach((question) => {
-                const {
-                    _id,
-                    questionText,
-                    questionLinks,
-                    tags,
-                    createdBy
-                } = question;
-
-                const obj = {
-                    _id,
-                    questionText,
-                    questionLinks,
-                    tags,
-                    createdBy
-                };
-
-                questions_list.push(obj);
-            });
-            return res.status(200).send(questions_list);
-        } catch (e) {
-            res.status(400).json(responseHandler(false, 400, "Something Went Wrong!"))
-        }
-
-        };
-    
     }
 };
+
+const allBookmarkQues = async ( req, res ) => {
+    try {
+        const questions = await Questions.find({ bookmarkedBy: req.user._id });
+        const questions_list = [];
+
+        questions.forEach((question) => {
+            const {
+                _id,
+                questionText,
+                questionLinks,
+                tags,
+                createdBy
+            } = question;
+
+            const obj = {
+                _id,
+                questionText,
+                questionLinks,
+                tags,
+                createdBy
+            };
+
+            questions_list.push(obj);
+        });
+        return res.status(200).send(questions_list);
+    } catch (e) {
+        res.status(400).json(responseHandler(false, 400, "Something Went Wrong!"))
+    }
+};
+
 
 const getQuestion = async(req, res) => {
     try{
@@ -217,6 +217,81 @@ const getQuestion = async(req, res) => {
     }
 }
 
+const upvoteQuestion = async(req, res) => {
+    try{
+        const question = await Questions.findById(req.params.id)
+        console.log(question)
+        if(!question){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findOne({_id:req.user._id})
+            const isUpvoted = user.upvotedQs.includes(question._id)
+            const isDownvoted = user.downvotedQs.includes(question._id)
+            console.log(user.upvotedQs.includes(question._id))
+            console.log(isDownvoted)
+            if(isUpvoted){
+                console.log('already')
+                return res.status(200).send({message: "already upvoted!"})
+
+            }
+            if(!isUpvoted){
+                if(isDownvoted){
+                    question.downvotes = question.downvotes - 1
+                    const index = user.downvotedQuestion.indexOf(question._id);
+                    if (index > -1) {
+                        user.downvotedQuestion.splice(index, 1);
+                    }    
+                }
+                question.upvotes = question.upvotes + 1
+                await question.save()
+                user.upvotedQs.push(question._id)
+                await user.save()
+                return res.status(200).send({message: "question upvoted!"})
+            }
+        }
+    }
+    catch(e){
+        console.log(e)
+        return res.status(400).send({message: "something went wrong!"})
+    }
+}
+
+const downvoteQuestion = async(req, res) => {
+    try{
+        const question = await Questions.findById(req.params.id)
+        if(!question){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findById(req.user._id)
+            const isUpvoted = user.upvotedQs.includes(question._id)
+            const isDownvoted = user.downvotedQs.includes(question._id)
+            if(isDownvoted){
+                return res.status(200).send({message: "already downvoted!"})
+            }
+            if(!isDownvoted){
+                if(isUpvoted){
+                    question.upvotes = question.upvotes - 1
+                    const index = user.upvotedQs.indexOf(question._id);
+                    if (index > -1) {
+                        user.upvotedQs.splice(index, 1);
+                    }    
+                }
+                question.downvotes = question.downvotes + 1
+                await question.save()
+                user.downvotedQs.push(question._id)
+                await user.save()
+                return res.status(200).send({message: "downvoted!"})
+            }
+        }
+    }
+    catch(e){
+        console.log(e)
+        res.status(400).send({message: "something went wrong!"})
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
@@ -226,6 +301,7 @@ module.exports = questionController = {
     searchQuestions,
     bookMarkques,
     allBookmarkQues,
-    getQuestion
-
+    getQuestion,
+    upvoteQuestion,
+    downvoteQuestion
 };

@@ -17,7 +17,7 @@ const questionsSchema = new mongoose.Schema(
             trim: true
         }],
         bookmarkedBy: [{
-            type: ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         }],
         createdBy: {
@@ -26,7 +26,13 @@ const questionsSchema = new mongoose.Schema(
             required: true
         },
         updatedAt: Date,
-        views: Number
+        views: Number,
+        upvotes: {
+            type: Number
+        },
+        downvotes: {
+            type: Number
+        },
     },
     { timeStamps: true }
 );
