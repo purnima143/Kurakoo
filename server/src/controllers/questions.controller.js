@@ -1,26 +1,31 @@
 const Questions = require('../models/questions.models');
 const responseHandler = require('../helpers/responseHandler');
 const Answers = require('../models/answers.model')
+const ObjectID = require('mongodb').ObjectID;
 
-const createQuestions = (req, res) => {
+const createQuestions = async (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
     
     const question = new Questions({
         questionText: questionText,
         questionLinks: questionLinks,
         tags: tags.split(" "),
-        createdBy: req.user._id
+        createdBy: req.user._id,
+        views:0
     });
-
-    question.save((error, question) => {
-        if (error)
-            return res
-                .status(400)
-                .json(responseHandler(false, 400, "Question not created ! Something went wrong!"));
-        if (question) {
-            res.json(responseHandler(true, 200, question));
-        }
-    });
+    try{
+        await question.save()
+        console.log('saved!')
+        return res
+            .status(200)
+            .json(responseHandler(true, 200, question));
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "Question not created ! Something went wrong!"));
+    }
 };
 
 const getQuestions = async(req, res) => {
@@ -136,10 +141,82 @@ const bookMarkques = async(req, res) => {
           await question.save();
           return res.status(200).json(responseHandler(true, 200,{ message: "the question is not included in your bookmarked list anymore!" }));
         }
-      } catch (e) {
+    } catch (e) {
         return res.status(400).json(responseHandler(false, 400,{ message: "something went wrong" }));
       }
     };
+
+    const allBookmarkQues = async ( req, res ) => {
+        try {
+            const questions = await Questions.find({ bookmarkedBy: req.user._id });
+            const questions_list = [];
+
+            questions.forEach((question) => {
+                const {
+                    _id,
+                    questionText,
+                    questionLinks,
+                    tags,
+                    createdBy
+                } = question;
+
+                const obj = {
+                    _id,
+                    questionText,
+                    questionLinks,
+                    tags,
+                    createdBy
+                };
+
+                questions_list.push(obj);
+            });
+            return res.status(200).send(questions_list);
+        } catch (e) {
+            res.status(400).json(responseHandler(false, 400, "Something Went Wrong!"))
+        }
+
+        };
+    
+    }
+};
+
+const getQuestion = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid question id"));
+        }
+        const question = await Questions.findById(req.params.id)
+        
+        if(!question){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "question does not exist!"));
+        }
+        if(question.createdBy.toString() !== req.user._id){ //increment count only when viewer is not the author of the question
+            question.views+=1
+            await question.save()
+        }
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "question found!",
+                    {question}
+                )
+            );
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
@@ -147,5 +224,8 @@ module.exports = questionController = {
     deleteQuestion,
     getAnswers,
     searchQuestions,
-    bookMarkques
+    bookMarkques,
+    allBookmarkQues,
+    getQuestion
+
 };

@@ -20,7 +20,7 @@ const uploadRoutes =require("./upload.routes");
 const spaceRoutes = require("./spaces.routes");
 
 //Admin route
-const adminRoutes = require("./admin.routes")
+const adminRoutes = require("../routes/admin/admin.routes")
 
 
 //User route
@@ -36,7 +36,7 @@ router.use("/", questionRoutes);
 router.use("/", answerRoutes);
 router.use("/", uploadRoutes);
 router.use("/", spaceRoutes);
-router.use("/admin",adminRoutes);
+router.use("/",adminRoutes);
 
 router.use("/user",userRoutes);
 

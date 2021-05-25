@@ -19,7 +19,8 @@ const createAnswers = async (req, res) => {
                         questionId: questionId,
                         createdBy: req.user._id,
                         upvotes:0,
-                        downvotes:0
+                        downvotes:0,
+                        views:0
                     });
                     answer.save((error, answer) => {
                         if (error)
@@ -218,6 +219,43 @@ const searchAnswers = async(req, res) => {
     }
 }
 
+const getAnswer = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid answer id"));
+        }
+        const answer = await Answers.findById(req.params.id)
+        
+        if(!answer){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "answer does not exist!"));
+        }
+        if(answer.createdBy.toString() !== req.user._id){ //increment count only when viewer is not the author of the answer
+            answer.views+=1
+            await answer.save()
+        }
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "answer found!",
+                    {answer}
+                )
+            );
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
+
 module.exports = answerController = {
     createAnswers,
     deleteAnswer,
@@ -225,5 +263,6 @@ module.exports = answerController = {
     upvoteAnswer,
     downvoteAnswer,
     getUpvotedAnswers,
-    searchAnswers
+    searchAnswers,
+    getAnswer
 };

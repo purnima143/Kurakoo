@@ -131,7 +131,13 @@ const steps = [
 const ChatBotComponent = () => {
   return (
      <ThemeProvider theme={theme}>
-    <ChatBot steps={steps} {...config} />
+       
+     <ChatBot recognition={true}
+      speechSynthesis={{enable:true,
+      lang:'en'}} 
+      steps={steps}
+      {...config}/> 
+
      </ThemeProvider>
   );
 };

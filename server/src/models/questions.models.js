@@ -16,12 +16,17 @@ const questionsSchema = new mongoose.Schema(
             required: true,
             trim: true
         }],
+        bookmarkedBy: [{
+            type: ObjectId,
+            ref: "User"
+        }],
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: true
         },
-        updatedAt: Date
+        updatedAt: Date,
+        views: Number
     },
     { timeStamps: true }
 );
