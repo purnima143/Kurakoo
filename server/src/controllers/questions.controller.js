@@ -238,9 +238,9 @@ const upvoteQuestion = async(req, res) => {
             if(!isUpvoted){
                 if(isDownvoted){
                     question.downvotes = question.downvotes - 1
-                    const index = user.downvotedQuestion.indexOf(question._id);
+                    const index = user.downvotedQs.indexOf(question._id);
                     if (index > -1) {
-                        user.downvotedQuestion.splice(index, 1);
+                        user.downvotedQs.splice(index, 1);
                     }    
                 }
                 question.upvotes = question.upvotes + 1
@@ -292,6 +292,60 @@ const downvoteQuestion = async(req, res) => {
     }
 }
 
+
+const getUpvotedQuestions = async(req, res) => {
+    try{
+        const user = await User.findById(req.user._id)
+        let upvotedQuestions = user.upvotedQs
+        for (i = 0; i < upvotedQuestions.length; i++) {
+            try{
+                upvotedQuestions[i] = await Questions.findById(upvotedQuestions[i])
+            }
+            catch(e){
+                console.log(e) 
+            }
+        } 
+        if(!upvotedQuestions || upvotedQuestions.length===0){
+            return res.status(200).json(responseHandler(true, 200, {message: "you haven't upvoted any question!"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, upvotedQuestions));
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+
+const getUpvotedQuestion = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid question id"));
+        }
+        const user = await User.findById(req.user._id)
+        const upvotedQuestions = user.upvotedQs
+        let flag = 0
+        for (i = 0; i < upvotedQuestions.length; i++) {
+                if(upvotedQuestions[i].toString()===req.params.id){
+                    const upvotedQuestion = await Questions.findById(upvotedQuestions[i])
+                    flag = 1
+                    return res.status(200).json(responseHandler(true, 200, upvotedQuestion));
+                }
+        } 
+        
+        if(flag===0){
+
+            return res.status(400).json(responseHandler(true, 400, {message: "no upvoted question with entered id exists!"})); 
+        }
+        
+    }
+    catch(e){
+        console.log(e)
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+
+
 module.exports = questionController = {
     createQuestions,
     getQuestions,
@@ -303,5 +357,7 @@ module.exports = questionController = {
     allBookmarkQues,
     getQuestion,
     upvoteQuestion,
-    downvoteQuestion
+    downvoteQuestion,
+    getUpvotedQuestions,
+    getUpvotedQuestion
 };
