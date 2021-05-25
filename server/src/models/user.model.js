@@ -58,11 +58,18 @@ const userSchema = new mongoose.Schema(
             max : 12
         },
         upvotedAns: [{
-            
             type: mongoose.Schema.Types.ObjectId,
             ref: "Answer"
         }],
         downvotedAns: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        upvotedQs: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        downvotedQs: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: "Answer"
         }],
