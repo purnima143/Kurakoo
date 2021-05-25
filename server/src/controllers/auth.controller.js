@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const responseHandler = require("../helpers/responseHandler");
 const Question = require ('../models/questions.models');
 const Answer = require('../models/answers.model');
-const welcomeMail = require("../utility/signup-mail");
+const welcomeMail = require("../utility/signup-mail-user");
 
 const signup = (req, res) => {
     User.findOne({ email: req.body.email }).exec((error, user) => {

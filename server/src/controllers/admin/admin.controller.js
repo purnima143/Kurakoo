@@ -4,6 +4,7 @@ const User = require("../../models/user.model");
 const Answer = require("../../models/answers.model");
 const Question = require("../../models/questions.models");
 const responseHandler = require("../../helpers/responseHandler");
+const welcomeMail = require("../utility/signup-mail-admin");
 
 const signup = (req, res) => {
   User.findOne({ email: req.body.email }).exec((error, user) => {
@@ -68,13 +69,14 @@ const signup = (req, res) => {
                   );
           }
           if (data) {
+            welcomeMail.signupMail(_user.firstName, _user.lastName, _user.email)
               return res
                   .status(201)
                   .json(
                       responseHandler(
                           true,
                           201,
-                          "Admin Created Succesfully...!",
+                          "Admin Created Succesfully...! & mail sent ",
                           { data }
                       )
                   );
