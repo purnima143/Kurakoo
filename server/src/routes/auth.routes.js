@@ -6,7 +6,7 @@ const {
     validateUpdateRequest,
     isRequestValidated
 } = require("../validators/auth.validator");
-const { requireSignin } = require("../common-middleware/middleware");
+const { requireSignin } = require("../common-middleware/common-middleware");
 const router = express.Router();
 
 // @route             Get signin/signup
@@ -17,7 +17,8 @@ router.post(
     "/signup",
     validateSignupRequest,
     isRequestValidated,
-    authController.signup
+    authController.signup,
+    
 );
 router.post(
     "/signin",

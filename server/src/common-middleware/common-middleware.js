@@ -30,10 +30,9 @@ const adminMiddleWare = (req, res, next) => {
     }
   }
 
-  module.exports = adminSignin;
 
 module.exports = commonMiddleware = {
     requireSignin,
     userMiddleWare,
-    adminMiddleware
+    adminMiddleWare
 };
