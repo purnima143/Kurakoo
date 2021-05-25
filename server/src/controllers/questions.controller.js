@@ -292,6 +292,49 @@ const downvoteQuestion = async(req, res) => {
     }
 }
 
+const getQuestionStats = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid question id"));
+        }
+        const question = await Questions.findById(req.params.id)
+        if(!question){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "question does not exist!"));
+        }
+        const answers = await Answers.find({questionId: req.params.id})
+        let answerCount = 0
+        if(!answers || answers.length===0){
+            answerCount = 0
+        }
+        else{
+            answerCount = answers.length
+        }
+        const statistics = {"views": question.views, "upvotes": question.upvotes, "downvotes": question.downvotes, "answerCount": answerCount}
+        
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "question statistics!",
+                    statistics
+                )
+            );
+        
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+  }
+  
 module.exports = questionController = {
     createQuestions,
     getQuestions,
@@ -303,5 +346,6 @@ module.exports = questionController = {
     allBookmarkQues,
     getQuestion,
     upvoteQuestion,
-    downvoteQuestion
+    downvoteQuestion,
+    getQuestionStats
 };
