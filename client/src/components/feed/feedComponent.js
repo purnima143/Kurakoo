@@ -8,7 +8,7 @@ import InsertCommentOutlinedIcon from "@material-ui/icons/InsertCommentOutlined"
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal';
 import AnswerQuestion from '../Answer/Answer';
-import Popover from '@material-ui/core/Popover';
+import {Box, Popover,Button, Card, CardContent,CardActions,TextField} from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
@@ -29,14 +29,28 @@ const useStyles = makeStyles({
   
       },
       commentArea:{
-          width:"810px",
+        width: "545px"
         //   marginLeft:"780px"
       },
       typography: {
         //padding: theme.spacing(2),
       },
+      divArea:{
+        width: "596px",
+        height: "66px",
+    
+      },
       pop:{
-          marginLeft:"120px"
+        //   marginLeft:"120px"
+        position:"absolute",
+        left:"750px"
+      },
+      card:{
+          width:"800px",
+          backgroundColor:"#BDEEBE"
+      },
+      button:{
+          marginLeft:"15px"
       }
 });
 
@@ -138,14 +152,42 @@ function Feed({ username, question, img, profession, answer }) {
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
       >
-        <Typography className={classes.typography}><TextareaAutosize className={classes.commentArea} aria-label="empty textarea" placeholder="Empty" /><button>Submit</button></Typography>
+    {/* <Box className={classes.divArea}>
+        <Typography className={classes.typography}>
+         
+                <TextareaAutosize className={classes.commentArea} aria-label="empty textarea" placeholder="Empty" />
+                <Button variant="contained" color="secondary">
+ Submit
+</Button>
+                </Typography>  
+                </Box> */}
+
+                <div>
+    <Card className={classes.card}>
+    <CardContent>
+        <TextField
+          id="outlined-multiline-static"
+          label=""
+          multiline
+          rows={2}
+          fullWidth
+          variant="outlined"
+        />
+      </CardContent>
+    <CardActions>
+        <Button size="small" variant="contained" color="secondary" className={classes.button}>Submit</Button>
+        </CardActions>
+    </Card>
+
+                </div>
+          
       </Popover>
         </div>
     );
