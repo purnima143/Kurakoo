@@ -103,7 +103,7 @@ const upvoteAnswer = async(req, res) => {
         const ans = await Answers.findById(req.params.id)
         console.log(ans)
         if(!ans){
-            return res.send(400).send({message: "invalid id!"})
+            return res.status(400).send({message: "invalid id!"})
         }
         else{
             const user = await User.findById(req.user._id)
@@ -256,6 +256,40 @@ const getAnswer = async(req, res) => {
     }
 }
 
+const getAnswerStats = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid answer id"));
+        }
+        const answer = await Answers.findById(req.params.id)
+        const statistics = {"views": answer.views, "upvotes": answer.upvotes, "downvotes": answer.downvotes}
+        if(!answer){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "answer does not exist!"));
+        }
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "answer statistics!",
+                    statistics
+                )
+            );
+        
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
+
 module.exports = answerController = {
     createAnswers,
     deleteAnswer,
@@ -264,5 +298,6 @@ module.exports = answerController = {
     downvoteAnswer,
     getUpvotedAnswers,
     searchAnswers,
-    getAnswer
+    getAnswer,
+    getAnswerStats
 };
