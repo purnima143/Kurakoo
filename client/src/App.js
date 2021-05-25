@@ -8,6 +8,7 @@ import Scroll from "./components/ScrollToTop/ScrollToTop"
 import UserEdit from "./components/UserEditScreen/UserEdit"
 import AdminUserList from "./components/Admin_userlist/admin_userlist"
 import AdminUserUpdate from "./components/Admin_UserUpdate/admin_userupdate"
+import bookmarkPage from "./components/bookmarkPage/bookmarkPage";
 import ChatBotComponent from './components/Chatbot/chatbot';
 
 const NotificationPage = React.lazy(() => {
@@ -87,6 +88,7 @@ const App = () => {
                         <Route path="/useredit" component={UserEdit} />
                         <Route path="/admin/userlist" component={AdminUserList} />
                         <Route path="/admin/userupdate" component={AdminUserUpdate} />
+                        <Route path="/bookmark" component={bookmarkPage} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
