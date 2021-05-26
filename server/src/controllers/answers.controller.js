@@ -256,6 +256,36 @@ const getAnswer = async(req, res) => {
     }
 }
 
+const getUpvotedAnswer = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid question id"));
+        }
+        const user = await User.findById(req.user._id)
+        const upvotedAnswers = user.upvotedAns
+        let flag = 0
+        for (i = 0; i < upvotedAnswers.length; i++) {
+                if(upvotedAnswers[i].toString()===req.params.id){
+                    const upvotedAnswer = await Answers.findById(upvotedAnswers[i])
+                    flag = 1
+                    return res.status(200).json(responseHandler(true, 200, upvotedAnswer));
+                }
+        } 
+        
+        if(flag===0){
+
+            return res.status(400).json(responseHandler(true, 400, {message: "no upvoted answer with entered id exists!"})); 
+        }
+        
+    }
+    catch(e){
+        console.log(e)
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+
 const getAnswerStats = async(req, res) => {
     try{
         if(!ObjectID.isValid(req.params.id)){
@@ -299,5 +329,6 @@ module.exports = answerController = {
     getUpvotedAnswers,
     searchAnswers,
     getAnswer,
-    getAnswerStats
+    getAnswerStats,
+    getUpvotedAnswer
 };

@@ -17,6 +17,12 @@ const commentSchema = new Schema(
             type: String,
             required: true
         },
+        upvotes: {
+            type: Number
+        },
+        downvotes: {
+            type: Number
+        },
         updatedAt: Date
     },
     {
