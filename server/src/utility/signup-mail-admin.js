@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const options = {
-    from: "Kurakoo",
+    from: "no-reply-Kurakoo",
     to: email,
     subject:"Welcome to kurakoo",
     html:`Hello Admin! Welcome to kurakoo! ${firstName}${lastName}! `

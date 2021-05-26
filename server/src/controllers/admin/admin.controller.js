@@ -4,7 +4,7 @@ const User = require("../../models/user.model");
 const Answer = require("../../models/answers.model");
 const Question = require("../../models/questions.models");
 const responseHandler = require("../../helpers/responseHandler");
-const welcomeMail = require("../utility/signup-mail-admin");
+const welcomeMail = require("../../utility/signup-mail-admin");
 
 
 const signup = (req, res) => {
@@ -115,6 +115,34 @@ const signout = async( req, res ) => {
   res.clearCookie( 'token' );
   res.status(200).json(responseHandler(true, 200, "Successfully Signout"));
 }
+
+const updateAdmin = async( req, res ) => {
+  try{
+    const user = User.findById(req.user.id);
+    const updates = Object.keys(req.body);
+    const allowedUpdates = ["firstName", "lastName", "email", "password"];
+    const isValid = updates.every((update) => {
+      return allowedUpdates.includes(update);
+    });
+    if(!isValid) {
+      res.status(400).json(responseHandler(false, 400, "Invalid input", null));
+    } try {
+      updates.forEach((update) => {
+        user[update] = req.body[update]
+      });
+
+      await user.save();
+      const { _id, firstName, lastName, email } = user;
+      return res.status(200).json(responseHandler(true, 200, "Updated successfully", user));
+    } catch (e) {
+      res.status(400).json(responseHandler(false, 400, "Something went rong!", null));
+    }
+
+  } catch(e) {
+    res.status(400).json(responseHandler(false, 400, "Something went rong!", null));
+  }
+};
+
 // @desc    Get all users
 // @route   GET /admin/users
 // @access  Private/Admin
@@ -232,34 +260,6 @@ const deleteQuestion = asyncHandler(async (req, res) => {
   }
 })
 
-
-// @desc    Update user
-// @route   PUT /admin/user/:id
-// @access  Private/Admin
-const updateUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id)
-
-  if (user) {
-    user.firstName = req.body.firstName || user.firstName
-    user.lastName = req.body.lastName || user.lastName
-    user.email = req.body.email || user.email
-    user.isAdmin = req.body.isAdmin
-
-    const updatedUser = await user.save()
-
-    res.json({
-      _id: updatedUser._id,
-      firstName: updatedUser.firstName,
-      lastName: updatedUser.lastName,
-      email: updatedUser.email,
-      isAdmin: updatedUser.isAdmin,
-    })
-  } else {
-    res.status(404)
-    .json(responseHandler(false, 404, "User not found", null));
-  }
-}) 
-
 module.exports = adminController = {
     signup,
     signin,
@@ -273,5 +273,5 @@ module.exports = adminController = {
     deleteAnswer,
     deleteQuestion,
     deleteUser,
-    updateUser
+    updateAdmin
 };

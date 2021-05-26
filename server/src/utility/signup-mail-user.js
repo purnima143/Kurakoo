@@ -6,14 +6,14 @@ const signupMail = async ( firstName, lastName, email) => {
 const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-        user: process.env.USER_MAIL,
-        pass: process.env.MAIL_PASSWORD
+        user: "himanshu.jaidka@gmail.com",
+        pass: "EAT100apples@"
     }
 });
 
 const options = {
-    from: "Kurakoo",
-    to: email,
+    from: "no-reply-Kurakoo",
+    to: "himanshu.september@gmail.com",
     subject:"Welcome to kurakoo",
     html:`Welcome to kurakoo! ${firstName}${lastName}`
 };
