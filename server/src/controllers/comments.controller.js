@@ -28,7 +28,9 @@ const postComment = async(req, res) => {
                 answerId,
                 text,
                 createdBy: req.user._id,
-                updatedAt: new Date().toISOString()
+                updatedAt: new Date().toISOString(),
+                upvotes:0,
+                downvotes:0,
             })
             await comment.save()
             return res
@@ -247,12 +249,84 @@ const getCommentsForAnswer = async(req, res) => {
     }
 };
 
+const upvoteComment = async(req, res) => {
+    try{
+        const comment = await Comment.findById(req.params.id)
+        if(!comment){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findOne({_id:req.user._id})
+            const isUpvoted = user.upvotedComments.includes(comment._id)
+            const isDownvoted = user.downvotedComments.includes(comment._id)
+            if(isUpvoted){
+               return res.status(200).send({message: "already upvoted!"})
+
+            }
+            if(!isUpvoted){
+                if(isDownvoted){
+                    comment.downvotes = comment.downvotes - 1
+                    const index = user.downvotedComments.indexOf(comment._id);
+                    if (index > -1) {
+                        user.downvotedComments.splice(index, 1);
+                    }    
+                }
+                comment.upvotes = comment.upvotes + 1
+                await comment.save()
+                user.upvotedComments.push(comment._id)
+                await user.save()
+                return res.status(200).send({message: "comment upvoted!"})
+            }
+        }
+    }
+    catch(e){
+        return res.status(400).send({message: "something went wrong!"})
+    }
+}
+
+const downvoteComment = async(req, res) => {
+    try{
+        const comment = await Comment.findById(req.params.id)
+        if(!comment){
+            return res.send(400).send({message: "invalid id!"})
+        }
+        else{
+            const user = await User.findOne({_id:req.user._id})
+            const isUpvoted = user.upvotedComments.includes(comment._id)
+            const isDownvoted = user.downvotedComments.includes(comment._id)
+            if(isDownvoted){
+               return res.status(200).send({message: "already upvoted!"})
+
+            }
+            if(!isDownvoted){
+                if(isUpvoted){
+                    comment.upvotes = comment.upvotes - 1
+                    const index = user.upvotedComments.indexOf(comment._id);
+                    if (index > -1) {
+                        user.upvotedComments.splice(index, 1);
+                    }    
+                }
+                comment.downvotes = comment.downvotes + 1
+                await comment.save()
+                user.downvotedComments.push(comment._id)
+                await user.save()
+                return res.status(200).send({message: "Comment upvoted!"})
+            }
+        }
+    }
+    catch(e){
+        return res.status(400).send({message: "something went wrong!"})
+    }
+}
+
 module.exports = commentController = {
     postComment,
     updateComment,
     deleteComment,
     getCommentById,
     getMyComments,
-    getCommentsForAnswer
+    getCommentsForAnswer,
+    upvoteComment,
+    downvoteComment
 };
 
