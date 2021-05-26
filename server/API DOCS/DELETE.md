@@ -157,3 +157,35 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : True**
+
+**7. Delete comment**
+* **URL**
+    `/api/deleteComment/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `comment deleted!` <br />
+      **Data:** `{'deletedComment': comment.text}`
+
+* **Error Response**
+    * **Code:** `400` <br /> 
+      **Message:** `something went wrong` <br />
+
+    * **Code:** `400` <br /> 
+      **Message:** `you have not written this comment originally, so you cannot delete this!` <br /> 
+
+    * **Code:** `400` <br /> 
+      **Message:** `comment does not exist!` <br /> 
+    
+    * **Code:** `400` <br /> 
+      **Message:** `invalid comment id!` <br /> 
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : True**
