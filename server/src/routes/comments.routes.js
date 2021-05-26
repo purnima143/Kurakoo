@@ -17,4 +17,8 @@ router.get('/getMyComments', requireSignin, userMiddleWare, commentController.ge
 
 router.get('/getCommentsForAnswer/:id', requireSignin, userMiddleWare, commentController.getCommentsForAnswer);
 
+router.get('/upvoteComment/:id', requireSignin, userMiddleWare, commentController.upvoteComment)
+router.get('/downvoteComment/:id', requireSignin, userMiddleWare, commentController.downvoteComment)
+
+
 module.exports = router;
