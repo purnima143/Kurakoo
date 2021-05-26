@@ -57,7 +57,7 @@ const useStyles = makeStyles({
       },
       button:{
           marginLeft:"15px"
-      }
+      },
 
       bookMarkIcon:{
         marginLeft:"680px",
