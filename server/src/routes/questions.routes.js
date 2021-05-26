@@ -49,4 +49,7 @@ router.get('/upvoteQuestion/:id', requireSignin, userMiddleWare, questionControl
 router.get('/downvoteQuestion/:id', requireSignin, userMiddleWare, questionController.downvoteQuestion)
 router.get('/getQuestionStats/:id', requireSignin, userMiddleWare, questionController.getQuestionStats)
 
+router.get('/getUpvotedQuestion/:id', requireSignin, userMiddleWare, questionController.getUpvotedQuestion)
+router.get('/getUpvotedQuestions', requireSignin, userMiddleWare, questionController.getUpvotedQuestions)
+
 module.exports = router;
