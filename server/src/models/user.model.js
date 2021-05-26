@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: String,
-            enum: ["user"],
+            enum: ["user", "admin"],
             default: "user"
         },
         year: {
@@ -57,17 +57,27 @@ const userSchema = new mongoose.Schema(
             integer: true,
             max : 12
         },
-        isAdmin: {
-            type: Boolean,
-            required: true,
-            default: false,
-        },
         upvotedAns: [{
-            
             type: mongoose.Schema.Types.ObjectId,
             ref: "Answer"
         }],
         downvotedAns: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        upvotedQs: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        downvotedQs: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        upvotedComments: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }],
+        downvotedComments: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: "Answer"
         }],

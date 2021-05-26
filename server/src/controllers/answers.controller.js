@@ -15,11 +15,12 @@ const createAnswers = async (req, res) => {
                 if(!duplicate){
                     const answer = new Answers({
                         answerText: answerText,
-                        tags: tags,
+                        tags: tags.split(" "),
                         questionId: questionId,
                         createdBy: req.user._id,
                         upvotes:0,
-                        downvotes:0
+                        downvotes:0,
+                        views:0
                     });
                     answer.save((error, answer) => {
                         if (error)
@@ -102,7 +103,7 @@ const upvoteAnswer = async(req, res) => {
         const ans = await Answers.findById(req.params.id)
         console.log(ans)
         if(!ans){
-            return res.send(400).send({message: "invalid id!"})
+            return res.status(400).send({message: "invalid id!"})
         }
         else{
             const user = await User.findById(req.user._id)
@@ -172,10 +173,162 @@ const downvoteAnswer = async(req, res) => {
     }
 }
 
+
+const getUpvotedAnswers = async (req, res) => {
+    try{
+        const user = await User.findById(req.user._id)
+        let upvotedAnswers = user.upvotedAns
+        for (i = 0; i < upvotedAnswers.length; i++) {
+            try{
+                upvotedAnswers[i] = await Answers.findById(upvotedAnswers[i])
+            }
+            catch(e){
+                console.log(e)
+            }
+        } 
+        if(!upvotedAnswers){
+            return res.status(200).json(responseHandler(true, 200, {message: "upvoted answers not found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, upvotedAnswers));
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+      
+const searchAnswers = async(req, res) => {
+    const match = {}
+    if(req.query.createdBy){
+        match.createdBy = req.query.createdBy
+    }
+    if(req.query.questionId){
+        match.questionId = req.query.questionId
+    }
+    if(req.query.tags){
+        match.tags = { $in: req.query.tags }
+    }
+    const answers = await Answers.find(match)
+    try{
+        if(answers.length===0){
+            return res.status(200).json(responseHandler(true, 200, {message: "no answers found"})); 
+        }
+        return res.status(200).json(responseHandler(true, 200, answers)); 
+    }
+    catch(e){
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong"}));
+    }
+}
+
+const getAnswer = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid answer id"));
+        }
+        const answer = await Answers.findById(req.params.id)
+        
+        if(!answer){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "answer does not exist!"));
+        }
+        if(answer.createdBy.toString() !== req.user._id){ //increment count only when viewer is not the author of the answer
+            answer.views+=1
+            await answer.save()
+        }
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "answer found!",
+                    {answer}
+                )
+            );
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
+
+const getUpvotedAnswer = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid question id"));
+        }
+        const user = await User.findById(req.user._id)
+        const upvotedAnswers = user.upvotedAns
+        let flag = 0
+        for (i = 0; i < upvotedAnswers.length; i++) {
+                if(upvotedAnswers[i].toString()===req.params.id){
+                    const upvotedAnswer = await Answers.findById(upvotedAnswers[i])
+                    flag = 1
+                    return res.status(200).json(responseHandler(true, 200, upvotedAnswer));
+                }
+        } 
+        
+        if(flag===0){
+
+            return res.status(400).json(responseHandler(true, 400, {message: "no upvoted answer with entered id exists!"})); 
+        }
+        
+    }
+    catch(e){
+        console.log(e)
+        return res.status(400).json(responseHandler(false, 400, {message: "something went wrong!"}));
+    }
+}
+
+const getAnswerStats = async(req, res) => {
+    try{
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid answer id"));
+        }
+        const answer = await Answers.findById(req.params.id)
+        const statistics = {"views": answer.views, "upvotes": answer.upvotes, "downvotes": answer.downvotes}
+        if(!answer){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "answer does not exist!"));
+        }
+        return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "answer statistics!",
+                    statistics
+                )
+            );
+        
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
+
 module.exports = answerController = {
     createAnswers,
     deleteAnswer,
     editAnswer,
     upvoteAnswer,
-    downvoteAnswer
+    downvoteAnswer,
+    getUpvotedAnswers,
+    searchAnswers,
+    getAnswer,
+    getAnswerStats,
+    getUpvotedAnswer
 };

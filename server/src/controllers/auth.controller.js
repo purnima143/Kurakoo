@@ -1,8 +1,9 @@
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const responseHandler = require("../helpers/responseHandler");
-const Question = require ('../models/questions.models')
-const Answer = require('../models/answers.model')
+const Question = require ('../models/questions.models');
+const Answer = require('../models/answers.model');
+const welcomeMail = require("../utility/signup-mail-user");
 
 const signup = (req, res) => {
     User.findOne({ email: req.body.email }).exec((error, user) => {
@@ -29,8 +30,7 @@ const signup = (req, res) => {
             lastName, 
             email, 
             password,
-            confirmPassword,
-            isAdmin
+            confirmPassword
         } = req.body;
         if(password != confirmPassword){
             return res
@@ -51,7 +51,6 @@ const signup = (req, res) => {
             email,
             password,
             userName: Math.random().toString(),
-            isAdmin,
         });
 
         _user.save((error, data) => {
@@ -62,7 +61,7 @@ const signup = (req, res) => {
                         responseHandler(
                             false,
                             400,
-                            "User Don't Created ! Something went wrong...!",
+                            "User is not Created ! Something went wrong...!",
                             null
                         )
                     );
@@ -78,13 +77,14 @@ const signup = (req, res) => {
             );
 
             if (data) {
+                welcomeMail.signupMail(_user.firstName, _user.lastName, _user.email)
                 return res
                     .status(201)
                     .json(
                         responseHandler(
                             true,
                             201,
-                            "User Created Succesfully...!",
+                            "Mail Sent & user created successfully",
                             { token }
                         )
                     );
@@ -107,8 +107,7 @@ const signin = (req, res) => {
                     lastName,
                     email,
                     role,
-                    fullName,
-                    isAdmin,
+                    fullName
                 } = user;
                 res.status(200).json(
                     responseHandler(true, 200, "User Logged in", {

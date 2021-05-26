@@ -11,17 +11,28 @@ const questionsSchema = new mongoose.Schema(
             type: String,
             trim: true
         },
-        tags: {
+        tags: [{
             type: String,
             required: true,
             trim: true
-        },
+        }],
+        bookmarkedBy: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        }],
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: true
         },
-        updatedAt: Date
+        updatedAt: Date,
+        views: Number,
+        upvotes: {
+            type: Number
+        },
+        downvotes: {
+            type: Number
+        },
     },
     { timeStamps: true }
 );

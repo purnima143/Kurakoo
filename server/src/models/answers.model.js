@@ -12,10 +12,10 @@ const answersSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        tags: {
-            type: [String],
+        tags: [{
+            type: String,
             trim: true
-        },
+        }],
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
@@ -27,7 +27,8 @@ const answersSchema = new mongoose.Schema(
         downvotes: {
             type: Number
         },
-        updatedAt: Date
+        updatedAt: Date,
+        views: Number
     },
     { timeStamps: true }
 );
