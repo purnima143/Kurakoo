@@ -52,7 +52,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, an option to follow people, a feature that allows users to filter and view specific content, etc.
 
 
-![Hnet-image](https://user-images.githubusercontent.com/57852378/104997423-90038c80-5a4f-11eb-88d3-389b501c00ad.gif)
+![Kurakoo Website](https://user-images.githubusercontent.com/68965499/119776203-4259cd80-bee2-11eb-8a6e-84ed4ce0ad93.gif)
 
 
 
