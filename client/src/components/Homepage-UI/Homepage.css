@@ -22,7 +22,7 @@ body {
 .mainvector {
     width: 44rem;
     float: right;
-    margin-right: -5.5rem;
+    margin-right: -8.5rem;
 }
 .logo {
     width: 21rem;
@@ -45,8 +45,8 @@ body {
     margin-bottom:10px;
 }
 .clock{
-    margin-left: -25%;
-    margin-top: -13%;
+    margin-left: -35%;
+    margin-top: -12%;
 }
 .signup {
     margin-right: -2rem;
@@ -65,8 +65,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 0rem 4rem;
-    /* top: 11rem; */
-    margin-top: 8rem;
 }
 .content h2 {
     font-size: 3rem;
@@ -246,6 +244,7 @@ body {
   }
   .headercontent {
     font-size: 3.5rem;
+    margin-left: 3%;
   }
   .headercontent span {
     color: red;

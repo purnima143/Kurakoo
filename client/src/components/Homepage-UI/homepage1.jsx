@@ -50,7 +50,7 @@ const Homepage = () => {
                     </Link>
                 </div>
             </div>
-            <div className="content">
+            <div className="content" style={{marginLeft:'0rem',marginTop:'12rem'}}>
                 <h2>Welcome To</h2>
                 <h1>Kurakoo</h1>
                 <h4>Get your answers</h4>
@@ -100,14 +100,14 @@ const Homepage = () => {
                 alt="leaf1"
                 className="leaf1"
             /><br/>
-            <div className='container-fluid' style={{marginTop:'6%'}}>
+            <div className='container-fluid'>
       <br />
-      <h1 className='text-center mb-3 headercontent'>
+      <h1 className='mb-3 headercontent'>
       Our <span>Vision</span>
                 </h1>
-                <h5>
+                <h5 style={{marginLeft:'2%'}}>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Aliquam quasi ipsum{" "}
+                   {" "}
                 </h5>
             <br/><br/>
             <div className='row' style={{ justifyContent: 'space-evenly' }}>
@@ -118,7 +118,7 @@ const Homepage = () => {
                     <img src={require("../../Homepage/01.png")} alt="" className='mx-auto d-block'
 />
 <br/>
-                    <h3>Share and Grow</h3>
+                    <h3>Share and Grow</h3><br/>
                     <h5>
                         As we grow, we will be able to provide larger and larger
                         audiences to writers, cover more and more topics, and
@@ -134,7 +134,7 @@ const Homepage = () => {
                     <img src={require("../../Homepage/02.png")} alt="" className='mx-auto d-block'
 />
 <br/>
-                    <h3>Create Networks</h3>
+                    <h3>Create Networks</h3><br/>
                     <h5>
                         We want you to build genuine relationships with your
                         friends and communities close to home or around the
@@ -149,7 +149,7 @@ const Homepage = () => {
                     <img src={require("../../Homepage/03.png")} alt="" className='mx-auto d-block'
 />
 <br/>
-                    <h3>Everything in One</h3>
+                    <h3>Everything in One</h3><br/>
                    
                     <h5>
                         Original, reliable, playful, and relatable. These are
