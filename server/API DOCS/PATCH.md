@@ -1,6 +1,8 @@
 # PATCH API DOCS
-**1. Update Profile**
+**1. Update Profile for the admin and the users**
 * **URL**
+    `/api/admin/update/`
+        or
     `/api/update`
 
 * **METHOD**
@@ -26,7 +28,7 @@
 
 * **Required Filed**
      * **Auth Need : True**
-    * **Admin Auth Need : False**
+    * **Admin Auth Need : True**
 
 **2. Update Questions**
 * **URL**
