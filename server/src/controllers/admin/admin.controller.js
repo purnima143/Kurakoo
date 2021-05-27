@@ -260,6 +260,33 @@ const deleteQuestion = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc    Update user
+// @route   PUT /admin/user/:id
+// @access  Private/Admin
+const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+
+  if (user) {
+    user.firstName = req.body.firstName || user.firstName
+    user.lastName = req.body.lastName || user.lastName
+    user.email = req.body.email || user.email
+    user.isAdmin = req.body.isAdmin
+
+    const updatedUser = await user.save()
+
+    res.json({
+      _id: updatedUser._id,
+      firstName: updatedUser.firstName,
+      lastName: updatedUser.lastName,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+    })
+  } else {
+    res.status(404)
+    .json(responseHandler(false, 404, "User not found", null));
+  }
+}) 
+
 module.exports = adminController = {
     signup,
     signin,
@@ -273,5 +300,6 @@ module.exports = adminController = {
     deleteAnswer,
     deleteQuestion,
     deleteUser,
-    updateAdmin
+    updateAdmin,
+    updateUser
 };
