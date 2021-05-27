@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from "../../helpers/Meta";
 import usePasswordToggle from "../../hooks/usePasswordToggle";
+import {Progress} from 'bootstrap-4-react';
+
 toast.configure();
 const SignUp = () => {
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
@@ -61,7 +63,7 @@ const SignUp = () => {
     }
 
     if (user.loading) {
-        return <p>Loading...!</p>;
+        return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
     }
 
     return (
