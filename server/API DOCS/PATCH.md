@@ -87,3 +87,39 @@
 * **Required Filed**
      * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**4. Update comments**
+* **URL**
+    `/api/updateComment/:id`
+
+* **METHOD**
+    `PATCH`
+
+* **URL params**
+    `comment id`
+
+* **request body** <br />
+     `text` 
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `comment updated` <br />
+      **data:** `{'updatedComment': comment.text}`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Invalid edit!` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `invalid comment id` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `you have not written this comment originally, so no edit rights!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+         
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
