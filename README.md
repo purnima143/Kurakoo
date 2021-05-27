@@ -51,10 +51,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 ## Flow of the site :computer:
 Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, an option to follow people, a feature that allows users to filter and view specific content, etc.
 
-
 ![Kurakoo Website](https://user-images.githubusercontent.com/68965499/119776203-4259cd80-bee2-11eb-8a6e-84ed4ce0ad93.gif)
-
-
 
 ## General Guidelines :dart:
  - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme the file carefully.
