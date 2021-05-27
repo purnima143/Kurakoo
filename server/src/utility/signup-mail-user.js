@@ -4,16 +4,16 @@ const signupMail = async ( firstName, lastName, email) => {
 
 
 const transporter = nodemailer.createTransport({
-    service: 'hotmail',
+    service: 'hotmail', //service offered by the outlook
     auth: {
-        user: "himanshu.jaidka@gmail.com",
-        pass: "EAT100apples@"
+        user: process.env.USER_MAIL, //you have to enter mail inside .env file
+        pass: process.env.MAIL_PASSWORD //you have to enter paasword for the authentication inside .env file
     }
 });
 
 const options = {
     from: "no-reply-Kurakoo",
-    to: "himanshu.september@gmail.com",
+    to: email,
     subject:"Welcome to kurakoo",
     html:`Welcome to kurakoo! ${firstName}${lastName}`
 };

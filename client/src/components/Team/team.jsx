@@ -55,7 +55,7 @@ const Team = () => {
             <h1
                 style={{
                     fontSize: "3rem",
-                    marginBottom: "4rem",
+                    marginBottom: "0rem",
                     color: "#212529",
                     textDecoration: "underline"
                 }}
@@ -65,127 +65,66 @@ const Team = () => {
             <h2 style={{ fontSize: "2rem", marginBottom: "2rem" }}>
                 <center>Project Admin</center>
             </h2>
-
-            <div className="box-container">
-                <div className="box-item">
-                    <div className="flip-box">
-                        <div
-                            className="flip-box-front text-center"
-                            style={{
-                                backgroundColor: "pink"
-                            }}
-                        >
-                            <img
-                                src={projectadmin.image}
-                                alt=""
-                                className="profile"
-                            />
-                            <div className="inner color-black">
-                                <h2
-                                    className="flip-box-header"
-                                    style={{ textTransform: "Capitalize" }}
-                                >
-                                    {projectadmin.name}
-                                </h2>
-                                <br />
-                                <h2>{projectadmin.title}</h2>
-                            </div>
-                        </div>
-                        <div
-                            className="flip-box-back text-center"
-                            style={{
-                                backgroundColor: "blanchedalmond"
-                            }}
-                        >
-                            <br />
-                            <h3>Want to know more ?</h3>
-
-                            <h3>Click on the icon below !</h3>
-
-                            <a href={projectadmin.githublink}>
-                                {" "}
-                                <GitHubIcon style={{ fontSize: "4rem" }}>
-                                    {" "}
-                                </GitHubIcon>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h2 style={{ fontSize: "2rem", marginTop: "-7rem" }}>
+            <div className='badges_container'>
+          
+            <div
+              className='badge hvr-bounce-to-top hvr-icon-grow'
+            >
+              <img src={projectadmin.image} alt='Avatar' className='badge_img' />
+              <div className='badge_text'>
+                <h5>
+                  <b>{projectadmin.name}</b>
+                </h5>
+                <p>
+                  <a href={projectadmin.githublink}>
+                    <GitHubIcon
+                      style={{ color: 'black', fontSize: 30 }}
+                      className='hvr-icon'
+                    />
+                  </a>
+                </p>
+              </div>
+            </div> 
+        </div>
+            <h2 style={{ fontSize: "2rem", marginTop: "2rem" }}>
                 <center>Collaborators</center>
             </h2>
-            <div className="colabcards">
-                {mentor.map((item) => (
-                    <div className="box-container cards">
-                        <div className="box-item">
-                            <div className="flip-box">
-                                <div
-                                    className="flip-box-front text-center"
-                                    style={{
-                                        backgroundColor: "pink"
-                                    }}
-                                >
-                                    <img
-                                        src={item.image}
-                                        alt=""
-                                        className="profile"
-                                    />
-                                    <div className="inner color-black">
-                                        <h2
-                                            className="flip-box-header"
-                                            style={{
-                                                textTransform: "Capitalize"
-                                            }}
-                                        >
-                                            {item.name}
-                                        </h2>
-                                        <br />
-                                        <h2>{item.title}</h2>
-                                    </div>
-                                </div>
-                                <div
-                                    className="flip-box-back text-center"
-                                    style={{
-                                        backgroundColor: "blanchedalmond"
-                                    }}
-                                >
-                                    <br />
-
-                                    <h3>Want to know more ?</h3>
-
-                                    <h3>Click on the icon below !</h3>
-
-                                    <a href={item.githublink}>
-                                        {" "}
-                                        <GitHubIcon
-                                            style={{ fontSize: "4rem" }}
-                                        >
-                                            {" "}
-                                        </GitHubIcon>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+            <div className='badges_container'>
+          {mentor.map(item => (
+            <div
+              className='badge hvr-bounce-to-top hvr-icon-grow'
+              key={item.title}
+            >
+              <img src={item.image} alt='Avatar' className='badge_img' />
+              <div className='badge_text'>
+                <h5>
+                  <b>{item.name}</b>
+                </h5>
+                <p>
+                  <a href={item.githublink}>
+                    <GitHubIcon
+                      style={{ color: 'black', fontSize: 30 }}
+                      className='hvr-icon'
+                    />
+                  </a>
+                </p>
+              </div>
             </div>
+          ))}
+        </div>
             <h2 style={{ fontSize: "2rem", margin: "2rem" }}>
-                <center style={{ marginTop: "-13%" }}>Contributors</center>
+                <center style={{ marginTop: "1%" }}>Contributors</center>
             </h2>
-            <div className="concards">
-                {contributors.map((item) => (
-                    <div>
-                        <a href={item.html_url}>
-                            <img
-                                src={item.avatar_url}
-                                className="profile"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                ))}
+            <div className='badges_container'>
+          {contributors.map(item => (
+            <div
+              className='badge hvr-bounce-to-top hvr-icon-grow'
+              key={item.id}
+            >
+              <a href={item.html_url}><img src={item.avatar_url} alt='Avatar' className='profile' /></a>
             </div>
+          ))}
+        </div>
         </div>
     );
 };
