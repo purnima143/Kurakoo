@@ -88,7 +88,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     }
-
+    // eslint-disable-next-line
     const { data } = await axios.put(`/api/admin/user/${user._id}`, user, config)
 
     dispatch({ type: USER_UPDATE_SUCCESS })

@@ -73,10 +73,11 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 1. Run `cd server` on your CLI.
 
-2. Create a `.env` file and paste the MONGO_URL in the given format
+2. Create a `.env` file and paste the MONGO_URL and since node environment in the given format
 
     ```
     MONGO_URL = <your_url>
+    NODE_ENV = development
     ```
      or
 

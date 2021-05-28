@@ -17,7 +17,7 @@ class profilePage extends Component {
                 <img
                     src={logo}
                     className="rounded-circle"
-                    alt="Profile-Picture"
+                    alt="Profile"
                 />
                 <div className="Intro">
                     <h1>Purnima Sharma</h1>
