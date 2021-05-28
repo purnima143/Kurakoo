@@ -1,0 +1,30 @@
+tr:nth-child(even){
+    background-color: #00ffff;
+}
+
+.deleteicon{
+    color: red;
+    text-align: center;    
+    margin-top: 1rem;
+}
+
+.editicon{
+    color: gold;
+    margin-left: -8rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.tablehead{
+    color: darkblue;
+    background-color: transparent;
+    height: 3rem;
+    text-align: center;
+
+}
+
+@media only screen and (max-width:798px){
+    .editicon{
+        margin-left:-5rem
+    }
+}

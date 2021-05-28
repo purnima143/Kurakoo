@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { useSelector, useDispatch } from "react-redux";
 import {  Redirect } from "react-router-dom";
@@ -9,37 +8,34 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
 import Navbar from '../navbar/Navbar';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 import Progress from 'bootstrap-4-react';
+import './admin_userlist.css';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'Is Admin', minWidth: 100 },
+  { id: 'name', label: 'Name' },
+  { id: 'code', label: 'Is Admin' },
   {
     id: 'population',
     label: 'Number of Questions Asked',
-    minWidth: 280,
-    align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'size',
-    label: 'Number of Questions Answered',
-    minWidth: 170,
-    align: 'center',
+    label: 'Number of Questions Answer',
     format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    label:'Actions'
   },
   {
     id: 'density',
     label: '',
-    minWidth:150,
-    align: 'left',
-    // format: (value) => value.toFixed(2),
+   
   },
 ];
 
@@ -67,17 +63,7 @@ const rows = [
   createData('User15',<ClearIcon/>, 21, 87),
 ];
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-  container: {
-    maxHeight: 440,
-  },
-});
-
 export default function StickyHeadTable() {
-  const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -95,50 +81,43 @@ export default function StickyHeadTable() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-        if (auth.authenticate) {
-        return <Redirect to={"/"} />;
-    }
 
-    if (user.loading) {
-        return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
-    }
 
   return (
       <>
-      <Navbar/>
-    <Paper className={classes.root} >
-      <TableContainer className={classes.container} style={{marginTop:'80px'}}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
+      <div style={{marginRight:'10vh'}}><Navbar/></div>
+    <Paper >
+      <TableContainer style={{marginTop:'80px'}}>
+        <Table stickyHeader aria-label="sticky table" style={{textAlign:'canter'}}>
+          <TableHead >
+            <tr >
               {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                <th
+                  key={column.id} className="tablehead"
                 >
                   {column.label}
               
-                </TableCell>
+                </th>
               ))}
-            </TableRow>
+            </tr>
           </TableHead>
           <TableBody>
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                <tr hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell key={column.id} align={column.align}>
+                      <TableCell key={column.id} style={{textAlign:'center'}}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
               
                       </TableCell>
                     );
                   })}
-                        {<EditIcon/>}
-                        {<DeleteIcon/>}
-                </TableRow>
+                 
+                        {<EditIcon className="editicon"/>}
+                        {<DeleteIcon className="deleteicon"/>}
+                </tr>
               );
             })}
           </TableBody>
