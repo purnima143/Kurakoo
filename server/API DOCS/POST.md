@@ -1,6 +1,8 @@
 # POST API DOCS
-**1. Signup**
+**1. Signup for the admin or the user**
 * **URL**
+    `/api/admin/signup`
+        or
     `/api/signup`
 
 * **METHOD**
@@ -30,8 +32,10 @@
      * **Auth Need : False**
     * **Admin Auth Need : False**
 
-**2. Signin**
+**2. Signin for the admin or the user**
 * **URL**
+    `/api/admin/signin`
+        or
     `/api/signin`
 
 * **METHOD**
@@ -54,8 +58,10 @@
      * **Auth Need : False**
     * **Admin Auth Need : False**
 
-**3. Signout**
+**3. Signout for the admin or the user**
 * **URL**
+    `/api/admin/signout`
+        or
     `/api/signout`
 
 * **METHOD**
@@ -164,6 +170,50 @@
 * **Error Response**
     * **Code:** `400` <br />
       **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+**7. BookMark Question**
+* **URL**
+    `/api/bookmarkQues`
+
+* **METHOD**
+    `POST`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `bookmarked your question!` <br />
+      **data:** `{  question }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Question not found` <br />
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+**8. allBookMark Question**
+* **URL**
+    `/api/allBookmarkQues`
+
+* **METHOD**
+    `POST`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `Your list` <br />
+      **data:** `{  questions_list }`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `Something went wrong` <br />
 
 * **Required Filed**
      * **Auth Need : True**

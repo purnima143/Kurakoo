@@ -78,6 +78,9 @@ git clone https://github.com/purnima143/Kurakoo.git
     ```
     MONGO_URL = <your_url>
     ```
+     or
+
+  We have added a string for the local mongoDB connection inside index.js `mongodb://localhost:27017/kurakooDB`
 
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
