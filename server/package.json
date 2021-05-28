@@ -27,11 +27,8 @@
         "mongoose": "^5.9.28",
         "morgan": "1.10.0",
         "multer": "^1.4.2",
-
         "redux-devtools-extension": "^2.13.9",
-
         "nodemailer": "^6.6.1"
-
     },
     "devDependencies": {
         "eslint": "^7.6.0",

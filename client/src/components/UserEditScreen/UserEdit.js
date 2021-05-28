@@ -1,48 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { signup } from "../../actions";
 import { useMediaQuery } from "react-responsive";
-import TextField from '@material-ui/core/TextField';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Meta from "../../helpers/Meta";
 import usePasswordToggle from "../../hooks/usePasswordToggle";
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import InputLabel from '@material-ui/core/Grid';
+import './UserEdit.css';
 import '../SignUp/SignUp.css'
-import Navbar from "../navbar/Navbar"
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  heading:{
-      textAlign:"center"
-  },
-  formLabel:{
-      marginLeft:'20px',
-      fontSize:'20px',
-      fontWeight:600,
-      marginTop:'120px'
+import Navbar from "../navbar/Navbar";
+import {Progress} from 'bootstrap-4-react';
 
-
-  },
-  formBox:{
-     marginLeft:'20px', 
-     width:"80%"
-    }
-}));
 toast.configure();
 const SignUp = () => {
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
-    const classes = useStyles();
+    
     const getMode = () => {
         return JSON.parse(localStorage.getItem("mode")) || false;
     };
@@ -70,151 +42,69 @@ const SignUp = () => {
         //dispatch
     
     };
-
     if (auth.authenticate) {
         return <Redirect to={"/"} />;
     }
 
     if (user.loading) {
-        return <p>Loading...!</p>;
+        return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
     }
-
     return (
-        <div>
+        <div >
               <Navbar/>
-        <div className={"main"} style={{marginTop:"50px"}}>
-          
-            <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo" />
-            <Grid container spacing={1}>
-            <Grid item xs={4}>
-            <h2 className={classes.heading}>My Questions</h2>
-          <Paper>
-          <img src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
-    style={{width:"100%", height:"480px", opacity:0.5}}
+              <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo" />
+              <div class="container" style={{marginTop:'10%'}}>
+              <img src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
+    style={{width:"25%", height:"480px", opacity:0.5}}
     />
-          </Paper>
-        </Grid>
-        <Grid item xs={4}>
-        <h2 className={classes.heading}>My Answers</h2>
-          <Paper>
-    <img src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
-    style={{width:"100%", height:"480px", opacity:0.5}}
-    />
-          </Paper>
-        </Grid>
-        <Grid item xs={4}>
-            <h2 className={classes.heading}>Update Profile</h2>
-          <Paper>
-           
-          <form className="form">
-                        <div className="group">
-                            <div className="col-1">
-                                <label for="name" style={{marginLeft:'40px'}}>FirstName</label>
-                            </div>
-                            <div class="colm-2" style={{marginLeft:'-45px'}}>
-                                <input
-                                    type="text"
-                                    placeholder="first name"
-                                    name="firstName"
+	<section id="content" style={{marginTop:'-40%'}}>
+		<form action="">
+			<h1>Update Profile</h1>
+			<div>
+				<input type="text" placeholder="First Name"  name="firstName"
                                     value={firstName}
                                     onChange={(e) =>
                                         setFirstName(e.target.value)
                                     }
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <div className="group">
-                            <div className="col-1">
-                                <label for="name"  style={{marginLeft:'40px'}}>LastName</label>
-                            </div>
-                            <div className="colm-2" style={{marginLeft:'-45px'}}>
-                                <input
-                                    type="text"
-                                    placeholder="last name"
+                                    required/>
+			</div>
+            <div>
+				<input type="text" placeholder="Last Name"
                                     name="lasttName"
                                     value={lastName}
                                     onChange={(e) =>
                                         setLastName(e.target.value)
                                     }
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div className="group">
-                            <div className="col-1">
-                                <label for="email"  style={{marginLeft:'40px'}}>Email</label>
-                            </div>
-                            <div className="colm-2" style={{marginLeft:'-45px'}}>
-                                <input
-                                    type="email"
+                                    required />
+			</div>   
+            <div>
+				<input  type="email"
                                     placeholder="example@email.com"
                                     name="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <div className="group">
-                            <div className="col-1">
-                                <label for="password"  style={{marginLeft:'40px'}}>Password</label>
-                            </div>
-                            <div className="colm-2" style={{marginLeft:'-45px'}}>
-                                <input
-                                    name="password"
-                                    placeholder="password"
+                                    required/>
+			</div>
+            <div>
+				<input name="password"
+                                    placeholder="Password"
                                     type={PasswordInputType}
                                     value={password}
                                     onChange={(e) =>
                                         setPassword(e.target.value)
                                     }
-                                    required
-                                />
-                               
-                            </div>
-                        </div>
-                       
-                        <div className="group">
-                            <div className="col-1">
-                                <label for="password"  style={{marginLeft:'40px'}}>Password</label>
-                            </div>
-                            <div className="colm-2" style={{marginLeft:'-45px'}}>
-                                <input
-                                    name="password"
-                                    placeholder="password"
-                                    type={PasswordInputType}
-                                    value={ConfirmPassword}
-                                    onChange={(e) =>
-                                        setConfirmPassword(e.target.value)
-                                    }
-                                    required
-                                />
-                                
-                            </div>
-                        </div>
-                      
-                        
-                        
-                        <input
-                            type="submit"
-                            className="submit"
-                            value="Update"
-                            onClick={updateUser}
-                        />
-                        <br />
-                       
-                    </form>
+                                    required />
+			</div>
+			<div>
+				<input type="submit" value="Update"
+                            onClick={updateUser} />
+			</div>
+		</form>
+	</section><img src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
+    style={{width:"25%", height:"480px", opacity:0.5,marginLeft:'75%',marginTop:'-41%'}}
+    />
+</div></div>
         
-
-       </Paper>
-
-        </Grid>
-               
-            </Grid>
-        </div>
-        </div>
     );
 };
 

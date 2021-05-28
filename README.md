@@ -51,10 +51,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 ## Flow of the site :computer:
 Below is a basic idea as to how the website works. We will also be working on adding more features to this project, like sharing of questions, an option to follow people, a feature that allows users to filter and view specific content, etc.
 
-
-![Hnet-image](https://user-images.githubusercontent.com/57852378/104997423-90038c80-5a4f-11eb-88d3-389b501c00ad.gif)
-
-
+![Kurakoo Website](https://user-images.githubusercontent.com/68965499/119776203-4259cd80-bee2-11eb-8a6e-84ed4ce0ad93.gif)
 
 ## General Guidelines :dart:
  - Before working on any issue, kindly go through the instructions given in the [contributing](CONTRIBUTING.md) and readme the file carefully.
@@ -81,6 +78,9 @@ git clone https://github.com/purnima143/Kurakoo.git
     ```
     MONGO_URL = <your_url>
     ```
+     or
+
+  We have added a string for the local mongoDB connection inside index.js `mongodb://localhost:27017/kurakooDB`
 
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
