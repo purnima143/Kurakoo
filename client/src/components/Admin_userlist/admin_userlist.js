@@ -81,7 +81,13 @@ export default function StickyHeadTable() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
+    if (auth.authenticate) {
+      return <Redirect to={"/"} />;
+  }
 
+  if (user.loading) {
+      return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
+  }
 
   return (
       <>
