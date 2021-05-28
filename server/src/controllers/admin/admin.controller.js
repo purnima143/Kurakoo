@@ -4,7 +4,7 @@ const User = require("../../models/user.model");
 const Answer = require("../../models/answers.model");
 const Question = require("../../models/questions.models");
 const responseHandler = require("../../helpers/responseHandler");
-const welcomeMail = require("../utility/signup-mail-admin");
+const welcomeMail = require("../../utility/signup-mail-admin");
 
 
 const signup = (req, res) => {

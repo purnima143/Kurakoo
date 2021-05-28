@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const { ObjectId } = mongoose.Schema.Types;
 
 const userSchema = new mongoose.Schema(
     {
@@ -58,29 +59,37 @@ const userSchema = new mongoose.Schema(
             max : 12
         },
         upvotedAns: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
         downvotedAns: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
         upvotedQs: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
         downvotedQs: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
         upvotedComments: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
         downvotedComments: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "Answer"
         }],
+        following: [{
+            type: ObjectId,
+            ref: "User"
+        }],
+        followers: [{
+            type: ObjectId,
+            ref: "User"
+        }]
 
         //profilePicture: { type: String} will be added later in future
     },
