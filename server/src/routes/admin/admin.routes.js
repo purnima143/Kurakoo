@@ -9,6 +9,7 @@ const { adminMiddleWare } =require("../../common-middleware/common-middleware");
 router.post('/admin/signup', validateSignupRequest, isRequestValidated, adminController.signup);
 router.post('/admin/signin', validateSigninRequest, isRequestValidated, adminController.signin);
 router.post('/admin/signout', requireSignin, authController.signout);
+router.patch('/admin/update', requireSignin, adminMiddleWare, adminController.updateAdmin);
 
 
 router.get('/users', requireSignin, adminMiddleWare, adminController.getUsers);
