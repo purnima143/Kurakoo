@@ -15,6 +15,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
+import Progress from 'bootstrap-4-react';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -99,7 +100,7 @@ export default function StickyHeadTable() {
     }
 
     if (user.loading) {
-        return <p>Loading...!</p>;
+        return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
     }
 
   return (

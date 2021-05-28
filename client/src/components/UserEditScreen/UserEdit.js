@@ -8,7 +8,8 @@ import Meta from "../../helpers/Meta";
 import usePasswordToggle from "../../hooks/usePasswordToggle";
 import './UserEdit.css';
 import '../SignUp/SignUp.css'
-import Navbar from "../navbar/Navbar"
+import Navbar from "../navbar/Navbar";
+import {Progress} from 'bootstrap-4-react';
 
 toast.configure();
 const SignUp = () => {
@@ -46,7 +47,7 @@ const SignUp = () => {
     }
 
     if (user.loading) {
-        return <p>Loading...!</p>;
+        return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
     }
     return (
         <div >
