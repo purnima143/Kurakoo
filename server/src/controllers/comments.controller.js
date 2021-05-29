@@ -3,6 +3,7 @@ const responseHandler = require("../helpers/responseHandler");
 const User = require("../models/user.model")
 const Answer = require("../models/answers.model")
 const ObjectID = require('mongodb').ObjectID;
+const Notification = require("../models/notification.model.js")
 
 
 const postComment = async(req, res) => {
@@ -25,7 +26,7 @@ const postComment = async(req, res) => {
         if(ans)
         {
             const comment = new Comment({
-                answerId,
+                answerId: ans._id,
                 text,
                 createdBy: req.user._id,
                 updatedAt: new Date().toISOString(),
@@ -275,6 +276,17 @@ const upvoteComment = async(req, res) => {
                 await comment.save()
                 user.upvotedComments.push(comment._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: comment.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your comment (comment id ${comment._id}) got an upvote by ${user.firstName}!`,
+                    upvoteCommentNotification: comment._id,
+                    status: "unread"
+                })
+
+                await notification.save()
+                
                 return res.status(200).send({message: "comment upvoted!"})
             }
         }
@@ -295,7 +307,7 @@ const downvoteComment = async(req, res) => {
             const isUpvoted = user.upvotedComments.includes(comment._id)
             const isDownvoted = user.downvotedComments.includes(comment._id)
             if(isDownvoted){
-               return res.status(200).send({message: "already upvoted!"})
+               return res.status(200).send({message: "already downvoted!"})
 
             }
             if(!isDownvoted){
@@ -310,7 +322,7 @@ const downvoteComment = async(req, res) => {
                 await comment.save()
                 user.downvotedComments.push(comment._id)
                 await user.save()
-                return res.status(200).send({message: "Comment upvoted!"})
+                return res.status(200).send({message: "Comment downvoted!"})
             }
         }
     }
