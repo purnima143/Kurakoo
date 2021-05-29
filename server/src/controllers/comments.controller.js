@@ -289,6 +289,17 @@ const upvoteComment = async(req, res) => {
                 await comment.save()
                 user.upvotedComments.push(comment._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: comment.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your comment (comment id ${comment._id}) got an upvote by ${user.firstName}!`,
+                    upvoteCommentNotification: comment._id,
+                    status: "unread"
+                })
+
+                await notification.save()
+                
                 return res.status(200).send({message: "comment upvoted!"})
             }
         }
