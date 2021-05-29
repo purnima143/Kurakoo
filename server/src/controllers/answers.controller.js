@@ -3,14 +3,16 @@ const responseHandler = require("../helpers/responseHandler");
 const Question = require("../models/questions.models")
 const ObjectID = require('mongodb').ObjectID;
 const User = require('../models/user.model')
+const Notification = require("../models/notification.model")
 
 const createAnswers = async (req, res) => {
     const { answerText, questionId, tags } = req.body;
     
     if(ObjectID.isValid(questionId)){  //checking if the string entered is a valid ObjectId
         try{
-            const isValidQuestion = await Question.findById(questionId)  //if valid ObjectId, checking if a question with this id exists
-            if(isValidQuestion){
+            const question = await Question.findById(questionId)  //if valid ObjectId, checking if a question with this id exists
+            const user = await User.findById(req.user._id)
+            if(question){
                 const duplicate = await Answers.findOne({createdBy: req.user._id, questionId: questionId}) //after 2 checks checking if there is already an answer created by the user for the same question
                 if(!duplicate){
                     const answer = new Answers({
@@ -22,7 +24,7 @@ const createAnswers = async (req, res) => {
                         downvotes:0,
                         views:0
                     });
-                    answer.save((error, answer) => {
+                    answer.save(async(error, answer) => {
                         if (error)
                             return res
                                 .status(400)
@@ -34,6 +36,20 @@ const createAnswers = async (req, res) => {
                                     )
                                 );
                         if (answer) {
+
+                            const questionId = question._id
+                            const answerId = answer._id
+
+                            const notification = new Notification({
+                                notificationFor: question.createdBy,
+                                notificationBy: req.user._id,
+                                notificationTitle: `${user.firstName + " " +user.lastName} answered a question (question id ${question._id}) that you created! (answer id ${answer._id})!`,
+                                answerNotification: {answerId, questionId},
+                                status: "unread" 
+                            })
+                            console.log(notification)
+                            console.log(notification.answerNotification)
+                            await notification.save()
                             return res.status(200).json(responseHandler(true, 200, answer));
                         }
                     });
