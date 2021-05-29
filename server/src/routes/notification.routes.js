@@ -10,6 +10,8 @@ const router = express.Router();
 
 
 
+
 router.get('/getNotifications', requireSignin, userMiddleWare, notificationController.getNotifications)
+router.get('/getNotification/:id', requireSignin, userMiddleWare, notificationController.getNotification)
 
 module.exports = router;

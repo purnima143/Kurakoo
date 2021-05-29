@@ -33,6 +33,7 @@ const SignIn = () => {
     const [formData, setFormData] = useState(initialState);
 
     //MAKING CHANGE IN STATE VALUES FROM USER INPUT
+    // eslint-disable-next-line
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -69,6 +70,7 @@ const SignIn = () => {
     };
 
     //FUNCTION TO DO APPROPRIATE TASK ON CLICKING SUBMIT BUTTON
+    // eslint-disable-next-line
     const PostData = () => {
         //CONDITIONS TO CHECK VALID INPUT DETAILS
         if (formData.email !== "") {
@@ -164,6 +166,7 @@ const SignIn = () => {
                                 <img
                                     src="./images/favicon.png"
                                     className="logo"
+                                    alt="preview"
                                 />
                             </header>
                             <div className="inputs">
