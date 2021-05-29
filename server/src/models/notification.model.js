@@ -49,6 +49,10 @@ const studentNotificationSchema = new Schema({
             ref: "Answer"
         }
     },
+    followNotification: {
+        type: ObjectId,
+        ref: "User"
+    },
     status: {
         type: String,
         enum: ['read', 'unread'],

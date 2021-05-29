@@ -3,6 +3,7 @@ const Answer = require("../models/answers.model");
 const Question = require("../models/questions.models");
 const User = require("../models/user.model.js");
 const responseHandler = require("../helpers/responseHandler")
+const Notification = require("../models/notification.model")
 
 
 // @desc    Get logged in user's questions
@@ -24,7 +25,7 @@ const getMyAnswers = asyncHandler(async (req, res) => {
 const following = async( req, res) => {
     try{
         if( req.user._id === req.params.user_id){
-            return res.status(405).json(responseHandler( false, 405, "Sorry, Bi-mistake you requested to follow yourself", null))
+            return res.status(405).json(responseHandler( false, 405, "Sorry, you made a follow request to yourself!", null))
         } 
         else{
             const user = await User.findById( req.user._id );
@@ -44,12 +45,41 @@ const following = async( req, res) => {
                 $push: {following: req.params.user_id}
             }, {
                 new: true
-            }).then(result => {
-                res.status(200).json(responseHandler(true, 200, "You start following", result));
-            })
+            }).then((async (result) => {
+
+                try{
+                    const notification = new Notification({
+                        notificationFor: req.params.user_id,
+                        notificationBy: req.user._id,
+                        notificationTitle: `${user.firstName} started following you, their user id is ${user._id}!`,
+                        followNotification: user._id,
+                        status: "unread" 
+                    }) 
+    
+                    await notification.save()
+                }
+                catch(e){
+                    console.log(e)
+                    return res
+                    .status(400)
+                    .json(
+                        responseHandler
+                        ( false, 
+                          400, 
+                          "Something went wrong", 
+                          null 
+                        )
+                    );
+                }
+
+                const {role, _id, firstName, lastName, email, following, followers} = result
+
+                res.status(200).json(responseHandler(true, 200, "Followed!", {role, _id, firstName, lastName, email, following, followers}));
+            }))
         }) } }
           
     } catch (e) {
+        console.log(e)
         return res.status(400).json(responseHandler( false, 400, "Something went wrong", null ));
     }
 
