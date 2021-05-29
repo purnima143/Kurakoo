@@ -39,7 +39,7 @@ const followUser = async( req, res) => {
                 new: true
             }, (err, result) => {
                 if(err){
-                    return res.status(400).json({error: err})
+                    return res.status(400).json(responseHandler( false, 405, "Already following", null))
                 }
             User.findByIdAndUpdate( req.user._id,{
                 $push: {following: req.params.user_id}
