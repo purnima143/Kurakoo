@@ -248,6 +248,16 @@ const upvoteQuestion = async(req, res) => {
                 await question.save()
                 user.upvotedQs.push(question._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: question.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your question (question id ${question._id}) got an upvote by ${user.firstName}!`,
+                    upvoteQuestionNotification: question._id,
+                    status: "unread" 
+                })
+
+                await notification.save()
                 return res.status(200).send({message: "question upvoted!"})
             }
         }

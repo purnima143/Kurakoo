@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,17 +13,20 @@ import {Progress} from 'bootstrap-4-react';
 
 toast.configure();
 const SignUp = () => {
+    // eslint-disable-next-line
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
     
     const getMode = () => {
         return JSON.parse(localStorage.getItem("mode")) || false;
     };
+    // eslint-disable-next-line
     const [dark, setmode] = useState(getMode());
     useEffect(() => {
         localStorage.setItem("mode", JSON.stringify(dark));
     }, [dark]);
 
     //CHECK WHETHER THE SCREEN IS SMALL OR NOT
+    // eslint-disable-next-line
     const isSmallScreen = useMediaQuery({
         query: "(max-width: 959.5px)"
     });
@@ -31,11 +34,11 @@ const SignUp = () => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [ConfirmPassword, setConfirmPassword] = useState("");
+    
 
     const auth = useSelector((state) => state.auth);
     const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
+    
 
     const updateUser = (e) => {
         e.preventDefault();
@@ -54,7 +57,7 @@ const SignUp = () => {
               <Navbar/>
               <Meta title="SignUp ​🚪​👨​​👩🏻​| Kurakoo" />
               <div class="container" style={{marginTop:'10%'}}>
-              <img src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
+              <img  alt= "img"src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
     style={{width:"25%", height:"480px", opacity:0.5}}
     />
 	<section id="content" style={{marginTop:'-40%'}}>
@@ -100,7 +103,7 @@ const SignUp = () => {
                             onClick={updateUser} />
 			</div>
 		</form>
-	</section><img src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
+	</section><img alt="preview" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
     style={{width:"25%", height:"480px", opacity:0.5,marginLeft:'75%',marginTop:'-41%'}}
     />
 </div></div>

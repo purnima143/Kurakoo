@@ -1,11 +1,8 @@
 import React from 'react';
 import "./adminScreen.css";
 import { makeStyles } from '@material-ui/core/styles';
-import {Paper,FormControlLabel,Checkbox, TextareaAutosize, Grid,TextField, Box,Link,CardContent,Typography,Divider,Container,Card,Button} from '@material-ui/core';
-import Dialog from '@material-ui/core/Dialog';
+import {FormControlLabel,Checkbox, TextField, Box,CardContent,Typography,Container,Card,Button} from '@material-ui/core';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
@@ -13,7 +10,8 @@ import Navbar from "../navbar/Navbar"
 
 
 const defaultTheme = createMuiTheme({})
-  const { breakpoints, typography: { pxToRem } } = defaultTheme
+// eslint-disable-next-line
+const { breakpoints, typography: { pxToRem } } = defaultTheme
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -64,6 +62,7 @@ const styles = (theme) => ({
   },
 
 });
+// eslint-disable-next-line
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
@@ -78,26 +77,14 @@ const DialogTitle = withStyles(styles)((props) => {
   );
 });
 
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-    backgroundColor:"#39BD3D"
-  },
-}))(MuiDialogContent);
-
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
 
 
  
 export default function MultilineTextFields() {
   const classes = useStyles();
+  // eslint-disable-next-line
   const [value, setValue] = React.useState('Controlled');
-
+// eslint-disable-next-line
   const handleChange = (event) => {
     setValue(event.target.value);
   };

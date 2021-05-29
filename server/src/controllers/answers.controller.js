@@ -36,6 +36,20 @@ const createAnswers = async (req, res) => {
                                     )
                                 );
                         if (answer) {
+
+                            const questionId = question._id
+                            const answerId = answer._id
+
+                            const notification = new Notification({
+                                notificationFor: question.createdBy,
+                                notificationBy: req.user._id,
+                                notificationTitle: `${user.firstName + " " +user.lastName} answered a question (question id ${question._id}) that you created! (answer id ${answer._id})!`,
+                                answerNotification: {answerId, questionId},
+                                status: "unread" 
+                            })
+                            console.log(notification)
+                            console.log(notification.answerNotification)
+                            await notification.save()
                             return res.status(200).json(responseHandler(true, 200, answer));
                         }
                     });
@@ -131,7 +145,17 @@ const upvoteAnswer = async(req, res) => {
                 await ans.save()
                 user.upvotedAns.push(ans._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: ans.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your answer (answer id ${ans._id}) got an upvote by ${user.firstName}!`,
+                    upvoteAnswerNotification: ans._id,
+                    status: "unread" 
+                }) 
+                await notification.save()
                 return res.status(200).send({message: "upvoted!"})
+
             }
         }
     }

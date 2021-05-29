@@ -9,9 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from '@material-ui/core/Modal';
 import AnswerQuestion from '../Answer/Answer';
 
-import {Box, Popover,Button, Card, CardContent,CardActions,TextField} from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import { Popover,Button, Card, CardContent,CardActions,TextField} from '@material-ui/core';
 
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import BookmarkIcon from '@material-ui/icons/Bookmark';

@@ -21,6 +21,7 @@
     "@material-ui/core": "^4.11.3",
     "concurrently": "^6.0.0",
     "express-async-handler": "^1.1.4",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.6.1",
     "nodemon": "^2.0.7",
     "suspense": "^0.0.1"

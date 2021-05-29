@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {  Redirect } from "react-router-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -93,8 +93,7 @@ export default function StickyHeadTable() {
 
   const auth = useSelector((state) => state.auth);
     const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
-
+    
         if (auth.authenticate) {
         return <Redirect to={"/"} />;
     }

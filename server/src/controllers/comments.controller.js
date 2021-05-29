@@ -34,6 +34,19 @@ const postComment = async(req, res) => {
                 downvotes:0,
             })
             await comment.save()
+            
+            const commentId = comment._id
+            const answerId = ans._id
+
+            const notification = new Notification({
+                notificationFor: ans.createdBy,
+                notificationBy: req.user._id,
+                notificationTitle: `${user.firstName + " " +user.lastName} commented (comment id ${comment._id}) on your answer! (answer id ${ans._id})!`,
+                commentNotification: { commentId, answerId },
+                status: "unread" 
+            })
+            await notification.save()
+
             return res
                 .status(200)
                 .json(
@@ -276,6 +289,17 @@ const upvoteComment = async(req, res) => {
                 await comment.save()
                 user.upvotedComments.push(comment._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: comment.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your comment (comment id ${comment._id}) got an upvote by ${user.firstName}!`,
+                    upvoteCommentNotification: comment._id,
+                    status: "unread"
+                })
+
+                await notification.save()
+                
                 return res.status(200).send({message: "comment upvoted!"})
             }
         }
@@ -311,6 +335,7 @@ const downvoteComment = async(req, res) => {
                 await comment.save()
                 user.downvotedComments.push(comment._id)
                 await user.save()
+
                 const notification = new Notification({
                     notificationFor: comment.createdBy,
                     notificationBy: req.user._id,
@@ -319,6 +344,7 @@ const downvoteComment = async(req, res) => {
                     status: "unread"
                 })
                 await notification.save()
+              
                 return res.status(200).send({message: "Comment downvoted!"})
             }
         }
