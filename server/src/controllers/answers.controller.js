@@ -3,14 +3,16 @@ const responseHandler = require("../helpers/responseHandler");
 const Question = require("../models/questions.models")
 const ObjectID = require('mongodb').ObjectID;
 const User = require('../models/user.model')
+const Notification = require("../models/notification.model")
 
 const createAnswers = async (req, res) => {
     const { answerText, questionId, tags } = req.body;
     
     if(ObjectID.isValid(questionId)){  //checking if the string entered is a valid ObjectId
         try{
-            const isValidQuestion = await Question.findById(questionId)  //if valid ObjectId, checking if a question with this id exists
-            if(isValidQuestion){
+            const question = await Question.findById(questionId)  //if valid ObjectId, checking if a question with this id exists
+            const user = await User.findById(req.user._id)
+            if(question){
                 const duplicate = await Answers.findOne({createdBy: req.user._id, questionId: questionId}) //after 2 checks checking if there is already an answer created by the user for the same question
                 if(!duplicate){
                     const answer = new Answers({
@@ -22,7 +24,7 @@ const createAnswers = async (req, res) => {
                         downvotes:0,
                         views:0
                     });
-                    answer.save((error, answer) => {
+                    answer.save(async(error, answer) => {
                         if (error)
                             return res
                                 .status(400)
@@ -164,6 +166,16 @@ const downvoteAnswer = async(req, res) => {
                 await ans.save()
                 user.downvotedAns.push(ans._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: ans.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your answer (answer id ${ans._id}) got a downvote by ${user.firstName}!`,
+                    downvoteAnswerNotification: ans._id,
+                    status: "unread" 
+                }) 
+
+                await notification.save()
                 return res.status(200).send({message: "downvoted!"})
             }
         }

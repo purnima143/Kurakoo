@@ -3,6 +3,7 @@ const responseHandler = require('../helpers/responseHandler');
 const Answers = require('../models/answers.model')
 const ObjectID = require('mongodb').ObjectID;
 const User = require('../models/user.model')
+const Notification = require("../models/notification.model")
 
 const createQuestions = async (req, res) => {
     const { questionText, questionLinks, tags } = req.body;
@@ -222,7 +223,7 @@ const upvoteQuestion = async(req, res) => {
         const question = await Questions.findById(req.params.id)
         console.log(question)
         if(!question){
-            return res.send(400).send({message: "invalid id!"})
+            return res.status(400).send({message: "invalid id!"})
         }
         else{
             const user = await User.findOne({_id:req.user._id})
@@ -282,6 +283,17 @@ const downvoteQuestion = async(req, res) => {
                 await question.save()
                 user.downvotedQs.push(question._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: question.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your question (question id ${question._id}) got a downvote by ${user.firstName}!`,
+                    downvoteQuestionNotification: question._id,
+                    status: "unread" 
+                })
+
+                await notification.save()
+
                 return res.status(200).send({message: "downvoted!"})
             }
         }
