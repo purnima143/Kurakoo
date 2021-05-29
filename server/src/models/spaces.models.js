@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema.Types;
 
 const spaceSchema = new mongoose.Schema(
     {
@@ -22,10 +23,14 @@ const spaceSchema = new mongoose.Schema(
             default: "user"
         },
         createdBy:{
-            type: mongoose.Schema.Types.ObjectId,
+            type: ObjectId,
             ref: "User",
             required: true
         },
+        followers: [{
+            type: ObjectId,
+            ref:  "User"
+        }],
         updatedAt: Date
     },
     {timeStamps: true}

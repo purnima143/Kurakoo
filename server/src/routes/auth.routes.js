@@ -36,8 +36,9 @@ router.patch(
     authController.update
 );
 
-router.put("/follow/:user_id", requireSignin, userMiddleWare, userController.following );
-router.put("/unfollow/:user_id", requireSignin, userMiddleWare, userController.unfollow );
+router.put("/followUser/:user_id", requireSignin, userMiddleWare, userController.followUser );
+router.put("/unfollowUSer/:user_id", requireSignin, userMiddleWare, userController.unfollowUser );
+router.put("/followSpace/:space_id", requireSignin, userMiddleWare, userController.followSpace);
 
 router.delete('/deleteProfile', requireSignin, authController.deleteProfile);
 
