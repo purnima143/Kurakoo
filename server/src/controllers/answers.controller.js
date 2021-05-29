@@ -190,6 +190,16 @@ const downvoteAnswer = async(req, res) => {
                 await ans.save()
                 user.downvotedAns.push(ans._id)
                 await user.save()
+
+                const notification = new Notification({
+                    notificationFor: ans.createdBy,
+                    notificationBy: req.user._id,
+                    notificationTitle: `your answer (answer id ${ans._id}) got a downvote by ${user.firstName}!`,
+                    downvoteAnswerNotification: ans._id,
+                    status: "unread" 
+                }) 
+
+                await notification.save()
                 return res.status(200).send({message: "downvoted!"})
             }
         }
