@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {  Redirect } from "react-router-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -79,11 +79,18 @@ export default function StickyHeadTable() {
 
   const auth = useSelector((state) => state.auth);
     const user = useSelector((state) => state.user);
+<<<<<<< HEAD
     const dispatch = useDispatch();
 
     if (auth.authenticate) {
       return <Redirect to={"/"} />;
   }
+=======
+    
+        if (auth.authenticate) {
+        return <Redirect to={"/"} />;
+    }
+>>>>>>> 8c0a785c63fd03b5f860f147e08baadca633da16
 
   if (user.loading) {
       return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;

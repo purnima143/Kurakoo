@@ -1,7 +1,6 @@
-import React, {  Suspense, useEffect } from "react";
+import React, {  Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import Preloader from "./components/Preloader/Preloader";
 import NotFound from "./components/NotFound/NotFound";
 import Scroll from "./components/ScrollToTop/ScrollToTop"
@@ -65,9 +64,7 @@ const Profile = React.lazy(() => {
   });
 
 const App = () => {
-    const dispatch = useDispatch();
-    const auth = useSelector((state) => state.auth);
-
+    
     return (
         <>
             <Suspense fallback={<Preloader />}>

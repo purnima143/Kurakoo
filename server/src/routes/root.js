@@ -29,6 +29,9 @@ const userRoutes = require("./user.routes")
 //Comment route
 const commentRoutes = require("./comments.routes")
 
+//Notification route
+const notificationRoutes = require("./notification.routes")
+
 
 router.use("/example", example);
 router.use("/", authRoutes);
@@ -41,6 +44,7 @@ router.use("/",adminRoutes);
 router.use("/user",userRoutes);
 
 router.use("/", commentRoutes)
+router.use("/", notificationRoutes)
 
 
 

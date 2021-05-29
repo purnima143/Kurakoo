@@ -576,3 +576,63 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**23. get notifications**
+* **URL**
+    `/api/getNotifications`
+
+* **METHOD**
+    `GET`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `unread notifications!`
+      **data:** `{notifications}`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `no new notifications!`
+
+* **Error Response**
+
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+
+**24. get notification by id**
+* **URL**
+    `/api/getNotification/:id`
+
+* **METHOD**
+    `GET`
+
+* **URL params**
+    `particular notification id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `notification`
+      **data:** `{notification}`
+
+* **Error Response**
+
+    * **Code:** `400` <br />
+      **Message:** `invalid notification id!` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `notification does not exist!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `notification not intended to you!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+

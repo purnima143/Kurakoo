@@ -12,7 +12,13 @@ const clc = require("cli-color");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
+
+//Morgan
+if(process.env.NODE_ENV ==='development'){
+  app.use(morgan('dev'))
+}
 
 const root = require('./routes/root');
 

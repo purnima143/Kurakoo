@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "../AddAQuestion/AddAQuestion.css";
 
-import closeIcon from "./svgs/closesvg.svg";
+
 import logo from "../images/kurakoo-logo.png";
-import link from "./svgs/linksvg.svg";
+
 
 import { Avatar } from "@material-ui/core";
 const Answerquestion = () => {
   const [Answer, setAnswer] = useState("");
-  const [addlink, setAddlink] = useState("");
+  
 
   const answer = (e) => {
     //code to add the question to the backend
