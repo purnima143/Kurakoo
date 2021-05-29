@@ -7,14 +7,11 @@ const {
 const notificationController = require("../controllers/notification.controller")
 const router = express.Router();
 
-// @route             Get signin/signup
-// @desc              login user
-// @param {}@access    Public
 
 
 
 
-
+router.get('/getNotifications', requireSignin, userMiddleWare, notificationController.getNotifications)
 router.get('/getNotification/:id', requireSignin, userMiddleWare, notificationController.getNotification)
 
 module.exports = router;

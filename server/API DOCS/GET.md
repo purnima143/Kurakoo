@@ -577,6 +577,31 @@
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
+**23. get notifications**
+* **URL**
+    `/api/getNotifications`
+
+* **METHOD**
+    `GET`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `unread notifications!`
+      **data:** `{notifications}`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `no new notifications!`
+
+* **Error Response**
+
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
 
 **24. get notification by id**
 * **URL**
@@ -610,3 +635,4 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
+
