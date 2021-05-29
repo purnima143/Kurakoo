@@ -7,10 +7,6 @@ const {
 const notificationController = require("../controllers/notification.controller")
 const router = express.Router();
 
-// @route             Get signin/signup
-// @desc              login user
-// @param {}@access    Public
-
 
 
 
