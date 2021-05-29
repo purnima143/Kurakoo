@@ -1,7 +1,8 @@
 const asyncHandler = require("express-async-handler")
 const Answer = require("../models/answers.model");
 const Question = require("../models/questions.models");
-const User = require("../models/user.model.js");
+const User = require("../models/user.model");
+const Space = require("../models/spaces.models");
 const responseHandler = require("../helpers/responseHandler")
 
 
@@ -21,7 +22,7 @@ const getMyAnswers = asyncHandler(async (req, res) => {
     res.json(orders)
 })
 
-const following = async( req, res) => {
+const followUser = async( req, res) => {
     try{
         if( req.user._id === req.params.user_id){
             return res.status(405).json(responseHandler( false, 405, "Sorry, Bi-mistake you requested to follow yourself", null))
@@ -38,7 +39,7 @@ const following = async( req, res) => {
                 new: true
             }, (err, result) => {
                 if(err){
-                    return res.status(400).json({error: err})
+                    return res.status(400).json(responseHandler( false, 405, "Already following", null))
                 }
             User.findByIdAndUpdate( req.user._id,{
                 $push: {following: req.params.user_id}
@@ -55,7 +56,38 @@ const following = async( req, res) => {
 
 }
 
-const unfollow = async( req, res) => {
+const followSpace = async( req, res ) => {
+    try {
+        const user = await User.findById( req.user._id );
+        const space = await Space.findById( req.params.space_id );
+        if ( space.followers.includes( req.user._id )){
+            return res.status(400).json(responseHandler( false, 400, "Already Following", null ));
+        } else {
+
+            Space.findByIdAndUpdate( req.params.space_id , {
+                $push: { followers: req.user._id}
+            }, {
+                new: true
+            }, ( err, result ) => {
+                if(err){
+                    return res.status(400)(responseHandler( false, 400, "Something Went Wrong!", null))
+                }
+            User.findByIdAndUpdate( req.user._id, {
+                $push: { following: req.params.space_id }
+            }, {
+                new: true
+            })
+            }).then(result => {
+                res.status(200).json(responseHandler(true, 200, "You start following", result));
+            })
+        }
+    } catch (e) {
+        return res.status(400).json({error: err})
+    }
+}
+
+
+const unfollowUser = async( req, res) => {
     try{
         if( req.user._id === req.params.user_id){
             return res.status(405).json(responseHandler( false, 405, "Action not allowed", null))
@@ -93,6 +125,7 @@ const unfollow = async( req, res) => {
 module.exports = userController = {
    getMyAnswers,
    getMyQuestions,
-   following,
-   unfollow
+   followUser,
+   unfollowUser,
+   followSpace
 };
