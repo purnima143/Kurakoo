@@ -10,9 +10,17 @@ import './UserEdit.css';
 import '../SignUp/SignUp.css'
 import Navbar from "../navbar/Navbar";
 import {Progress} from 'bootstrap-4-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 toast.configure();
 const SignUp = () => {
+    useEffect(()=>{
+        AOS.init({
+            duration:2000,
+            delay:1000
+        })
+    },[]);
     // eslint-disable-next-line
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
     
@@ -59,9 +67,9 @@ const SignUp = () => {
               <div class="container" style={{marginTop:'10%'}}>
               <img  alt= "img"src="https://previews.123rf.com/images/chrisdorney/chrisdorney1602/chrisdorney160200077/51658510-no-questions-asked-red-rubber-stamp-over-a-white-background-.jpg"
     style={{width:"25%", height:"480px", opacity:0.5}}
-    />
+    data-aos='fade-right'/>
 	<section id="content" style={{marginTop:'-40%'}}>
-		<form action="">
+		<form action="" data-aos='fade-in'>
 			<h1>Update Profile</h1>
 			<div>
 				<input type="text" placeholder="First Name"  name="firstName"
@@ -105,7 +113,7 @@ const SignUp = () => {
 		</form>
 	</section><img alt="preview" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1707/lkeskinen170708972/82453980-no-answer-rubber-stamp.jpg"
     style={{width:"25%", height:"480px", opacity:0.5,marginLeft:'75%',marginTop:'-41%'}}
-    />
+    data-aos='fade-left'/>
 </div></div>
         
     );

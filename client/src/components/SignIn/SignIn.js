@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Meta from "../../helpers/Meta";
 import usePasswordToggle from "../../hooks/usePasswordToggle";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 toast.configure();
 
 const initialState = {
@@ -18,6 +20,12 @@ const initialState = {
 };
 
 const SignIn = () => {
+    useEffect(()=>{
+        AOS.init({
+            duration:2000,
+            delay:1000
+        })
+    },[]);
     const [PasswordInputType, ToggleIcon] = usePasswordToggle();
     const getMode = () => {
         return JSON.parse(localStorage.getItem("mode")) || false;
@@ -159,7 +167,7 @@ const SignIn = () => {
                         <span className="slider round"></span>
                         <h2>{dark ? "Dark" : "Light"}</h2>
                     </label>
-                    <div className="app">
+                    <div className="app" data-aos='fade-up'>
                         <div className="bg"></div>
                         <form className="form1">
                             <header>

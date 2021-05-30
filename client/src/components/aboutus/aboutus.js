@@ -1,15 +1,23 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./aboutus.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import Navbar from '../navbar/Navbar'
-import Footer from '../Footer/footer'
+import Navbar from '../navbar/Navbar';
+import Footer from '../Footer/footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function aboutus() {
+const Aboutus=() =>{
+  useEffect(()=>{
+    AOS.init({
+        duration:2000,
+        delay:1000
+    })
+},[]);
     return (<div><Navbar/><section class="text-center about">
         
     <h1>WHO ARE WE ?</h1>
-    <div class="container">
+    <div class="container" data-aos='flip-down'>
       <div class="row">
         <div class="col-lg-4 col-sm-6 col-ex-12 about-item wow lightSpeedIn" data-wow-offset="200" >
           <span class="fa fa-group"></span>
@@ -34,8 +42,8 @@ function aboutus() {
     </div>
   </section>
   <Footer/>
-  </div>)
-}
+  </div>);
+};
 
-export default aboutus;
+export default Aboutus;
 
