@@ -4,9 +4,17 @@ import "./AddAQuestion.css";
 import closeIcon from "./svgs/closesvg.svg";
 import logo from "../images/kurakoo-logo.png";
 import link from "./svgs/linksvg.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { Avatar } from "@material-ui/core";
 const AddAQuestion = () => {
+  useEffect(()=>{
+    AOS.init({
+        duration:2000,
+        delay:1000
+    })
+},[]);
     const getMode = ()=>{
         return JSON.parse(localStorage.getItem("mode")) || false
       }
@@ -27,7 +35,7 @@ const AddAQuestion = () => {
         <>
             {/* Link Modal */}
             {modal && (
-                <div className="addlinkmodal">
+                <div className="addlinkmodal" data-aos='flip-left'>
                     <div onClick={() => setModal(false)}></div>
                     <form>
                         <label>Add Link</label>
