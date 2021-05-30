@@ -2,13 +2,37 @@ import React, {  Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Preloader from "./components/Preloader/Preloader";
-import NotFound from "./components/NotFound/NotFound";
 import Scroll from "./components/ScrollToTop/ScrollToTop"
-import UserEdit from "./components/UserEditScreen/UserEdit"
-import AdminUserList from "./components/Admin_userlist/admin_userlist"
-import AdminUserUpdate from "./components/Admin_UserUpdate/admin_userupdate"
-import bookmarkPage from "./components/bookmarkPage/bookmarkPage";
 import ChatBotComponent from './components/Chatbot/chatbot';
+
+const NotFound = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/NotFound/NotFound')), 3000);
+  });
+});
+const bookmarkPage= React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/bookmarkPage/bookmarkPage')), 5000);
+  });
+});
+
+const UserEdit = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/UserEditScreen/UserEdit')), 5000);
+  });
+});
+
+const AdminUserList = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/Admin_userlist/admin_userlist')), 5000);
+  });
+});
+
+const AdminUserUpdate = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/Admin_UserUpdate/admin_userupdate')), 5000);
+  });
+});
 
 const NotificationPage = React.lazy(() => {
     return new Promise(resolve => {

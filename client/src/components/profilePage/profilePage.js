@@ -4,8 +4,12 @@ import "./profilePage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import logo from "../images/profile-pic.png";
-import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
+const Footer = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('../Footer/footer')), 6000);
+    });
+  });
 const followers = 0;
 const following = 0;
 class profilePage extends Component {
@@ -65,7 +69,22 @@ class profilePage extends Component {
                 <br />
                 <br />
                 <div>
-                    <Footer />
+                <React.Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '50px',
+              fontWeight: 'medium',
+            }}
+          >
+            Loading...
+          </div>
+        }
+      >
+        <Footer />
+      </React.Suspense>
                 </div>
             </div>
         );

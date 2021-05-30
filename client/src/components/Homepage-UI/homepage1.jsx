@@ -9,7 +9,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import Footer from "../Footer/footer";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { toast } from "react-toastify";
@@ -17,6 +16,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Clockwise from '../Clock/clock';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+ 
+const Footer = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('../Footer/footer')), 6000);
+    });
+  });
 
 const successToast = (message) => {
     toast.warning(message, {
@@ -291,7 +296,22 @@ const Homepage = () => {
                     alt=""
                 />
             </div><br/><br/><br/><br/>
-            <Footer/>
+            <React.Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '50px',
+              fontWeight: 'medium',
+            }}
+          >
+            Loading...
+          </div>
+        }
+      >
+        <Footer />
+      </React.Suspense>
         </div>
        
     );
