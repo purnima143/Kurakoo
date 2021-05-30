@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
@@ -15,6 +15,8 @@ import VisibilitySensor from "react-visibility-sensor";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Clockwise from '../Clock/clock';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const successToast = (message) => {
     toast.warning(message, {
@@ -29,6 +31,12 @@ const successToast = (message) => {
 };
 successToast("Great Landing! Create a profile to get started.")
 const Homepage = () => {
+    useEffect(()=>{
+        AOS.init({
+            duration:2000,
+            delay:1000
+        })
+    },[]);
     return (
         
         <div className="LandingPage">
@@ -50,7 +58,7 @@ const Homepage = () => {
                     </Link>
                 </div>
             </div>
-            <div className="content" style={{marginLeft:'0rem',marginTop:'12rem'}}>
+            <div className="content" style={{marginLeft:'0rem',marginTop:'12rem'}} data-aos='fade-up'>
                 <h2>Welcome To</h2>
                 <h1>Kurakoo</h1>
                 <h4>Get your answers</h4>
@@ -100,7 +108,7 @@ const Homepage = () => {
                 alt="leaf1"
                 className="leaf1"
             /><br/>
-            <div className='container-fluid'>
+            <div className='container-fluid'  data-aos='zoom-in'>
       <br />
       <h1 className='mb-3 headercontent'>
       Our <span>Vision</span>
@@ -167,7 +175,7 @@ const Homepage = () => {
                     className="aboutimage"
                     alt=""
                 />
-                <div className="about-content">
+                <div className="about-content"  data-aos='zoom-in-right'>
                     <h1 className="head">
                         <span>About</span> Us
                     </h1>
@@ -194,7 +202,7 @@ const Homepage = () => {
         <br/>
 
         <div className='row' style={{ justifyContent: 'space-evenly' }}>
-          <div className='col-md-3'>
+          <div className='col-md-3' data-aos='zoom-in-left'>
             <div className='text-white mb-3 cards2'>
               <div className='card-body color1'>
 
@@ -221,7 +229,7 @@ const Homepage = () => {
                     </div>
                     </div></div>
                 
-          <div className='col-md-3'>
+          <div className='col-md-3' data-aos='zoom-in-left'>
             <div className='text-white mb-3 cards2'>
               <div className='card-body color2'>
 
@@ -249,7 +257,7 @@ const Homepage = () => {
                     </div>
                     </div></div>
                     
-          <div className='col-md-3'>
+          <div className='col-md-3' data-aos='zoom-in-left'>
             <div className='text-white mb-3 cards2 media'>
               <div className='card-body color3'>
 
