@@ -116,6 +116,39 @@ const followSpace = async( req, res ) => {
     }
 }
 
+const unfollowSpace = async(req, res) => {
+    try{
+        if( req.user._id === req.params.space_id){
+            return res.status(405).json(responseHandler( false, 405, "Action not Allowed", null ));
+        } else {
+            const user = await User.findById( req.user._id );
+            if( !user.following.includes(req.params.space_id)){
+                return res.status(405).json(responseHandler( false, 405, "You need to follow first", null))
+            } 
+            else{
+            Space.findByIdAndUpdate( req.params.space_id , {
+                $pull: {followers: req.user._id}
+            },{
+                new: true
+            }, (err, result) => {
+                if(err){
+                    return res.status(400).json({error: err})
+                }
+            User.findByIdAndUpdate( req.user._id,{
+                $pull: {following: req.params.space_id}
+            }, {
+                new: true
+            }).then(result => {
+                res.status(200).json(responseHandler(true, 200, "Unfollow done", result));
+            })
+        }) }
+        }
+    }    
+    catch(e) {
+        return res.status(400).json(responseHandler( false, 400, "Something Went Wrong", null))
+    }
+}
+
 
 const unfollowUser = async( req, res) => {
     try{
@@ -157,5 +190,6 @@ module.exports = userController = {
    getMyQuestions,
    followUser,
    unfollowUser,
-   followSpace
+   followSpace,
+   unfollowSpace
 };
