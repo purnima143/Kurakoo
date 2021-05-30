@@ -271,6 +271,15 @@ const upvoteComment = async(req, res) => {
         }
         else{
             const user = await User.findOne({_id:req.user._id})
+            if(user._id.toString() === comment.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not upvote comment that was created by you!"}
+                    )) 
+            }
             const isUpvoted = user.upvotedComments.includes(comment._id)
             const isDownvoted = user.downvotedComments.includes(comment._id)
             if(isUpvoted){
@@ -317,6 +326,15 @@ const downvoteComment = async(req, res) => {
         }
         else{
             const user = await User.findOne({_id:req.user._id})
+            if(user._id.toString() === comment.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not downvote comment that was created by you!"}
+                    )) 
+            }
             const isUpvoted = user.upvotedComments.includes(comment._id)
             const isDownvoted = user.downvotedComments.includes(comment._id)
             if(isDownvoted){

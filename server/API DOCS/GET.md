@@ -236,9 +236,12 @@
     * **Code:** `200` <br />
       **data:** `{message: "upvoted!"}`
 
-* **Error Response**
+* **Error Response** 
     * **Code:** `400` <br />
       **Message:** `something went wrong` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not upvote answer that was created by you` <br />
 
 * **Required Filed**
     * **Auth Need : True**
@@ -261,6 +264,9 @@
 * **Error Response**
     * **Code:** `400` <br />
       **Message:** `something went wrong` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not downvote answer that was created by you` <br />
 
 * **Required Filed**
     * **Auth Need : True**
@@ -403,15 +409,18 @@
     * **Code:** `200` <br />
       **data:** `{message: "already upvoted!!"}`
 
-* **Error Response**
+* **Error Response** 
     * **Code:** `400` <br />
       **Message:** `something went wrong` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not upvote question that was created by you` <br />
 
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
-**17. downvote question**
+**17. downvote question** 
 * **URL**
     `/upvoteQuestion/:id`
 
@@ -431,6 +440,9 @@
 * **Error Response**
     * **Code:** `400` <br />
       **Message:** `something went wrong` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `you can not downvote question that was created by you` <br />
 
 * **Required Filed**
     * **Auth Need : True**
@@ -631,6 +643,57 @@
 
     * **Code:** `400` <br />
       **Message:** `something went wrong!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+
+**25. upvote comment**
+* **URL**
+    `/api/upvoteComment/:id`
+
+* **METHOD**
+    `GET`
+
+* **URL params**
+    `particular comment id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `{message: "upvoted!"}`
+
+* **Error Response** 
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not upvote comment that was created by you` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
+**26. downvote comment**
+* **URL**
+    `/api/downvoteComment/:id`
+
+* **METHOD**
+    `GET`
+
+* **URL params**
+    `particular comment id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `{message: "downvoted!"}`
+
+* **Error Response** 
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not downvote comment that was created by you` <br />
 
 * **Required Filed**
     * **Auth Need : True**
