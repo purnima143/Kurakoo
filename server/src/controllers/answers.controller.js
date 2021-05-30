@@ -12,6 +12,17 @@ const createAnswers = async (req, res) => {
         try{
             const question = await Question.findById(questionId)  //if valid ObjectId, checking if a question with this id exists
             const user = await User.findById(req.user._id)
+
+            if(user._id.toString() === question.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not answer a question that was created by you!"}
+                    )) 
+            }
+
             if(question){
                 const duplicate = await Answers.findOne({createdBy: req.user._id, questionId: questionId}) //after 2 checks checking if there is already an answer created by the user for the same question
                 if(!duplicate){
@@ -123,7 +134,17 @@ const upvoteAnswer = async(req, res) => {
         }
         else{
             const user = await User.findById(req.user._id)
-            console.log(user)
+
+            if(user._id.toString() === ans.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not upvote answer that was created by you!"}
+                    )) 
+            }
+
             const isUpvoted = user.upvotedAns.includes(ans._id)
             const isDownvoted = user.downvotedAns.includes(ans._id)
             console.log(user.upvotedAns.includes(ans._id))
@@ -173,6 +194,15 @@ const downvoteAnswer = async(req, res) => {
         }
         else{
             const user = await User.findById(req.user._id)
+            if(user._id.toString() === ans.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not downvote answer that was created by you!"}
+                    )) 
+            }
             const isUpvoted = user.upvotedAns.includes(ans._id)
             const isDownvoted = user.downvotedAns.includes(ans._id)
             if(isDownvoted){

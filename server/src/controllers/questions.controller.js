@@ -227,6 +227,17 @@ const upvoteQuestion = async(req, res) => {
         }
         else{
             const user = await User.findOne({_id:req.user._id})
+            console.log(user._id)
+            console.log(question.createdBy)
+            if(user._id.toString() === question.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not upvote question that was created by you!"}
+                    )) 
+            }
             const isUpvoted = user.upvotedQs.includes(question._id)
             const isDownvoted = user.downvotedQs.includes(question._id)
             console.log(user.upvotedQs.includes(question._id))
@@ -276,6 +287,15 @@ const downvoteQuestion = async(req, res) => {
         }
         else{
             const user = await User.findById(req.user._id)
+            if(user._id.toString() === question.createdBy.toString()){
+                return res
+                .status(400)
+                .json(responseHandler
+                    (true, 
+                    400, 
+                    {message: "you can not downvote question that was created by you!"}
+                    )) 
+            }
             const isUpvoted = user.upvotedQs.includes(question._id)
             const isDownvoted = user.downvotedQs.includes(question._id)
             if(isDownvoted){
