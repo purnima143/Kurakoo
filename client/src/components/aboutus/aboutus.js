@@ -5,7 +5,6 @@ import "font-awesome/css/font-awesome.min.css";
 import Navbar from '../navbar/Navbar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Navbar from '../navbar/Navbar'
 
 const Footer = React.lazy(() => {
   return new Promise(resolve => {
@@ -47,11 +46,6 @@ const Aboutus=() =>{
       
     </div>
   </section>
-<<<<<<< Updated upstream
-  <Footer/>
-  </div>);
-};
-=======
   <React.Suspense
         fallback={
           <div
@@ -70,7 +64,6 @@ const Aboutus=() =>{
       </React.Suspense>
   </div>)
 }
->>>>>>> Stashed changes
 
 export default Aboutus;
 

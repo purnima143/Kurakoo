@@ -4,14 +4,13 @@ import "./Preloader.css";
 function Preloader() {
     return (
         <div className="preloader">
-            <div className="updown">
-                <img src={require("./KURKOO logo.png")} alt="KURKOO Logo" />
-                <h1>
-                    Kurakoo<span> .</span>
-                    <span> .</span>
-                    <span> .</span>
-                </h1>
-            </div>
+            <div className="container7">
+        <div className="banner">
+          LOADING
+          <div className="banner-left"></div>
+          <div className="banner-right"></div>
+        </div>
+      </div>
         </div>
     );
 }
