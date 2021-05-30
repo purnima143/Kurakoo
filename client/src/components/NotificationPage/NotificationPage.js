@@ -3,10 +3,15 @@ import "./NotificationPage.css";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "./sideBar";
 import Notification from "./NotficationComp";
-import Footer from "../Footer/footer";
 import { currentuser, data } from "./DummyData";
 import Image from "./images/Vector.png";
-import Meta from "../../helpers/Meta"
+import Meta from "../../helpers/Meta";
+
+const Footer = React.lazy(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(import('../Footer/footer')), 6000);
+    });
+  });
 
 function getTime() {
     var hours = new Date().getHours();
@@ -92,7 +97,22 @@ function NotificationPage() {
                     </div>
                     <Sidebar />
                 </div>
-            <Footer />
+                <React.Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '50px',
+              fontWeight: 'medium',
+            }}
+          >
+            Loading...
+          </div>
+        }
+      >
+        <Footer />
+      </React.Suspense>
         </div>
     );
 }

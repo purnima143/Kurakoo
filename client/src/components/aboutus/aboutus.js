@@ -3,9 +3,15 @@ import "./aboutus.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import Navbar from '../navbar/Navbar';
-import Footer from '../Footer/footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from '../navbar/Navbar'
+
+const Footer = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('../Footer/footer')), 6000);
+  });
+});
 
 const Aboutus=() =>{
   useEffect(()=>{
@@ -41,9 +47,30 @@ const Aboutus=() =>{
       
     </div>
   </section>
+<<<<<<< Updated upstream
   <Footer/>
   </div>);
 };
+=======
+  <React.Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '50px',
+              fontWeight: 'medium',
+            }}
+          >
+            Loading...
+          </div>
+        }
+      >
+        <Footer />
+      </React.Suspense>
+  </div>)
+}
+>>>>>>> Stashed changes
 
 export default Aboutus;
 
