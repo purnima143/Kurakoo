@@ -81,6 +81,7 @@ export default function StickyHeadTable() {
     const user = useSelector((state) => state.user);
 
 
+
     if (auth.authenticate) {
       return <Redirect to={"/"} />;
   }
