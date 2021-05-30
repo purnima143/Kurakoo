@@ -82,9 +82,12 @@ export default function StickyHeadTable() {
 
 
 
-    if (auth.authenticate) {
-      return <Redirect to={"/"} />;
-  }
+    
+        if (auth.authenticate) {
+        return <Redirect to={"/"} />;
+    }
+
+
 
 
   if (user.loading) {
