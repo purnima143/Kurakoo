@@ -87,7 +87,6 @@ export default function StickyHeadTable() {
   }
 
 
-
   if (user.loading) {
       return <Progress mb='4' w='25%'><Progress.Bar striped animated min='0'max='100' mx='auto' now='50'>Loading....</Progress.Bar></Progress>;
   }

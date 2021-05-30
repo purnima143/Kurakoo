@@ -108,7 +108,7 @@
      * **Auth Need : True**
     * **Admin Auth Need : False**
 
-**5. Add answers**
+**5. Add answers** 
 * **URL**
     `/api/question/answers`
 
@@ -125,12 +125,24 @@
 * **Error Response**
     * **Code:** `400` <br />
       **Message:** `Something went wrong or Authorization required` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you can not answer a question that was created by you!` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `Please fill the required field` <br />
+    
+    * **Code:** `400` <br />
+      **Message:** `you have already answered that question! wish to edit that?` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `invalid questionId!` <br />
 
 * **Required Filed**
      * **Auth Need : True**
     * **Admin Auth Need : False**
 
-**5. Create Spaces**
+**6. Create Spaces**
 * **URL**
     `/api/createSpace`
 
@@ -153,7 +165,7 @@
     * **Admin Auth Need : True**
 
 
-**6. Post Commment**
+**7. Post Commment**
 * **URL**
     `/api/postComment`
 
@@ -175,7 +187,7 @@
      * **Auth Need : True**
     * **Admin Auth Need : False**
 
-**7. BookMark Question**
+**8. BookMark Question**
 * **URL**
     `/api/bookmarkQues`
 
@@ -197,7 +209,7 @@
      * **Auth Need : True**
     * **Admin Auth Need : False**
 
-**8. allBookMark Question**
+**9. allBookMark Question**
 * **URL**
     `/api/allBookmarkQues`
 
