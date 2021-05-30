@@ -1,11 +1,19 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "./adminScreen.css";
 import {FormControlLabel,Checkbox} from '@material-ui/core';
 import Navbar from "../navbar/Navbar";
-import './adminScreen.css'
+import './adminScreen.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
  
 export default function MultilineTextFields() {
+  useEffect(()=>{
+    AOS.init({
+        duration:2000,
+        delay:1000
+    })
+},[]);
   const [value, setValue] = React.useState('Controlled');
 // eslint-disable-next-line
   const handleChange = (event) => {
@@ -15,7 +23,7 @@ export default function MultilineTextFields() {
   return (<div><Navbar/><br/><br/>
     <div class="container" style={{width:'50%'}}>
     <h1>Edit User</h1>
-<form>
+<form data-aos="fade-up">
     <div class="txt_field">
         <input type="text" required id="name" name="name"/>
         <span></span>

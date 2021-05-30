@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./team.css";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Team = () => {
+  useEffect(()=>{
+    AOS.init({
+        duration:2000,
+        delay:1000
+    })
+},[]);
     const projectadmin = {
         name: "Purnima Sharma",
         title: "Project Admin",
@@ -51,7 +59,7 @@ const Team = () => {
             });
     }, []);
     return (
-        <div className="container">
+        <div className="container" data-aos='zoom-in-right'>
             <h1
                 style={{
                     fontSize: "3rem",
@@ -89,7 +97,7 @@ const Team = () => {
             <h2 style={{ fontSize: "2rem", marginTop: "2rem" }}>
                 <center>Collaborators</center>
             </h2>
-            <div className='badges_container'>
+            <div className='badges_container' data-aos='zoom-in-left'>
           {mentor.map(item => (
             <div
               className='badge hvr-bounce-to-top hvr-icon-grow'
