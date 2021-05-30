@@ -20,7 +20,7 @@ export const listQuestions = () => async (dispatch, getState) => {
         },
       }
 
-      const { data } = await axios.get(`/api/user/answers`, config)
+      const { data } = await axios.get(`/api/user/question`, config)
 
       dispatch({
         type: USER_QUESTION_SUCCESS,
