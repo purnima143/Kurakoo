@@ -30,7 +30,10 @@ const signup = (req, res) => {
             lastName, 
             email, 
             password,
-            confirmPassword
+            confirmPassword,
+            location,
+            educationalQualification,
+            description
         } = req.body;
         if(password != confirmPassword){
             return res
@@ -46,15 +49,20 @@ const signup = (req, res) => {
         }
 
         const _user = new User({
-            firstName,
-            lastName,
+            firstName: firstName.toLowerCase(),
+            lastName: lastName.toLowerCase(),
             email,
             password,
+            location,
+            joiningDate: new Date(),
+            educationalQualification,
+            description,
             userName: Math.random().toString(),
         });
 
         _user.save((error, data) => {
             if (error) {
+                console.log(error)
                 return res
                     .status(400)
                     .json(
@@ -77,7 +85,7 @@ const signup = (req, res) => {
             );
 
             if (data) {
-                welcomeMail.signupMail(_user.firstName, _user.lastName, _user.email)
+                // welcomeMail.signupMail(_user.firstName, _user.lastName, _user.email)
                 return res
                     .status(201)
                     .json(
@@ -142,7 +150,7 @@ const update = async (req, res) => {
         const user = await User.findById(req.user._id);
         console.log(user);
         const updates = Object.keys(req.body);
-        const allowedUpdates = ["firstName", "lastName", "email", "password"]; //allowing a user to update only these fields
+        const allowedUpdates = ["firstName", "lastName", "email", "password", "location", "educationalQualification", "description"]; //allowing a user to update only these fields
         const isValid = updates.every((update) => {
             return allowedUpdates.includes(update);
         });
@@ -158,7 +166,7 @@ const update = async (req, res) => {
             const { _id, firstName, lastName, email } = user;
             return res
                 .status(200)
-                .json({ user: { _id, firstName, lastName, email } });
+                .json({ user: { _id, firstName, lastName, email, location, educationalQualification, description } });
         } catch (e) {
             res.status(400).send({ error: "something went wrong!" });
         }

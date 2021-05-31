@@ -93,7 +93,7 @@ const updateComment = async (req, res) => {
             .status(400)
             .json(responseHandler(false, 400, "comment does not exist!"));
         }
-        if(comment.createdBy!=req.user._id){
+        if(comment.createdBy.toString() !== req.user._id.toString()){
             return res
             .status(400)
             .json(responseHandler(false, 400, "you have not written this comment originally, so no edit rights!"));
