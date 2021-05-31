@@ -13,6 +13,7 @@ const compression = require("compression");
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+const xss = require('xss-clean');
 
 //Morgan
 if(process.env.NODE_ENV ==='development'){
@@ -44,6 +45,9 @@ app.use('/', limiter);
 
 //data sanitization against noSQL query injection
 app.use(mongoSanitize());
+
+//data sanitization against xss
+app.use(xss());
 
 // cors enable
 app.options("*", cors());
