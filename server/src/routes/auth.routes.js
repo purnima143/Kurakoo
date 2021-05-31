@@ -43,4 +43,7 @@ router.put("/unfollowSpace/:space_id", requireSignin, userMiddleWare, userContro
 
 router.delete('/deleteProfile', requireSignin, authController.deleteProfile);
 
+router.get('/viewUserById/:id', requireSignin, userMiddleWare, userController.viewUserById)
+router.post('/viewUsersByName', requireSignin, userMiddleWare, userController.viewUsersByName)
+
 module.exports = router;
