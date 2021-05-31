@@ -725,3 +725,31 @@
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
+**28. view user by id** 
+* **URL**
+    `/viewUserById/:id`
+
+* **METHOD**
+    `GET`
+
+* **URL params**
+    `particular user id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `user profile`
+
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `something went wrong!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `invalid id!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `user does not exist!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
