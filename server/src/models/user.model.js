@@ -89,8 +89,23 @@ const userSchema = new mongoose.Schema(
         followers: [{
             type: ObjectId,
             ref: "User"
-        }]
-
+        }],
+        location: {
+            type: "String",
+            required: true
+        },
+        joiningDate: {
+            type: Date,
+            required: true
+        },
+        educationalQualification: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        }
         //profilePicture: { type: String} will be added later in future
     },
     { timeStamps: true }
