@@ -3,10 +3,12 @@ import {
     USER_ANSWER_REQUEST,
      USER_ANSWER_RESET, 
      USER_ANSWER_SUCCESS, 
+
      USER_UPDATE_ANSWER_FAIL, 
      USER_UPDATE_ANSWER_REQUEST,
      USER_UPDATE_ANSWER_RESET,
      USER_UPDATE_ANSWER_SUCCESS
+
     } from "../actions/constants"
 
 export const answerListReducer = (state = { answers: [] }, action) => {
@@ -25,6 +27,7 @@ export const answerListReducer = (state = { answers: [] }, action) => {
 }
 
 
+
 export const userUpdateAnswerReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_ANSWER_REQUEST:
@@ -39,3 +42,4 @@ export const userUpdateAnswerReducer = (state = {}, action) => {
       return state
   }
 }
+
