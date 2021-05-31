@@ -37,7 +37,14 @@ body {
 }
 .links {
     margin: -13rem;
-    margin-top: -44%;
+    margin-top: -37%;   
+}
+.links a{
+    text-decoration: none;
+}
+.links a:hover{
+    text-decoration: none;
+    color: #ff6f00;
 }
 .login {
     color: #6a040f;
@@ -184,7 +191,7 @@ body {
 
 .social ul {
     margin: 0;
-    padding: 0;
+    padding: 4px;
 }
 .social ul li {
     list-style: none;
@@ -192,7 +199,8 @@ body {
 }
 .social ul li a {
     width: 45px;
-    height: 45px;
+    height: 46px;
+    /* Filled the gap */
     line-height: 50px;
     font-size: 25px;
     color: black;
