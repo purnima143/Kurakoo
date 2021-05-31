@@ -6,7 +6,7 @@ import {userListReducer, userUpdateReducer, userUpdateProfileReducer} from '../r
 import { answerListReducer } from "../reducers/answer.reducer";
 
 
-import {commentListReducer} from '../reducers/comment.reducer'
+import {commentListReducer, userUpdateCommentReducer} from '../reducers/comment.reducer'
 import {questionListReducer} from '../reducers/question.reducer'
 
 const reducer = combineReducers({
@@ -16,6 +16,7 @@ const reducer = combineReducers({
   commentListr: commentListReducer,
   questionList:questionListReducer,
   answerList: answerListReducer,
+  userUpdateComment: userUpdateCommentReducer,
 })
 
 const middleware = [thunk]
