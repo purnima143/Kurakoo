@@ -10,5 +10,4 @@ jobs:
     - uses: actions/labeler@main
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        script:
-         # Add 'gssoc21' label
+        labels-synonyms: '{"gssoc21"}'
