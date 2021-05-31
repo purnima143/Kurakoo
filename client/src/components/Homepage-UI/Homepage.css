@@ -49,15 +49,16 @@ body {
 .login {
     color: #6a040f;
     margin-right: 2rem;
-    margin-bottom:10px;
+    margin-bottom:25px;
 }
 .clock{
     margin-left: -35%;
-    margin-top: -12%;
+    margin-top: -20%;
 }
 .signup {
     margin-right: -2rem;
     /* color: #6a040f00; */
+    margin-bottom: 10%;
     background-color: #6a040f;
     color: #fff;
     padding: 10px 14px;

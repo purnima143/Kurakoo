@@ -115,7 +115,7 @@ export default function StickyHeadTable() {
           <TableBody>
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <tr hover role="checkbox" tabIndex={-1} key={row.code}>
+                <tr hover role="checkbox" tabIndex={-1} key={row.code} aria-checked={false}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (

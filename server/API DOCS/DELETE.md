@@ -189,3 +189,26 @@
 * **Required Filed**
     * **Auth Need : True**
     * **Admin Auth Need : True**
+
+**8. Delete space**
+* **URL**
+    `/api/deleteSpaceAdmin/:id`
+
+* **METHOD**
+    `DELETE`
+
+* **URL params**
+    `id`
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `Space deleted!` <br />
+      **Data:** `null`
+
+* **Error Response**
+    * **Code:** `400` <br /> 
+      **Message:** `something went wrong` <br />
+
+* **Required Filed**
+    * **Auth Need : false**
+    * **Admin Auth Need : True**
