@@ -18,9 +18,7 @@ export default function MultilineTextFields() {
         delay:1000
     })
 },[]);
-<<<<<<< Updated upstream
-  const [value, setValue] = React.useState('Controlled');
-=======
+  const [setValue] = React.useState('Controlled');
 const initialState = {
   email: "",
   firstName:"",
@@ -29,7 +27,6 @@ const initialState = {
 
 const [formData, setFormData] = useState(initialState);
   const [setValue] = React.useState('Controlled');
->>>>>>> Stashed changes
 // eslint-disable-next-line
   const handleChange = (event) => {
     setValue(event.target.value);
