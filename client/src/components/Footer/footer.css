@@ -121,14 +121,16 @@ ul {
     background: #2e2e2e;
     border: 1px solid #2e2e2e;
     color: #fff;
+    border-radius: 10px;
 }
 .subscribe-form button {
     position: absolute;
     right: 0;
     background: #ff5e14;
-    padding: 13px 20px;
+    padding: 16px 20px;
     border: 1px solid #ff5e14;
     top: 0;
+    border-radius: 0px 10px 10px 0px;
 }
 .subscribe-form button i {
     color: #fff;
