@@ -42,7 +42,7 @@ This would be an enriching experience for all Student Developers, Project Manage
 
 - **Coding Languages**: <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 
-- **Tools & Technologies**: <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img alt="Express.js" src="https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge"/> <img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/>
+- **Tools & Technologies**: <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img alt="Express.js" src="https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge"/> <img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/> <img alt="Mocha" src="https://raw.githubusercontent.com/ianpogi5/mocha-badge-generator/master/test/badge.svg?sanitize=true"/> <img alt="Chai" style="width:10px, height:10px" src="https://www.google.com/search?q=chai+npm+badge&sxsrf=ALeKk01LpKl7TVeIMcIVgOwIKP257Ss3Uw:1622482858996&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiBstvTu_TwAhUz3jgGHd--A-8Q_AUoAXoECAEQAw&biw=1366&bih=625#imgrc=KOi0v_dCvifUMM"/>
 
 
 - **Project Management Tools**: <img alt="Trello" src="https://img.shields.io/badge/Trello%20-%23026AA7.svg?&style=for-the-badge&logo=Trello&logoColor=white"/> <img alt="GitHub" src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/> <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/> <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/>
@@ -132,6 +132,13 @@ _NOTE: To run the Frontend side of the application is recommended to run the bac
     ```
     npm run dev
     ```
+### Unit Testing
+
+1. Currently we are working on the implementation of unit-tests.
+
+2. This will improve the our codebase & help to manage all the wierd cases.
+
+3. We are using Mocha & Chai for the unit-testing. We welcome you, for helping us to improve test casing. 
 
     
 
@@ -160,6 +167,8 @@ Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long 
 -   [Introduction to MongoDB](https://frontendmasters.com/courses/mongodb/)
     
 - [API Design in Node.js (using Express & Mongo)](https://frontendmasters.com/courses/api-design-nodejs/using-the-mongo-with-node/)
+
+- [For testing go through the documentaion of Mocha & Chai](https://mochajs.org/)
 
 ## License📜
 
