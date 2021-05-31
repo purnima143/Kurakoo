@@ -199,16 +199,35 @@ const getQuestion = async(req, res) => {
             question.views+=1
             await question.save()
         }
-        return res
+        const questions = await Questions.find({tags: {$in: question.tags}})
+        if(questions.length>0){
+            for (var i = 0; i < questions.length; i++){
+                questions[i] = questions[i]._id
+            }
+            return res
             .status(200)
             .json(
                 responseHandler(
                     true,
                     200,
                     "question found!",
-                    {question}
+                    {question, "relatedQuestionIds": questions}
                 )
             );
+        }
+        else{
+            return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "question found!",
+                    {question, "message": "no related questions"}
+                )
+            );
+        }
+        
     }
     catch(e){
         console.log(e)
