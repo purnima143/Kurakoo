@@ -430,6 +430,53 @@ const getQuestionStats = async(req, res) => {
   }
 }
 
+const getQuestionsOfFollowingUsers = async (req, res) => {
+    try{
+        const user = await User.findById(req.user._id)
+        if(user.following.length === 0) {
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "you don't follow anyone!"));
+        }
+        var questions_list = []
+        if(user.following.length > 0){
+            for (i = 0; i < user.following.length; i++) {
+                const followingUser = await User.findById(user.following[i])
+                const questions = await Questions.find({createdBy: followingUser._id})
+                if(questions.length > 0){
+                    questions.userName = followingUser.firstName
+                    questions_list.push(questions)
+                }
+            }
+
+            if(questions_list.length===0){
+                return res
+            .status(400)
+            .json(responseHandler(false, 400, "no questions!"));
+            }
+
+            return res
+          .status(200)
+          .json(
+              responseHandler(
+                  true,
+                  200,
+                  "questions!",
+                  questions_list
+              )
+          );
+
+        }
+
+        
+    }
+    catch(e){
+        console.log(e)
+        return res
+        .status(400)
+        .json(responseHandler(false, 400, "something went wrong!"));
+    }
+}
 
 module.exports = questionController = {
     createQuestions,
@@ -445,5 +492,6 @@ module.exports = questionController = {
     downvoteQuestion,
     getQuestionStats,
     getUpvotedQuestions,
-    getUpvotedQuestion
+    getUpvotedQuestion,
+    getQuestionsOfFollowingUsers
 };
