@@ -23,6 +23,7 @@ router.get('/answer/:id', requireSignin, adminMiddleWare, adminController.getAns
 
 router.delete('/question/:id', requireSignin, adminMiddleWare, adminController.deleteQuestion);
 router.delete('/user/:id', requireSignin, adminMiddleWare, adminController.deleteUser);
+router.delete('/spaceDeleteAdmin/:id', requireSignin, adminMiddleWare, adminController.deleteSpace);
 router.delete('/answer/:id', requireSignin, adminMiddleWare, adminController.deleteAnswer);
 
 router.put('/user/:id', requireSignin,adminMiddleWare,adminController.updateUser)
