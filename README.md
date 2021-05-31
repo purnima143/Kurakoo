@@ -73,15 +73,17 @@ git clone https://github.com/purnima143/Kurakoo.git
 
 1. Run `cd server` on your CLI.
 
-2. Create a `.env` file and paste the MONGO_URL and since node environment in the given format
+2. Create a `.env` file and paste the MONGO_URL, node environment and email for nodemailer in the given format
 
     ```
     MONGO_URL = <your_url>
     NODE_ENV = development
+    USER_MAIL=<Enter your mail-id from where you want to send the mails>
+    MAIL_PASSWORD=<password of the entered mail-id for the authentication>
     ```
      or
 
-  We have added a string for the local mongoDB connection inside index.js `mongodb://localhost:27017/kurakooDB`
+  For the MONGO_URL, We have added a string for the local mongoDB connection inside index.js  `   mongodb://localhost:27017/kurakooDB`
 
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
