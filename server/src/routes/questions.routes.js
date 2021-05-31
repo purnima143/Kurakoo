@@ -52,4 +52,7 @@ router.get('/getQuestionStats/:id', requireSignin, userMiddleWare, questionContr
 router.get('/getUpvotedQuestion/:id', requireSignin, userMiddleWare, questionController.getUpvotedQuestion)
 router.get('/getUpvotedQuestions', requireSignin, userMiddleWare, questionController.getUpvotedQuestions)
 
+
+router.get('/getQuestionsOfFollowing', requireSignin, userMiddleWare, questionController.getQuestionsOfFollowingUsers)
+
 module.exports = router;

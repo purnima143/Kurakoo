@@ -699,3 +699,29 @@
     * **Auth Need : True**
     * **Admin Auth Need : False**
 
+**27. get questions of users who you follow**
+* **URL**
+    `/getQuestionsOfFollowing`
+
+* **METHOD**
+    `GET`
+
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **data:** `questions_list array`
+
+* **Error Response** 
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br /> 
+    
+    * **Code:** `400` <br />
+      **Message:** `you don't follow anyone!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `no questions!` <br />
+
+* **Required Filed**
+    * **Auth Need : True**
+    * **Admin Auth Need : False**
+
