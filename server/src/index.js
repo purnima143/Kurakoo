@@ -14,6 +14,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const xss = require('xss-clean');
+const config = require("config");
 
 //Morgan
 if(process.env.NODE_ENV ==='development'){
