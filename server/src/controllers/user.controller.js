@@ -5,6 +5,7 @@ const User = require("../models/user.model");
 const Space = require("../models/spaces.models");
 const responseHandler = require("../helpers/responseHandler")
 const Notification = require("../models/notification.model")
+const ObjectID = require('mongodb').ObjectID;
 
 
 // @desc    Get logged in user's questions
@@ -184,6 +185,94 @@ const unfollowUser = async( req, res) => {
 
 }
 
+const viewUserById = async(req, res) => {
+    try {
+        if(!ObjectID.isValid(req.params.id)){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "invalid id"));
+        }
+        const user = await User.findOne({_id: req.params.id})
+        if(!user){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "user does not exist!"));
+        }
+        if(user._id.toString() !== req.user._id.toString()){
+            const {firstName, lastName, location, educationalQualification, description, joiningDate} = user
+            return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "user profile",
+                    {firstName, lastName, location, educationalQualification, description, joiningDate}
+                )
+            );
+        }
+        if(user._id.toString() === req.user._id.toString()){
+            return res
+            .status(200)
+            .json(
+                responseHandler(
+                    true,
+                    200,
+                    "user profile",
+                    user
+                )
+            );
+        }
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    } 
+}
+
+
+const viewUsersByName = async(req, res) => {
+    try {
+        let {firstName, lastName} = req.body
+        if(!req.body.firstName || !req.body.lastName){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "please enter required fields"));
+        }
+        firstName = firstName.toLowerCase()
+        lastName = lastName.toLowerCase()
+        const users = await User.find({firstName:firstName, lastName:lastName})
+        if(users.length===0){
+            return res
+            .status(400)
+            .json(responseHandler(false, 400, "user does not exist!"));
+        }
+        var users_ = []
+        for (var i=0; i<users.length; i++){
+            const {firstName, lastName, location, educationalQualification, description, joiningDate} = users[i]
+            users_.push({firstName, lastName, location, educationalQualification, description, joiningDate})
+        }
+        return res
+        .status(200)
+        .json(
+            responseHandler(
+                true,
+                200,
+                "relevant user profiles",
+                users_
+            )
+        );
+    }
+    catch(e){
+        console.log(e)
+        return res
+            .status(400)
+            .json(responseHandler(false, 400, "something went wrong!"));
+    } 
+}
+
 
 module.exports = userController = {
    getMyAnswers,
@@ -191,5 +280,7 @@ module.exports = userController = {
    followUser,
    unfollowUser,
    followSpace,
-   unfollowSpace
+   unfollowSpace,
+   viewUserById,
+   viewUsersByName
 };
