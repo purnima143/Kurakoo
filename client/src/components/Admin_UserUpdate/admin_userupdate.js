@@ -14,7 +14,7 @@ export default function MultilineTextFields() {
         delay:1000
     })
 },[]);
-  const [value, setValue] = React.useState('Controlled');
+  const [setValue] = React.useState('Controlled');
 // eslint-disable-next-line
   const handleChange = (event) => {
     setValue(event.target.value);
