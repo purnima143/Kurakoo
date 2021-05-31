@@ -85,6 +85,8 @@ git clone https://github.com/purnima143/Kurakoo.git
 
   For the MONGO_URL, We have added a string for the local mongoDB connection inside index.js  `   mongodb://localhost:27017/kurakooDB`
 
+Note: See the .env.example file for further clarity
+
     _NOTE: To get the MONGO_URL, take a look at this article for reference [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/)_
 
 3. Install the dependencies by running
