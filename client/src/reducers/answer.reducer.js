@@ -2,7 +2,7 @@ import {
     USER_ANSWER_FAIL,
     USER_ANSWER_REQUEST,
      USER_ANSWER_RESET, 
-     USER_ANSWER_SUCCESS 
+     USER_ANSWER_SUCCESS, 
     } from "../actions/constants"
 
 export const answerListReducer = (state = { answers: [] }, action) => {
@@ -19,3 +19,4 @@ export const answerListReducer = (state = { answers: [] }, action) => {
         return state
     }
 }
+
