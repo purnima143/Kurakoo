@@ -230,3 +230,31 @@
 * **Required Filed**
      * **Auth Need : True**
     * **Admin Auth Need : False**
+
+**9. view user profiles by name**
+* **URL**
+    `/api/viewUsersByName`
+
+* **METHOD**
+    `POST`
+
+`**NOTE**: in the headers you have to authorize token and you can get token by signin API `
+
+* **Success Response**<br />
+    * **Code:** `200` <br />
+      **Message:** `relevant user profiles` <br />
+      **data:** `users array`
+
+* **Error Response**
+    * **Code:** `400` <br />
+      **Message:** `please enter required fields` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `user does not exist!` <br />
+
+    * **Code:** `400` <br />
+      **Message:** `something went wrong` <br />
+
+* **Required Filed**
+     * **Auth Need : True**
+    * **Admin Auth Need : False**
