@@ -17,7 +17,7 @@ export const updateUserUpvote = (user) => async (dispatch, getState) => {
         },
       }
 
-      const { data } = await axios.put(`/api/user/upvote/${id}`, user, config)
+      const { data } = await axios.put(`/api/user/downvote/${id}`, user, config)
        data =  data - 1;
 
       dispatch({
