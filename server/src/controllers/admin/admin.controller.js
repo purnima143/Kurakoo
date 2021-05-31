@@ -228,6 +228,16 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 })
 
+const deleteSpace = async(req, res) => {
+  const space = await Space.findById(req.params.id)
+
+  if(space){
+    await space.remove()
+    res.json(ressponseHandler( true, 200, "Space Removed", null ))
+  } else {
+    res.status.json(responseHandler(false, 404, "Space not found", null))
+  }
+}
 
 // @desc    Delete answer
 // @route   DELETE /admin/answer/:id
@@ -301,5 +311,6 @@ module.exports = adminController = {
     deleteQuestion,
     deleteUser,
     updateAdmin,
-    updateUser
+    updateUser,
+    deleteSpace
 };
