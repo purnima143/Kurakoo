@@ -59,7 +59,7 @@ export const listQuestions = () => async (dispatch, getState) => {
         },
       }
 
-      const { data } = await axios.put(`/api/user/comment/${id}`, user, config)
+      const { data } = await axios.put(`/api/user/question/${id}`, user, config)
 
       dispatch({
         type: USER_UPDATE_QUESTION_SUCCESS,
