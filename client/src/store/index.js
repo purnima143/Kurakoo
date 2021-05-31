@@ -3,7 +3,7 @@ import { applyMiddleware, createStore,combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import {userListReducer, userUpdateReducer, userUpdateProfileReducer} from '../reducers/user.reducers'
-import { answerListReducer } from "../reducers/answer.reducer";
+import { answerListReducer, userUpdateAnswerReducer } from "../reducers/answer.reducer";
 
 
 import {commentListReducer} from '../reducers/comment.reducer'
@@ -16,6 +16,7 @@ const reducer = combineReducers({
   commentListr: commentListReducer,
   questionList:questionListReducer,
   answerList: answerListReducer,
+  userUpdateAnswer: userUpdateAnswerReducer,
 })
 
 const middleware = [thunk]
