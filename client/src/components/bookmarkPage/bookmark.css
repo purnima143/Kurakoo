@@ -1,0 +1,57 @@
+
+.card-container {
+  cursor: pointer;
+  height: 150px;
+  perspective: 600;
+  position: relative;
+  top: 200%;
+  width: 150px;
+}
+.card-container2 {
+    cursor: pointer;
+    height: 150px;
+    perspective: 600;
+    position: relative;
+    top: 200%;
+    width: 150px;
+    margin-right: 20%;
+  }
+.card {
+  height: 220%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 200%;
+  margin-left: 30%;
+  border: 3px black solid;
+  margin-top: -20%;
+}
+.card2 {
+    height: 220%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 200%;
+    margin-left: 580%;
+    margin-top: -120%;
+    border: 3px black solid
+  }
+.card:hover ,.card2:hover {
+  transform: rotateY(180deg);
+}
+.card .side,.card2 .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+.card .back,.card2 .back {
+  background: #eaeaed;
+  color: #0087cc;
+  line-height: 150px;
+  text-align: center;
+  font-size: 2rem;
+  transform: rotateY(180deg);
+}
