@@ -1,0 +1,13 @@
+name: "Pull Request Labeler"
+on:
+- pull_request_target:
+  types: [opened]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Renato66/auto-label@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+           default-labels: '["gssoc21"]'
