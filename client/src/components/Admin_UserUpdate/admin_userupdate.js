@@ -19,8 +19,6 @@ export default function MultilineTextFields() {
     })
 },[]);
 
-  const [setValue] = React.useState('Controlled');
-
 const initialState = {
   email: "",
   firstName:"",
