@@ -27,7 +27,7 @@ const reducer = combineReducers({
   userUpdateComment: userUpdateCommentReducer,
   userUpdateAnswer: userUpdateAnswerReducer,
 
-  userDownvote:userDownvoteReducer
+  userDownvote:userDownvoteReducer,
 
   userUpvote:userUpvoteReducer,
 
