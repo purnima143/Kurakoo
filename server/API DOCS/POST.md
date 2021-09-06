@@ -1,260 +1,290 @@
 # POST API DOCS
+
 **1. Signup for the admin or the user**
-* **URL**
+
+-   **URL**
     `/api/admin/signup`
-        or
+    or
     `/api/signup`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
-* **PASSED OBJETCS** <br />
+-   **PASSED OBJETCS** <br />
     `firstName [required],` <br />
     `lastName [required],` <br />
     ` password [required],` <br />
-    ` confirmPassword [required],` <br /> 
+    ` confirmPassword [required],` <br />
     ` email [required],` <br />
     ` userName,` <br />
     ` year,` <br />
     ` collegeName,` <br />
     ` contactNumber`
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `User Created Succesfully...!` <br />
-      **data:** `{ token: "token generetaed" }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `User is already registered` <br />
+    -   **Code:** `201` <br />
+        **Message:** `User Created Succesfully...!` <br />
+        **data:** `{ token: "token generated" }`
 
-* **Required Filed**
-     * **Auth Need : False**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `User is already registered` <br />
+
+-   **Required Filed**
+    -   **Auth Need : False**
+    -   **Admin Auth Need : False**
 
 **2. Signin for the admin or the user**
-* **URL**
+
+-   **URL**
     `/api/admin/signin`
-        or
+    or
     `/api/signin`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
-* **PASSED OBJETCS** <br />
+-   **PASSED OBJETCS** <br />
     ` email [required],` <br />
     ` password [required]` <br />
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** ` User Logged in` <br />
-      **data:** `{ token: "token generetaed", user: "user_info" }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `401` <br />
-      **Message:** `Invalid password or valid email is required` <br />
+    -   **Code:** `200` <br />
+        **Message:** ` User Logged in` <br />
+        **data:** `{ token: "token generated", user: "user_info" }`
 
-* **Required Filed**
-     * **Auth Need : False**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `401` <br />
+        **Message:** `Invalid password or valid email is required` <br />
+
+-   **Required Filed**
+    -   **Auth Need : False**
+    -   **Admin Auth Need : False**
 
 **3. Signout for the admin or the user**
-* **URL**
+
+-   **URL**
     `/api/admin/signout`
-        or
+    or
     `/api/signout`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `Signout Successful` <br />
-      **data:** `null`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `401` <br />
-      **Message:** `Authorization Required` <br />
+    -   **Code:** `200` <br />
+        **Message:** `Signout Successful` <br />
+        **data:** `null`
 
-* **Required Filed**
-    * **Auth/ Admin Auth: true/true**
+-   **Error Response**
+
+    -   **Code:** `401` <br />
+        **Message:** `Authorization Required` <br />
+
+-   **Required Filed**
+    -   **Auth/ Admin Auth: true/true**
 
 **4. Add questions**
-* **URL**
+
+-   **URL**
     `/api/question`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
-* **PASSED OBJETCS** <br />
+-   **PASSED OBJETCS** <br />
     ` questionText [required],` <br />
     ` tags [required],` <br />
-    ` questionLinks,` <br />       
+    ` questionLinks,` <br />
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `Question added successfully` <br />
-      **data:** `{ _id_: "questionID", questionText: "question_text", tags: "tags", createdBy: "user_id" }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Question not created ! Something went wrong! or Authorization Required` <br />
+    -   **Code:** `200` <br />
+        **Message:** `Question added successfully` <br />
+        **data:** `{ _id_: "questionID", questionText: "question_text", tags: "tags", createdBy: "user_id" }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
 
-**5. Add answers** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `Question not created ! Something went wrong! or Authorization Required` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**5. Add answers**
+
+-   **URL**
     `/api/question/answers`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `Answer added successfully` <br />
-      **data:** `{  tags: [tags], _id: "answerID", answerText: "answer_text", questionId: "questionID", createdBy: "user_id" }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong or Authorization required` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not answer a question that was created by you!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `Please fill the required field` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you have already answered that question! wish to edit that?` <br />
+    -   **Code:** `200` <br />
+        **Message:** `Answer added successfully` <br />
+        **data:** `{ tags: [tags], _id: "answerID", answerText: "answer_text", questionId: "questionID", createdBy: "user_id" }`
 
-    * **Code:** `400` <br />
-      **Message:** `invalid questionId!` <br />
+-   **Error Response**
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong or Authorization required` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not answer a question that was created by you!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `Please fill the required field` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you have already answered that question! wish to edit that?` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `invalid questionId!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **6. Create Spaces**
-* **URL**
+
+-   **URL**
     `/api/createSpace`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `Space created successfully` <br />
-      **data:** `{  role: [role], _id: "spaceID", spaceName: "space_name", description: "description", createdBy: "user_id" }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Authorization required` <br />
+    -   **Code:** `200` <br />
+        **Message:** `Space created successfully` <br />
+        **data:** `{ role: [role], _id: "spaceID", spaceName: "space_name", description: "description", createdBy: "user_id" }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : True**
+-   **Error Response**
 
+    -   **Code:** `400` <br />
+        **Message:** `Authorization required` <br />
 
-**7. Post Commment**
-* **URL**
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
+
+**7. Post Comment**
+
+-   **URL**
     `/api/postComment`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `comment saved!` <br />
-      **data:** `{  comment:[answerId,text, updatedAt, created_by: user.firstName + user.lastName ] }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `200` <br />
+        **Message:** `comment saved!` <br />
+        **data:** `{ comment:[answerId,text, updatedAt, created_by: user.firstName + user.lastName ] }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **8. BookMark Question**
-* **URL**
+
+-   **URL**
     `/api/bookmarkQues`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `bookmarked your question!` <br />
-      **data:** `{  question }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Question not found` <br />
+    -   **Code:** `200` <br />
+        **Message:** `bookmarked your question!` <br />
+        **data:** `{ question }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `Question not found` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **9. allBookMark Question**
-* **URL**
+
+-   **URL**
     `/api/allBookmarkQues`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `Your list` <br />
-      **data:** `{  questions_list }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong` <br />
+    -   **Code:** `200` <br />
+        **Message:** `Your list` <br />
+        **data:** `{ questions_list }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **9. view user profiles by name**
-* **URL**
+
+-   **URL**
     `/api/viewUsersByName`
 
-* **METHOD**
+-   **METHOD**
     `POST`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `relevant user profiles` <br />
-      **data:** `users array`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `please enter required fields` <br />
+    -   **Code:** `200` <br />
+        **Message:** `relevant user profiles` <br />
+        **data:** `users array`
 
-    * **Code:** `400` <br />
-      **Message:** `user does not exist!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `400` <br />
+        **Message:** `please enter required fields` <br />
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `user does not exist!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
