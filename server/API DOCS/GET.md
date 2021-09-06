@@ -1,755 +1,825 @@
 # GET API DOCS
+
 **1. Get All Questions**
-* **URL**
+
+-   **URL**
     `/api/allQuestions`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
+-   **Success Response**<br />
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **data:** `{ questions: [ displaying all question data] }`
+    -   **Code:** `201` <br />
+        **data:** `{ questions: [ displaying all question data] }`
 
-* **Error Response**
-    * **Code:** `401` <br />
-      **Message:** `authorization required` <br />
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `401` <br />
+        **Message:** `authorization required` <br />
 
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **2. Get answers**
-* **URL**
+
+-   **URL**
     `/api/getAnswers/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ answers: [ displaying all answers to a particular question] }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `200` <br />
+        **data:** `{ answers: [ displaying all answers to a particular question] }`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **3. Get specific questions**
-* **URL**
+
+-   **URL**
     `/api/searchQuestions`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ questions: [ displaying all questions related to the search] }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `200` <br />
+        **data:** `{ questions: [ displaying all questions related to the search] }`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **4. Get All Spaces**
-* **URL**
+
+-   **URL**
     `/api/getSpaces`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
+-   **Success Response**<br />
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **data:** `{ Spaces: [ displaying all available spaces] }`
+    -   **Code:** `201` <br />
+        **data:** `{ Spaces: [ displaying all available spaces] }`
 
-* **Error Response**
-    * **Code:** `401` <br />
-      **Message:** `authorization required` <br />
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `401` <br />
+        **Message:** `authorization required` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **5. Get All Spaces**
-* **URL**
+
+-   **URL**
     `/api/getSpacebyId`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
 `**NOTE**: in the headers you have to authorize token and you can get token by signin API `
 
+-   **Success Response**<br />
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ Spaces: [ displaying all spaces created by the specific user] }`
+    -   **Code:** `200` <br />
+        **data:** `{ Spaces: [ displaying all spaces created by the specific user] }`
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `authorization required` <br />
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `authorization required` <br />
 
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **6.ADMIN: Get All users**
-* **URL**
+
+-   **URL**
     `/api/admin/users`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ users:[array of all the users] }`
+-   **Success Response**<br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+    -   **Code:** `200` <br />
+        **data:** `{ users:[array of all the users] }`
 
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **7.ADMIN: Get All questions**
-* **URL**
+
+-   **URL**
     `/api/admin/questions`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ questions:[array of all the questions] }`
+-   **Success Response**<br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+    -   **Code:** `200` <br />
+        **data:** `{ questions:[array of all the questions] }`
 
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **8.ADMIN: Get All answers**
-* **URL**
+
+-   **URL**
     `/api/admin/answers`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{ answers:[array of all the answers] }`
+-   **Success Response**<br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+    -   **Code:** `200` <br />
+        **data:** `{ answers:[array of all the answers] }`
 
-
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **6. ADMIN: Get user by Id**
-* **URL**
+
+-   **URL**
     `/api/admin/user/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{user}` <br />
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `404` <br />
-      **Message:** `User not found` <br />
+    -   **Code:** `200` <br />
+        **data:** `{user}` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+-   **Error Response**
 
+    -   **Code:** `404` <br />
+        **Message:** `User not found` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **7. ADMIN: Get question by Id**
-* **URL**
+
+-   **URL**
     `/api/admin/question/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{question}` <br />
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `404` <br />
-      **Message:** `Question not found` <br />
+    -   **Code:** `200` <br />
+        **data:** `{question}` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+-   **Error Response**
 
+    -   **Code:** `404` <br />
+        **Message:** `Question not found` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **8. ADMIN: Get answer by Id**
-* **URL**
+
+-   **URL**
     `/api/admin/answer/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{answer}` <br />
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `404` <br />
-      **Message:** `Answer not found` <br />
+    -   **Code:** `200` <br />
+        **data:** `{answer}` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : True**
+-   **Error Response**
+
+    -   **Code:** `404` <br />
+        **Message:** `Answer not found` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **9. upvote answer**
-* **URL**
+
+-   **URL**
     `/api/upvote/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular answer id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "upvoted!"}`
+-   **Success Response**<br />
 
-* **Error Response** 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not upvote answer that was created by you` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "upvoted!"}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not upvote answer that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **10. downvote answer**
-* **URL**
+
+-   **URL**
     `/api/downvote/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular answer id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "downvoted!"}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not downvote answer that was created by you` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "downvoted!"}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False** 
+-   **Error Response**
 
-**11. get upvoted answers** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not downvote answer that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**11. get upvoted answers**
+
+-   **URL**
     `/api/getUpvotedAnswers`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{upvotedAnswers: [array of answers upvoted by the user]}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `200` <br />
+        **data:** `{upvotedAnswers: [array of answers upvoted by the user]}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **12. search answers**
-* **URL**
+
+-   **URL**
     `/api/searchAnswers`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **query params (optional)**
+-   **query params (optional)**
     `createdBy`,
     `tags`,
     `questionId`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{answers: [array of answers with filter applied as per the query string]}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `200` <br />
+        **data:** `{answers: [array of answers with filter applied as per the query string]}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False** 
+-   **Error Response**
 
-**13. get comment by Id** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**13. get comment by Id**
+
+-   **URL**
     `/api/getCommentById/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `comment found!`
-      **data:** `{comment}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `invalid comment id` <br />
+    -   **Code:** `200` <br />
+        **Message:** `comment found!`
+        **data:** `{comment}`
 
-    * **Code:** `400` <br />
-      **Message:** `comment does not exist!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `invalid comment id` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `comment does not exist!` <br />
 
-**14. get my comments** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**14. get my comments**
+
+-   **URL**
     `/api/getMyComments`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `comments found!`
-      **data:** `{comments: [array of comments]}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `you have not commented on any answer!` <br />
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `200` <br />
+        **Message:** `comments found!`
+        **data:** `{comments: [array of comments]}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
 
-**15. get comments for answer** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `you have not commented on any answer!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**15. get comments for answer**
+
+-   **URL**
     `/api/getCommentsForAnswer/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `comments found!`
-      **data:** `{comments: [array of comments]}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `invalid answer id` <br />
+    -   **Code:** `200` <br />
+        **Message:** `comments found!`
+        **data:** `{comments: [array of comments]}`
 
-    * **Code:** `400` <br />
-      **Message:** `invalid answer id, no such answer exists in the database!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `no comments for this particular answer yet!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br /> 
+    -   **Code:** `400` <br />
+        **Message:** `invalid answer id` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `invalid answer id, no such answer exists in the database!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `no comments for this particular answer yet!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **16. upvote question**
-* **URL**
+
+-   **URL**
     `/upvoteQuestion/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular question id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "question upvoted!!"}`
-    
-    * **Code:** `200` <br />
-      **data:** `{message: "already upvoted!!"}`
+-   **Success Response**<br />
 
-* **Error Response** 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not upvote question that was created by you` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "question upvoted!!"}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `200` <br />
+        **data:** `{message: "already upvoted!!"}`
 
-**17. downvote question** 
-* **URL**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not upvote question that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**17. downvote question**
+
+-   **URL**
     `/upvoteQuestion/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular question id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "downvoted!"}`
+-   **Success Response**<br />
 
-    * **Code:** `200` <br />
-      **data:** `{message: "already downvoted!"}`
+    -   **Code:** `200` <br />
+        **data:** `{message: "downvoted!"}`
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "already downvoted!"}`
 
-    * **Code:** `400` <br />
-      **Message:** `you can not downvote question that was created by you` <br />
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
 
-**18. get upvoted questions** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `you can not downvote question that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**18. get upvoted questions**
+
+-   **URL**
     `/api/getUpvotedAnswers`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{upvotedAnswers: [array of questions upvoted by the user]}`
+-   **Success Response**<br />
 
-* **Error Response** 
+    -   **Code:** `200` <br />
+        **data:** `{upvotedAnswers: [array of questions upvoted by the user]}`
 
-    * **Code:** `400` <br />
-      **Message:** `you haven't upvoted any question!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `you haven't upvoted any question!` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
 
-**19. get upvoted question** 
-* **URL**
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**19. get upvoted question**
+
+-   **URL**
     `/getUpvotedQuestion/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `question id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{upvotedQuestion}`
+-   **Success Response**<br />
 
-* **Error Response**
+    -   **Code:** `200` <br />
+        **data:** `{upvotedQuestion}`
 
-    * **Code:** `400` <br />
-      **Message:** `invalid question id!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `no upvoted question with entered id exists!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br /> 
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `invalid question id!` <br />
 
-**20. get upvoted answer** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `no upvoted question with entered id exists!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**20. get upvoted answer**
+
+-   **URL**
     `/getUpvotedAnswer/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `answer id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{upvotedAnswer}`
+-   **Success Response**<br />
 
-* **Error Response**
+    -   **Code:** `200` <br />
+        **data:** `{upvotedAnswer}`
 
-    * **Code:** `400` <br />
-      **Message:** `invalid answer id!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `no upvoted answer with entered id exists!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br /> 
+-   **Error Response**
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `invalid answer id!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `no upvoted answer with entered id exists!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **21. get answer stats**
-* **URL**
+
+-   **URL**
     `/api/getAnswerStats/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular answer id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `answer statistics!`
-      **data:** `{statistics: {"views": answer.views, "upvotes": answer.upvotes, "downvotes": answer.downvotes}}`
+-   **Success Response**<br />
 
-* **Error Response**
+    -   **Code:** `200` <br />
+        **Message:** `answer statistics!`
+        **data:** `{statistics: {"views": answer.views, "upvotes": answer.upvotes, "downvotes": answer.downvotes}}`
 
-    * **Code:** `400` <br />
-      **Message:** `answer does not exist!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `invalid answer id!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `answer does not exist!` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `invalid answer id!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **22. get question stats**
-* **URL**
+
+-   **URL**
     `/api/getQuestionStats/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular question id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `quetsion statistics!`
-      **data:** `{statistics: {"views": question.views, "upvotes": question.upvotes, "downvotes": question.downvotes, "answerCount": answerCount}}`
+-   **Success Response**<br />
 
-* **Error Response**
+    -   **Code:** `200` <br />
+        **Message:** `question statistics!`
+        **data:** `{statistics: {"views": question.views, "upvotes": question.upvotes, "downvotes": question.downvotes, "answerCount": answerCount}}`
 
-    * **Code:** `400` <br />
-      **Message:** `question does not exist!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `invalid question id!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `question does not exist!` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `invalid question id!` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **23. get notifications**
-* **URL**
+
+-   **URL**
     `/api/getNotifications`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `unread notifications!`
-      **data:** `{notifications}`
+-   **Success Response**<br />
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `no new notifications!`
+    -   **Code:** `200` <br />
+        **Message:** `unread notifications!`
+        **data:** `{notifications}`
 
-* **Error Response**
+-   **Success Response**<br />
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `200` <br />
+        **Message:** `no new notifications!`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
 
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **24. get notification by id**
-* **URL**
+
+-   **URL**
     `/api/getNotification/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular notification id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **Message:** `notification`
-      **data:** `{notification}`
+-   **Success Response**<br />
 
-* **Error Response**
+    -   **Code:** `200` <br />
+        **Message:** `notification`
+        **data:** `{notification}`
 
-    * **Code:** `400` <br />
-      **Message:** `invalid notification id!` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `notification does not exist!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `notification not intended to you!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `invalid notification id!` <br />
 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `notification does not exist!` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `notification not intended to you!` <br />
 
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **25. upvote comment**
-* **URL**
+
+-   **URL**
     `/api/upvoteComment/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular comment id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "upvoted!"}`
+-   **Success Response**<br />
 
-* **Error Response** 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not upvote comment that was created by you` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "upvoted!"}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not upvote comment that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **26. downvote comment**
-* **URL**
+
+-   **URL**
     `/api/downvoteComment/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular comment id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `{message: "downvoted!"}`
+-   **Success Response**<br />
 
-* **Error Response** 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br />
-    
-    * **Code:** `400` <br />
-      **Message:** `you can not downvote comment that was created by you` <br />
+    -   **Code:** `200` <br />
+        **data:** `{message: "downvoted!"}`
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
+
+    -   **Code:** `400` <br />
+        **Message:** `you can not downvote comment that was created by you` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
 
 **27. get questions of users who you follow**
-* **URL**
+
+-   **URL**
     `/getQuestionsOfFollowing`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
+-   **Success Response**<br />
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `questions_list array`
+    -   **Code:** `200` <br />
+        **data:** `questions_list array`
 
-* **Error Response** 
-    * **Code:** `400` <br />
-      **Message:** `something went wrong` <br /> 
-    
-    * **Code:** `400` <br />
-      **Message:** `you don't follow anyone!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `no questions!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `you don't follow anyone!` <br />
 
-**28. view user by id** 
-* **URL**
+    -   **Code:** `400` <br />
+        **Message:** `no questions!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**
+
+**28. view user by id**
+
+-   **URL**
     `/viewUserById/:id`
 
-* **METHOD**
+-   **METHOD**
     `GET`
 
-* **URL params**
+-   **URL params**
     `particular user id`
 
-* **Success Response**<br />
-    * **Code:** `200` <br />
-      **data:** `user profile`
+-   **Success Response**<br />
 
+    -   **Code:** `200` <br />
+        **data:** `user profile`
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `something went wrong!` <br />
+-   **Error Response**
 
-    * **Code:** `400` <br />
-      **Message:** `invalid id!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `something went wrong!` <br />
 
-    * **Code:** `400` <br />
-      **Message:** `user does not exist!` <br />
+    -   **Code:** `400` <br />
+        **Message:** `invalid id!` <br />
 
-* **Required Filed**
-    * **Auth Need : True**
-    * **Admin Auth Need : False**
+    -   **Code:** `400` <br />
+        **Message:** `user does not exist!` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : False**

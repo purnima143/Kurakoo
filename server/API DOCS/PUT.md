@@ -1,12 +1,14 @@
 # PUT API DOCS
-**1.ADIMN: Update User Profile**
-* **URL**
+
+**1.ADMIN: Update User Profile**
+
+-   **URL**
     `/apiadmin/user/:id`
 
-* **METHOD**
+-   **METHOD**
     `PUT`
 
-* **PASSED OBJETCS** <br />
+-   **PASSED OBJECTS** <br />
 
     required atleast one field to update
 
@@ -15,108 +17,121 @@
     ` email,` <br />
     `isAdmin,`
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `Profile updated` <br />
-      **data:** `{ id: "user_id", firstName, lastName, email, isAdmin }`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `User Not Found` <br />
+    -   **Code:** `201` <br />
+        **Message:** `Profile updated` <br />
+        **data:** `{ id: "user_id", firstName, lastName, email, isAdmin }`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : True**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `User Not Found` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : True**
 
 **2. User: Follow other user**
-* **URL**
+
+-   **URL**
     `/followUser/:user_id`
 
-* **METHOD**
+-   **METHOD**
     `PUT`
 
-* **PASSED OBJETCS** <br />
-    *No need to pass anything just replace :user_id with user_id which you want to update*
+-   **OBJECTS** <br />
+    _No need to pass anything just replace :user_id with user_id which you want to update_
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `Following` <br />
-      **data:** `{data}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong` <br />
+    -   **Code:** `201` <br />
+        **Message:** `Following` <br />
+        **data:** `{data}`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : false**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : false**
 
 **3. User: Unfollow other user**
-* **URL**
+
+-   **URL**
     `/unfollowUser/:user_id`
 
-* **METHOD**
+-   **METHOD**
     `PUT`
 
-* **PASSED OBJETCS** <br />
-    *No need to pass anything just replace :user_id with user_id which you want to update*
+-   **OBJECTS** <br />
+    _No need to pass anything just replace :user_id with user_id which you want to update_
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `Unfollowing` <br />
-      **data:** `{null}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong` <br />
+    -   **Code:** `201` <br />
+        **Message:** `Unfollowing` <br />
+        **data:** `{null}`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : false**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : false**
 
 **4. User: Follow Space**
-* **URL**
+
+-   **URL**
     `/followSpace/:space_id`
 
-* **METHOD**
+-   **METHOD**
     `PUT`
 
-* **PASSED OBJETCS** <br />
-    *No need to pass anything just replace :space_id with space_id which you want to update*
+-   **OBJECTS** <br />
+    _No need to pass anything just replace :space_id with space_id which you want to update_
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `Following` <br />
-      **data:** `{data}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong` <br />
+    -   **Code:** `201` <br />
+        **Message:** `Following` <br />
+        **data:** `{data}`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : false**
+-   **Error Response**
 
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : false**
 
 **5. User: Unfollow Space**
-* **URL**
+
+-   **URL**
     `/unfollowSpace/:space_id`
 
-* **METHOD**
+-   **METHOD**
     `PUT`
 
-* **PASSED OBJETCS** <br />
-    *No need to pass anything just replace :space_id with space_id which you want to update*
+-   **OBJECTS** <br />
+    _No need to pass anything just replace :space_id with space_id which you want to update_
 
-* **Success Response**<br />
-    * **Code:** `201` <br />
-      **Message:** `Unfollow` <br />
-      **data:** `{data}`
+-   **Success Response**<br />
 
-* **Error Response**
-    * **Code:** `400` <br />
-      **Message:** `Something went wrong` <br />
+    -   **Code:** `201` <br />
+        **Message:** `Unfollow` <br />
+        **data:** `{data}`
 
-* **Required Filed**
-     * **Auth Need : True**
-    * **Admin Auth Need : false**
+-   **Error Response**
+
+    -   **Code:** `400` <br />
+        **Message:** `Something went wrong` <br />
+
+-   **Required Filed**
+    -   **Auth Need : True**
+    -   **Admin Auth Need : false**
