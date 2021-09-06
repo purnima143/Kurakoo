@@ -1,41 +1,51 @@
-import thunk from 'redux-thunk';
-import { applyMiddleware, createStore,combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from "redux-thunk";
+import { applyMiddleware, createStore, combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import {userListReducer, userUpdateReducer, userUpdateProfileReducer} from '../reducers/user.reducers'
-import { answerListReducer, userUpdateAnswerReducer } from "../reducers/answer.reducer";
+import {
+    userListReducer,
+    userUpdateReducer,
+    userUpdateProfileReducer
+} from "../reducers/user.reducers";
+import {
+    answerListReducer,
+    userUpdateAnswerReducer
+} from "../reducers/answer.reducer";
 
+import {
+    questionListReducer,
+    userUpdateQuestionReducer
+} from "../reducers/question.reducer";
 
+import {
+    commentListReducer,
+    userUpdateCommentReducer
+} from "../reducers/comment.reducer";
 
-import {questionListReducer, userUpdateQuestionReducer} from '../reducers/question.reducer'
+import { userDownvoteReducer } from "../reducers/downvote.reducer";
 
-import {commentListReducer, userUpdateCommentReducer} from '../reducers/comment.reducer'
-
-import {userDownvoteReducer} from '../reducers/downvote.reducer'
-
-import {userUpvoteReducer} from '../reducers/upvote.reducer'
-
+import { userUpvoteReducer } from "../reducers/upvote.reducer";
 
 const reducer = combineReducers({
-  userList: userListReducer,
-  userUpdate: userUpdateReducer,
-  userUpdateProfile: userUpdateProfileReducer,
-  commentListr: commentListReducer,
-  questionList:questionListReducer,
-  answerList: answerListReducer,
-  userUpdateQuestion:userUpdateQuestionReducer,
-  userUpdateComment: userUpdateCommentReducer,
-  userUpdateAnswer: userUpdateAnswerReducer,
+    userList: userListReducer,
+    userUpdate: userUpdateReducer,
+    userUpdateProfile: userUpdateProfileReducer,
+    commentListr: commentListReducer,
+    questionList: questionListReducer,
+    answerList: answerListReducer,
+    userUpdateQuestion: userUpdateQuestionReducer,
+    userUpdateComment: userUpdateCommentReducer,
+    userUpdateAnswer: userUpdateAnswerReducer,
 
-  userDownvote:userDownvoteReducer
+    userDownvote: userDownvoteReducer,
 
-  userUpvote:userUpvoteReducer,
+    userUpvote: userUpvoteReducer
+});
 
+const middleware = [thunk];
+const store = createStore(
+    reducer,
+    composeWithDevTools(applyMiddleware(...middleware))
+);
 
-})
-
-const middleware = [thunk]
-const store = createStore( reducer,
-    composeWithDevTools(applyMiddleware(...middleware)));
-
-export default store; 
+export default store;
