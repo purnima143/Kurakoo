@@ -92,19 +92,19 @@ const userSchema = new mongoose.Schema(
         }],
         location: {
             type: "String",
-            required: true
+            required: false
         },
         joiningDate: {
             type: Date,
-            required: true
+            required: false
         },
         educationalQualification: {
             type: String,
-            required: true
+            required: false
         },
         description: {
             type: String,
-            required: true
+            required: false
         }
         //profilePicture: { type: String} will be added later in future
     },
