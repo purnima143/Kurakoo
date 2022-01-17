@@ -168,7 +168,7 @@ Girlscript Summer of Code 2021: The GirlScript Summer of Code is a 3 month long 
     
 - [API Design in Node.js (using Express & Mongo)](https://frontendmasters.com/courses/api-design-nodejs/using-the-mongo-with-node/)
 
-- [For testing go through the documentaion of Mocha & Chai](https://mochajs.org/)
+- [For testing go through the documentation of Mocha & Chai](https://mochajs.org/)
 
 ## License📜
 
